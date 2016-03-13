@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<header>
+		</h1>Cálculo Geotexan</h1>
+		<p>Aplicación de gestión de cálculo</p>
+	</header>
+	<section>
+		<form id="carretera-geotexan">
+			<div class="form-group">
+				<label>CBR Subsuelo(%) <strong>CBR</strong></label>
+				<input type="text" name="cbr-subsuelo">
+			</div>
+			<div class="form-group">
+				<label>Espesor mínimo (mm) <strong>e</strong>/label>
+				<input type="text" name="espesor-minimo">
+			</div>
+			<div class="form-group">
+				<label>D max relleno (mm) <strong>D</strong>/label>
+				<input type="text" name="d-max-relleno">
+			</div>
+			<div class="form-table-group">
+				<input type="submit" value="Cálculo Geotexan">
+				<div class="row-results">
+					<div class="row-result-column">
+						<label>Rt (kN/m) UNE EN ISO 10319</label>
+						<input type="text" name="rt-calculo-value" readonly>
+					</div>
+					<div class="row-result-column">
+						<label>Elong(%) UNE EN ISO 10319</label>
+						<input type="text" name="e-calculo-value" readonly>
+					</div>
+					<div class="row-result-column">
+						<label>R CBR perf (kN) UNE EN ISO 12236/label>
+						<input type="text" name="r-cbr-calculo-value" readonly>
+					</div>
+					<div class="row-result-column">
+						<label>R perf cono(mm) UNE EN ISO 13433</label>
+						<input type="text" name="rperf-calculo-value" readonly>
+					</div>
+					<div class="row-result-column">
+						<label>Abertura Poro (mm) EN ISO 12956</label>
+						<input type="text" name="abertura-poro-calculo-value" readonly>
+					</div>
+				</div>
+			</div>
+			<div class="form-table-group">
+				<input type="submit" value="Geotextil">
+				<div class="row-results">
+					<div class="row-result-column">
+						<label>Rt (kN/m) UNE EN ISO 10319</label>
+						<input type="text" name="rt-geotextil-value" readonly>
+					</div>
+					<div class="row-result-column">
+						<label>Elong(%) UNE EN ISO 10319</label>
+						<input type="text" name="e-geotextil-value" readonly>
+					</div>
+					<div class="row-result-column">
+						<label>R CBR perf (kN) UNE EN ISO 12236/label>
+						<input type="text" name="r-cbr-geotextil-value" readonly>
+					</div>
+					<div class="row-result-column">
+						<label>R perf cono(mm) UNE EN ISO 13433</label>
+						<input type="text" name="rperf-geotextil-value" readonly>
+					</div>
+					<div class="row-result-column">
+						<label>Abertura Poro (mm) EN ISO 12956</label>
+						<input type="text" name="abertura-poro-geotextil-value" readonly>
+					</div>
+				</div>
+			</div>
+		</form>
+
+	</section>
+	<footer>
+		<div>
+			<a href="#">Justificación del cálculo</a>
+		</div>
+		<div>
+			<a href="#">Pliego de condiciones</a>
+		</div>
+		<div>
+			<a href="#">Ficha Técnica</a>
+		</div>
+		<div>
+			<a href="#">Volver</a>
+		</div>
+	</footer>
+</body>
+</html>
