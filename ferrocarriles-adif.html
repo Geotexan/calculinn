@@ -3,7 +3,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
 	<script src="libs/jquery-2.2.1.min.js"></script>
-	<script src="js/carreteras_g.js"></script>
+	<script src="js/ferrocarriles_a.js"></script>
 </head>
 <body>
 	<header>
@@ -12,60 +12,48 @@
 	</header>
 	<section>
 		<div class="form-group">
-			<label for="i-cbr">CBR Subsuelo(%) <strong>CBR</strong></label>
-			<input id="i-cbr" type="text" name="i-cbr">
+			<label for="funcion">Espesor mínimo (mm) <strong>e</strong></label>
+			<input id="funcion" type="text" name="funcion" readonly>
 		</div>
 		<div class="form-group">
-			<label for="i-e">Espesor mínimo (mm) <strong>e</strong></label>
-			<input id="i-e" type="text" name="i-e">
-		</div>
-		<div class="form-group">
-			<label for="i-d">D máx relleno (mm) <strong>D</strong></label>
-			<input id="i-d" type="text" name="i-d">
-		</div>
-		<input type="submit" value="Cálculo" onclick="calcula()">
-	</section>
-	<section>
-		<div class="form-table-group">
-			<div class="section-head">
-				<h2>Cálculo Geotexan</h2>
-			</div>
-			<div class="row-results">
-				<div class="row-result-column">
-					<label for="rt-geotexan-value">Rt (KN/m) UNE EN ISO 10319</label>
-					<input id="rt-geotexan-value" type="text" name="rt-geotexan-value" readonly>
-				</div>
-			</div>
-			<div class="row-results">
-				<div class="row-result-column">
-					<label for="elong-geotexan-value">Elong(%) UNE EN ISO 10319</label>
-					<input id="elong-geotexan-value" type="text" name="elong-geotexan-value" readonly>
-				</div>
-			</div>
-			<div class="row-results">
-				<div class="row-result-column">
-					<label for="cbr-geotexan-value">R CBR perf (kN) UNE EN ISO 12236</label>
-					<input id="cbr-geotexan-value" type="text" name="cbr-geotexan-value" readonly>
-				</div>
-			</div>
-			<div class="row-results">
-				<div class="row-result-column">
-					<label for="perfcono-geotexan-value">R perf cono(mm) UNE EN ISO 13433</label>
-					<input id="perfcono-geotexan-value" type="text" name="perfcono-geotexan-value" readonly>
-				</div>
-			</div>
-			<div class="row-results">
-				<div class="row-result-column">
-					<label for="abcono-geotexan-value">Abertura Poro (mm) EN ISO 12956</label>
-					<input id="abcono-geotexan-value" type="text" name="abcono-geotexan-value" readonly>
-				</div>
-			</div>
+			<label for="aplicacion">D máx relleno (mm) <strong>D</strong></label>
+			<input id="aplicacion" type="text" name="aplicacion" readonly>
 		</div>
 	</section>
 	<section>
 		<div class="form-table-group">
 			<div class="section-head">
-				<h2>Cálculo Geotextil</h2>
+				<h2>Normativa ADIF</h2>
+			</div>
+			<div class="row-results">
+				<div class="row-result-column">
+					<label for="rt-adif-value">Rt (KN/m) UNE EN ISO 10319</label>
+					<input id="rt-adif-value" type="text" name="rt-adif-value" readonly>
+				</div>
+			</div>
+			<div class="row-results">
+				<div class="row-result-column">
+					<label for="elong-adif-value">Elong(%) UNE EN ISO 10319</label>
+					<input id="elong-adif-value" type="text" name="elong-adif-value" readonly>
+				</div>
+			</div>
+			<div class="row-results">
+				<div class="row-result-column">
+					<label for="cbr-adif-value">R CBR perf (kN) UNE EN ISO 12236</label>
+					<input id="cbr-adif-value" type="text" name="cbr-adif-value" readonly>
+				</div>
+			</div>
+			<div class="row-results">
+				<div class="row-result-column">
+					<label for="kvert-adif-value">K vert (l/m2s) EN ISO 11058</label>
+					<input id="kvert-adif-value" type="text" name="kvert-adif-value" readonly>
+				</div>
+			</div>
+		</div>
+	</section><section>
+		<div class="form-table-group">
+			<div class="section-head">
+				<h2>Geotextil</h2>
 			</div>
 			<div class="row-results">
 				<div class="row-result-column">
@@ -87,14 +75,8 @@
 			</div>
 			<div class="row-results">
 				<div class="row-result-column">
-					<label for="perfcono-geotextil-value">R perf cono(mm) UNE EN ISO 13433</label>
-					<input id="perfcono-geotextil-value" type="text" name="perfcono-geotextil-value" readonly>
-				</div>
-			</div>
-			<div class="row-results">
-				<div class="row-result-column">
-					<label for="abcono-geotextil-value">Abertura Poro (mm) EN ISO 12956</label>
-					<input id="abcono-geotextil-value" type="text" name="abcono-geotextil-value" readonly>
+					<label for="kvert-geotextil-value">K vert (l/m2s) EN ISO 11058</label>
+					<input id="kvert-geotextil-value" type="text" name="kvert-geotextil-value" readonly>
 				</div>
 			</div>
 			<div class="row-results">
@@ -114,7 +96,7 @@
 			<a href="#">Ficha Técnica</a>
 		</div>
 		<div>
-			<a href="carreteras.html">Volver</a>
+			<a href="#">Volver</a>
 		</div>
 	</footer>
 </body>
