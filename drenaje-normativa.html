@@ -1,0 +1,85 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<title></title>
+
+<link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+
+<script src="libs/jquery-2.2.1.min.js"></script>
+<script src="js/drenaje_n.js"></script>
+
+</head>
+<body class="calculo">
+	<section>
+		<!--cerrar ventana-->
+		<a style="position:relative;z-index:1" href="javascript:history.back(1);">
+			<img src="images/boton_retroceder.png" width="25px"/><span class="retroceder_ventana">retroceder</span>
+		</a>
+	</section>
+	<section>
+		<div class="form-group">
+			<label for="funcion">Función</label>
+			<input id="funcion" type="text" name="funcion" readonly>
+		</div>
+		<div class="form-group">
+			<label>Tráfico</label>
+			<select id="trafico">
+				<option value="T0">T0</option>
+				<option value="T1">T1</option>
+				<option value="T2">T2</option>
+				<option value="T3">T3</option>
+			</select>
+		</div>
+		<input type="submit" value="Cálculo Geotexan" onclick="calcula()">
+	</section>
+	<section>
+		<div class="form-table-group">
+			<div class="row-results">
+				<h2>Normativa PG3</h2>
+				<div class="row-result-column">
+					<label for="e-normativa-value">E(kN/m)</label>
+					<input id="e-normativa-value" type="text" name="e-normativa-value" readonly>
+				</div>
+				<div class="row-result-column">
+					<label for="rt-normativa-value">Rt (KN/m) UNE EN ISO 10319</label>
+					<input id="rt-normativa-value" type="text" name="rt-normativa-value" readonly>
+				</div>
+				<div class="row-result-column">
+					<label for="rperf-normativa-value">R perf cono(mm) UNE EN ISO 13433</label>
+					<input id="rperf-normativa-value" type="text" name="rperf-normativa-value" readonly>
+				</div>
+				<div class="row-result-column">
+					<label for="abertura-poro-normativa-value">Abertura Poro (mm) EN ISO 12956</label>
+					<input id="abertura-poro-normativa-value" type="text" name="abertura-poro-normativa-value" readonly>
+				</div>
+			</div>
+			<div class="row-results">
+				<h2>Cálculo Geotexan</h2>
+				<div class="row-result-column">
+					<label for="e-geotextil-value">E(kN/m)</label>
+					<input id="e-geotextil-value" type="text" name="e-geotextil-value" readonly>
+				</div>
+				<div class="row-result-column">
+					<label for="rt-geotextil-value">Rt (KN/m) UNE EN ISO 10319</label>
+					<input id="rt-geotextil-value" type="text" name="rt-geotextil-value" readonly>
+				</div>
+				<div class="row-result-column">
+					<label for="rperf-geotextil-value">R perf cono(mm) UNE EN ISO 13433</label>
+					<input id="rperf-geotextil-value" type="text" name="rperf-geotextil-value" readonly>
+				</div>
+				<div class="row-result-column">
+					<label for="abertura-poro-geotextil-value">Abertura Poro (mm) EN ISO 12956</label>
+					<input id="abertura-poro-geotextil-value" type="text" name="abertura-poro-geotextil-value" readonly>
+				</div>
+			</div>
+			<div class="row-results">
+				<label for="product">GEOTEXTIL GEOTESAN</label>
+				<input id="product" type="text" name="product" readonly>
+			</div>
+		</div>
+	</section>
+</body>
+</html>

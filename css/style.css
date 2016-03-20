@@ -9,7 +9,7 @@
 			
 			overflow-x:hidden;
 		  	overflow-y:hidden; 
-		  	background-image: url('/plantillas/images/inicio.jpg');
+		  	background-image: url('/images/inicio.jpg');
 		  	background-repeat:no-repeat;
 		  	background-size: 876px 545px;
 		  }
@@ -17,7 +17,7 @@
 			
 			overflow-x:hidden;
 		  	overflow-y:hidden; 
-		  	background-image: url('/plantillas/images/introduccion.jpg');
+		  	background-image: url('/images/introduccion.jpg');
 		  	background-repeat:no-repeat;
 		  	background-size: 876px 545px;
 		  }
@@ -25,7 +25,7 @@
             
             overflow-x:hidden;
             overflow-y:hidden; 
-            background-image: url('/plantillas/images/empresa.jpg');
+            background-image: url('/images/empresa.jpg');
             background-repeat:no-repeat;
             background-size: 876px 545px;
           }
@@ -33,7 +33,7 @@
             
             overflow-x:hidden;
             overflow-y:hidden; 
-            background-image: url('/plantillas/images/servicios.jpg');
+            background-image: url('/images/servicios.jpg');
             background-repeat:no-repeat;
             background-size: 876px 545px;
           }
@@ -41,7 +41,7 @@
             
             overflow-x:hidden;
             overflow-y:hidden; 
-            background-image: url('/plantillas/images/accionariado.jpg');
+            background-image: url('/images/accionariado.jpg');
             background-repeat:no-repeat;
             background-size: 876px 545px;
           }
@@ -49,7 +49,7 @@
             
             overflow-x:hidden;
             overflow-y:hidden; 
-            background-image: url('/plantillas/images/empleados.jpg');
+            background-image: url('/images/empleados.jpg');
             background-repeat:no-repeat;
             background-size: 876px 545px;
           }
@@ -57,7 +57,7 @@
             
             overflow-x:hidden;
             overflow-y:hidden; 
-            background-image: url('/plantillas/images/idi.jpg');
+            background-image: url('/images/idi.jpg');
             background-repeat:no-repeat;
             background-size: 876px 545px;
           }
@@ -65,7 +65,7 @@
             
             overflow-x:hidden;
             overflow-y:hidden; 
-            background-image: url('/plantillas/images/medio-ambiente.jpg');
+            background-image: url('/images/medio-ambiente.jpg');
             background-repeat:no-repeat;
             background-size: 876px 545px;
           }
@@ -73,7 +73,7 @@
             
             overflow-x:hidden;
             overflow-y:hidden; 
-            background-image: url('/plantillas/images/geosinteticos.jpg');
+            background-image: url('/images/geosinteticos.jpg');
             background-repeat:no-repeat;
             background-size: 876px 545px;
           }
@@ -81,7 +81,7 @@
             
             overflow-x:hidden;
             overflow-y:hidden; 
-            background-image: url('/plantillas/images/geotextiles.jpg');
+            background-image: url('/images/geotextiles.jpg');
             background-repeat:no-repeat;
             background-size: 876px 545px;
           }
@@ -89,7 +89,7 @@
             
             overflow-x:hidden;
             overflow-y:hidden; 
-            background-image: url('/plantillas/images/definicion.jpg');
+            background-image: url('/images/definicion.jpg');
             background-repeat:no-repeat;
             background-size: 876px 545px;
           }
@@ -97,7 +97,7 @@
             
             overflow-x:hidden;
             overflow-y:hidden; 
-            background-image: url('/plantillas/images/normativa.jpg');
+            background-image: url('/images/normativa.jpg');
             background-repeat:no-repeat;
             background-size: 876px 545px;
           }
@@ -105,7 +105,7 @@
             
             overflow-x:hidden;
             overflow-y:hidden; 
-            background-image: url('/plantillas/images/geocompuestos.jpg');
+            background-image: url('/images/geocompuestos.jpg');
             background-repeat:no-repeat;
             background-size: 876px 545px;
           }
@@ -113,7 +113,7 @@
             
             overflow-x:hidden;
             overflow-y:hidden; 
-            background-image: url('/plantillas/images/cordrain.jpg');
+            background-image: url('/images/cordrain.jpg');
             background-repeat:no-repeat;
             background-size: 876px 545px;
           }
@@ -121,7 +121,7 @@
             
             overflow-x:hidden;
             overflow-y:hidden; 
-            background-image: url('/plantillas/images/inicio.jpg');
+            background-image: url('/images/inicio.jpg');
             background-repeat:no-repeat;
             background-size: 876px 545px;
           }
@@ -129,7 +129,7 @@
             
             overflow-x:hidden;
             overflow-y:hidden; 
-            background-image: url('/plantillas/images/productos-relacionados.jpg');
+            background-image: url('/images/productos-relacionados.jpg');
             background-repeat:no-repeat;
             background-size: 876px 545px;
           }
@@ -137,7 +137,7 @@
             
             overflow-x:hidden;
             overflow-y:hidden; 
-            background-image: url('/plantillas/images/calculo.jpg');
+            background-image: url('../images/calculo.jpg');
             background-repeat:no-repeat;
             background-size: 876px 545px;
           }
@@ -145,7 +145,7 @@
             
             overflow-x:hidden;
             overflow-y:hidden; 
-            background-image: url('/plantillas/images/carreteras.jpg');
+            background-image: url('/images/carreteras.jpg');
             background-repeat:no-repeat;
             background-size: 876px 545px;
           }
@@ -153,7 +153,7 @@
             
             overflow-x:hidden;
             overflow-y:hidden; 
-            background-image: url('/plantillas/images/calcular.jpg');
+            background-image: url('/images/calcular.jpg');
             background-repeat:no-repeat;
             background-size: 876px 545px;
           }
