@@ -145,7 +145,7 @@
             
             overflow-x:hidden;
             overflow-y:hidden; 
-            background-image: url('/images/carreteras.jpg');
+            background-image: url('../images/carreteras.jpg');
             background-repeat:no-repeat;
             background-size: 876px 545px;
           }
@@ -153,7 +153,7 @@
             
             overflow-x:hidden;
             overflow-y:hidden; 
-            background-image: url('/images/calcular.jpg');
+            background-image: url('../images/calcular.jpg');
             background-repeat:no-repeat;
             background-size: 876px 545px;
           }

@@ -1,0 +1,121 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<title>Cálculo Geotexan</title>
+
+<link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+
+<script src="libs/jquery-2.2.1.min.js"></script>
+<script src="js/muro_contencion.js"></script>
+
+</head>
+<body class="calcular">
+	<section>
+		<!--cerrar ventana-->
+		<a style="position:relative;z-index:1" href="javascript:history.back(1);">
+			<img src="images/boton_retroceder.png" width="25px"/><span class="retroceder_ventana">retroceder</span></a>
+	</section>
+	<section>
+		<div class="form-group">
+			<label for="etongada-">Espesor Tongada de Relleno (cm) <strong>t</strong></label>
+			<select id="etongada">
+				<option value="50">50</option>
+			</select>
+		</div>
+		<div class="form-group">
+			<label for="arozamiento">Ángulo de Rozamiento de Relleno (grados) <strong>&#x2118;</strong></label>
+			<select id="arozamiento">
+				<option value="25-35">25 a 35</option>
+				<option value="35-45">35 a 45</option>
+			</select>
+		</div>
+		<div class="form-group">
+			<label for="amuro">Altura_muro (m) <strong>H</strong></label>
+			<select id="amuro">
+				<option value="0-5">0 a 5</option>
+				<option value="5-10">5 a 10</option>
+				<option value="1-15">10 a 15</option>
+			</select>
+		</div>
+		<div class="form-group">
+			<label for="imuro">Inclinación de Muro (m) <strong>a</strong></label>
+			<select id="imuro">
+				<option value="50-60">50 a 60</option>
+				<option value="60-70">60 a 70</option>
+				<option value="70-80">70 a 80</option>
+				<option value="80-90">80 a 90</option>
+			</select>
+		</div>
+		<div class="form-group">
+			<label for="drelleno">Densidad de relleno (t/m3) <strong>Y</strong></label>
+			<input id="drelleno" type="text" name="drelleno">
+		</div>
+		<div class="form-group">
+			<label for="sobrecarga">Sobrecarga (kN/m2) <strong>P</strong></label>
+			<select id="sobrecarga">
+				<option value="0-10">50 a 60</option>
+				<option value="10-20">60 a 70</option>
+				<option value="20-30">70 a 80</option>
+				<option value="30-40">80 a 90</option>
+			</select>
+		</div>
+		<input type="submit" value="Cálculo Geotexan" onclick="calcula()">
+	</section>
+	<section>
+		<div class="form-table-group">
+			<div class="section-head">
+				<h2>Cálculo Geotexan</h2>
+			</div>
+			<div class="row-results">
+				<div class="row-result-column">
+					<label for="rt-geotexan-value">Rt (KN/m) UNE EN ISO 10319</label>
+					<input id="rt-geotexan-value" type="text" name="rt-geotexan-value" readonly>
+				</div>
+			</div>
+			<div class="row-results">
+				<div class="row-result-column">
+					<label for="elong-geotexan-value">Elong(%) UNE EN ISO 10319</label>
+					<input id="elong-geotexan-value" type="text" name="elong-geotexan-value" readonly>
+				</div>
+			</div>
+			<div class="row-results">
+				<div class="row-result-column">
+					<label for="anclaje-geotexan-value">ANCLAJE (m)</label>
+					<input id="anclaje-geotexan-value" type="text" name="anclaje-geotexan-value" readonly>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section>
+		<div class="form-table-group">
+			<div class="section-head">
+				<h2>Cálculo Geotextil/Geomalia</h2>
+			</div>
+			<div class="row-results">
+				<div class="row-result-column">
+					<label for="rt-geotextil-value">Rt (KN/m) UNE EN ISO 10319</label>
+					<input id="rt-geotextil-value" type="text" name="rt-geotextil-value" readonly>
+				</div>
+			</div>
+			<div class="row-results">
+				<div class="row-result-column">
+					<label for="elong-geotextil-value">Elong(%) UNE EN ISO 10319</label>
+					<input id="elong-geotextil-value" type="text" name="elong-geotextil-value" readonly>
+				</div>
+			</div>
+			<div class="row-results">
+				<div class="row-result-column">
+					<label for="anclaje-geotextil-value">ANCLAJE (m)</label>
+					<input id="anclaje-geotextil-value" type="text" name="anclaje-geotextil-value" readonly>
+				</div>
+			</div>
+			<div class="row-results">
+				<label for="product">GEOTEXTIL GEOTESAN</label>
+				<input id="product" type="text" name="product" readonly>
+			</div>
+		</div>
+	</section>
+</body>
+</html>
