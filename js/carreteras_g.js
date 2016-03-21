@@ -89,7 +89,7 @@ var carreteras =
 		"GEOTESAN" : "NT-23"
 		},
 	"data12" : {
-		"CBR": "g6",
+		"CBR": "ge6",
 		"Espesor" : "ge400",
 		"Dmax" : "l150",
 		"Geotexan" : { "RT": "12", "ELONG" : "50", "RCBR" : "1900", "RPERF_CONO": "25", "AB_PORO": "0.05-0.2"},
@@ -97,7 +97,7 @@ var carreteras =
 		"GEOTESAN" : "NT-18"
 		},
 	"data13" : {
-		"CBR": "g6",
+		"CBR": "ge6",
 		"Espesor" : "ge400",
 		"Dmax" : "ge150-l300",
 		"Geotexan" : { "RT": "16", "ELONG" : "50", "RCBR" : "2700", "RPERF_CONO": "20", "AB_PORO": "0.05-0.2"},
@@ -105,7 +105,7 @@ var carreteras =
 		"GEOTESAN" : "NT-23"
 		},
 	"data14" : {
-		"CBR": "g6",
+		"CBR": "ge6",
 		"Espesor" : "ge200-l400",
 		"Dmax" : "l150",
 		"Geotexan" : { "RT": "10", "ELONG" : "50", "RCBR" : "1700", "RPERF_CONO": "25", "AB_PORO": "0.05-0.2"},
@@ -113,7 +113,7 @@ var carreteras =
 		"GEOTESAN" : "NT-175"
 		},
 	"data15" : {
-		"CBR": "g6",
+		"CBR": "ge6",
 		"Espesor" : "ge200-l400",
 		"Dmax" : "ge150-l300",
 		"Geotexan" : { "RT": "13", "ELONG" : "50", "RCBR" : "2200", "RPERF_CONO": "25", "AB_PORO": "0.05-0.2"},
@@ -175,14 +175,14 @@ function calcula() {
 		return false;
 	} else if (icbr > 0 ) {
 		cbr = "g0";
-		if (icbr <= 1) {
+		if (icbr >= 0 && icbr < 1) {
 			cbr = "0-1";
-		} else if (icbr <= 3) {
+		} else if (icbr >= 1 && icbr < 3) {
 			cbr = "1-3";
-		} else if (icbr <= 6) {
+		} else if (icbr>= 3 && icbr < 6) {
 			cbr = "3-6";
-		} else if (icbr > 6) {
-			cbr = "g6";
+		} else if (icbr >= 6) {
+			cbr = "ge6";
 		}
 	}
 
