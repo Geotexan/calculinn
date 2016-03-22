@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<title></title>
+
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+	<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+
+	<script src="libs/jquery-2.2.1.min.js"></script>
+	<script src="js/carreteras_g.js"></script>
+</head>
+</head>
+<body class="calculo">
+	<section>
+		<!--cerrar ventana-->
+		<a style="position:relative;z-index:1" href="javascript:history.back(1);">
+			<img src="images/boton_retroceder.png" width="25px"/><span class="retroceder_ventana">retroceder</span></a>
+	</section>
+	<section>
+		<div class="form-group">
+			<label for="i-d">D máx Revestimiento Superior (mm) <strong>D</strong></label>
+			<input id="i-d" type="text" name="i-d">
+		</div>
+		<input type="submit" value="Cálculo" onclick="calcula()">
+	</section>
+	<section>
+		<div class="section-head">
+				<h2>Cálculo Normativa UNE 104424</h2>
+			</div>
+			<div class="row-results">
+				<div class="row-result-column">
+					<label for="rt-geotexan-value">Rt (KN/m) UNE EN ISO 10319</label>
+					<input id="rt-geotexan-value" type="text" name="rt-geotexan-value" readonly>
+				</div>
+			</div>
+			<div class="row-results">
+				<div class="row-result-column">
+					<label for="elong-geotexan-value">Elong(%) UNE EN ISO 10319</label>
+					<input id="elong-geotexan-value" type="text" name="elong-geotexan-value" readonly>
+				</div>
+			</div>
+			<div class="row-results">
+				<div class="row-result-column">
+					<label for="cbr-geotexan-value">R CBR perf (kN) UNE EN ISO 12236</label>
+					<input id="cbr-geotexan-value" type="text" name="cbr-geotexan-value" readonly>
+				</div>
+			</div>
+			<div class="row-results">
+				<div class="row-result-column">
+					<label for="kplano-geotexan-value">K plano 10^(-6)(m2/s) EN ISO 12958</label>
+					<input id="kplano-geotexan-value" type="text" name="kplano-geotexan-value" readonly>
+				</div>
+			</div>
+	</section>
+	<section>
+		<div class="section-head">
+				<h2>Cálculo Geotextil</h2>
+			</div>
+			<div class="row-results">
+				<div class="row-result-column">
+					<label for="rt-geotexan-value">Rt (KN/m) UNE EN ISO 10319</label>
+					<input id="rt-geotexan-value" type="text" name="rt-geotexan-value" readonly>
+				</div>
+			</div>
+			<div class="row-results">
+				<div class="row-result-column">
+					<label for="elong-geotexan-value">Elong(%) UNE EN ISO 10319</label>
+					<input id="elong-geotexan-value" type="text" name="elong-geotexan-value" readonly>
+				</div>
+			</div>
+			<div class="row-results">
+				<div class="row-result-column">
+					<label for="cbr-geotexan-value">R CBR perf (kN) UNE EN ISO 12236</label>
+					<input id="cbr-geotexan-value" type="text" name="cbr-geotexan-value" readonly>
+				</div>
+			</div>
+			<div class="row-results">
+				<div class="row-result-column">
+					<label for="kplano-geotexan-value">K plano 10^(-6)(m2/s) EN ISO 12958</label>
+					<input id="kplano-geotexan-value" type="text" name="kplano-geotexan-value" readonly>
+				</div>
+			</div>
+			<div class="row-results">
+				<label for="product">GEOTEXTIL GEOTESAN</label>
+				<input id="product" type="text" name="product" readonly>
+			</div>
+	</section>
+	<footer>
+		<div class="link boton">
+			<a href="index.html">Atrás</a>
+		</div>
+	</footer>
+		
+</body>
+
+</html>
