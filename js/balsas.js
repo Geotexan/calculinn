@@ -146,7 +146,7 @@ var balsas = [
 ]
 
 function calcula() {
-		//Inputs
+	//Inputs
 	var ih = $('#i-h').val();
 	var e = $('#i-e').val();
 	var id = $('#i-d').val();
