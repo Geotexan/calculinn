@@ -139,7 +139,7 @@
             overflow-y:hidden; 
             background-image: url('../images/calculo.jpg');
             background-repeat:no-repeat;
-            background-size: 876px 545px;
+            background-size: 100% 100%;
           }
     .carreteras {
             
