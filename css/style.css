@@ -11,7 +11,7 @@
 		  	overflow-y:hidden; 
 		  	background-image: url('/images/inicio.jpg');
 		  	background-repeat:no-repeat;
-		  	background-size: 876px 545px;
+		  	background-size: 100% 100%;
 		  }
 	.introduccion {
 			
@@ -19,7 +19,7 @@
 		  	overflow-y:hidden; 
 		  	background-image: url('/images/introduccion.jpg');
 		  	background-repeat:no-repeat;
-		  	background-size: 876px 545px;
+		  	background-size: 100% 100%;
 		  }
     .empresa {
             
@@ -27,7 +27,7 @@
             overflow-y:hidden; 
             background-image: url('/images/empresa.jpg');
             background-repeat:no-repeat;
-            background-size: 876px 545px;
+            background-size: 100% 100%;
           }
     .servicios {
             
@@ -35,7 +35,7 @@
             overflow-y:hidden; 
             background-image: url('/images/servicios.jpg');
             background-repeat:no-repeat;
-            background-size: 876px 545px;
+            background-size: 100% 100%;
           }
     .accionariado {
             
@@ -43,7 +43,7 @@
             overflow-y:hidden; 
             background-image: url('/images/accionariado.jpg');
             background-repeat:no-repeat;
-            background-size: 876px 545px;
+            background-size: 100% 100%;
           }
     .empleados {
             
@@ -51,7 +51,7 @@
             overflow-y:hidden; 
             background-image: url('/images/empleados.jpg');
             background-repeat:no-repeat;
-            background-size: 876px 545px;
+            background-size: 100% 100%;
           }
     .idi {
             
@@ -59,7 +59,7 @@
             overflow-y:hidden; 
             background-image: url('/images/idi.jpg');
             background-repeat:no-repeat;
-            background-size: 876px 545px;
+            background-size: 100% 100%;
           }
     .medio-ambiente {
             
@@ -67,7 +67,7 @@
             overflow-y:hidden; 
             background-image: url('/images/medio-ambiente.jpg');
             background-repeat:no-repeat;
-            background-size: 876px 545px;
+            background-size: 100% 100%;
           }
     .geosinteticos {
             
@@ -75,7 +75,7 @@
             overflow-y:hidden; 
             background-image: url('/images/geosinteticos.jpg');
             background-repeat:no-repeat;
-            background-size: 876px 545px;
+            background-size: 100% 100%;
           }
     .geotextiles {
             
@@ -83,7 +83,7 @@
             overflow-y:hidden; 
             background-image: url('/images/geotextiles.jpg');
             background-repeat:no-repeat;
-            background-size: 876px 545px;
+            background-size: 100% 100%;
           }
     .definicion {
             
@@ -91,7 +91,7 @@
             overflow-y:hidden; 
             background-image: url('/images/definicion.jpg');
             background-repeat:no-repeat;
-            background-size: 876px 545px;
+            background-size: 100% 100%;
           }
     .normativa {
             
@@ -99,7 +99,7 @@
             overflow-y:hidden; 
             background-image: url('/images/normativa.jpg');
             background-repeat:no-repeat;
-            background-size: 876px 545px;
+            background-size: 100% 100%;
           }
     .geocompuestos {
             
@@ -107,7 +107,7 @@
             overflow-y:hidden; 
             background-image: url('/images/geocompuestos.jpg');
             background-repeat:no-repeat;
-            background-size: 876px 545px;
+            background-size: 100% 100%;
           }
     .cordrain {
             
@@ -115,7 +115,7 @@
             overflow-y:hidden; 
             background-image: url('/images/cordrain.jpg');
             background-repeat:no-repeat;
-            background-size: 876px 545px;
+            background-size: 100% 100%;
           }
     .geomembranas {
             
@@ -123,7 +123,7 @@
             overflow-y:hidden; 
             background-image: url('/images/inicio.jpg');
             background-repeat:no-repeat;
-            background-size: 876px 545px;
+            background-size: 100% 100%;
           }
     .productos-relacionados {
             
@@ -131,7 +131,7 @@
             overflow-y:hidden; 
             background-image: url('/images/productos-relacionados.jpg');
             background-repeat:no-repeat;
-            background-size: 876px 545px;
+            background-size: 100% 100%;
           }
     .calculo {
             
@@ -147,7 +147,7 @@
             overflow-y:hidden; 
             background-image: url('../images/carreteras.jpg');
             background-repeat:no-repeat;
-            background-size: 876px 545px;
+            background-size: 100% 100%;
           }
     .calcular {
             
@@ -155,7 +155,7 @@
             overflow-y:hidden; 
             background-image: url('../images/calcular.jpg');
             background-repeat:no-repeat;
-            background-size: 876px 545px;
+            background-size: 100% 100%;
           }
     button{
         cursor:pointer;
@@ -463,4 +463,3 @@
     width: 135px;
     z-index: -1;
 }
-

@@ -1,0 +1,32 @@
+#links {
+	margin-top: 20%;
+}
+#links ul {
+	width: 25%;
+	margin: auto;
+	margin-top: 3%;
+}
+
+#links ul li {
+	list-style-type: none;
+}
+
+section label {
+	color: #fff;
+}
+section.form {
+	margin-left: 10%;
+	margin-top: 10%;
+}
+
+.form-group {
+	display: inline;
+}
+
+h2 {
+	color: #fff;
+}
+
+th {
+	font-size: 12px;
+}
