@@ -11,6 +11,8 @@
 	list-style-type: none;
 }
 
+
+
 section label {
 	color: #fff;
 }
@@ -23,10 +25,14 @@ section.form {
 	display: inline;
 }
 
-h2 {
+h1, h2, td, th {
 	color: #fff;
 }
 
 th {
 	font-size: 12px;
+}
+
+.normas {
+    margin-left: 25%!important;
 }
