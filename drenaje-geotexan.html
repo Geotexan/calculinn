@@ -3,27 +3,23 @@
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 
-<title>Cálculo Geotexan</title>
+	<title>Cálculo Geotexan</title>
 
-<link rel="stylesheet" href="css/style.css" type="text/css" media="all">
-<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+	<link rel="stylesheet" href="css/positions.css" type="text/css" media="all">
+	<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
 
-<script src="libs/jquery-2.2.1.min.js"></script>
-<script src="js/drenaje_g.js"></script>
+	<script src="libs/jquery-2.2.1.min.js"></script>
+	<script src="js/drenaje_g.js"></script>
+	<script src="js/fichas_tecnicas.js"></script>
 
 </head>
 <body class="calculo">
-	<header>
-		</h1>Cálculo Geotexan</h1>
-		<p>Aplicación de gestión de cálculo</p>
-	</header>
-	<section>
-		<!--cerrar ventana-->
-		<a style="position:relative;z-index:1" href="javascript:history.back(1);">
-			<img src="images/boton_retroceder.png" width="25px"/><span class="retroceder_ventana">retroceder</span>
-		</a>
-	</section>
-	<section>
+	<!--cerrar ventana-->
+	<a style="position:relative;z-index:1" href="javascript:history.back(1);">
+		<img src="images/boton_retroceder.png" width="25px"/><span class="retroceder_ventana">retroceder</span>
+	</a>
+	<section class="form">
 		<div class="form-group">
 			<label>Tipo Terreno Circundante</label>
 			<select id="terreno">
@@ -43,82 +39,72 @@
 			<input id="i-d" type="text" name="i-d">
 		</div>
 		<input type="submit" value="Cálculo Geotexan" onclick="calcula()">
-	</section>
-	<section>
-		<div class="form-table-group">
-			<div class="row-results">
-				<h2>Cálculo Geotexan</h2>
-				<div class="row-result-column">
-					<label for="rt-geotexan-value">Rt (KN/m) UNE EN ISO 10319</label>
+	
+		<table>
+			<tr>
+				<td></td>
+				<td>Rt (KN/m) UNE EN ISO 10319</td>
+				<td>Elong(%) UNE EN ISO 10319</td>
+				<td>R CBR perf (kN) UNE EN ISO 12236</td>
+				<td>R perf cono(mm) UNE EN ISO 13433</td>
+				<td>Abertura Poro (mm) EN ISO 12956</td>
+				<td>K vert (l/m2s) EN ISO 11058</td>
+			</tr>
+			<tr>
+				<td><h2>Cálculo Geotexan</h2></td>
+				<td>
 					<input id="rt-geotexan-value" type="text" name="rt-geotexan-value" readonly>
-				</div>
-				<div class="row-result-column">
-					<label for="elong-geotexan-value">Elong(%) UNE EN ISO 10319</label>
+				</td>
+				<td>
 					<input id="elong-geotexan-value" type="text" name="elong-geotexan-value" readonly>
-				</div>
-				<div class="row-result-column">
-					<label for="cbr-geotexan-value">R CBR perf (kN) UNE EN ISO 12236</label>
+				</td>
+				<td>
 					<input id="cbr-geotexan-value" type="text" name="cbr-geotexan-value" readonly>
-				</div>
-				<div class="row-result-column">
-					<label for="rperf-geotexan-value">R perf cono(mm) UNE EN ISO 13433</label>
+				</td>
+				<td>
 					<input id="rperf-geotexan-value" type="text" name="rperf-geotexan-value" readonly>
-				</div>
-				<div class="row-result-column">
-					<label for="abertura-poro-geotexan-value">Abertura Poro (mm) EN ISO 12956</label>
+				</td>
+				<td>
 					<input id="abertura-poro-geotexan-value" type="text" name="abertura-poro-geotexan-value" readonly>
-				</div>
-				<div class="row-result-column">
-					<label for="kvert-geotexan-value">K vert (l/m2s) EN ISO 11058</label>
+				</td>
+				<td>
 					<input id="kvert-geotexan-value" type="text" name="kvert-geotexan-value" readonly>
-				</div>
-			</div>
-			<div class="row-results">
-				<h2>Cálculo Geotextil</h2>
-				<div class="row-result-column">
-					<label for="rt-geotextil-value">Rt (KN/m) UNE EN ISO 10319</label>
+				</td>
+			</tr>
+			<tr>
+				<td><h2>Cálculo Geotextil</h2></td>
+				<td>
 					<input id="rt-geotextil-value" type="text" name="rt-geotextil-value" readonly>
-				</div>
-				<div class="row-result-column">
-					<label for="elong-geotextil-value">Elong(%) UNE EN ISO 10319</label>
+				</td>
+				<td>
 					<input id="elong-geotextil-value" type="text" name="elong-geotextil-value" readonly>
-				</div>
-				<div class="row-result-column">
-					<label for="cbr-geotextil-value">R CBR perf (kN) UNE EN ISO 12236</label>
+				</td>
+				<td>
 					<input id="cbr-geotextil-value" type="text" name="cbr-geotextil-value" readonly>
-				</div>
-				<div class="row-result-column">
-					<label for="rperf-geotextil-value">R perf cono(mm) UNE EN ISO 13433</label>
+				</td>
+				<td>
 					<input id="rperf-geotextil-value" type="text" name="rperf-geotextil-value" readonly>
-				</div>
-				<div class="row-result-column">
-					<label for="abertura-poro-geotextil-value">Abertura Poro (mm) EN ISO 12956</label>
+				</td>
+				<td>
 					<input id="abertura-poro-geotextil-value" type="text" name="abertura-poro-geotextil-value" readonly>
-				</div>
-				<div class="row-result-column">
-					<label for="kvert-geotextil-value">K vert (l/m2s) EN ISO 11058</label>
+				</td>
+				<td>
 					<input id="kvert-geotextil-value" type="text" name="kvert-geotextil-value" readonly>
-				</div>
-			</div>
-			<div class="row-results">
-				<label for="product">GEOTEXTIL GEOTESAN</label>
-				<input id="product" type="text" name="product" readonly>
-			</div>
+				</td>
+			</tr>
+		</table>
+		<div class="row-results">
+			<label for="product">GEOTEXTIL GEOTESAN</label>
+			<input id="product" type="text" name="product" readonly>
 		</div>
-	</section>
 	<footer>
-		<div>
-			<a href="#">Justificación del cálculo</a>
-		</div>
-		<div>
-			<a href="#">Pliego de condiciones</a>
-		</div>
-		<div>
-			<a href="#">Ficha Técnica</a>
-		</div>
-		<div>
-			<a href="#">Volver</a>
-		</div>
+		<section id="links">
+			<ul>
+				<li class="link boton">
+					<a href="#" id="pdf">Ficha técnica</a>
+				</li>
+			</ul>
+		</section>
 	</footer>
 </body>
 </html>
