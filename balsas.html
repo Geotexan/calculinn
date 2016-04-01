@@ -6,19 +6,19 @@
 <title>Cálculo Geotexan</title>
 
 <link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+<link rel="stylesheet" href="css/positions.css" type="text/css" media="all">
 <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
 
 <script src="libs/jquery-2.2.1.min.js"></script>
 <script src="js/balsas.js"></script>
+<script src="js/fichas_tecnicas.js"></script>
 
 </head>
-<body class="calculo">
-	<section>
-		<!--cerrar ventana-->
-		<a style="position:relative;z-index:1" href="javascript:history.back(1);">
-			<img src="images/boton_retroceder.png" width="25px"/><span class="retroceder_ventana">retroceder</span></a>
-	</section>
-	<section>
+<body class="calcular">
+	<!--cerrar ventana-->
+	<a style="position:relative;z-index:1" href="javascript:history.back(1);">
+		<img src="images/boton_retroceder.png" width="25px"/><span class="retroceder_ventana">retroceder</span></a>
+	<section class="form">
 		<div class="form-group">
 			<label for="i-e">Espesor Geomembrana (mm) <strong>e</strong></label>
 			<select id="i-e">
@@ -36,99 +36,73 @@
 			<input id="i-d" type="text" name="i-d">
 		</div>
 		<input type="submit" value="Cálculo" onclick="calcula()">
-	</section>
-	<section>
-		<div class="form-table-group">
-			<div class="section-head">
-				<h2>Cálculo Geotexan</h2>
-			</div>
-			<div class="row-results">
-				<label for="rt-geotexan-value">Rt (KN/m) UNE EN ISO 10319</label>
-				<input id="rt-geotexan-value" type="text" name="rt-geotexan-value" readonly>
-			</div>
-			<div class="row-results">
-				<div class="row-result-column">
-					<label for="elong-geotexan-value">Elong(%) UNE EN ISO 10319</label>
+
+		<table>
+			<tr>
+				<td></td>
+				<td>Rt (KN/m) UNE EN ISO 10319</td>
+				<td>Elong(%) UNE EN ISO 10319</td>
+				<td>R CBR perf (kN) UNE EN ISO 12236</td>
+				<td>R perf cono(mm) UNE EN ISO 13433</td>
+				<td>K plano 10^(-6)(m2/s) EN ISO 12958</td>
+				<td>Abertura Poro (mm) EN ISO 12956</td>
+			</tr>
+			<tr>
+				<td><h2>Cálculo Geotexan</h2></td>
+				<td>
+					<input id="rt-geotexan-value" type="text" name="rt-geotexan-value" readonly>
+				</td>
+				<td>
 					<input id="elong-geotexan-value" type="text" name="elong-geotexan-value" readonly>
-				</div>
-			</div>
-			<div class="row-results">
-				<div class="row-result-column">
-					<label for="cbr-geotexan-value">R CBR perf (kN) UNE EN ISO 12236</label>
+				</td>
+				<td>
 					<input id="cbr-geotexan-value" type="text" name="cbr-geotexan-value" readonly>
-				</div>
-			</div>
-			<div class="row-results">
-				<div class="row-result-column">
-					<label for="perfcono-geotexan-value">R perf cono(mm) UNE EN ISO 13433</label>
+				</td>
+				<td>
 					<input id="perfcono-geotexan-value" type="text" name="perfcono-geotexan-value" readonly>
-				</div>
-			</div>
-			<div class="row-results">
-				<div class="row-result-column">
-					<label for="kplano-geotexan-value">K plano 10^(-6)(m2/s) EN ISO 12958</label>
+				</td>
+				<td>
 					<input id="kplano-geotexan-value" type="text" name="kplano-geotexan-value" readonly>
-				</div>
-			</div>
-			<div class="row-results">
-				<div class="row-result-column">
-					<label for="abcono-geotexan-value">Abertura Poro (mm) EN ISO 12956</label>
+				</td>
+				<td>
 					<input id="abcono-geotexan-value" type="text" name="abcono-geotexan-value" readonly>
-				</div>
-			</div>
-		</div>
-	</section>
-	<section>
-		<div class="form-table-group">
-			<div class="section-head">
-				<h2>Cálculo Geotextil</h2>
-			</div>
-			<div class="row-results">
-				<label for="rt-geotextil-value">Rt (KN/m) UNE EN ISO 10319</label>
-				<input id="rt-geotextil-value" type="text" name="rt-geotextil-value" readonly>
-			</div>
-			<div class="row-results">
-				<div class="row-result-column">
-					<label for="elong-geotextil-value">Elong(%) UNE EN ISO 10319</label>
+				</td>
+			</tr>
+			<tr>
+				<td><h2>Cálculo Geotextil</h2></td>
+				<td>
+					<input id="rt-geotextil-value" type="text" name="rt-geotextil-value" readonly>
+				</td>
+				<td>
 					<input id="elong-geotextil-value" type="text" name="elong-geotextil-value" readonly>
-				</div>
-			</div>
-			<div class="row-results">
-				<div class="row-result-column">
-					<label for="cbr-geotextil-value">R CBR perf (kN) UNE EN ISO 12236</label>
+				</td>
+				<td>
 					<input id="cbr-geotextil-value" type="text" name="cbr-geotextil-value" readonly>
-				</div>
-			</div>
-			<div class="row-results">
-				<div class="row-result-column">
-					<label for="perfcono-geotextil-value">R perf cono(mm) UNE EN ISO 13433</label>
+				</td>
+				<td>
 					<input id="perfcono-geotextil-value" type="text" name="perfcono-geotextil-value" readonly>
-				</div>
-			</div>
-			<div class="row-results">
-				<div class="row-result-column">
-					<label for="kplano-geotextil-value">K plano 10^(-6)(m2/s) EN ISO 12958</label>
+				</td>
+				<td>
 					<input id="kplano-geotextil-value" type="text" name="kplano-geotextil-value" readonly>
-				</div>
-			</div>
-			<div class="row-results">
-				<div class="row-result-column">
-					<label for="abcono-geotextil-value">Abertura Poro (mm) EN ISO 12956</label>
+				</td>
+				<td>
 					<input id="abcono-geotextil-value" type="text" name="abcono-geotextil-value" readonly>
-				</div>
-			</div>
-			<div class="row-results">
-				<label for="product">GEOTEXTIL GEOTESAN</label>
-				<input id="product" type="text" name="product" readonly>
-			</div>
+				</td>
+			</tr>
+		</table>
+		<div class="row-results">
+			<label for="product">GEOTEXTIL GEOTESAN</label>
+			<input id="product" type="text" name="product" readonly>
 		</div>
 	</section>
 	<footer>
-		<div class="link boton">
-			<a href="index.html">Atrás</a>
-		</div>
+		<section id="links">
+			<ul>
+				<li class="link boton">
+					<a href="#" id="pdf">Ficha técnica</a>
+				</li>
+			</ul>
+		</section>
 	</footer>
-		
 </body>
-
 </html>
