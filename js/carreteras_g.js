@@ -432,7 +432,7 @@ function calcula() {
 		return false;
 	}
 
-	if (isNaN(icbr) | isNaN(ie) | isNaN(id)) {
+	if (isNaN(icbr) || isNaN(ie) || isNaN(id)) {
 		alert("Los valores deben ser numéricos");
 	}
 	
