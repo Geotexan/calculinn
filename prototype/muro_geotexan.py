@@ -212,11 +212,11 @@ def parse_rango(str_rango):
         x = int(x)
     if str_rango[-1] == ")":
         if y.isdigit():
-            y = int(y) - 1
+            y = int(y)
         else:   # Infinito. Me da igual si el extermo es abierto o cerrado:
             y = sys.maxint  # El máximo entero permitido por la máquina.
     elif str_rango[-1] == "]":
-        y = int(y)
+        y = int(y) + 1
     res = range(x, y)
     return res
 
