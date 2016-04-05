@@ -15,7 +15,7 @@
             from browser import alert
             def calculate(e, a, h, i, d, s):
                 catalogo, header = TABLA, CABECERA
-                out_recomendacion = recomendar(e, a, h, i, d, s, catalogo)
+                out_recomendacion = recomendar(catalogo, e, a, h, i, d, s)
                 if out_recomendacion:
                     producto = out_recomendacion[-1]
                 else:
@@ -29,7 +29,7 @@
                 d = int(doc["d"].value)
                 s = int(doc["s"].value)
                 producto = calculate(e, a, h, i, d, s)
-                alert("El producto recomendado es {}".format(producto))
+                alert("Producto recomendado: {}".format(producto))
             doc["bcalcular"].bind("click", test)
         </script>
         <p>Test muros.</p>

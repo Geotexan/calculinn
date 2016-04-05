@@ -10,7 +10,7 @@ Prototipo de cálculo y recomendación para la aplicación de muros.
 
 
 # pylint: disable=invalid-name, too-many-arguments, too-many-locals
-def calcular(e, a, h, i, d, s, tabla):
+def calcular(tabla, e, a, h, i, d, s):
     """
     Compara la combinación de los seis valores de entrada (e, a, h, i, d, s)
     con cada una de las listas del array bidimensional «tabla». Devuelve la
@@ -25,6 +25,7 @@ def calcular(e, a, h, i, d, s, tabla):
     se implementara como árbol de decisión, PERO NO HAY TIEMPO Y ESTO ES SÓLO
     UN PROTOTIPO que acabará en JavaScript.
     """
+# TODO: Recibir parámetros como opcionales para que valga para todas las tablas
     res = None
     for fila in tabla:
         aciertos = []
@@ -35,6 +36,12 @@ def calcular(e, a, h, i, d, s, tabla):
                                   (i, inclinacion),
                                   (d, densidad),
                                   (s, sobrecarga)):
+            # Sanitize:
+            try:
+                valor = valor.strip().upper()
+            except AttributeError:
+                pass
+            # Si no es rango ni cadena, lo convierto ya a entero para comparar
             if referencia.isdigit():    # OJO: Solo vale para enteros.
                 referencia = int(referencia)
             resultado = comparar(valor, referencia)
@@ -58,42 +65,46 @@ def comparar(valor, referencia):
           de carretera, aunque no se den en aquí en muros).
     """
     if isinstance(referencia, str):
-        # NOTE: Esto en Javascript seguramente haya que hacerlo de otra forma.
         if ".." in referencia:  # Es un rango.
-            res = valor in parse_rango(referencia)
-        else:   # Es cadena.
-            res = valor == referencia
+            res = valor_in_rango(valor, referencia)
+        else:   # Es cadena. Las entradas se pasaron a upper también arriba.
+            res = valor == referencia.strip().upper()
     else:   # Es númerico.
         res = valor == referencia
     return res
 
 
-def parse_rango(str_rango):
+def valor_in_rango(valor, rango):
     """
-    Devuelve un rango numérico correspondiente al rango recibido como cadena.
-    La cadena siempre tiene la forma "[(x..y)]" donde el primer y el último
-    carácter indican si es un intervalo abierto «()» o cerrado «[]» en cada
-    extremo.
-    `x` es el extermo inferior.
-    `y` es el extremo superior (puede ser infinito: ∞)
+    Recibe el valor, que puede ser float, y un rango como cadena. Devuelve
+    True si el valor está dentro del rango.
     """
-    _x, _y = str_rango.split("..")
-    _x = "".join([i for i in _x if i.isdigit()])
-    _y = "".join([i for i in _y if i.isdigit()])
-    if str_rango[0] == "(":
-        x = int(_x) + 1  # Como todos los valores son enteros, me vale así.
-        # Si fueran floats habría que montar los ifs con > y >=. Nada de rangos
-    elif str_rango[0] == "[":
-        x = int(_x)
-    if str_rango[-1] == ")":
-        if _y.isdigit():
-            y = int(_y)
-        else:   # Infinito. Me da igual si el extermo es abierto o cerrado:
-            # y = sys.maxint  # El máximo entero permitido por la máquina.
-            y = 99999  # No puedo sys.maxint, así que número grande arbitrario.
-    elif str_rango[-1] == "]":
-        y = int(_y) + 1
-    res = range(x, y)
+    # Había una manera más "pythónica" de hacerlo, pero no valía para floats.
+    ini = rango[0]
+    fin = rango[-1]
+    strx, stry = rango.split("..")
+    strx = strx.replace("(", "").replace("[", "").replace(",", ".")
+    stry = stry.replace(")", "").replace("]", "").replace(",", ".")
+    x = float(strx)
+    y = float(stry)
+    evals = []  # Almacenaré los resultados de cada una de las evaluaciones
+    # Evalúo el extremo inferior:
+    if ini == "(":      # Abierto
+        condicion_ini = valor > x
+    elif ini == "[":    # Cerrado
+        condicion_ini = valor >= x
+    else:
+        raise ValueError("El inicio del intervalo debe ser ( o [.")
+    evals.append(condicion_ini)
+    if fin == ")":      # Abierto
+        condicion_fin = valor < y
+    elif fin == "]":    # Cerrado
+        condicion_fin = valor <= y
+    else:
+        raise ValueError("El fin del intervalo debe ser ) o ].")
+    evals.append(condicion_fin)
+    # Y al final evaluaré si todas son True o no.
+    res = check_aciertos(evals)
     return res
 
 
@@ -109,10 +120,10 @@ def check_aciertos(aciertos):
     return res
 
 
-def recomendar(e, a, h, i, d, s, tabla):
+def recomendar(tabla, *args):
     """
     De manera análiga a `calcular`, realiza las comapraciones y devuelve
     la fila que satisface todos los valores de entrada o None si no se
     encuentra ninguna.
     """
-    return calcular(e, a, h, i, d, s, tabla)
+    return calcular(tabla, *args)
