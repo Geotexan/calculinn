@@ -257,7 +257,8 @@ def dump(fila, cabecera, num_params_entrada=6, nombre_calculo=""):
         print("\t{}: {}".format(nombre_parametro, fila[i]))
     print("Salida:")
     for i, nombre_parametro in enumerate(cabecera[num_params_entrada:]):
-        print("\t{}: {}".format(nombre_parametro, fila[i]))
+        print("\t{}: {}".format(nombre_parametro,
+                                fila[num_params_entrada + i]))
     print()
 
 
