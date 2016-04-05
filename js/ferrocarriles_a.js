@@ -1,8 +1,8 @@
 var ferrocarriles = 
 {
-	"ADIF" : { "RT" : "VALUE", "ELONG" : "VALUE", "CBR": "VALUE", "KVERT" : "VALUE" },
-	"Geotextil" : {"RT" : "VALUE", "ELONG" : "VALUE", "CBR": "VALUE", "KVERT" : "VALUE"},
-	"GEOTESAN" : "NT-VALUE"
+	"ADIF" : { "RT" : "8 – 10,1", "ELONG" : "50 – 55", "CBR": "1,56", "KVERT" : "4,9" },
+	"Geotextil" : {"RT" : "20", "ELONG" : "60", "CBR": "3,25", "KVERT" : "74"},
+	"GEOTESAN" : "NT-25"
 };
 var inputs = 
 {
