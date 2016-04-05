@@ -1,9 +1,24 @@
 
 	@font-face {
-		font-family: "Miller Text";
-    	src: url('/fonts/Miller-TextItalic_0.otf'),
+        font-family: "Miller Text";
+        src: url('/fonts/Miller-TextItalic_0.otf'),
       }
-    @import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+    /* montserrat-regular - latin */
+    @font-face {
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 400;
+      src: local('Montserrat-Regular'),
+           url('/fonts/Montserrat-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+    }
+    /* montserrat-700 - latin */
+    @font-face {
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 700;
+      src: local('Montserrat-Bold'),
+           url('/fonts/Montserrat-Bold.ttf') format('truetype'), /* Safari, Android, iOS */
+    }
 
 	.inicio {
 			
