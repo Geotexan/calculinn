@@ -3,7 +3,7 @@ var carreteras_gtx = [
     "Espesor":"[200..400)",
     "Dmax":"[0..150)",
     "CBR":"[0..1)",
-    "Rt":17,
+    "RT":17,
     "ELONG":50,
     "RCBR":3000,
     "RPERF_CONO":20,
@@ -14,7 +14,7 @@ var carreteras_gtx = [
     "Espesor":"[200..400)",
     "Dmax":"[0..150)",
     "CBR":"[1..3)",
-    "Rt":13,
+    "RT":13,
     "ELONG":50,
     "RCBR":2200,
     "RPERF_CONO":25,
@@ -25,7 +25,7 @@ var carreteras_gtx = [
     "Espesor":"[200..400)",
     "Dmax":"[0..150)",
     "CBR":"[3..6)",
-    "Rt":12,
+    "RT":12,
     "ELONG":50,
     "RCBR":1900,
     "RPERF_CONO":25,
@@ -36,7 +36,7 @@ var carreteras_gtx = [
     "Espesor":"[200..400)",
     "Dmax":"[0..150)",
     "CBR":"ge6",
-    "Rt":10,
+    "RT":10,
     "ELONG":50,
     "RCBR":1700,
     "RPERF_CONO":25,
@@ -47,7 +47,7 @@ var carreteras_gtx = [
     "Espesor":"[200..400)",
     "Dmax":"[150..300)",
     "CBR":"[1..3)",
-    "Rt":17,
+    "RT":17,
     "ELONG":50,
     "RCBR":3000,
     "RPERF_CONO":20,
@@ -58,7 +58,7 @@ var carreteras_gtx = [
     "Espesor":"[200..400)",
     "Dmax":"[150..300)",
     "CBR":"[3..6)",
-    "Rt":16,
+    "RT":16,
     "ELONG":50,
     "RCBR":2700,
     "RPERF_CONO":20,
@@ -69,7 +69,7 @@ var carreteras_gtx = [
     "Espesor":"[200..400)",
     "Dmax":"[150..300)",
     "CBR":"ge6",
-    "Rt":13,
+    "RT":13,
     "ELONG":50,
     "RCBR":2200,
     "RPERF_CONO":25,
@@ -80,7 +80,7 @@ var carreteras_gtx = [
     "Espesor":"ge400",
     "Dmax":"[0..150)",
     "CBR":"[0..1)",
-    "Rt":13,
+    "RT":13,
     "ELONG":50,
     "RCBR":2200,
     "RPERF_CONO":25,
@@ -91,7 +91,7 @@ var carreteras_gtx = [
     "Espesor":"ge400",
     "Dmax":"[0..150)",
     "CBR":"[1..3)",
-    "Rt":9,
+    "RT":9,
     "ELONG":50,
     "RCBR":1500,
     "RPERF_CONO":30,
@@ -102,7 +102,7 @@ var carreteras_gtx = [
     "Espesor":"ge400",
     "Dmax":"[0..150)",
     "CBR":"[3..6)",
-    "Rt":7,
+    "RT":7,
     "ELONG":50,
     "RCBR":1300,
     "RPERF_CONO":35,
@@ -113,7 +113,7 @@ var carreteras_gtx = [
     "Espesor":"ge400",
     "Dmax":"[0..150)",
     "CBR":"ge6",
-    "Rt":12,
+    "RT":12,
     "ELONG":50,
     "RCBR":1900,
     "RPERF_CONO":25,
@@ -124,7 +124,7 @@ var carreteras_gtx = [
     "Espesor":"ge400",
     "Dmax":"[150..300)",
     "CBR":"[0..1)",
-    "Rt":20,
+    "RT":20,
     "ELONG":50,
     "RCBR":3000,
     "RPERF_CONO":15,
@@ -135,7 +135,7 @@ var carreteras_gtx = [
     "Espesor":"ge400",
     "Dmax":"[150..300)",
     "CBR":"[1..3)",
-    "Rt":16,
+    "RT":16,
     "ELONG":50,
     "RCBR":2700,
     "RPERF_CONO":20,
@@ -146,7 +146,7 @@ var carreteras_gtx = [
     "Espesor":"ge400",
     "Dmax":"[150..300)",
     "CBR":"[3..6)",
-    "Rt":13,
+    "RT":13,
     "ELONG":50,
     "RCBR":2200,
     "RPERF_CONO":25,
@@ -157,7 +157,7 @@ var carreteras_gtx = [
     "Espesor":"ge400",
     "Dmax":"[150..300)",
     "CBR":"ge6",
-    "Rt":16,
+    "RT":16,
     "ELONG":50,
     "RCBR":2700,
     "RPERF_CONO":20,
@@ -168,7 +168,7 @@ var carreteras_gtx = [
     "Espesor":"[400..600)",
     "Dmax":"[300..400)",
     "CBR":"Z",
-    "Rt":21,
+    "RT":21,
     "ELONG":50,
     "RCBR":3900,
     "RPERF_CONO":10,
@@ -179,7 +179,7 @@ var carreteras_gtx = [
     "Espesor":"[600..750)",
     "Dmax":"[400..500)",
     "CBR":"Z",
-    "Rt":25,
+    "RT":25,
     "ELONG":50,
     "RCBR":4400,
     "RPERF_CONO":10,
@@ -190,7 +190,7 @@ var carreteras_gtx = [
     "Espesor":"[750..900)",
     "Dmax":"[500..600)",
     "CBR":"Z",
-    "Rt":27,
+    "RT":27,
     "ELONG":50,
     "RCBR":5200,
     "RPERF_CONO":10,
@@ -201,7 +201,7 @@ var carreteras_gtx = [
     "Espesor":"ge900",
     "Dmax":"ge600",
     "CBR":"Z",
-    "Rt":31,
+    "RT":31,
     "ELONG":50,
     "RCBR":6400,
     "RPERF_CONO":10,
@@ -281,17 +281,27 @@ function calcula() {
 		}
 	} else if (id >= 300 && id <400) {
 		d = "[300..400)";
-		if (e == "[400..600)" || e == "[600..750)" || e =="[750..900)" || e == "ge900"){
+		if (e == "[400..600)"){
 			cbr = "Z";
 		}
 	} else if (id >=400 && id < 500){
 		d = "[400..500)";
+		if (e == "[600..750)"){
+			cbr = "Z";
+		}
 	} else if (id >= 500 && id < 600) {
 		d = "[500..600)";
+		if (e == "[750.900)"){
+			cbr = "Z";
+		}
 	} else if (id >= 600) {
 		d = "ge600";
+		if (e == "ge900"){
+			cbr = "Z";
+		}
 	}
 
+	var result = false;
 	$.each(carreteras_gtx, function(i, item) {
 		if (carreteras_gtx[i]['Dmax'] == d && carreteras_gtx[i]['Espesor'] == e &&
 			carreteras_gtx[i]['CBR'] == cbr) {
@@ -308,9 +318,13 @@ function calcula() {
 				$('#perfcono-geotextil-value').val(carreteras_gtx[i]['RPERF_CONO']);
 				$('#abcono-geotextil-value').val(carreteras_gtx[i]['AB_PORO']);
 				$('#product').val(carreteras_gtx[i]['GEOTESAN']);
-				return true;
+				result = true;
+				return false;;
 
 			}
 	});
+	if (!result) {
+		alert('No se han encontrado resultados');
+	}
 
 }
