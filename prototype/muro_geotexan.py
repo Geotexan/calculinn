@@ -76,8 +76,8 @@ def parse_calculo(nomfichero="400 muro_Geotexan (muro-contencion.html).csv"):
     Abre el fichero de la tabla de cálculo y lee todas las líneas para
     devolver una lista de tuplas de la siguiente forma:
     [
-     (50, "[25..35)", "[0..5)", "[50..60)", ...),
-     (50, "[25..35)", ...),
+     ("50", "[25..35)", "[0..5)", "[50..60)", ...),
+     ("50", "[25..35)", ...),
     ...
     ]
     Cada valor de esas listas contiene un número o un rango (como cadena) para
