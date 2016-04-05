@@ -101,6 +101,7 @@ def parse_calculo(nomfichero="400 muro_Geotexan (muro-contencion.html).csv"):
             cabecera = fila
             continue
         res.append(tuple(fila))
+    file_in.close()
     return res, cabecera
 
 
