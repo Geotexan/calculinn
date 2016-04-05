@@ -53,15 +53,16 @@ def main():
                                calculo)
         out_recomendacion = recomendar(args.e, args.a, args.h, args.i, args.d,
                                        args.s, catalogo)
+        entradas = (args.e, args.a, args.h, args.i, args.d, args.s)
         if out_calculo:
-            dump(out_calculo, header_calculo,
+            dump(entradas, out_calculo, header_calculo,
                  nombre_calculo="Cálculo Geotexan")
         else:
             print("Combinación de parámetros incorrecta para cálculo.",
                   file=sys.stderr)
             sys.exit(2)
         if out_recomendacion:
-            dump(out_recomendacion, header_recomendacion,
+            dump(entradas, out_recomendacion, header_recomendacion,
                  nombre_calculo="Geocompuesto recomendado")
         else:
             print("Combinación de parámetros incorrecta para recomendación.",
@@ -211,7 +212,7 @@ def parse_rango(str_rango):
         x = int(x)
     if str_rango[-1] == ")":
         if y.isdigit():
-            y = int(y) + 1
+            y = int(y) - 1
         else:   # Infinito. Me da igual si el extermo es abierto o cerrado:
             y = sys.maxint  # El máximo entero permitido por la máquina.
     elif str_rango[-1] == "]":
@@ -241,7 +242,7 @@ def recomendar(e, a, h, i, d, s, tabla):
     return calcular(e, a, h, i, d, s, tabla)
 
 
-def dump(fila, cabecera, num_params_entrada=6, nombre_calculo=""):
+def dump(entradas, fila, cabecera, num_params_entrada=6, nombre_calculo=""):
     """
     Muestra por pantalla el resultado del cálculo o la recomendación.
     Recibe la fila que satisface todos los valores de entrada y una lista
@@ -249,12 +250,16 @@ def dump(fila, cabecera, num_params_entrada=6, nombre_calculo=""):
     Como parámetro opcional recibe el índice hasta el que los parámetros
     de la fila resultante eran de entrada (-1). El resto se consideran de
     salida.
+    «entradas» son los parámetros de entrada que recogió el script para
+    hacer los cálculos y determinar los valores de aplicación.
     """
     print(nombre_calculo)
     print("=" * len(nombre_calculo))
     print("Entrada:")
     for i, nombre_parametro in enumerate(cabecera[:num_params_entrada]):
-        print("\t{}: {}".format(nombre_parametro, fila[i]))
+        print("\t{}: {} ({})".format(nombre_parametro,
+                                     entradas[i],
+                                     fila[i]))
     print("Salida:")
     for i, nombre_parametro in enumerate(cabecera[num_params_entrada:]):
         print("\t{}: {}".format(nombre_parametro,
