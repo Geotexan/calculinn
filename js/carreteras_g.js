@@ -271,10 +271,19 @@ function calcula() {
 		return false;
 	} else if (id >= 0 && id < 150) {
 		d = "[0..150)";
+		if (is_ge400) {
+			e = "ge400";
+		}
 	} else if (id >= 150 && id < 300) {
-		d = "[150..300)]";
+		d = "[150..300)";
+		if (is_ge400) {
+			e = "ge400";
+		}
 	} else if (id >= 300 && id <400) {
 		d = "[300..400)";
+		if (e == "[400..600)" || e == "[600..750)" || e =="[750..900)" || e == "ge900"){
+			cbr = "Z";
+		}
 	} else if (id >=400 && id < 500){
 		d = "[400..500)";
 	} else if (id >= 500 && id < 600) {
@@ -284,25 +293,24 @@ function calcula() {
 	}
 
 	$.each(carreteras_gtx, function(i, item) {
-		if (carreteras_gtx[i]['CBR'] == cbr ) {
-			if (carreteras_gtx[i]['Espesor'] == e) {
-				if (carreteras_gtx[i]['Dmax'] == d) {
-					//Relleno valores del formulario y salgo de la iteración
-					$('#rt-geotexan-value').val(carreteras_gtx[i]['RT']);
-					$('#elong-geotexan-value').val(carreteras_gtx[i]['ELONG']);
-					$('#cbr-geotexan-value').val(carreteras_gtx[i]['RCBR']);
-					$('#perfcono-geotexan-value').val(carreteras_gtx[i]['RPERF_CONO']);
-					$('#abcono-geotexan-value').val(carreteras_gtx[i]['AB_PORO']);
-					$('#rt-geotextil-value').val(carreteras_gtx[i]['RT']);
-					$('#elong-geotextil-value').val(carreteras_gtx[i]['ELONG']);
-					$('#cbr-geotextil-value').val(carreteras_gtx[i]['RCBR']);
-					$('#perfcono-geotextil-value').val(carreteras_gtx[i]['RPERF_CONO']);
-					$('#abcono-geotextil-value').val(carreteras_gtx[i]['AB_PORO']);
-					$('#product').val(carreteras_gtx[i]['GEOTESAN']);
-					return true;
-				}
+		if (carreteras_gtx[i]['Dmax'] == d && carreteras_gtx[i]['Espesor'] == e &&
+			carreteras_gtx[i]['CBR'] == cbr) {
+
+				//Relleno valores del formulario y salgo de la iteración
+				$('#rt-geotexan-value').val(carreteras_gtx[i]['RT']);
+				$('#elong-geotexan-value').val(carreteras_gtx[i]['ELONG']);
+				$('#cbr-geotexan-value').val(carreteras_gtx[i]['RCBR']);
+				$('#perfcono-geotexan-value').val(carreteras_gtx[i]['RPERF_CONO']);
+				$('#abcono-geotexan-value').val(carreteras_gtx[i]['AB_PORO']);
+				$('#rt-geotextil-value').val(carreteras_gtx[i]['RT']);
+				$('#elong-geotextil-value').val(carreteras_gtx[i]['ELONG']);
+				$('#cbr-geotextil-value').val(carreteras_gtx[i]['RCBR']);
+				$('#perfcono-geotextil-value').val(carreteras_gtx[i]['RPERF_CONO']);
+				$('#abcono-geotextil-value').val(carreteras_gtx[i]['AB_PORO']);
+				$('#product').val(carreteras_gtx[i]['GEOTESAN']);
+				return true;
+
 			}
-		}
 	});
 
 }
