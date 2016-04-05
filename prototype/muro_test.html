@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <script type="text/javascript" src="brython.js"></script>
+        <title>Prueba muros</title>
+    </head>
+    <body onload="brython()">
+        <!-- <script type="text/python" src="muros.py"></script> -->
+        <!-- <script type="text/python" src="motor.py"></script> -->
+        <script type="text/python">
+            from motor import recomendar
+            from muros import CABECERA, TABLA
+            from browser import document as doc
+            from browser import alert
+            def calculate(e, a, h, i, d, s):
+                catalogo, header = TABLA, CABECERA
+                out_recomendacion = recomendar(e, a, h, i, d, s, catalogo)
+                if out_recomendacion:
+                    producto = out_recomendacion[-1]
+                else:
+                    producto = "No se encontró."
+                return producto
+            def test(*args):
+                e = int(doc["e"].value)
+                a = int(doc["a"].value)
+                h = int(doc["h"].value)
+                i = int(doc["i"].value)
+                d = int(doc["d"].value)
+                s = int(doc["s"].value)
+                producto = calculate(e, a, h, i, d, s)
+                alert("El producto recomendado es {}".format(producto))
+            doc["bcalcular"].bind("click", test)
+        </script>
+        <p>Test muros.</p>
+        <input id="e" type="text" name="e">
+        <input id="a" type="text" name="a">
+        <input id="h" type="text" name="h">
+        <input id="i" type="text" name="i">
+        <input id="d" type="text" name="d">
+        <input id="s" type="text" name="s">
+        <button id="bcalcular">Calcular</button>
+    </body>
+</html>
