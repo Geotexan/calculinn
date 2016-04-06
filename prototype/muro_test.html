@@ -17,6 +17,7 @@
                 catalogo, header = TABLA, CABECERA
                 out_recomendacion = recomendar(catalogo, e, a, h, i, d, s)
                 if out_recomendacion:
+                    # print(out_recomendacion) # A la consola del navegador.
                     producto = out_recomendacion[-1]
                 else:
                     producto = "No se encontró."

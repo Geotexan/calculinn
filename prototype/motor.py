@@ -10,32 +10,24 @@ Prototipo de cálculo y recomendación para la aplicación de muros.
 
 
 # pylint: disable=invalid-name, too-many-arguments, too-many-locals
-def calcular(tabla, e, a, h, i, d, s):
+def recomendar(tabla, *args):
     """
-    Compara la combinación de los seis valores de entrada (e, a, h, i, d, s)
-    con cada una de las listas del array bidimensional «tabla». Devuelve la
-    primer lista con la que coincida o None si no hay coincidencia.
+    Compara la combinación de los valores de entrada con cada una de las
+    listas del array bidimensional «tabla». Devuelve la primera lista con la
+    que coincidan los primeros valores con los argumentos o None si no hay
+    coincidencia.
     Las listas pueden contener números enteros, un valor de cadena o un
     rango de valores como string (por ejemplo: "[25..35)"). En este último
     caso se parsea la cadena y se obtiene el rango correspondiente con el que
     se compara el valor.
-    El orden de los parámetros recibidos y el de la lista con los rangos a
+    El orden de los parámetros recibidos y el de la lista con los valores a
     comparar **debe ser el mismo**.
-    El cálculo se hace por fuerza bruta y es O(n). Podría hacerse O(log_n) si
-    se implementara como árbol de decisión, PERO NO HAY TIEMPO Y ESTO ES SÓLO
-    UN PROTOTIPO que acabará en JavaScript.
     """
-# TODO: Recibir parámetros como opcionales para que valga para todas las tablas
     res = None
+    num_params_entrada = len(args)
     for fila in tabla:
         aciertos = []
-        espesor, angulo, altura, inclinacion, densidad, sobrecarga = fila[:6]
-        for valor, referencia in ((e, espesor),
-                                  (a, angulo),
-                                  (h, altura),
-                                  (i, inclinacion),
-                                  (d, densidad),
-                                  (s, sobrecarga)):
+        for valor, referencia in zip(args, fila[:num_params_entrada]):
             # Sanitize:
             try:
                 valor = valor.strip().upper()
@@ -67,8 +59,13 @@ def comparar(valor, referencia):
     if isinstance(referencia, str):
         if ".." in referencia:  # Es un rango.
             res = valor_in_rango(valor, referencia)
-        else:   # Es cadena. Las entradas se pasaron a upper también arriba.
-            res = valor == referencia.strip().upper()
+        else:   # Es cadena.
+            try:  # ¿Será un flotante in disguise? Transformers!
+                ref_flotante = float(referencia.replace(",", "."))
+                res = valor == ref_flotante
+            except ValueError:  # No lo es. Es una cadena.
+                # Las entradas se pasaron a upper también en `calcular`
+                res = valor == referencia.strip().upper()
     else:   # Es númerico.
         res = valor == referencia
     return res
@@ -120,10 +117,22 @@ def check_aciertos(aciertos):
     return res
 
 
-def recomendar(tabla, *args):
+def calcular(tabla, *args):
     """
-    De manera análiga a `calcular`, realiza las comapraciones y devuelve
+    De manera análiga a `recomendar`, realiza las comapraciones y devuelve
     la fila que satisface todos los valores de entrada o None si no se
     encuentra ninguna.
+    A la fila resultante se le elimina el último valor si éste es un producto
+    y no un valor (las tablas de cálculo llevan como última columna el
+    producto que coincide con los cálcuos, pero no debe devolverese porque
+    en el formulario de cálculo solo se muestran valores. Es el recomendador
+    el que sugiere un producto y lo devuelve con sus valores de la ficha
+    técnica.
     """
-    return calcular(tabla, *args)
+    res = recomendar(tabla, *args)
+    if res:     # Check si la última columna es un producto
+        last_column = res[-1].upper().strip()
+        if ("GEOTE" in last_column or "NT" in last_column or
+                "GRID" in last_column):
+            res = res[:-1]
+    return res
