@@ -56,6 +56,17 @@ def comparar(valor, referencia):
         - En otro caso hace una comaración como cadena (para los casos como el
           de carretera, aunque no se den en aquí en muros).
     """
+    # Sanitize valores de entrada:
+    # pylint: disable=redefined-variable-type
+    if isinstance(valor, str):
+        if valor.isdigit():
+            valor = int(valor)
+        else:
+            try:
+                valor = float(valor.replace(",", "."))
+            except (ValueError, TypeError):
+                pass    # Es cadena y se queda como está.
+    # Check tipo de valor de referencia y comparación con el valor.
     if isinstance(referencia, str):
         if ".." in referencia:  # Es un rango.
             res = valor_in_rango(valor, referencia)
@@ -63,7 +74,7 @@ def comparar(valor, referencia):
             try:  # ¿Será un flotante in disguise? Transformers!
                 ref_flotante = float(referencia.replace(",", "."))
                 res = valor == ref_flotante
-            except ValueError:  # No lo es. Es una cadena.
+            except (ValueError, TypeError):  # No lo es. Es una cadena.
                 # Las entradas se pasaron a upper también en `calcular`
                 res = valor == referencia.strip().upper()
     else:   # Es númerico.

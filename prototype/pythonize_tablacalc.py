@@ -53,18 +53,42 @@ def parse(fin):
         if es_cabecera(fila):
             # La segunda cabecera, la de verdad, machacará a la de (In, Out).
             cabecera = fila
+            if "In" in cabecera:    # Ojo, es la fila que me dice cuántas
+                # entradas y salidas tiene la tabla de cálculo.
+                numentradas, numsalidas = find_ins_outs(cabecera)
             continue
         res.append(tuple(fila))
-    return cabecera, res
+    return cabecera, res, numentradas, numsalidas
 
 
-def generate(nombre_fout, cabecera, datos):
+def find_ins_outs(fila):
+    """
+    Devuelve el número de entradas y salidas que indica la primera cabecera.
+    """
+    # NOTE: Quedaría el caso de las constantes, que siempre van antes de los
+    # In. También está el caso de los desplegables, indicado en el nombre
+    # de la variable de entrada, pero eso es otra historia.
+    ins = outs = 0
+    # Todo hasta encontrar Out son entradas.
+    ins = fila.index("Out")
+    # A partir de ahí son salidas.
+    outs = len(fila[ins:])
+    if "FICHA" in fila[-1].upper():
+        # **Salvo** en las tablas de cálculo, que tengo anotados los productos
+        # pero solo como referencia. No son salidas.
+        outs -= 1
+    return ins, outs
+
+
+def generate(nombre_fout, cabecera, datos, numentradas, numsalidas):
     """
     Crea un fichero python muy sencillo (si existe, lo sobreescribe) que
     instancia la cabecera y filas de datos al ser importado.
     """
     skel = ["#!/usr/bin/env python\n"]
-    skel.append("# -*- coding: utf-8 -*-\n")
+    skel.append("# -*- coding: utf-8 -*-\n\n")
+    skel.append("NUMENTRADAS = {}\n".format(numentradas))
+    skel.append("NUMSALIDAS = {}\n".format(numsalidas))
     skel.append("CABECERA = {}\n".format(cabecera))
     skel.append("TABLA = {}\n".format(datos))
     fout = open(nombre_fout, "w")
@@ -89,9 +113,26 @@ def parse_opendocument(fin):
         if es_cabecera(fila):
             # La segunda cabecera, la de verdad, machacará a la de (In, Out).
             cabecera = fila
+            if "In" in cabecera:    # Ojo, es la fila que me dice cuántas
+                # entradas y salidas tiene la tabla de cálculo.
+                numentradas, numsalidas = find_ins_outs(cabecera)
             continue
         res.append(fila)
-    return cabecera, res
+    return cabecera, res, numentradas, numsalidas
+
+
+def get_numcolumns(cell):
+    """
+    Devuelve el número de columnas del ODS que ocupa la celda.
+    Una celda puede estar unida con otras, ocupando varias columnas.
+    """
+    res = 1
+    for attribute in cell.attributes:
+        # pylint: disable=unused-variable
+        namespace, name = attribute
+        if "columns-spanned" in name:
+            res = int(cell.attributes[attribute])
+    return res
 
 
 def convert_odrow(row):
@@ -101,6 +142,7 @@ def convert_odrow(row):
     """
     res = []
     for cell in row.getElementsByType(TableCell):
+        columnas_unidas = get_numcolumns(cell)
         textos = cell.getElementsByType(P)
         for texto in textos:
             for nodo in texto.childNodes:
@@ -110,6 +152,10 @@ def convert_odrow(row):
                     pass
                 else:
                     res.append(valor)
+        # Si lleva columnas unidas, agrego valores vacíos para saberlo.
+        # pylint: disable=unused-variable
+        for i in range(1, columnas_unidas):
+            res.append("")
     ret = tuple(res)
     return ret
 
@@ -155,10 +201,10 @@ def main():
         print("El fichero {} no existe.".format(nombre_fin), file=sys.stderr)
         sys.exit(1)
     if nombre_fin.endswith(".csv"):
-        cabecera, datos = parse(fin)
+        cabecera, datos, numentradas, numsalidas = parse(fin)
     else:   # Es un OpenDocument (.ods).
-        cabecera, datos = parse_opendocument(fin)
-    generate(nombre_fout, cabecera, datos)
+        cabecera, datos, numentradas, numsalidas = parse_opendocument(fin)
+    generate(nombre_fout, cabecera, datos, numentradas, numsalidas)
     fin.close()
     sys.exit(0)
 
