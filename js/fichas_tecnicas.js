@@ -26,7 +26,7 @@ var fichas =
 $(document).ready(function() {
 	$('#pdf').click(function() {
 		var nt = $('#product').val();
-        alert(nt);
+        console.log(nt)
 		if (typeof fichas[nt] !== 'undefined') {
 			var file = '../pdf/' + fichas[nt];
 			var win = window.open(file, '_blank');
