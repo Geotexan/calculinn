@@ -94,7 +94,11 @@ def valor_in_rango(valor, rango):
     strx = strx.replace("(", "").replace("[", "").replace(",", ".")
     stry = stry.replace(")", "").replace("]", "").replace(",", ".")
     x = float(strx)
-    y = float(stry)
+    try:
+        y = float(stry)
+    except ValueError:  # Es infinito: ∞, uso el mayor entero posible
+        # (sys.maxint) pero manualmente porque no brython no puede importar.
+        y = float(2**31 - 1)
     evals = []  # Almacenaré los resultados de cada una de las evaluaciones
     # Evalúo el extremo inferior:
     if ini == "(":      # Abierto

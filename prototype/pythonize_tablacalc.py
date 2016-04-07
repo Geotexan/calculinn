@@ -13,6 +13,7 @@ from __future__ import print_function
 import sys
 import csv
 import argparse
+from collections import defaultdict
 from odf.table import TableRow, TableCell, Table
 from odf.text import P
 from odf.opendocument import load
@@ -80,7 +81,8 @@ def find_ins_outs(fila):
     return ins, outs
 
 
-def generate(nombre_fout, cabecera, datos, numentradas, numsalidas):
+# pylint: disable=too-many-arguments
+def generate(nombre_fout, cabecera, datos, numentradas, numsalidas, rangos):
     """
     Crea un fichero python muy sencillo (si existe, lo sobreescribe) que
     instancia la cabecera y filas de datos al ser importado.
@@ -91,9 +93,22 @@ def generate(nombre_fout, cabecera, datos, numentradas, numsalidas):
     skel.append("NUMSALIDAS = {}\n".format(numsalidas))
     skel.append("CABECERA = {}\n".format(cabecera))
     skel.append("TABLA = {}\n".format(datos))
+    skel.append("RANGOS = {}".format(rangos))
     fout = open(nombre_fout, "w")
     fout.writelines(skel)
     fout.close()
+
+
+def esta_en(cad, lista):
+    """
+    Devuelve True si la cadena «cad» está en alguna de las cadenas de «lista».
+    """
+    res = False
+    for item in lista:
+        if cad in item:
+            res = True
+            break
+    return res
 
 
 def parse_opendocument(fin):
@@ -108,12 +123,13 @@ def parse_opendocument(fin):
     tables = doc.spreadsheet.getElementsByType(Table)
     table = tables[0]   # Sólo tienen 1 hoja
     rows = table.getElementsByType(TableRow)
+    numentradas = numsalidas = 0    # Por si no tuviera filas
     for row in rows:
         fila = convert_odrow(row)
         if es_cabecera(fila):
             # La segunda cabecera, la de verdad, machacará a la de (In, Out).
             cabecera = fila
-            if "In" in cabecera:    # Ojo, es la fila que me dice cuántas
+            if esta_en("In", cabecera):  # Ojo, es la fila que me dice cuántas
                 # entradas y salidas tiene la tabla de cálculo.
                 numentradas, numsalidas = find_ins_outs(cabecera)
             continue
@@ -204,9 +220,147 @@ def main():
         cabecera, datos, numentradas, numsalidas = parse(fin)
     else:   # Es un OpenDocument (.ods).
         cabecera, datos, numentradas, numsalidas = parse_opendocument(fin)
-    generate(nombre_fout, cabecera, datos, numentradas, numsalidas)
+    rangos = determinar_rangos(cabecera[:numentradas], datos)
+    generate(nombre_fout, cabecera, datos, numentradas, numsalidas, rangos)
     fin.close()
     sys.exit(0)
+
+
+def determinar_rangos(columnas, tabla):
+    """
+    Crea y devuelve un diccionario cuyas claves son los nombres de las
+    columnas de entrada recibidas.
+    Los valores son:
+        - Si es una columna numérica, el menor y el mayor valor admitido.
+          Pueden ser el mismo. Como tupla de 2 elementos.
+        - Si es una columna de texto, una tupla con los diferentes valores que
+          puede tomar. En el HTML se convertirá en un desplegable.
+    """
+    minimos = defaultdict(lambda: None)
+    maximos = defaultdict(lambda: None)
+    cadenas = defaultdict(lambda: None)
+    res = {}
+    for fila in tabla:
+        for indice, columna in enumerate(columnas):
+            valor = fila[indice]
+            if es_numero(valor):    # Entero o flotante, pero uno solo.
+                numero = parse_numero(valor)
+                update_minimos(minimos, columna, numero)
+                update_maximos(maximos, columna, numero)
+            elif es_rango_numerico(valor):
+                ini, fin = parse_rango(valor)
+                update_minimos(minimos, columna, ini)
+                update_maximos(maximos, columna, fin)
+            else:   # Es texto
+                update_cadenas(cadenas, columna, valor)
+    for columna in columnas:
+        if minimos[columna] is not None:
+            res[columna] = (minimos[columna], maximos[columna])
+        else:   # No está en la columna de mínimos, está en la de cadenas.
+            res[columna] = tuple(cadenas[columna])
+    return res
+
+
+def parse_rango(valor):
+    """
+    Analiza el rango y devuelve el valor inferior y superior.
+    Como el último valor de la unión de todos los rangos para la columna
+    siempre es cerrado, da igual si el extremo del que estamos tratando ahora
+    es abierto o cerrado.
+    Si el máximo valor es infinito, devuelve el máximo entero permitido por
+    la máquina. ¿Podría dar problemas en ordenadores con otro máximo definido
+    cuando interprete el Javascript? Haré una cosa, infinito lo equipararé
+    al mínimo máximo garantizado que devuelve python para sys.maxint.
+    """
+    valor = valor.replace(
+        "[", "").replace("(", "").replace("]", "").replace(")", "")
+    # pylint: disable=invalid-name
+    x, y = valor.split("..")
+    infinito = 2**31 - 1
+    try:
+        ini = parse_numero(x)
+    except (TypeError, ValueError):
+        ini = -infinito - 1     # -1 por la simetría.
+    try:
+        fin = parse_numero(y)
+    except (TypeError, ValueError):
+        fin = infinito
+    return ini, fin
+
+
+def es_rango_numerico(valor):
+    """
+    Devuelve True si el valor recibido es un rango numérico.
+    """
+    res = ".." in valor
+    return res
+
+
+def parse_numero(valor):
+    """
+    Convierte el valor recibido en un entero o en un float, dependiendo de
+    si lleva o no decimales.
+    """
+    try:
+        valor = valor.replace(",", ".")
+        res = float(valor)
+    except AttributeError:  # No es una cadena. ¿?
+        if isinstance(valor, (int, float)):
+            res = valor
+        else:
+            raise ValueError("El valor recibido «{}» no se puede parsear"
+                             " como número".format(valor))
+    if res % 1 == 0:
+        # pylint: disable=redefined-variable-type
+        res = int(res)
+    return res
+
+
+def es_numero(valor):
+    """
+    Determina si un número es interpretable como entero o floante.
+    """
+    try:
+        parse_numero(valor)
+        res = True
+    except (TypeError, ValueError):
+        res = False
+    return res
+
+
+def update_cadenas(cadenas, columna, valor):
+    """
+    Si la cadena no está ya en la lista de valores para esa columna según
+    el diccionario, la agrega y vuelve a ordenar.
+    """
+    if cadenas[columna] is None:
+        cadenas[columna] = [valor]
+    elif valor not in cadenas[columna]:
+        cadenas[columna].append(valor)
+        cadenas[columna].sort()
+
+
+def update_minimos(minimos, columna, numero):
+    """
+    Actualiza el diccionario de mínimos con el valor recibido para la columna
+    indicada.
+    """
+    if minimos[columna] is None:
+        minimos[columna] = numero
+    elif minimos[columna] > numero:
+        minimos[columna] = numero
+
+
+def update_maximos(maximos, columna, numero):
+    """
+    Actualiza el diccionario de máximos con el valor recibido para la columna
+    indicada.
+    """
+    if maximos[columna] is None:
+        maximos[columna] = numero
+    elif maximos[columna] < numero:
+        maximos[columna] = numero
+
 
 if __name__ == "__main__":
     main()
