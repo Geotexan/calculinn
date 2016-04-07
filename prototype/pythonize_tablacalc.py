@@ -236,7 +236,8 @@ def determinar_rangos(columnas, tabla):
     columnas de entrada recibidas.
     Los valores son:
         - Si es una columna numérica, el menor y el mayor valor admitido.
-          Pueden ser el mismo. Como tupla de 2 elementos.
+          Pueden ser el mismo. Como tupla de 2 elementos. Salvo si son valores
+          únicos, que entonces también sería un desplegable y no un rango.
         - Si es una columna de texto, una tupla con los diferentes valores que
           puede tomar. En el HTML se convertirá en un desplegable.
     """
@@ -248,9 +249,10 @@ def determinar_rangos(columnas, tabla):
         for indice, columna in enumerate(columnas):
             valor = fila[indice]
             if es_numero(valor):    # Entero o flotante, pero uno solo.
-                numero = parse_numero(valor)
-                update_minimos(minimos, columna, numero)
-                update_maximos(maximos, columna, numero)
+                # numero = parse_numero(valor)
+                # update_minimos(minimos, columna, numero)
+                # update_maximos(maximos, columna, numero)
+                update_cadenas(cadenas, columna, valor)
             elif es_rango_numerico(valor):
                 ini, fin = parse_rango(valor)
                 update_minimos(minimos, columna, ini)

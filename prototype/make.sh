@@ -16,12 +16,28 @@ clean () {
     rm *_recomendador.py || true
 }
 
+abrir_ficheros_en_navegador () {
+    # Ojo porque abrirá todos los *.html del directorioque no sean el skel.
+    for HTML in *.html; do
+        if [ $HTML == "skel.html" ]; then
+            :
+        else
+            xdg-open $HTML
+        fi
+    done
+}
+
+RUTA_DEFAULT='/home/queen/Geotexan/doc/Programación/calculinn: Programa cálculo pendrive/tablas/normalizadas'
+OPEN=false
+
 if [ $# -eq 0 ]; then
-    RUTA_TABLAS='/home/queen/Geotexan/doc/Programación/calculinn: Programa cálculo pendrive/tablas/normalizadas'
+    RUTA_TABLAS=$RUTA_DEFAULT
 else
     if [ "$1" == "clean" ]; then
         clean
         exit $?
+    elif [ "$1" == "open" ]; then
+        RUTA_TABLAS=$RUTA_DEFAULT
     else
         RUTA_TABLAS=$1
     fi
@@ -31,3 +47,7 @@ fi
 for FICH_CALCULO in $RUTA_TABLAS/??0*; do
     ./build_html.py "$FICH_CALCULO"
 done
+
+if [ $OPEN ]; then
+    abrir_ficheros_en_navegador
+fi
