@@ -27,25 +27,25 @@
 		<div class="form-group">
 			<label for="arozamiento">Ángulo de Rozamiento de Relleno (grados) <strong>&#x2118;</strong></label>
 			<select id="arozamiento">
-				<option value="25-35">25 a 35</option>
-				<option value="35-45">35 a 45</option>
+				<option value="[25..35)">25 a 35</option>
+				<option value="[35..45]">35 a 45</option>
 			</select>
 		</div>
 		<div class="form-group">
 			<label for="amuro">Altura_muro (m) <strong>H</strong></label>
 			<select id="amuro">
-				<option value="0-5">0 a 5</option>
-				<option value="5-10">5 a 10</option>
-				<option value="1-15">10 a 15</option>
+				<option value="[0..5)">0 a 5</option>
+				<option value="[5..10)">5 a 10</option>
+				<option value="[10..15]">10 a 15</option>
 			</select>
 		</div>
 		<div class="form-group">
 			<label for="imuro">Inclinación de Muro (m) <strong>a</strong></label>
 			<select id="imuro">
-				<option value="50-60">50 a 60</option>
-				<option value="60-70">60 a 70</option>
-				<option value="70-80">70 a 80</option>
-				<option value="80-90">80 a 90</option>
+				<option value="[50..60)">50 a 60</option>
+				<option value="[60..70)">60 a 70</option>
+				<option value="[70..80)">70 a 80</option>
+				<option value="[80..90]">80 a 90</option>
 			</select>
 		</div>
 		<div class="form-group">
@@ -55,10 +55,10 @@
 		<div class="form-group">
 			<label for="sobrecarga">Sobrecarga (kN/m2) <strong>P</strong></label>
 			<select id="sobrecarga">
-				<option value="0-10">50 a 60</option>
-				<option value="10-20">60 a 70</option>
-				<option value="20-30">70 a 80</option>
-				<option value="30-40">80 a 90</option>
+				<option value="[0..10)">0 a 10</option>
+				<option value="[10..20)">10 a 20</option>
+				<option value="[20..30)">20 a 30</option>
+				<option value="[30..40)">30 a 40</option>
 			</select>
 		</div>
 		<input type="submit" value="Cálculo Geotexan" onclick="calcula()">
