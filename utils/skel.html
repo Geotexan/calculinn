@@ -192,8 +192,8 @@
                     print("\tCABECERA[i] => ", CABECERA[i])
                 nombrecolumna = unicode(CABECERA[i])
                 # Algunos nombres de columna llevan algo de información extra:
-                nombrecolumna = nombrecolumna.replace("(desplegable)", "")
-                nombrecolumna = nombrecolumna.strip()
+                nombreinput = nombrecolumna.replace("(desplegable)", "")
+                nombreinput = nombreinput.strip()
                 # Determino rangos para tooptip
                 if (len(RANGOS[nombrecolumna]) == 2
                         and not isinstance(RANGOS[nombrecolumna][0], str)):
@@ -203,7 +203,7 @@
                 else:
                     valores = RANGOS[nombrecolumna]
                     minimo = maximo = 0
-                elementos.append(html.LABEL(nombrecolumna + ": "))
+                elementos.append(html.LABEL(nombreinput + ": "))
                 # Construyo el input dependiendo del tipo de valores permitidos
                 if valores:     # Desplegable
                     tooltip = "Valores permitidos: {}".format(valores)
