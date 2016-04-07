@@ -214,8 +214,8 @@
                 # Agrego la fila completa con label e input
                 elementos.append(html.BR())
             # Y creo el botón de calcular sin form definido para no refresh.
-            elementos.append(html.BUTTON("Calcular", id="bcalcular",
-                             form=None))
+            elementos.append(html.INPUT(value = "Calcular", id="bcalcular",
+                                        type="submit"))
             # Inyecto los elementos al HTML
             for elemento in elementos:
                 doc["entradas"] <= elemento
@@ -234,10 +234,10 @@
         <h1>Cálculo de parámetros para vertederos</h1>
 
         <section class="form">
-            <div class="form-group">
-                <form id="entradas" class="form">
+            <div class="form-group" id="entradas">
+                <!-- <form id="entradas" class="form"> -->
                     <!-- <button id="bcalcular">Calcular</button> -->
-                </form>
+                <!-- </form> -->
             </div>
 
             <div id="salida" class="form-table-group">
