@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <style>
+            div.cell_referencia     {background-color: lightgreen;}
+            div.cell_recomendado    {background-color: yellow;}
+        </style>
+        <script type="text/javascript" src="../libs/brython.js"></script>
+    <title>Obras Hidraulicas</title>
+    </head>
+    <body onload="brython()">
+        <script type="text/python">
+            from obras_hidraulicas_recomendador import CABECERA, TABLA, RANGOS
+            from obras_hidraulicas_recomendador import NUMENTRADAS, NUMSALIDAS
+            from obras_hidraulicas_calculo import TABLA as CALCULO
+            from motor import recomendar, calcular, find_step
+            from browser import document as doc
+            from browser import alert
+            from browser import html
+
+            DEBUG = True
+
+            print("DEBUG activado.")
+
+            unicode = lambda c: str(c, "utf8")
+
+            def dump_calculo(out):
+                """
+                Recibe la fila completa del resultado del cálculo.
+                Muestra los valores de referencia con los que se ha
+                comparado (In) y los valores calculados para los
+                parámetros de salida (Out) que definirán el producto a
+                recomendar.
+                """
+                # Primero los valores de referencia que han sido activados por
+                # los parámetros de entrada (los del formulario `entrada`).
+                if DEBUG:
+                    print("Valores de referencia usados:")
+                ths = []
+                tds = []
+                for i in range(NUMENTRADAS):
+                    nombre = unicode(CABECERA[i])  # Por si tildes "raras".
+                    valor = out[i]
+                    if DEBUG:
+                        print(nombre, valor)
+                    ths.append(nombre)
+                    tds.append(html.DIV(valor, Class="cell_referencia"))
+                # Ahora los valores calculados para esas entradas
+                if DEBUG:
+                    print("Valores calculados que debe satisfacer el producto:")
+                for i in range(NUMENTRADAS, NUMENTRADAS + NUMSALIDAS - 1):
+                    # -1 porque la fila lleva también el producto como
+                    # referencia interna para depuración, pero no se debe
+                    # mostar. Aunque debe ser el mismo que da el recomendador.
+                    nombre = unicode(CABECERA[i])
+                    valor = out[i]
+                    if DEBUG:
+                        print(nombre, valor)
+                    ths.append(nombre)
+                    tds.append(valor)
+                # La fila de la tabla de cabecera, los nombres de los paráms.
+                # Pero solo si no se había pintado antes.
+                if "header_calculo" not in doc:
+                    try:
+                        row = html.TH(ths[0])
+                    except IndexError: # Sin valores para mostrar.
+                        pass
+                    else:
+                        for th in ths[1:]:
+                            row += html.TH(th)
+                        doc["referencia"] <= html.TR(row,
+                                                     id = "header_calculo")
+                # La fila de los valores: los de referencia y los calculados.
+                try:
+                    row = html.TD(tds[0])
+                except IndexError:  # Sin valores para mostrar.
+                    pass
+                else:
+                    for td in tds[1:]:
+                        row += html.TD(td)
+                    doc["referencia"] <= html.TR(row)
+
+            def dump_recomendacion(out):
+                """
+                Recibe la tupla «out» e inyecta en el HTML los resultados
+                con sus etiquetas.
+                """
+                # Si ya se había calculado antes, no pinta la cabecera.
+                ths = []
+                tds = []
+                # Pongo los valores del producto recomendado que satisfacen
+                # los valores calculados:
+                if DEBUG:
+                    print("Cracterísticas del producto recomendado:")
+                # Analizo valores a mostrar y los organizo en headers y data.
+                for i in range(NUMENTRADAS, NUMENTRADAS + NUMSALIDAS - 1):
+                    # -1 porque al producto le voy a aplicar otro estilo.
+                    nombre = unicode(CABECERA[i])
+                    valor = out[i]
+                    if DEBUG:
+                        print(nombre, valor)
+                    ths.append(nombre)
+                    tds.append(valor)
+                try:
+                    nombre = unicode(CABECERA[-1])
+                    valor = out[-1]
+                except IndexError:  # ¿No hay datos?
+                    pass
+                else:
+                    ths.append(nombre)
+                    tds.append(html.DIV(valor, Class="cell_recomendado"))
+                # La fila de la tabla de cabecera, los nombres de los paráms.
+                # Pero solo si no existen ya en la tabla:
+                if "header_recomendado" not in doc:
+                    try:
+                        row = html.TH(ths[0])
+                    except IndexError: # Sin valores para mostrar.
+                        pass
+                    else:
+                        for th in ths[1:]:
+                            row += html.TH(th)
+                        doc["producto"] <= html.TR(row,
+                                                   id ="header_recomendado")
+                # La fila de los valores: los de referencia y los calculados.
+                try:
+                    row = html.TD(tds[0])
+                except IndexError:  # Sin valores para mostrar.
+                    pass
+                else:
+                    for td in tds[1:]:
+                        row += html.TD(td)
+                    doc["producto"] <= html.TR(row)
+
+            def calculate(ev):
+                args = []
+                for i in range(NUMENTRADAS):
+                    inputvalue = doc["in%d" % i].value
+                    if inputvalue.strip() == "":
+                        alert("Debe espeficiar un valor para {}.".format(
+                            CABECERA[i]))
+                    else:
+                        args.append(inputvalue)
+                if DEBUG:
+                    print(args)
+                if len(args) == NUMENTRADAS:
+                    out_calculo = calcular(CALCULO, *args)
+                    if not out_calculo:
+                        alert("No se pudieron realizar los cálculos.\n"
+                              "Los parámetros de entrada no son válidos.")
+                    else:
+                        if DEBUG:
+                            print(out_calculo)
+                        dump_calculo(out_calculo)
+                        out_recomendacion = recomendar(TABLA, *args)
+                        if DEBUG:
+                            print(out_recomendacion)
+                        if not out_recomendacion:
+                            alert("No se encontró producto.\n"
+                                  "Los parámetros de entrada no son válidos.")
+                        else:
+                            dump_recomendacion(out_recomendacion)
+
+            ##########################
+            # Construyo el formulario:
+            print("Construyendo formulario de entradas...")
+            elementos = []
+            for i in range(NUMENTRADAS):
+                if DEBUG:
+                    print("\tCABECERA[i] => ", CABECERA[i])
+                nombrecolumna = unicode(CABECERA[i])
+                # Determino rangos para tooptip
+                if (len(RANGOS[nombrecolumna]) == 2
+                        and not isinstance(RANGOS[nombrecolumna][0], str)):
+                        # Máximo y mínimo
+                    minimo, maximo = RANGOS[nombrecolumna]
+                    valores = []
+                else:
+                    valores = RANGOS[nombrecolumna]
+                    minimo = maximo = 0
+                elementos.append(html.LABEL(nombrecolumna + ": "))
+                # Construyo el input dependiendo del tipo de valores permitidos
+                if valores:     # Desplegable
+                    tooltip = "Valores permitidos: {}".format(valores)
+                    if len(valores) == 1:    # Es una constante
+                        constante = html.INPUT(id="in%d" % i, title=tooltip,
+                                               value=valores[0],
+                                               readonly=True)
+                        elementos.append(constante)
+                    else:
+                        sel = html.SELECT(id="in%d" % i, title=tooltip)
+                        for item in valores:
+                            sel <= html.OPTION(item)
+                        elementos.append(sel)
+                else:
+                    tooltip = "Escriba cualquier valor entre [{}..{}]".format(
+                        minimo, maximo)
+                    step = find_step(CABECERA.index(nombrecolumna), TABLA)
+                    elementos.append(html.INPUT(type="number", id="in%d" % i,
+                                                min=minimo, max=maximo,
+                                                required="required",
+                                                title=tooltip,
+                                                step=step))
+                # Agrego la fila completa con label e input
+                elementos.append(html.BR())
+            # Y creo el botón de calcular sin form definido para no refresh.
+            elementos.append(html.BUTTON("Calcular", id="bcalcular",
+                             form=None))
+            # Inyecto los elementos al HTML
+            for elemento in elementos:
+                doc["entradas"] <= elemento
+            # Y asocio el clic a las operaciones de cálculo
+            doc["bcalcular"].bind("click", calculate)
+            print("DONE")
+        </script>
+        <h1>Cálculo de parámetros para obras hidraulicas</h1>
+        <form id="entradas">
+            <!-- <button id="bcalcular">Calcular</button> -->
+        </form>
+        <div id="salida">
+            <h2>Valores de referencia y calculados:</h2>
+            <table id="referencia">
+            </table>
+            <h2>Producto recomendado:</h2>
+            <table id="producto">
+            </table>
+        </div>
+    </body>
+</html>
