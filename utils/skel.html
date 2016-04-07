@@ -16,13 +16,25 @@
     </head>
     <body onload="brython()" class=SKEL_BODY_CLASS>
         <script type="text/python">
-            from SKEL_RECOMENDADOR import CABECERA, TABLA, RANGOS
-            from SKEL_RECOMENDADOR import NUMENTRADAS, NUMSALIDAS
-            from SKEL_CALCULO import TABLA as CALCULO
-            from motor import recomendar, calcular, find_step
             from browser import document as doc
             from browser import alert
             from browser import html
+
+            ###################################################################
+            # Esto está muy feo, pero es lo más rápido que puedo hacer
+            # funcionar ahora mismo. En Firefox no hay problema con los
+            # imports. Pero en Chrome la cosa cambia.
+            #from S_K_E_L_RECOMENDADOR import CABECERA, TABLA, RANGOS
+            #from S_K_E_L_RECOMENDADOR import NUMENTRADAS, NUMSALIDAS
+            #from S_K_E_L_CALCULO import TABLA as CALCULO
+            #from motor import recomendar, calcular, find_step
+            # Código python para recomendador
+            SKEL_RECOMENDADOR
+            # Código python para cálculo
+            SKEL_CALCULO
+            # Código python para motor
+            SKEL_MOTOR
+            ###################################################################
 
             DEBUG = False
 
@@ -179,6 +191,9 @@
                 if DEBUG:
                     print("\tCABECERA[i] => ", CABECERA[i])
                 nombrecolumna = unicode(CABECERA[i])
+                # Algunos nombres de columna llevan algo de información extra:
+                nombrecolumna = nombrecolumna.replace("(desplegable)", "")
+                nombrecolumna = nombrecolumna.strip()
                 # Determino rangos para tooptip
                 if (len(RANGOS[nombrecolumna]) == 2
                         and not isinstance(RANGOS[nombrecolumna][0], str)):

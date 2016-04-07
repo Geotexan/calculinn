@@ -49,6 +49,7 @@ def parse(fin):
     """
     res = []
     cabecera = ()
+    cabecera_superior = ()
     reader = csv.reader(fin)
     for fila in reader:
         if es_cabecera(fila):
@@ -58,9 +59,10 @@ def parse(fin):
                 # Ojo, es la fila que me dice cuántas entradas y salidas
                 # tiene la tabla de cálculo.
                 numentradas, numsalidas = find_ins_outs(cabecera)
+                cabecera_superior = cabecera
             continue
         res.append(tuple(fila))
-    return cabecera, res, numentradas, numsalidas
+    return cabecera, res, numentradas, numsalidas, cabecera_superior
 
 
 def find_ins_outs(fila):
@@ -79,18 +81,38 @@ def find_ins_outs(fila):
     return ins, outs
 
 
+def es_fichero_recomendador(cabecera):
+    """
+    Devuelve True si es un fichero recomendador y no uno de cálculo.
+    La diferencia está en que el de cálculo lleva **siempre** una última
+    columna que dice «Ficha técnica».
+    """
+    # Es una chapuza, lo sé. Pero hay que habilitar Chrome urgentemente.
+    if cabecera[-1].lower().strip() == u"ficha técnica":
+        res = False
+    else:
+        res = True
+    return res
+
+
 # pylint: disable=too-many-arguments
-def generate(nombre_fout, cabecera, datos, numentradas, numsalidas, rangos):
+def generate(nombre_fout, cabecera, datos, numentradas, numsalidas, rangos,
+             cabecera_superior):
     """
     Crea un fichero python muy sencillo (si existe, lo sobreescribe) que
     instancia la cabecera y filas de datos al ser importado.
+    cabecera_superior es la fila que contiene el In, Out y Ficha técnica si
+    es un fichero de cálculo y no recomendador.
     """
     skel = ["#!/usr/bin/env python\n"]
     skel.append("# -*- coding: utf-8 -*-\n\n")
     skel.append("NUMENTRADAS = {}\n".format(numentradas))
     skel.append("NUMSALIDAS = {}\n".format(numsalidas))
     skel.append("CABECERA = {}\n".format(cabecera))
-    skel.append("TABLA = {}\n".format(datos))
+    if es_fichero_recomendador(cabecera_superior):
+        skel.append("TABLA = {}\n".format(datos))
+    else:   # Es fichero de cálculo. Evito conflicos de nombre.
+        skel.append("CALCULO = {}\n".format(datos))
     skel.append("RANGOS = {}".format(rangos))
     fout = open(nombre_fout, "w")
     fout.writelines(skel)
@@ -121,6 +143,7 @@ def parse_opendocument(fin):
     """
     res = []
     cabecera = ()
+    cabecera_superior = ()
     doc = load(fin)
     tables = doc.spreadsheet.getElementsByType(Table)
     table = tables[0]   # Sólo tienen 1 hoja
@@ -135,9 +158,10 @@ def parse_opendocument(fin):
                 # la fila que me dice cuántas entradas y salidas tiene la
                 # tabla de cálculo.
                 numentradas, numsalidas = find_ins_outs(cabecera)
+                cabecera_superior = cabecera
             continue
         res.append(fila)
-    return cabecera, res, numentradas, numsalidas
+    return cabecera, res, numentradas, numsalidas, cabecera_superior
 
 
 def get_numcolumns(cell):
@@ -220,11 +244,14 @@ def main():
         print("El fichero {} no existe.".format(nombre_fin), file=sys.stderr)
         sys.exit(1)
     if nombre_fin.endswith(".csv"):
-        cabecera, datos, numentradas, numsalidas = parse(fin)
+        (cabecera, datos, numentradas, numsalidas,
+         cabecera_superior) = parse(fin)
     else:   # Es un OpenDocument (.ods).
-        cabecera, datos, numentradas, numsalidas = parse_opendocument(fin)
+        (cabecera, datos, numentradas, numsalidas,
+         cabecera_superior) = parse_opendocument(fin)
     rangos = determinar_rangos(cabecera[:numentradas], datos)
-    generate(nombre_fout, cabecera, datos, numentradas, numsalidas, rangos)
+    generate(nombre_fout, cabecera, datos, numentradas, numsalidas, rangos,
+             cabecera_superior)
     fin.close()
     sys.exit(0)
 

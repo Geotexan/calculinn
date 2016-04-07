@@ -136,14 +136,34 @@ def find_body_class(aplicacion):
     return body_class
 
 
-def templatear(linea, modulo_calculo, modulo_recomendador, aplicacion):
+def paste_modulo(ruta_modulo):
+    """
+    Devuelve tooooodo el contenido del módulo como cadena de texto para
+    ser insertado en el código brython del html.
+    Chrome se niega a reconocer que un fichero local puede acceder a otro
+    fichero local sin que suponga un Cross Origin Request.
+    """
+    filein = open(ruta_modulo, "r")
+    # Los ficheros no son tan grandes como para agotar el buffer
+    # El indentado del HTML es de 12 espacios. Esto cada vez pinta peor...
+    res = "            ".join(filein.readlines())
+    filein.close()
+    return res
+
+
+# pylint: disable= too-many-arguments, unused-argument
+def templatear(linea, modulo_calculo, modulo_recomendador, aplicacion,
+               ruta_calculo, ruta_recomendador, ruta_motor):
     """
     Devuelve la línea recibida pero realizando las sustituciones pertinentes.
     """
     if "SKEL_" in linea:
         lista_subs = (("SKEL_TITULO", aplicacion.title()),
-                      ("SKEL_RECOMENDADOR", modulo_recomendador),
-                      ("SKEL_CALCULO", modulo_calculo),
+                      # ("SKEL_RECOMENDADOR", modulo_recomendador),
+                      # ("SKEL_CALCULO", modulo_calculo),
+                      ("SKEL_RECOMENDADOR", paste_modulo(ruta_recomendador)),
+                      ("SKEL_CALCULO", paste_modulo(ruta_calculo)),
+                      ("SKEL_MOTOR", paste_modulo(ruta_motor)),
                       ("SKEL_HEAD",
                        "Cálculo de parámetros para {}".format(
                            aplicacion.replace("_", " ").replace("_", " "))),
@@ -154,7 +174,7 @@ def templatear(linea, modulo_calculo, modulo_recomendador, aplicacion):
     return linea
 
 
-# pylint: disable=too-many-arguments
+# pylint: disable=too-many-arguments, too-many-locals
 def generate_html(pycalculo, pyrecomendador, aplicacion, dir_dest,
                   ruta_calculo, ruta_recomendador):
     """
@@ -173,9 +193,15 @@ def generate_html(pycalculo, pyrecomendador, aplicacion, dir_dest,
         nombre_html += ".html"
     ruta_html = os.path.join(dir_dest, nombre_html)
     fhtml = open(ruta_html, "w")  # Si existe, los sobrescribe.
+    ruta_motor = os.path.join(os.path.dirname(ruta_html), "motor.py")
+    ruta_modulo_calculo = os.path.join(os.path.dirname(ruta_html),
+                                       "{}.py".format(pycalculo))
+    ruta_modulo_recomendador = os.path.join(os.path.dirname(ruta_html),
+                                            "{}.py".format(pyrecomendador))
     for linea in fskel.readlines():
         linea_tratada = templatear(linea, pycalculo, pyrecomendador,
-                                   aplicacion)
+                                   aplicacion, ruta_modulo_calculo,
+                                   ruta_modulo_recomendador, ruta_motor)
         fhtml.write(linea_tratada)
     fskel.close()
     fhtml.close()
@@ -273,6 +299,8 @@ def main():
         parser.print_help()
         sys.exit(1)
     tabla_calculo, tabla_recomendador = determinar_tablas(args.tabla)
+    # FIXME: Si metemos los módulos inline, ya no haría falta generarlos en el
+    # directorio destino. También sobraría motor.py
     pycalculo, pyrecomendador = pythonize_tablas(tabla_calculo,
                                                  tabla_recomendador,
                                                  args.ruta_dest)
