@@ -54,8 +54,9 @@ def parse(fin):
         if es_cabecera(fila):
             # La segunda cabecera, la de verdad, machacará a la de (In, Out).
             cabecera = fila
-            if "In" in cabecera:    # Ojo, es la fila que me dice cuántas
-                # entradas y salidas tiene la tabla de cálculo.
+            if "In" in cabecera or "Out" in cabecera:
+                # Ojo, es la fila que me dice cuántas entradas y salidas
+                # tiene la tabla de cálculo.
                 numentradas, numsalidas = find_ins_outs(cabecera)
             continue
         res.append(tuple(fila))
@@ -133,8 +134,9 @@ def parse_opendocument(fin):
         if es_cabecera(fila):
             # La segunda cabecera, la de verdad, machacará a la de (In, Out).
             cabecera = fila
-            if esta_en("In", cabecera):  # Ojo, es la fila que me dice cuántas
-                # entradas y salidas tiene la tabla de cálculo.
+            if esta_en("In", cabecera) or esta_en("Out", cabecera):  # Ojo, es
+                # la fila que me dice cuántas entradas y salidas tiene la
+                # tabla de cálculo.
                 numentradas, numsalidas = find_ins_outs(cabecera)
             continue
         res.append(fila)
