@@ -245,7 +245,7 @@ var balsas_gtxtl = [
   {
     "Espesor":"1",
     "Altura":"[0..10)",
-    "Dmax":"[120..∞]",
+    "Dmax":"[120..∞)",
     "RT":23,
     "ELONG":"57,91",
     "RCBR":"4",
@@ -281,7 +281,7 @@ var balsas_gtxtl = [
   {
     "Espesor":"1",
     "Altura":"[10..∞)",
-    "Dmax":"[120..∞]",
+    "Dmax":"[120..∞)",
     "RT":26,
     "ELONG":"60",
     "RCBR":"4,49",
@@ -317,7 +317,7 @@ var balsas_gtxtl = [
   {
     "Espesor":"1,5",
     "Altura":"[0..10)",
-    "Dmax":"[120..∞]",
+    "Dmax":"[120..∞)",
     "RT":20,
     "ELONG":"60",
     "RCBR":"3,25",
@@ -353,7 +353,7 @@ var balsas_gtxtl = [
   {
     "Espesor":"1,5",
     "Altura":"[10..∞)",
-    "Dmax":"[120..∞]",
+    "Dmax":"[120..∞)",
     "RT":23,
     "ELONG":"57,91",
     "RCBR":"4",
@@ -389,7 +389,7 @@ var balsas_gtxtl = [
   {
     "Espesor":"2",
     "Altura":"[0..10)",
-    "Dmax":"[120..∞]",
+    "Dmax":"[120..∞)",
     "RT":16,
     "ELONG":"55,76",
     "RCBR":"2,7",
@@ -425,7 +425,7 @@ var balsas_gtxtl = [
   {
     "Espesor":"2",
     "Altura":"[10..∞)",
-    "Dmax":"[120..∞]",
+    "Dmax":"[120..∞)",
     "RT":20,
     "ELONG":"60",
     "RCBR":"3,25",
@@ -493,7 +493,7 @@ function calcula() {
 					$('#kplano-geotextil-value').val(balsas_gtxtl[i]['KVERT']);
 					$('#abcono-geotextil-value').val(balsas_gtxtl[i]['AB_PORO']);
 					$('#product').val(balsas_gtxtl[i]['GEOTESAN']);
-          result = true;
+                    result = true;
 					return true;
 				}
 			}
