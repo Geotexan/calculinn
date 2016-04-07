@@ -161,11 +161,23 @@
             def find_step(col, tabla):
                 """
                 Busca en la tabla el delta del primer intervalo para
-                determinar si el paso de los inputs numéricos debe
+                determinar si el tamaño de paso de los inputs numéricos debe
                 ser "0.01" porque lleva decimales, 1 u otro número más
                 acorde.
                 """
-                return 0.01
+                rango = tabla[0][col]
+                # Este código ya estaba en el pythonize... pero no lo voy
+                # a empaquetar con la aplicación solo para una función.
+                x, y = rango.split("..")
+                x = float(x.replace("[", "").replace("(", "").replace(",", "."))
+                y = float(y.replace("]", "").replace(")", "").replace(",", "."))
+                if y - x < 10:
+                    step = 0.1
+                elif y - x < 100:
+                    step = 1
+                else:
+                    step = int((y - x) / 10)
+                return step
 
             ##########################
             # Construyo el formulario:
@@ -198,7 +210,7 @@
                 else:
                     tooltip = "Escriba cualquier valor entre [{}..{}]".format(
                         minimo, maximo)
-                    step = find_step(nombrecolumna, )
+                    step = find_step(CABECERA.index(nombrecolumna), TABLA)
                     elementos.append(html.INPUT(type="number", id="in%d" % i,
                                                 min=minimo, max=maximo,
                                                 required="required",
