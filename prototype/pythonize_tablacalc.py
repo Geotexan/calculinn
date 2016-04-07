@@ -106,6 +106,10 @@ def esta_en(cad, lista):
     res = False
     for item in lista:
         if cad in item:
+            # NOTE: Caso especial. "Inclinación de muro" no debe activar la
+            # detección de "In" en la cabecera.
+            if "Inclinaci" in item:
+                continue
             res = True
             break
     return res
