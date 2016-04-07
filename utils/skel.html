@@ -203,7 +203,9 @@
                 else:
                     valores = RANGOS[nombrecolumna]
                     minimo = maximo = 0
-                elementos.append(html.LABEL(nombreinput + ": "))
+                tagdiv = html.DIV(Class="form-group")
+                # Construyo primero el label
+                tagdiv <= html.LABEL(nombreinput + ": ")
                 # Construyo el input dependiendo del tipo de valores permitidos
                 if valores:     # Desplegable
                     tooltip = "Valores permitidos: {}".format(valores)
@@ -211,21 +213,21 @@
                         constante = html.INPUT(id="in%d" % i, title=tooltip,
                                                value=valores[0],
                                                readonly=True)
-                        elementos.append(constante)
+                        tagdiv <= constante
                     else:
                         sel = html.SELECT(id="in%d" % i, title=tooltip)
                         for item in valores:
                             sel <= html.OPTION(item)
-                        elementos.append(sel)
+                        tagdiv <= sel
                 else:
                     tooltip = "Escriba cualquier valor entre [{}..{}]".format(
                         minimo, maximo)
                     step = find_step(CABECERA.index(nombrecolumna), TABLA)
-                    elementos.append(html.INPUT(type="number", id="in%d" % i,
-                                                min=minimo, max=maximo,
-                                                required="required",
-                                                title=tooltip,
-                                                step=step))
+                    tagdiv <= html.INPUT(type="number", id="in%d" % i,
+                                         min=minimo, max=maximo,
+                                         required="required",
+                                         title=tooltip, step=step)
+                elementos.append(tagdiv)
                 # Agrego la fila completa con label e input
                 elementos.append(html.BR())
             # Y creo el botón de calcular como input de tipo submit.
