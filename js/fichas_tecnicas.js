@@ -1,4 +1,4 @@
-var fichas = 
+var fichas =
 {
 	"NT-10" : "1-1-01_geotesan_nt10.pdf",
 	"NT-11" : "1-1-02_geotesan_nt11.pdf",
@@ -26,8 +26,9 @@ var fichas =
 $(document).ready(function() {
 	$('#pdf').click(function() {
 		var nt = $('#product').val();
+        alert(nt);
 		if (typeof fichas[nt] !== 'undefined') {
-			var file = 'pdf/' + fichas[nt];
+			var file = '../pdf/' + fichas[nt];
 			var win = window.open(file, '_blank');
 			if(win){
 			    //Browser has allowed it to be opened
@@ -41,5 +42,5 @@ $(document).ready(function() {
 			return false;
 		}
 	});
-	
+
 });

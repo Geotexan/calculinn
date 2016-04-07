@@ -108,6 +108,34 @@ def pythonize_tablas(ruta_calculo, ruta_recomendador, ruta_dest):
     return modulo_calculo, modulo_recomendador
 
 
+def find_body_class(aplicacion):
+    """
+    Esto sí que es una pirueta sobre el alambre.
+    Para no tocar los CSS, esta función devuelve la clase a la que pertenece
+    el body según la aplicación recibida.
+    """
+    # clases actuales en el CSS: calculo, carreteras, calcular
+    if "carretera" in aplicacion.lower():
+        body_class = "carreteras"
+    elif "balsa" in aplicacion.lower():
+        body_class = "calculo"
+    elif "drenaje" in aplicacion.lower():
+        body_class = "calculo"
+    elif "ferrocaril" in aplicacion.lower():
+        body_class = "calculo"
+    elif "muro" in aplicacion.lower():
+        body_class = "calcular"
+    elif "hidra" in aplicacion.lower():     # Obras hidráulicas
+        body_class = "calcular"
+    elif "tuneles" in aplicacion.lower():
+        body_class = "calcular"
+    elif "vertedero" in aplicacion.lower():
+        body_class = "calculo"
+    else:   # La más genérica que encuentro
+        body_class = "calculo"
+    return body_class
+
+
 def templatear(linea, modulo_calculo, modulo_recomendador, aplicacion):
     """
     Devuelve la línea recibida pero realizando las sustituciones pertinentes.
@@ -118,7 +146,8 @@ def templatear(linea, modulo_calculo, modulo_recomendador, aplicacion):
                       ("SKEL_CALCULO", modulo_calculo),
                       ("SKEL_HEAD",
                        "Cálculo de parámetros para {}".format(
-                           aplicacion.replace("_", " ").replace("_", " "))))
+                           aplicacion.replace("_", " ").replace("_", " "))),
+                      ("SKEL_BODY_CLASS", find_body_class(aplicacion)))
         for snippet, valor in lista_subs:
             if snippet in linea:
                 linea = linea.replace(snippet, valor)

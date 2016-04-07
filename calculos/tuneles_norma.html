@@ -2,14 +2,19 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <style>
-            div.cell_referencia     {background-color: lightgreen;}
-            div.cell_recomendado    {background-color: yellow;}
+        <style>     <!-- TODO: Temporal -->
+            div.cell_referencia     {background-color: blue;}
+            div.cell_recomendado    {background-color: darkgreen;}
         </style>
+	    <link rel="stylesheet" href="../css/style.css" type="text/css" media="all">
+    	<link rel="stylesheet" href="../css/positions.css" type="text/css" media="all">
+	    <link rel="shortcut icon" href="../favicon.ico" type="image/vnd.microsoft.icon">
+	    <script src="../libs/jquery-2.2.1.min.js"></script>
+    	<script src="../js/fichas_tecnicas.js"></script>
         <script type="text/javascript" src="../libs/brython.js"></script>
-    <title>Tuneles Norma</title>
+    <title>Cálculo Geotexan: Tuneles Norma</title>
     </head>
-    <body onload="brython()">
+    <body onload="brython()" class=calcular>
         <script type="text/python">
             from tuneles_norma_recomendador import CABECERA, TABLA, RANGOS
             from tuneles_norma_recomendador import NUMENTRADAS, NUMSALIDAS
@@ -19,9 +24,10 @@
             from browser import alert
             from browser import html
 
-            DEBUG = True
+            DEBUG = False
 
-            print("DEBUG activado.")
+            if DEBUG:
+                print("DEBUG activado.")
 
             unicode = lambda c: str(c, "utf8")
 
@@ -45,7 +51,8 @@
                     if DEBUG:
                         print(nombre, valor)
                     ths.append(nombre)
-                    tds.append(html.DIV(valor, Class="cell_referencia"))
+                    tds.append(html.DIV(html.SPAN(valor),
+                                        Class="cell_referencia"))
                 # Ahora los valores calculados para esas entradas
                 if DEBUG:
                     print("Valores calculados que debe satisfacer el producto:")
@@ -109,7 +116,9 @@
                     pass
                 else:
                     ths.append(nombre)
-                    tds.append(html.DIV(valor, Class="cell_recomendado"))
+                    tds.append(html.DIV(html.SPAN(valor, name="product",
+                                                         id="product"),
+                                        Class="cell_recomendado"))
                 # La fila de la tabla de cabecera, los nombres de los paráms.
                 # Pero solo si no existen ya en la tabla:
                 if "header_recomendado" not in doc:
@@ -163,7 +172,8 @@
 
             ##########################
             # Construyo el formulario:
-            print("Construyendo formulario de entradas...")
+            if DEBUG:
+                print("Construyendo formulario de entradas...")
             elementos = []
             for i in range(NUMENTRADAS):
                 if DEBUG:
@@ -211,19 +221,46 @@
                 doc["entradas"] <= elemento
             # Y asocio el clic a las operaciones de cálculo
             doc["bcalcular"].bind("click", calculate)
-            print("DONE")
+            if DEBUG:
+                print("DONE")
         </script>
+
+    	<!--cerrar ventana-->
+    	<a style="position:relative;z-index:1" href="javascript:history.back(1);">
+    		<img src="../images/boton_retroceder.png" width="25px"/>
+            <span class="retroceder_ventana">retroceder</span>
+        </a>
+
         <h1>Cálculo de parámetros para tuneles norma</h1>
-        <form id="entradas">
-            <!-- <button id="bcalcular">Calcular</button> -->
-        </form>
-        <div id="salida">
-            <h2>Valores de referencia y calculados:</h2>
-            <table id="referencia">
-            </table>
-            <h2>Producto recomendado:</h2>
-            <table id="producto">
-            </table>
-        </div>
+
+        <section class="form">
+            <div class="form-group">
+                <form id="entradas" class="form">
+                    <!-- <button id="bcalcular">Calcular</button> -->
+                </form>
+            </div>
+
+            <div id="salida" class="form-table-group">
+                <h2>Valores de referencia y calculados:</h2>
+
+                <table id="referencia">
+                    <!-- Aquí irán los cálculos de referencia -->
+                </table>
+
+                <h2>Producto recomendado:</h2>
+                <table id="producto">
+                    <!-- Aquí irá el producto recomendado -->
+                </table>
+            </div>
+        </section>
+    	<footer>
+    		<section id="links">
+    			<ul>
+    				<li class="link boton">
+    					<a href="#" id="pdf">Ficha técnica</a>
+    				</li>
+    			</ul>
+    		</section>
+    	</footer>
     </body>
 </html>

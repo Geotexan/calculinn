@@ -1,7 +1,7 @@
 
 	@font-face {
         font-family: "Miller Text";
-        src: url('/fonts/Miller-TextItalic_0.otf'),
+        src: url('../fonts/millertextitalic.otf'),
       }
     /* montserrat-regular - latin */
     @font-face {
@@ -9,7 +9,7 @@
       font-style: normal;
       font-weight: 400;
       src: local('Montserrat-Regular'),
-           url('/fonts/Montserrat-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+           url('../fonts/Montserrat-regular.ttf') format('truetype'), /* Safari, Android, iOS */
     }
     /* montserrat-700 - latin */
     @font-face {
@@ -17,157 +17,157 @@
       font-style: normal;
       font-weight: 700;
       src: local('Montserrat-Bold'),
-           url('/fonts/Montserrat-Bold.ttf') format('truetype'), /* Safari, Android, iOS */
+           url('../fonts/Montserrat-Bold.ttf') format('truetype'), /* Safari, Android, iOS */
     }
 
 	.inicio {
-			
+
 			overflow-x:hidden;
-		  	overflow-y:hidden; 
-		  	background-image: url('/images/inicio.jpg');
+		  	overflow-y:hidden;
+		  	background-image: url('../images/inicio.jpg');
 		  	background-repeat:no-repeat;
 		  	background-size: 100% 100%;
 		  }
 	.introduccion {
-			
+
 			overflow-x:hidden;
-		  	overflow-y:hidden; 
-		  	background-image: url('/images/introduccion.jpg');
+		  	overflow-y:hidden;
+		  	background-image: url('../images/introduccion.jpg');
 		  	background-repeat:no-repeat;
 		  	background-size: 100% 100%;
 		  }
     .empresa {
-            
+
             overflow-x:hidden;
-            overflow-y:hidden; 
-            background-image: url('/images/empresa.jpg');
+            overflow-y:hidden;
+            background-image: url('../images/empresa.jpg');
             background-repeat:no-repeat;
             background-size: 100% 100%;
           }
     .servicios {
-            
+
             overflow-x:hidden;
-            overflow-y:hidden; 
-            background-image: url('/images/servicios.jpg');
+            overflow-y:hidden;
+            background-image: url('../images/servicios.jpg');
             background-repeat:no-repeat;
             background-size: 100% 100%;
           }
     .accionariado {
-            
+
             overflow-x:hidden;
-            overflow-y:hidden; 
-            background-image: url('/images/accionariado.jpg');
+            overflow-y:hidden;
+            background-image: url('../images/accionariado.jpg');
             background-repeat:no-repeat;
             background-size: 100% 100%;
           }
     .empleados {
-            
+
             overflow-x:hidden;
-            overflow-y:hidden; 
-            background-image: url('/images/empleados.jpg');
+            overflow-y:hidden;
+            background-image: url('../images/empleados.jpg');
             background-repeat:no-repeat;
             background-size: 100% 100%;
           }
     .idi {
-            
+
             overflow-x:hidden;
-            overflow-y:hidden; 
-            background-image: url('/images/idi.jpg');
+            overflow-y:hidden;
+            background-image: url('../images/idi.jpg');
             background-repeat:no-repeat;
             background-size: 100% 100%;
           }
     .medio-ambiente {
-            
+
             overflow-x:hidden;
-            overflow-y:hidden; 
-            background-image: url('/images/medio-ambiente.jpg');
+            overflow-y:hidden;
+            background-image: url('../images/medio-ambiente.jpg');
             background-repeat:no-repeat;
             background-size: 100% 100%;
           }
     .geosinteticos {
-            
+
             overflow-x:hidden;
-            overflow-y:hidden; 
-            background-image: url('/images/geosinteticos.jpg');
+            overflow-y:hidden;
+            background-image: url('../images/geosinteticos.jpg');
             background-repeat:no-repeat;
             background-size: 100% 100%;
           }
     .geotextiles {
-            
+
             overflow-x:hidden;
-            overflow-y:hidden; 
-            background-image: url('/images/geotextiles.jpg');
+            overflow-y:hidden;
+            background-image: url('../images/geotextiles.jpg');
             background-repeat:no-repeat;
             background-size: 100% 100%;
           }
     .definicion {
-            
+
             overflow-x:hidden;
-            overflow-y:hidden; 
-            background-image: url('/images/definicion.jpg');
+            overflow-y:hidden;
+            background-image: url('../images/definicion.jpg');
             background-repeat:no-repeat;
             background-size: 100% 100%;
           }
     .normativa {
-            
+
             overflow-x:hidden;
-            overflow-y:hidden; 
-            background-image: url('/images/normativa.jpg');
+            overflow-y:hidden;
+            background-image: url('../images/normativa.jpg');
             background-repeat:no-repeat;
             background-size: 100% 100%;
           }
     .geocompuestos {
-            
+
             overflow-x:hidden;
-            overflow-y:hidden; 
-            background-image: url('/images/geocompuestos.jpg');
+            overflow-y:hidden;
+            background-image: url('../images/geocompuestos.jpg');
             background-repeat:no-repeat;
             background-size: 100% 100%;
           }
     .cordrain {
-            
+
             overflow-x:hidden;
-            overflow-y:hidden; 
-            background-image: url('/images/cordrain.jpg');
+            overflow-y:hidden;
+            background-image: url('../images/cordrain.jpg');
             background-repeat:no-repeat;
             background-size: 100% 100%;
           }
     .geomembranas {
-            
+
             overflow-x:hidden;
-            overflow-y:hidden; 
-            background-image: url('/images/inicio.jpg');
+            overflow-y:hidden;
+            background-image: url('../images/inicio.jpg');
             background-repeat:no-repeat;
             background-size: 100% 100%;
           }
     .productos-relacionados {
-            
+
             overflow-x:hidden;
-            overflow-y:hidden; 
-            background-image: url('/images/productos-relacionados.jpg');
+            overflow-y:hidden;
+            background-image: url('../images/productos-relacionados.jpg');
             background-repeat:no-repeat;
             background-size: 100% 100%;
           }
     .calculo {
-            
+
             overflow-x:hidden;
-            overflow-y:hidden; 
+            overflow-y:hidden;
             background-image: url('../images/calculo.jpg');
             background-repeat:no-repeat;
             background-size: 100% 100%;
           }
     .carreteras {
-            
+
             overflow-x:hidden;
-            overflow-y:hidden; 
+            overflow-y:hidden;
             background-image: url('../images/carreteras.jpg');
             background-repeat:no-repeat;
             background-size: 100% 100%;
           }
     .calcular {
-            
+
             overflow-x:hidden;
-            overflow-y:hidden; 
+            overflow-y:hidden;
             background-image: url('../images/calcular.jpg');
             background-repeat:no-repeat;
             background-size: 100% 100%;
@@ -188,7 +188,7 @@
         position:relative;
         font-size: 11px;
     }
-	
+
 	.cerrar_ventana{
 		font-family: "Miller Text";
 		font-style:italic;
