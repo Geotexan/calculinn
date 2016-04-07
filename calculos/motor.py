@@ -88,17 +88,7 @@ def valor_in_rango(valor, rango):
     True si el valor está dentro del rango.
     """
     # Había una manera más "pythónica" de hacerlo, pero no valía para floats.
-    ini = rango[0]
-    fin = rango[-1]
-    strx, stry = rango.split("..")
-    strx = strx.replace("(", "").replace("[", "").replace(",", ".")
-    stry = stry.replace(")", "").replace("]", "").replace(",", ".")
-    x = float(strx)
-    try:
-        y = float(stry)
-    except ValueError:  # Es infinito: ∞, uso el mayor entero posible
-        # (sys.maxint) pero manualmente porque no brython no puede importar.
-        y = float(2**31 - 1)
+    ini, x, y, fin = parse_extremos(rango)
     evals = []  # Almacenaré los resultados de cada una de las evaluaciones
     # Evalúo el extremo inferior:
     if ini == "(":      # Abierto
@@ -151,3 +141,72 @@ def calcular(tabla, *args):
                 "GRID" in last_column):
             res = res[:-1]
     return res
+
+
+def parse_extremos(rango):
+    """
+    Analiza el rango recibido como cadena y devuelve:
+    :ini: Extremo inicial: Abierto «(» o cerrado «[»
+    :x: Extremo inicial como flotante
+    :y: Extremo final como número flotante (incluso si es infinito). Asegura
+        que es siempre un número, mno devuelve float("inf")
+    :fin: Extremo final: Abierto «(» o cerrado «[»
+    """
+    ini = rango[0]
+    fin = rango[-1]
+    strx, stry = rango.split("..")
+    strx = strx.replace("(", "").replace("[", "").replace(",", ".")
+    stry = stry.replace(")", "").replace("]", "").replace(",", ".")
+    try:
+        x = float(strx)
+    except ValueError:
+        x = float(2**31 - 1) - 1
+    try:
+        y = float(stry)
+    except ValueError:  # Es infinito: ∞, uso el mayor entero posible
+        # (sys.maxint) pero manualmente porque no brython no puede importar.
+        y = float(2**31 - 1)
+    return ini, x, y, fin
+
+
+# pylint: disable=redefined-variable-type, unused-variable
+def find_step(col, tabla):
+    """
+    Busca en la tabla el delta del primer intervalo para
+    determinar si el tamaño de paso de los inputs numéricos debe
+    ser "0.01" porque lleva decimales, 1 u otro número más
+    acorde.
+    """
+    minimo_delta = (None, None, None)
+    for fila in tabla:
+        rango = fila[col]
+        # Este código ya estaba en el pythonize... pero no lo voy
+        # a empaquetar con la aplicación solo para una función.
+        try:
+            ini, x, y, fin = parse_extremos(rango)
+        except ValueError:  # Ojo, es un Z. Paso de él.
+            continue
+        # Otro caso especial. Si el mínimo o el máximo tienen decimales, el
+        # experto ha querido ser tan preciso por un motivo. Aunque llegue hasta
+        # infinito el rango, seguramente los valores serán pequeñitos.
+        if x % 1 or y % 1:
+            step = 0.1
+            minimo_delta = (x, x + step, rango)
+            break
+        if (minimo_delta[0] is None or
+                minimo_delta[1] - minimo_delta[0] > y - x):
+            minimo_delta = x, y, rango
+    x, y = minimo_delta[0], minimo_delta[1]
+    if y - x < 3:
+        step = 0.1
+    elif y - x < 10:
+        step = 1
+    else:
+        step = int((y - x) / 10)
+    if step > 100000:
+        # Solo hay un rango y llega hasta infinito. Un paso demasiado grande.
+        # OPTIMIZACIÓN: Much más rápido comparar dos floats que recorrer la
+        # tabla para comprobar si solo hay el mismo rango para esa columna en
+        # todas las filas.
+        step = 10
+    return step

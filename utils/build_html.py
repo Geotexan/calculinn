@@ -76,7 +76,7 @@ def escape_chars(ruta):
     return ruta
 
 
-def pythonize_tablas(ruta_calculo, ruta_recomendador):
+def pythonize_tablas(ruta_calculo, ruta_recomendador, ruta_dest):
     """
     ruta_calculo y ruta_recomendador son la ruta a las dos tablas en CSV o ODS.
     Ejecuta un script externo que convierte ambas tablas en sendo módulos
@@ -84,11 +84,14 @@ def pythonize_tablas(ruta_calculo, ruta_recomendador):
     """
     ruta_script = os.path.dirname(os.path.abspath(__file__))
     script = os.path.join(ruta_script, "pythonize_tablacalc.py")
-    res = []
+    res = []    # Si por lo que fuera no se generan los ficheros, *
     salida = find_nombre_comun_ficheros(ruta_calculo, ruta_recomendador)
-    for ruta_tabla, pyout in ((ruta_calculo, salida + "_calculo.py"),
+    for ruta_tabla, pyout in ((ruta_calculo,
+                               os.path.join(ruta_dest,
+                                            salida + "_calculo.py")),
                               (ruta_recomendador,
-                               salida + "_recomendador.py")):
+                               os.path.join(ruta_dest,
+                                            salida + "_recomendador.py"))):
         comando = "{} {} -o {}".format(script, escape_chars(ruta_tabla),
                                        escape_chars(pyout))
 
@@ -99,17 +102,20 @@ def pythonize_tablas(ruta_calculo, ruta_recomendador):
         else:
             raise ValueError("Comando `{}` falló.\nSalida {}.".format(comando,
                                                                       retcode))
-    return res[0], res[1]
+    # [*] Prefiero que pete. Aquí, concretamente.
+    modulo_calculo = os.path.basename(res[0]).replace(".py", "")
+    modulo_recomendador = os.path.basename(res[1]).replace(".py", "")
+    return modulo_calculo, modulo_recomendador
 
 
-def templatear(linea, calculo, recomendador, aplicacion):
+def templatear(linea, modulo_calculo, modulo_recomendador, aplicacion):
     """
     Devuelve la línea recibida pero realizando las sustituciones pertinentes.
     """
     if "SKEL_" in linea:
         lista_subs = (("SKEL_TITULO", aplicacion.title()),
-                      ("SKEL_RECOMENDADOR", recomendador.replace(".py", "")),
-                      ("SKEL_CALCULO", calculo.replace(".py", "")),
+                      ("SKEL_RECOMENDADOR", modulo_recomendador),
+                      ("SKEL_CALCULO", modulo_calculo),
                       ("SKEL_HEAD",
                        "Cálculo de parámetros para {}".format(
                            aplicacion.replace("_", " ").replace("_", " "))))
@@ -239,7 +245,8 @@ def main():
         sys.exit(1)
     tabla_calculo, tabla_recomendador = determinar_tablas(args.tabla)
     pycalculo, pyrecomendador = pythonize_tablas(tabla_calculo,
-                                                 tabla_recomendador)
+                                                 tabla_recomendador,
+                                                 args.ruta_dest)
     # pycalculo y pyrecomendador es el nombre del fichero python, sin ruta.
     ruta_html = generate_html(pycalculo, pyrecomendador, args.aplicacion,
                               args.ruta_dest, tabla_calculo,

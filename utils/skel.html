@@ -6,7 +6,7 @@
             div.cell_referencia     {background-color: lightgreen;}
             div.cell_recomendado    {background-color: yellow;}
         </style>
-        <script type="text/javascript" src="brython.js"></script>
+        <script type="text/javascript" src="../libs/brython.js"></script>
     <title>SKEL_TITULO</title>
     </head>
     <body onload="brython()">
@@ -14,14 +14,17 @@
             from SKEL_RECOMENDADOR import CABECERA, TABLA, RANGOS
             from SKEL_RECOMENDADOR import NUMENTRADAS, NUMSALIDAS
             from SKEL_CALCULO import TABLA as CALCULO
-            from motor import recomendar, calcular
+            from motor import recomendar, calcular, find_step
             from browser import document as doc
             from browser import alert
             from browser import html
 
-            DEBUG = False
+            DEBUG = True
+
+            print("DEBUG activado.")
 
             unicode = lambda c: str(c, "utf8")
+
             def dump_calculo(out):
                 """
                 Recibe la fila completa del resultado del cálculo.
@@ -158,32 +161,14 @@
                         else:
                             dump_recomendacion(out_recomendacion)
 
-            def find_step(col, tabla):
-                """
-                Busca en la tabla el delta del primer intervalo para
-                determinar si el tamaño de paso de los inputs numéricos debe
-                ser "0.01" porque lleva decimales, 1 u otro número más
-                acorde.
-                """
-                rango = tabla[0][col]
-                # Este código ya estaba en el pythonize... pero no lo voy
-                # a empaquetar con la aplicación solo para una función.
-                x, y = rango.split("..")
-                x = float(x.replace("[", "").replace("(", "").replace(",", "."))
-                y = float(y.replace("]", "").replace(")", "").replace(",", "."))
-                if y - x < 10:
-                    step = 0.1
-                elif y - x < 100:
-                    step = 1
-                else:
-                    step = int((y - x) / 10)
-                return step
-
             ##########################
             # Construyo el formulario:
+            print("Construyendo formulario de entradas...")
             elementos = []
             for i in range(NUMENTRADAS):
-                nombrecolumna = CABECERA[i]
+                if DEBUG:
+                    print("\tCABECERA[i] => ", CABECERA[i])
+                nombrecolumna = unicode(CABECERA[i])
                 # Determino rangos para tooptip
                 if (len(RANGOS[nombrecolumna]) == 2
                         and not isinstance(RANGOS[nombrecolumna][0], str)):
@@ -198,7 +183,7 @@
                 if valores:     # Desplegable
                     tooltip = "Valores permitidos: {}".format(valores)
                     if len(valores) == 1:    # Es una constante
-                        constante = html.INPUT(id="in%id" % i, title=tooltip,
+                        constante = html.INPUT(id="in%d" % i, title=tooltip,
                                                value=valores[0],
                                                readonly=True)
                         elementos.append(constante)
@@ -215,7 +200,7 @@
                                                 min=minimo, max=maximo,
                                                 required="required",
                                                 title=tooltip,
-                                                step="{}".format(step)))
+                                                step=step))
                 # Agrego la fila completa con label e input
                 elementos.append(html.BR())
             # Y creo el botón de calcular sin form definido para no refresh.
@@ -226,6 +211,7 @@
                 doc["entradas"] <= elemento
             # Y asocio el clic a las operaciones de cálculo
             doc["bcalcular"].bind("click", calculate)
+            print("DONE")
         </script>
         <h1>SKEL_HEAD</h1>
         <form id="entradas">
