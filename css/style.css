@@ -1,208 +1,191 @@
+@font-face {
+    font-family: "Miller Text";
+    src: url('../fonts/millertextitalic.otf'),
+  }
+/* montserrat-regular - latin */
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Montserrat-Regular'),
+         url('../fonts/Montserrat-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+}
+/* montserrat-700 - latin */
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Montserrat-Bold'),
+         url('../fonts/Montserrat-Bold.ttf') format('truetype'), /* Safari, Android, iOS */
+}
 
-	@font-face {
-        font-family: "Miller Text";
-        src: url('../fonts/millertextitalic.otf'),
-      }
-    /* montserrat-regular - latin */
-    @font-face {
-      font-family: 'Montserrat';
-      font-style: normal;
-      font-weight: 400;
-      src: local('Montserrat-Regular'),
-           url('../fonts/Montserrat-regular.ttf') format('truetype'), /* Safari, Android, iOS */
-    }
-    /* montserrat-700 - latin */
-    @font-face {
-      font-family: 'Montserrat';
-      font-style: normal;
-      font-weight: 700;
-      src: local('Montserrat-Bold'),
-           url('../fonts/Montserrat-Bold.ttf') format('truetype'), /* Safari, Android, iOS */
-    }
+.inicio {
+    overflow-x:hidden;
+    /* overflow-y:hidden; */
+    background-image: url('../images/inicio.jpg');
+    background-repeat:no-repeat;
+    background-size: 100% 100%;
+}
 
-	.inicio {
+.introduccion {
+    overflow-x:hidden;
+    /* overflow-y:hidden; */
+    background-image: url('../images/introduccion.jpg');
+    background-repeat:no-repeat;
+    background-size: 100% 100%;
+}
 
-			overflow-x:hidden;
-		  	overflow-y:hidden;
-		  	background-image: url('../images/inicio.jpg');
-		  	background-repeat:no-repeat;
-		  	background-size: 100% 100%;
-		  }
-	.introduccion {
+.empresa {
+    overflow-x:hidden;
+    /* overflow-y:hidden; */
+    background-image: url('../images/empresa.jpg');
+    background-repeat:no-repeat;
+    background-size: 100% 100%;
+}
 
-			overflow-x:hidden;
-		  	overflow-y:hidden;
-		  	background-image: url('../images/introduccion.jpg');
-		  	background-repeat:no-repeat;
-		  	background-size: 100% 100%;
-		  }
-    .empresa {
+.servicios {
+    overflow-x:hidden;
+    /* overflow-y:hidden; */
+    background-image: url('../images/servicios.jpg');
+    background-repeat:no-repeat;
+    background-size: 100% 100%;
+}
+.accionariado {
+    overflow-x:hidden;
+    /* overflow-y:hidden; */
+    background-image: url('../images/accionariado.jpg');
+    background-repeat:no-repeat;
+    background-size: 100% 100%;
+}
+.empleados {
+    overflow-x:hidden;
+    /* overflow-y:hidden; */
+    background-image: url('../images/empleados.jpg');
+    background-repeat:no-repeat;
+    background-size: 100% 100%;
+}
+.idi {
+    overflow-x:hidden;
+    /* overflow-y:hidden; */
+    background-image: url('../images/idi.jpg');
+    background-repeat:no-repeat;
+    background-size: 100% 100%;
+}
+.medio-ambiente {
+    overflow-x:hidden;
+    /* overflow-y:hidden; */
+    background-image: url('../images/medio-ambiente.jpg');
+    background-repeat:no-repeat;
+    background-size: 100% 100%;
+}
+.geosinteticos {
+    overflow-x:hidden;
+    /* overflow-y:hidden; */
+    background-image: url('../images/geosinteticos.jpg');
+    background-repeat:no-repeat;
+    background-size: 100% 100%;
+}
+.geotextiles {
+    overflow-x:hidden;
+    /* overflow-y:hidden; */
+    background-image: url('../images/geotextiles.jpg');
+    background-repeat:no-repeat;
+    background-size: 100% 100%;
+}
+.definicion {
+    overflow-x:hidden;
+    /* overflow-y:hidden; */
+    background-image: url('../images/definicion.jpg');
+    background-repeat:no-repeat;
+    background-size: 100% 100%;
+}
+.normativa {
+    overflow-x:hidden;
+    /* overflow-y:hidden; */
+    background-image: url('../images/normativa.jpg');
+    background-repeat:no-repeat;
+    background-size: 100% 100%;
+}
+.geocompuestos {
+    overflow-x:hidden;
+    /* overflow-y:hidden; */
+    background-image: url('../images/geocompuestos.jpg');
+    background-repeat:no-repeat;
+    background-size: 100% 100%;
+}
+.cordrain {
+    overflow-x:hidden;
+    /* overflow-y:hidden; */
+    background-image: url('../images/cordrain.jpg');
+    background-repeat:no-repeat;
+    background-size: 100% 100%;
+}
+.geomembranas {
+    overflow-x:hidden;
+    /* overflow-y:hidden; */
+    background-image: url('../images/inicio.jpg');
+    background-repeat:no-repeat;
+    background-size: 100% 100%;
+}
+.productos-relacionados {
+    overflow-x:hidden;
+    /* overflow-y:hidden; */
+    background-image: url('../images/productos-relacionados.jpg');
+    background-repeat:no-repeat;
+    background-size: 100% 100%;
+}
+.calculo {
+    overflow-x:hidden;
+    /* overflow-y:hidden; */
+    background-image: url('../images/calculo.jpg');
+    background-repeat:no-repeat;
+    background-size: 100% 100%;
+}
+.carreteras {
+    overflow-x:hidden;
+    /* overflow-y:hidden; */
+    background-image: url('../images/carreteras.jpg');
+    background-repeat:no-repeat;
+    background-size: 100% 100%;
+}
+.calcular {
+    overflow-x:hidden;
+    /* overflow-y:hidden; */
+    background-image: url('../images/calcular.jpg');
+    background-repeat:no-repeat;
+    background-size: 100% 100%;
+}
+button{
+    cursor:pointer;
+}
+span{
+    font-family: "Miller Text";
+    font-style:italic;
+    color:#fff;
+    text-decoration:underline;
+    position:relative;
+}
+p{
+    font-family: 'Montserrat', sans-serif;
+    color:#fff;
+    position:relative;
+    font-size: 11px;
+}
 
-            overflow-x:hidden;
-            overflow-y:hidden;
-            background-image: url('../images/empresa.jpg');
-            background-repeat:no-repeat;
-            background-size: 100% 100%;
-          }
-    .servicios {
-
-            overflow-x:hidden;
-            overflow-y:hidden;
-            background-image: url('../images/servicios.jpg');
-            background-repeat:no-repeat;
-            background-size: 100% 100%;
-          }
-    .accionariado {
-
-            overflow-x:hidden;
-            overflow-y:hidden;
-            background-image: url('../images/accionariado.jpg');
-            background-repeat:no-repeat;
-            background-size: 100% 100%;
-          }
-    .empleados {
-
-            overflow-x:hidden;
-            overflow-y:hidden;
-            background-image: url('../images/empleados.jpg');
-            background-repeat:no-repeat;
-            background-size: 100% 100%;
-          }
-    .idi {
-
-            overflow-x:hidden;
-            overflow-y:hidden;
-            background-image: url('../images/idi.jpg');
-            background-repeat:no-repeat;
-            background-size: 100% 100%;
-          }
-    .medio-ambiente {
-
-            overflow-x:hidden;
-            overflow-y:hidden;
-            background-image: url('../images/medio-ambiente.jpg');
-            background-repeat:no-repeat;
-            background-size: 100% 100%;
-          }
-    .geosinteticos {
-
-            overflow-x:hidden;
-            overflow-y:hidden;
-            background-image: url('../images/geosinteticos.jpg');
-            background-repeat:no-repeat;
-            background-size: 100% 100%;
-          }
-    .geotextiles {
-
-            overflow-x:hidden;
-            overflow-y:hidden;
-            background-image: url('../images/geotextiles.jpg');
-            background-repeat:no-repeat;
-            background-size: 100% 100%;
-          }
-    .definicion {
-
-            overflow-x:hidden;
-            overflow-y:hidden;
-            background-image: url('../images/definicion.jpg');
-            background-repeat:no-repeat;
-            background-size: 100% 100%;
-          }
-    .normativa {
-
-            overflow-x:hidden;
-            overflow-y:hidden;
-            background-image: url('../images/normativa.jpg');
-            background-repeat:no-repeat;
-            background-size: 100% 100%;
-          }
-    .geocompuestos {
-
-            overflow-x:hidden;
-            overflow-y:hidden;
-            background-image: url('../images/geocompuestos.jpg');
-            background-repeat:no-repeat;
-            background-size: 100% 100%;
-          }
-    .cordrain {
-
-            overflow-x:hidden;
-            overflow-y:hidden;
-            background-image: url('../images/cordrain.jpg');
-            background-repeat:no-repeat;
-            background-size: 100% 100%;
-          }
-    .geomembranas {
-
-            overflow-x:hidden;
-            overflow-y:hidden;
-            background-image: url('../images/inicio.jpg');
-            background-repeat:no-repeat;
-            background-size: 100% 100%;
-          }
-    .productos-relacionados {
-
-            overflow-x:hidden;
-            overflow-y:hidden;
-            background-image: url('../images/productos-relacionados.jpg');
-            background-repeat:no-repeat;
-            background-size: 100% 100%;
-          }
-    .calculo {
-
-            overflow-x:hidden;
-            overflow-y:hidden;
-            background-image: url('../images/calculo.jpg');
-            background-repeat:no-repeat;
-            background-size: 100% 100%;
-          }
-    .carreteras {
-
-            overflow-x:hidden;
-            overflow-y:hidden;
-            background-image: url('../images/carreteras.jpg');
-            background-repeat:no-repeat;
-            background-size: 100% 100%;
-          }
-    .calcular {
-
-            overflow-x:hidden;
-            overflow-y:hidden;
-            background-image: url('../images/calcular.jpg');
-            background-repeat:no-repeat;
-            background-size: 100% 100%;
-          }
-    button{
-        cursor:pointer;
-    }
-	span{
-		font-family: "Miller Text";
-		font-style:italic;
-		color:#fff;
-		text-decoration:underline;
-		position:relative;
-	}
-    p{
-        font-family: 'Montserrat', sans-serif;
-        color:#fff;
-        position:relative;
-        font-size: 11px;
-    }
-
-	.cerrar_ventana{
-		font-family: "Miller Text";
-		font-style:italic;
-		color:#fff;
-		text-decoration:underline;
-		position: relative;
-		bottom: 10px;
-		right: 15px;
-		font-size: 13px;
-	}
-	.cerrar_ventana:hover{
-		/*color:#000;*/
-	}
-	.retroceder_ventana {
+.cerrar_ventana{
+    font-family: "Miller Text";
+    font-style:italic;
+    color:#fff;
+    text-decoration:underline;
+    position: relative;
+    bottom: 10px;
+    right: 15px;
+    font-size: 13px;
+}
+.cerrar_ventana:hover{
+    /*color:#000;*/
+}
+.retroceder_ventana {
     bottom: 10px;
     color: #fff;
     font-family: "Miller Text";
@@ -213,138 +196,138 @@
     text-decoration: underline;
 }
 
-	.boton{
-		font-family: 'Montserrat', sans-serif;
-		background: #249e5e;
-		color:#fff;
-		border:2px solid #fff;
-		outline: none;
-		padding: 5px;
-		width: 205px;
-		font-size: 12px;
-	}
+.boton{
+    font-family: 'Montserrat', sans-serif;
+    background: #249e5e;
+    color:#fff;
+    border:2px solid #fff;
+    outline: none;
+    padding: 5px;
+    width: 205px;
+    font-size: 12px;
+}
 
-	.sombra{
-		background: transparent none repeat scroll 0 0;
-	    border: 2px solid #fff;
-	    bottom: 20px;
-	    height: 33px;
-	    position: relative;
-	    right: 15px;
-	    width: 205px;
-	    z-index: -1;
-	}
-    .boton-geosinteticos{
-        font-family: 'Montserrat', sans-serif;
-        background: #f60c32;
-        color:#fff;
-        border:2px solid #fff;
-        outline: none;
-        padding: 5px;
-        width: 135px;
-        font-size: 12px;
-        height: 42px;
-    }
+.sombra{
+    background: transparent none repeat scroll 0 0;
+    border: 2px solid #fff;
+    bottom: 20px;
+    height: 33px;
+    position: relative;
+    right: 15px;
+    width: 205px;
+    z-index: -1;
+}
+.boton-geosinteticos{
+    font-family: 'Montserrat', sans-serif;
+    background: #f60c32;
+    color:#fff;
+    border:2px solid #fff;
+    outline: none;
+    padding: 5px;
+    width: 135px;
+    font-size: 12px;
+    height: 42px;
+}
 
-    .sombra-geosinteticos{
-        background: transparent none repeat scroll 0 0;
-        border: 2px solid #fff;
-        height: 33px;
-        position: relative;
-        width: 135px;
-        bottom: 22px;
-        z-index: -1;
-        right: 10px;
-    }
-    .boton-geotextiles{
-        font-family: 'Montserrat', sans-serif;
-        background: #2b7d79;
-        color:#fff;
-        border:2px solid #fff;
-        outline: none;
-        padding: 5px;
-        width: 135px;
-        font-size: 12px;
-        height: 42px;
-    }
+.sombra-geosinteticos{
+    background: transparent none repeat scroll 0 0;
+    border: 2px solid #fff;
+    height: 33px;
+    position: relative;
+    width: 135px;
+    bottom: 22px;
+    z-index: -1;
+    right: 10px;
+}
+.boton-geotextiles{
+    font-family: 'Montserrat', sans-serif;
+    background: #2b7d79;
+    color:#fff;
+    border:2px solid #fff;
+    outline: none;
+    padding: 5px;
+    width: 135px;
+    font-size: 12px;
+    height: 42px;
+}
 
-    .sombra-geotextiles{
-        background: transparent none repeat scroll 0 0;
-        border: 2px solid #fff;
-        height: 33px;
-        position: relative;
-        width: 135px;
-        bottom: 22px;
-        z-index: -1;
-        right: 10px;
-    }
-    .boton-geocompuestos{
-        font-family: 'Montserrat', sans-serif;
-        background: #ff6d7e;
-        color:#fff;
-        border:2px solid #fff;
-        outline: none;
-        padding: 5px;
-        width: 155px;
-        font-size: 12px;
-        height: 42px;
-    }
+.sombra-geotextiles{
+    background: transparent none repeat scroll 0 0;
+    border: 2px solid #fff;
+    height: 33px;
+    position: relative;
+    width: 135px;
+    bottom: 22px;
+    z-index: -1;
+    right: 10px;
+}
+.boton-geocompuestos{
+    font-family: 'Montserrat', sans-serif;
+    background: #ff6d7e;
+    color:#fff;
+    border:2px solid #fff;
+    outline: none;
+    padding: 5px;
+    width: 155px;
+    font-size: 12px;
+    height: 42px;
+}
 
-    .sombra-geocompuestos{
-        background: transparent none repeat scroll 0 0;
-        border: 2px solid #fff;
-        height: 33px;
-        position: relative;
-        width: 155px;
-        bottom: 22px;
-        z-index: -1;
-        right: 10px;
-    }
-    .boton-productos{
-        font-family: 'Montserrat', sans-serif;
-        background: #adab20;
-        color:#fff;
-        border:2px solid #fff;
-        outline: none;
-        padding: 3px;
-        width: 155px;
-        font-size: 12px;
-        height: 42px;
-    }
+.sombra-geocompuestos{
+    background: transparent none repeat scroll 0 0;
+    border: 2px solid #fff;
+    height: 33px;
+    position: relative;
+    width: 155px;
+    bottom: 22px;
+    z-index: -1;
+    right: 10px;
+}
+.boton-productos{
+    font-family: 'Montserrat', sans-serif;
+    background: #adab20;
+    color:#fff;
+    border:2px solid #fff;
+    outline: none;
+    padding: 3px;
+    width: 155px;
+    font-size: 12px;
+    height: 42px;
+}
 
-    .sombra-productos{
-        background: transparent none repeat scroll 0 0;
-        border: 2px solid #fff;
-        height: 33px;
-        position: relative;
-        width: 155px;
-        bottom: 22px;
-        z-index: -1;
-        right: 10px;
-    }
-    .boton-calculo{
-        font-family: 'Montserrat', sans-serif;
-        background: #f4554d;
-        color:#fff;
-        border:2px solid #fff;
-        outline: none;
-        padding: 3px;
-        width: 140px;
-        font-size: 12px;
-        height: 42px;
-    }
+.sombra-productos{
+    background: transparent none repeat scroll 0 0;
+    border: 2px solid #fff;
+    height: 33px;
+    position: relative;
+    width: 155px;
+    bottom: 22px;
+    z-index: -1;
+    right: 10px;
+}
+.boton-calculo{
+    font-family: 'Montserrat', sans-serif;
+    background: #f4554d;
+    color:#fff;
+    border:2px solid #fff;
+    outline: none;
+    padding: 3px;
+    width: 140px;
+    font-size: 12px;
+    height: 42px;
+}
 
-    .sombra-calculo{
-        background: transparent none repeat scroll 0 0;
-        border: 2px solid #fff;
-        height: 33px;
-        position: relative;
-        width: 140px;
-        bottom: 22px;
-        z-index: -1;
-        right: 10px;
-    }
-	.boton-empresas {
+.sombra-calculo{
+    background: transparent none repeat scroll 0 0;
+    border: 2px solid #fff;
+    height: 33px;
+    position: relative;
+    width: 140px;
+    bottom: 22px;
+    z-index: -1;
+    right: 10px;
+}
+.boton-empresas {
     background: #249e5e none repeat scroll 0 0;
     border: 2px solid #fff;
     color: #fff;
@@ -357,7 +340,7 @@
     bottom: 15px;
 }
 
-	.sombra-empresas {
+.sombra-empresas {
     background: transparent none repeat scroll 0 0;
     bottom: 37px;
     height: 33px;
@@ -380,7 +363,7 @@
     position: relative;
     width: 120px;
 }
-	.sombra-servicios {
+.sombra-servicios {
     background: transparent none repeat scroll 0 0;
     border: 2px solid #fff;
     bottom: 27px;
