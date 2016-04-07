@@ -245,7 +245,7 @@ def main():
                               args.ruta_dest, tabla_calculo,
                               tabla_recomendador)
     print("Fichero {} generado.".format(ruta_html))
-    sys.exit(1)
+    sys.exit(0)
 
 
 if __name__ == "__main__":

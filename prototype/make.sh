@@ -9,9 +9,11 @@ IFS=$'\n\t'
 ## LICENSE: [Do What the Fuck You Want to Public License](http://www.wtfpl.net)
 
 clean () {
-    rm [^s][^k][^e][^l]*.html
-    rm *_calculo.py
-    rm *_recomendador.py
+    rm [^s][^k][^e][^l]*.html || true
+    # Caso especial. Drenaje me entra en el glob de arriba:
+    rm drenaje.html drenaje_normativa.html || true
+    rm *_calculo.py || true
+    rm *_recomendador.py || true
 }
 
 if [ $# -eq 0 ]; then
@@ -27,5 +29,5 @@ fi
 
 # Solo necesito uno de cada par de tablas. La de cálculo, por ejemplo.
 for FICH_CALCULO in $RUTA_TABLAS/??0*; do
-    echo ./build_html.py "$FICH_CALCULO"
+    ./build_html.py "$FICH_CALCULO"
 done
