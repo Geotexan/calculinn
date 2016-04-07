@@ -7,12 +7,12 @@
             div.cell_recomendado    {background-color: yellow;}
         </style>
         <script type="text/javascript" src="brython.js"></script>
-	<title>SKEL_TITULO</title>
+    <title>SKEL_TITULO</title>
     </head>
     <body onload="brython()">
         <script type="text/python">
             from SKEL_RECOMENDADOR import CABECERA, TABLA, RANGOS
-	    from SKEL_RECOMENDADOR import NUMENTRADAS, NUMSALIDAS
+            from SKEL_RECOMENDADOR import NUMENTRADAS, NUMSALIDAS
             from SKEL_CALCULO import TABLA as CALCULO
             from motor import recomendar, calcular
             from browser import document as doc
@@ -158,6 +158,15 @@
                         else:
                             dump_recomendacion(out_recomendacion)
 
+            def find_step(col, tabla):
+                """
+                Busca en la tabla el delta del primer intervalo para
+                determinar si el paso de los inputs numéricos debe
+                ser "0.01" porque lleva decimales, 1 u otro número más
+                acorde.
+                """
+                return 0.01
+
             ##########################
             # Construyo el formulario:
             elementos = []
@@ -176,18 +185,25 @@
                 # Construyo el input dependiendo del tipo de valores permitidos
                 if valores:     # Desplegable
                     tooltip = "Valores permitidos: {}".format(valores)
-                    sel = html.SELECT(id="in%d" % i, title=tooltip)
-                    for item in valores:
-                        sel <= html.OPTION(item)
-                    elementos.append(sel)
+                    if len(valores) == 1:    # Es una constante
+                        constante = html.INPUT(id="in%id" % i, title=tooltip,
+                                               value=valores[0],
+                                               readonly=True)
+                        elementos.append(constante)
+                    else:
+                        sel = html.SELECT(id="in%d" % i, title=tooltip)
+                        for item in valores:
+                            sel <= html.OPTION(item)
+                        elementos.append(sel)
                 else:
                     tooltip = "Escriba cualquier valor entre [{}..{}]".format(
                         minimo, maximo)
+                    step = find_step(nombrecolumna, )
                     elementos.append(html.INPUT(type="number", id="in%d" % i,
-                                                min = minimo, max = maximo,
-                                                required = "required",
-                                                title = tooltip,
-                                                step = "0.01"))
+                                                min=minimo, max=maximo,
+                                                required="required",
+                                                title=tooltip,
+                                                step="{}".format(step)))
                 # Agrego la fila completa con label e input
                 elementos.append(html.BR())
             # Y creo el botón de calcular sin form definido para no refresh.

@@ -67,9 +67,6 @@ def find_ins_outs(fila):
     """
     Devuelve el número de entradas y salidas que indica la primera cabecera.
     """
-    # NOTE: Quedaría el caso de las constantes, que siempre van antes de los
-    # In. También está el caso de los desplegables, indicado en el nombre
-    # de la variable de entrada, pero eso es otra historia.
     ins = outs = 0
     # Todo hasta encontrar Out son entradas.
     ins = fila.index("Out")
@@ -259,6 +256,9 @@ def determinar_rangos(columnas, tabla):
                 ini, fin = parse_rango(valor)
                 update_minimos(minimos, columna, ini)
                 update_maximos(maximos, columna, fin)
+            elif valor.upper().strip() == "Z":
+                # Alta impedancia. Esta variable no importa para ese caso.
+                pass
             else:   # Es texto
                 update_cadenas(cadenas, columna, valor)
     for columna in columnas:
