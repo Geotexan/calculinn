@@ -50,10 +50,16 @@ $(document).ready(function() {
              * del primero de los productos recomendados. Todos los demás
              * que se agreguen a la tabla llevan el mismo id.
              */
-            if (nt.startsWith("NT") && (nt[2] != "-")) {
-                nt = nt.replace(" ", "-")
-            }
         }
+        if (nt.indexOf("GEOTESAN ") >= 0) {
+        	nt = nt.replace("GEOTESAN ", '');
+        }
+       if (nt.startsWith("NT") && (nt[2] != "-")) {
+       		nt = nt.replace(" ", "-")
+       	}
+
+
+
         if (typeof fichas[nt] !== 'undefined') {
             // var file = 'pdf/' + fichas[nt];
             var file = '../pdf/' + fichas[nt];
