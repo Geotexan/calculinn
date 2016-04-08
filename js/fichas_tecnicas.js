@@ -40,7 +40,6 @@ var fichas =
 */
 $(document).ready(function() {
 	$('#pdf').click(function() {
-        var flag_version = 1;   // No se me ocurre otra manera más rápida.
 		var nt = $('#product').val();
         if ( nt == ''){
             // No es un input, viene del template. Es un span.
@@ -51,13 +50,10 @@ $(document).ready(function() {
              * del primero de los productos recomendados. Todos los demás
              * que se agreguen a la tabla llevan el mismo id.
              */
-            flag_version = 2;
         }
 		if (typeof fichas[nt] !== 'undefined') {
-    		var file = 'pdf/' + fichas[nt];
-            if (flag_version >= 2){
-                file = '../pdf/' + fichas[nt];
-            }
+    		// var file = 'pdf/' + fichas[nt];
+    		var file = '../pdf/' + fichas[nt];
 			var win = window.open(file, '_blank');
 			if(win){
 			    //Browser has allowed it to be opened

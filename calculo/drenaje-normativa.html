@@ -1,0 +1,94 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+	<title>Cálculo Geotexan</title>
+
+	<link rel="stylesheet" href="../css/style.css" type="text/css" media="all">
+	<link rel="stylesheet" href="../css/positions.css" type="text/css" media="all">
+	<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+
+	<script src="../libs/jquery-2.2.1.min.js"></script>
+	<script src="../js/drenaje_n.js"></script>
+	<script src="../js/fichas_tecnicas.js"></script>
+	<link rel="shortcut icon" href="../favicon.ico" type="image/vnd.microsoft.icon">
+
+</head>
+<body class="calculo">
+
+	<!--cerrar ventana-->
+	<a style="position:relative;z-index:1" href="javascript:history.back(1);">
+		<img src="../images/boton_retroceder.png" width="25px"/><span class="retroceder_ventana">retroceder</span>
+	</a>
+	<section class="form">
+		<div class="form-group">
+			<label for="funcion">Función</label>
+			<input id="funcion" type="text" name="funcion" readonly>
+		</div>
+		<div class="form-group">
+			<label>Tráfico</label>
+			<select id="trafico">
+				<option value="T0">T0</option>
+				<option value="T1">T1</option>
+				<option value="T2">T2</option>
+				<option value="T3">T3</option>
+			</select>
+		</div>
+		<input type="submit" value="Cálculo Geotexan" onclick="calcula()">
+
+		<table>
+			<tr>
+				<td></td>
+				<td>E(kN/m)</td>
+				<td>Rt (KN/m) UNE EN ISO 10319</td>
+				<td>R perf cono(mm) UNE EN ISO 13433</td>
+				<td>Abertura Poro (mm) EN ISO 12956</td>
+			</tr>
+			<tr>
+				<td><h2>Normativa PG3</h2></td>
+				<td>
+					<input id="e-normativa-value" type="text" name="e-normativa-value" readonly>
+				</td>
+				<td>
+					<input id="rt-normativa-value" type="text" name="rt-normativa-value" readonly>
+				</td>
+				<td>
+					<input id="rperf-normativa-value" type="text" name="rperf-normativa-value" readonly>
+				</td>
+				<td>
+					<input id="abertura-poro-normativa-value" type="text" name="abertura-poro-normativa-value" readonly>
+				</td>
+			</tr>
+			<tr>
+				<td><h2>Cálculo Geotexan</h2></td>
+				<td>
+					<input id="e-geotexan-value" type="text" name="e-geotexan-value" readonly>
+				</td>
+				<td>
+					<input id="rt-geotexan-value" type="text" name="rt-geotexan-value" readonly>
+				</td>
+				<td>
+					<input id="rperf-geotexan-value" type="text" name="rperf-geotexan-value" readonly>
+				</td>
+				<td>
+					<input id="abertura-poro-geotexan-value" type="text" name="abertura-poro-geotexan-value" readonly>
+				</td>
+			</tr>
+		</table>
+		<div class="row-results">
+			<label for="product">GEOTEXTIL GEOTESAN</label>
+			<input id="product" type="text" name="product" readonly>
+		</div>
+	</section>
+	<footer>
+		<section id="links">
+			<ul>
+				<li class="link boton">
+					<a href="#" id="pdf">Ficha técnica</a>
+				</li>
+			</ul>
+		</section>
+	</footer>
+</body>
+</html>
