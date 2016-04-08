@@ -6,11 +6,11 @@
             div.cell_referencia     {background-color: blue;}
             div.cell_recomendado    {background-color: darkgreen;}
         </style>
-	    <link rel="stylesheet" href="../css/style.css" type="text/css" media="all">
-    	<link rel="stylesheet" href="../css/calculinn.css" type="text/css" media="all">
-	    <link rel="shortcut icon" href="../favicon.ico" type="image/vnd.microsoft.icon">
-	    <script src="../libs/jquery-2.2.1.min.js"></script>
-    	<script src="../js/fichas_tecnicas.js"></script>
+        <link rel="stylesheet" href="../css/style.css" type="text/css" media="all">
+        <link rel="stylesheet" href="../css/calculinn.css" type="text/css" media="all">
+        <link rel="shortcut icon" href="../favicon.ico" type="image/vnd.microsoft.icon">
+        <script src="../libs/jquery-2.2.1.min.js"></script>
+        <script src="../js/fichas_tecnicas.js"></script>
         <script type="text/javascript" src="../libs/brython.js"></script>
     <title>Cálculo Geotexan: Tuneles Excavados</title>
     </head>
@@ -455,7 +455,7 @@
                                          title=tooltip, step=step)
                 elementos.append(tagdiv)
                 # Agrego la fila completa con label e input
-                elementos.append(html.BR())
+                # elementos.append(html.BR())
             # Y creo el botón de calcular como input de tipo submit.
             elementos.append(html.INPUT(value = "Calcular", id="bcalcular",
                                         type="submit"))
@@ -468,16 +468,16 @@
                 print("DONE")
         </script>
 
-    	<!--cerrar ventana-->
-    	<a style="position:relative;z-index:1" href="javascript:history.back(1);">
-    		<img src="../images/boton_retroceder.png" width="25px"/>
+        <!--cerrar ventana-->
+        <a style="position:relative;z-index:1" href="javascript:history.back(1);">
+            <img src="../images/boton_retroceder.png" width="25px"/>
             <span class="retroceder_ventana">retroceder</span>
         </a>
 
         <h1>Cálculo de parámetros para tuneles excavados</h1>
 
-        <section class="form">
-            <div class="form-group" id="entradas">
+        <section>
+            <div class="form" id="entradas">
                 <!-- <form id="entradas" class="form"> -->
                     <!-- <button id="bcalcular">Calcular</button> -->
                 <!-- </form> -->
@@ -496,14 +496,14 @@
                 </table>
             </div>
         </section>
-    	<footer>
-    		<section id="links">
-    			<ul>
-    				<li class="link boton">
-    					<a href="#" id="pdf">Ficha técnica</a>
-    				</li>
-    			</ul>
-    		</section>
-    	</footer>
+        <footer>
+            <section id="links">
+                <ul>
+                    <li class="link boton">
+                        <a href="#" id="pdf">Ficha técnica</a>
+                    </li>
+                </ul>
+            </section>
+        </footer>
     </body>
 </html>

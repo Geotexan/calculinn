@@ -14,7 +14,7 @@
 section label {
     color: #fff;
 }
-section.form {
+div.form {
     margin-left: 10%;
     margin-top: 10%;
 }
