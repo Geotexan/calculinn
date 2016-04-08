@@ -19,6 +19,10 @@ div.form {
     margin-left: 10%;
     margin-top: 10%;
 }
+div.form-table-group {
+    margin-left: 10%;
+    margin-top: 3%;
+}
 
 .form-group {
     display: inline;
