@@ -28,6 +28,12 @@ h1, h2, td, th {
     color: #fff;
 }
 
+h2 {
+    font-family: "Miller Text";
+    font-size: 13px;
+    font-style: italic;
+}
+
 th {
     font-size: 12px;
 }
