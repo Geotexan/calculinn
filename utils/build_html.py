@@ -76,6 +76,28 @@ def escape_chars(ruta):
     return ruta
 
 
+def clean_pymodules(pycalculo, pyrecomendador, ruta_dest):
+    """
+    Elimina los ficheros python generados. No son necesarios una vez
+    todo su código se ha metido "inline" en el HTML.
+    """
+    filecalculo = os.path.join(ruta_dest, pycalculo + ".py")
+    try:
+        os.unlink(filecalculo)
+    except IOError:     # ¿No existe?
+        pass
+    else:
+        print("Módulo {} eliminado. Ya no es necesario.".format(filecalculo))
+    filerecomendador = os.path.join(ruta_dest, pyrecomendador + ".py")
+    try:
+        os.unlink(filerecomendador)
+    except IOError:     # ¿No existe?
+        pass
+    else:
+        print("Módulo {} eliminado. Ya no es necesario.".format(
+            filerecomendador))
+
+
 def pythonize_tablas(ruta_calculo, ruta_recomendador, ruta_dest):
     """
     ruta_calculo y ruta_recomendador son la ruta a las dos tablas en CSV o ODS.
@@ -193,7 +215,8 @@ def generate_html(pycalculo, pyrecomendador, aplicacion, dir_dest,
         nombre_html += ".html"
     ruta_html = os.path.join(dir_dest, nombre_html)
     fhtml = open(ruta_html, "w")  # Si existe, los sobrescribe.
-    ruta_motor = os.path.join(os.path.dirname(ruta_html), "motor.py")
+    # ruta_motor = os.path.join(os.path.dirname(ruta_html), "motor.py")
+    ruta_motor = os.path.join(os.path.dirname(__file__), "motor.py")
     ruta_modulo_calculo = os.path.join(os.path.dirname(ruta_html),
                                        "{}.py".format(pycalculo))
     ruta_modulo_recomendador = os.path.join(os.path.dirname(ruta_html),
@@ -299,8 +322,6 @@ def main():
         parser.print_help()
         sys.exit(1)
     tabla_calculo, tabla_recomendador = determinar_tablas(args.tabla)
-    # FIXME: Si metemos los módulos inline, ya no haría falta generarlos en el
-    # directorio destino. También sobraría motor.py
     pycalculo, pyrecomendador = pythonize_tablas(tabla_calculo,
                                                  tabla_recomendador,
                                                  args.ruta_dest)
@@ -309,6 +330,8 @@ def main():
                               args.ruta_dest, tabla_calculo,
                               tabla_recomendador)
     print("Fichero {} generado.".format(ruta_html))
+    # Y ahora que ya está todo el código python inline, no necesito los .py
+    clean_pymodules(pycalculo, pyrecomendador, args.ruta_dest)
     sys.exit(0)
 
 
