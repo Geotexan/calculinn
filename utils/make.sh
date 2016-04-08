@@ -41,9 +41,9 @@ print_usage () {
     echo
     echo "clean: Limpia todos los ficheros .html y .py generados."
     echo
-    echo "open : Genera todos los ficheros correspondientes a cada par de "
-    echo "       tablas fuente del directorio por defecto:"
-    echo "       $RUTA_DEFAULT"
+    echo "open : Genera y abre en el navegador todos los ficheros "
+    echo "       correspondientes a cada par de tablas fuente del directorio "
+    echo "       por defecto: $RUTA_DEFAULT"
     echo
     echo -n "Si no se especifca parámetro, genera todos los .html y .py de la "
     echo "ruta por defecto."
