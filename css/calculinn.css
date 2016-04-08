@@ -38,3 +38,7 @@ th {
 span#id{
     color: black;
 }
+
+input {
+    width: 100px;
+}
