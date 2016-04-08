@@ -13,6 +13,7 @@
 
 section label {
     color: #fff;
+    padding-left: 10px;
 }
 div.form {
     margin-left: 10%;
@@ -42,3 +43,5 @@ span#id{
 input {
     width: 100px;
 }
+
+#in0
