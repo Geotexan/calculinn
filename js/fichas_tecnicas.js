@@ -52,13 +52,11 @@ $(document).ready(function() {
              */
         }
         if (nt.indexOf("GEOTESAN ") >= 0) {
-        	nt = nt.replace("GEOTESAN ", '');
+            nt = nt.replace("GEOTESAN ", '');
         }
-       if (nt.startsWith("NT") && (nt[2] != "-")) {
-       		nt = nt.replace(" ", "-")
-       	}
-
-
+        if (nt.startsWith("NT") && (nt[2] != "-")) {
+            nt = nt.replace(" ", "-")
+        }
 
         if (typeof fichas[nt] !== 'undefined') {
             // var file = 'pdf/' + fichas[nt];
@@ -76,5 +74,4 @@ $(document).ready(function() {
             return false;
         }
     });
-
 });
