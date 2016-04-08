@@ -461,3 +461,10 @@ p{
     width: 135px;
     z-index: -1;
 }
+
+.boton_funciones_geotextiles{
+    box-shadow: 10px 10px 5px #888888;
+    background: #2b7d79;
+    border: 2px solid #fff;
+    width: 135px;
+}
