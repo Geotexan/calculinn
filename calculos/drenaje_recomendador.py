@@ -1,8 +1,0 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
-NUMENTRADAS = 3
-NUMSALIDAS = 7
-CABECERA = (u'Tipo terreno (desplegable)', u'Tipo \xe1rido (desplegable)', u'D. m\xe1x', u'Rt', u'Elong.', u'R CBR perf', u'R perf cono', u'Abertura poro', u'K vert', u'Producto recomendado')
-TABLA = [(u'Cohesivo', u'Machacado', u'[0..60)', u'8', u'55,87', u'1,5', u'34,04', u'0,068', u'115', u'NT 12'), (u'Cohesivo', u'Machacado', u'[60..100)', u'8', u'55,87', u'1,5', u'34,04', u'0,068', u'115', u'NT 12'), (u'Cohesivo', u'Machacado', u'[100..\u221e]', u'8,5', u'55,35', u'1,5', u'33,2', u'0,065', u'110', u'NT 13'), (u'Cohesivo', u'Redondeado', u'[0..60)', u'6', u'55,19', u'1,02', u'39', u'0,075', u'120', u'NT 10'), (u'Cohesivo', u'Redondeado', u'[60..100)', u'6,5', u'55,25', u'1,11', u'36,52', u'0,071', u'117', u'NT 11'), (u'Cohesivo', u'Redondeado', u'[100..\u221e]', u'8', u'55,87', u'1,5', u'34,04', u'0,068', u'115', u'NT 12'), (u'No cohesivo', u'Machacado', u'[0..60)', u'8', u'55,87', u'1,5', u'34,04', u'0,068', u'115', u'NT 12'), (u'No cohesivo', u'Machacado', u'[60..100)', u'6,5', u'55,25', u'1,11', u'36,52', u'0,071', u'117', u'NT 11'), (u'No cohesivo', u'Machacado', u'[100..\u221e]', u'8', u'55,87', u'1,5', u'34,04', u'0,068', u'115', u'NT 12'), (u'No cohesivo', u'Redondeado', u'[0..60)', u'8', u'55,87', u'1,5', u'34,04', u'0,068', u'115', u'NT 12'), (u'No cohesivo', u'Redondeado', u'[60..100)', u'8', u'55,87', u'1,5', u'34,04', u'0,068', u'115', u'NT 12'), (u'No cohesivo', u'Redondeado', u'[100..\u221e]', u'8', u'55,87', u'1,5', u'34,04', u'0,068', u'115', u'NT 12')]
-RANGOS = {u'Tipo terreno (desplegable)': (u'Cohesivo', u'No cohesivo'), u'D. m\xe1x': (0, 2147483647), u'Tipo \xe1rido (desplegable)': (u'Machacado', u'Redondeado')}
