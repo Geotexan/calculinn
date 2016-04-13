@@ -1,6 +1,15 @@
+a {
+    color: white;
+}
+
+ul.lista_certificados {
+    list-style-type: none;
+}
+
 #links {
     margin-top: 20%;
 }
+
 #links ul {
     width: 25%;
     margin: auto;
