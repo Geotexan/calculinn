@@ -63,4 +63,18 @@ input {
     width: 100px;
 }
 
-#in0
+.secc_geosinteticos {
+    margin-left: 10%;
+}
+
+.secc_geosinteticos h2{
+    text-decoration: underline;
+    font-family: "Montserrat";
+    font-weight: 700;
+}
+
+dl {
+    list-style-type: none;
+    color: #fff;
+    text-decoration: underline;
+}
