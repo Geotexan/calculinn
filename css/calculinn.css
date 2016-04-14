@@ -37,7 +37,8 @@ div.form-table-group {
     display: inline;
 }
 
-h1, h2, td, th {
+h1, h2, h3, td, th {
+    font-family: "Montserrat";
     color: #fff;
 }
 
@@ -63,11 +64,17 @@ input {
     width: 100px;
 }
 
-.secc_geosinteticos {
+.secc_geosinteticos,
+.secc_geotextiles_no_tejidos {
     margin-left: 10%;
 }
 
-.secc_geosinteticos h2{
+.secc_geotextiles_no_tejidos {
+    margin-top: 10%;
+    font-size: 20px;
+}
+
+.secc_geosinteticos h2 {
     text-decoration: underline;
     font-family: "Montserrat";
     font-weight: 700;
@@ -77,4 +84,18 @@ dl {
     list-style-type: none;
     color: #fff;
     text-decoration: underline;
+}
+
+#geotextiles_no_tejidos_funciones,
+.materia_prima {
+    max-width: 80%;
+}
+.materia_prima {
+    font-size: 12px;
+}
+
+ul,
+ul li {
+    font-family: "Montserrat";
+    color: #fff;
 }
