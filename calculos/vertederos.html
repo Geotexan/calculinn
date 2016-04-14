@@ -277,17 +277,21 @@
                 # los parámetros de entrada (los del formulario `entrada`).
                 if DEBUG:
                     print("Valores de referencia usados:")
-                ths = []
-                tds = []
+                ths_params = []
+                tds_params = []
                 for i in range(NUMENTRADAS):
                     nombre = unicode(CABECERA[i])  # Por si tildes "raras".
                     valor = out[i]
                     if DEBUG:
                         print(nombre, valor)
-                    ths.append(nombre)
-                    tds.append(html.DIV(valor,
-                                        Class="cell_referencia"))
+                    nombre = nombre.replace("(desplegable)", "")
+                    nombre = nombre.replace("(constante)", "").strip()
+                    ths_params.append(nombre)
+                    tds_params.append(html.DIV(valor,
+                                               Class="cell_referencia"))
                 # Ahora los valores calculados para esas entradas
+                ths = []
+                tds = []
                 if DEBUG:
                     print("Valores calculados que debe satisfacer el producto:")
                 for i in range(NUMENTRADAS, NUMENTRADAS + NUMSALIDAS - 1):
@@ -303,6 +307,29 @@
                                         Class="cell_calculado"))
                 # La fila de la tabla de cabecera, los nombres de los paráms.
                 # Pero solo si no se había pintado antes.
+                if "header_params" not in doc:
+                    try:
+                        row = html.TH(ths_params[0], Class="th_calculo")
+                    except IndexError: # Sin valores para mostrar.
+                        pass
+                    else:
+                        for th in ths_params[1:]:
+                            row += html.TH(th, Class="th_calculo")
+                        doc["tabla_rangos_entrada"] <= html.TR(row,
+                                                               id="header_params",
+                                                               Class="tr_calculo")
+                # La fila de parámetros: los rangos de referencia (in).
+                try:
+                    row = html.TD(tds_params[0], Class="td_calculo")
+                except IndexError:  # Sin valores para mostrar.
+                    pass
+                else:
+                    for td in tds_params[1:]:
+                        row += html.TD(td, Class="td_calculo")
+                    doc["tabla_rangos_entrada"] <= html.TR(row,
+                                                           Class="tr_calculo")
+                # La fila de la tabla de cabecera, los nombres de los paráms.
+                # calculodos. Pero solo si no se había pintado antes.
                 if "header_calculo" not in doc:
                     try:
                         row = html.TH(ths[0], Class="th_calculo")
@@ -314,7 +341,7 @@
                         doc["referencia"] <= html.TR(row,
                                                      id="header_calculo",
                                                      Class="tr_calculo")
-                # La fila de valores: los de referencia (in) y los calculados.
+                # La fila de valores: los calculados.
                 try:
                     row = html.TD(tds[0], Class="td_calculo")
                 except IndexError:  # Sin valores para mostrar.
@@ -418,6 +445,7 @@
                 nombrecolumna = unicode(CABECERA[i])
                 # Algunos nombres de columna llevan algo de información extra:
                 nombreinput = nombrecolumna.replace("(desplegable)", "")
+                nombreinput = nombreinput.replace("(constante)", "")
                 nombreinput = nombreinput.strip()
                 # Determino rangos para tooptip
                 if (len(RANGOS[nombrecolumna]) == 2
@@ -483,17 +511,26 @@
             </div>
 
             <div id="salida" class="form-table-group">
-                <h2>Valores de referencia y calculados:</h2>
+                <h2>Cálculo:</h2>
 
                 <table id="referencia">
                     <!-- Aquí irán los cálculos de referencia -->
                 </table>
 
-                <h2>Producto recomendado:</h2>
+                <h2>Geotextil:</h2>
                 <table id="producto">
                     <!-- Aquí irá el producto recomendado -->
                 </table>
             </div>
+
+            <div id="parametros" class="form-table-group">
+                <h2>Parámetros de activación de función de evaluación:</h2>
+
+                <table id="tabla_rangos_entrada">
+                    <!-- Aquí irán los rangos que se han activado con las entradas -->
+                </table>
+            </div>
+
         </section>
         <footer>
             <section id="links">

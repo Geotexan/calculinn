@@ -168,7 +168,7 @@ span{
     font-family: "Miller Text";
     font-style:italic;
     color:#fff;
-    text-decoration:underline;
+    /* text-decoration:underline; */
     position:relative;
 }
 p{

@@ -7,6 +7,8 @@ ul.lista_certificados {
 }
 
 #links {
+    clear: both;
+    padding-top: 1em;
     margin-top: 20%;
 }
 
@@ -25,15 +27,21 @@ section label {
     padding-left: 10px;
 }
 div.form {
-    margin-left: 10%;
-    margin-top: 10%;
-}
-div.form-table-group {
-    margin-left: 10%;
+    margin-left: 5%;
     margin-top: 3%;
+    box-shadow: -5px 5px white;
+    padding: 1em;
+}
+
+div.form-table-group {
+    margin-left: 3%;
+    margin-top: 3%;
+    box-shadow: -5px 5px white;
+    padding: 1em;
 }
 
 .form-group {
+    margin: 0.5em;
     display: inline;
 }
 
@@ -48,8 +56,8 @@ h1, h2, h3, td, th {
 }
 
 .th_calculo, .th_recomendacion {
-    padding-left: 2em;
-    padding-right: 2em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
 }
 
 table {
@@ -58,9 +66,9 @@ table {
 }
 
 h2 {
-    font-family: "Miller Text";
+    /* font-family: "Miller Text";
+    font-style: italic; */
     font-size: 13px;
-    font-style: italic;
 }
 
 th {
@@ -135,16 +143,46 @@ ul li {
 
 div.cell_referencia {
     background-color: IndianRed;
+    padding-left: 1em;
+    padding-right: 1em;
 }
 
 div.cell_recomendado {
     background-color: DarkGreen;
+    padding-left: 1em;
+    padding-right: 1em;
 }
 
 div.cell_calculado{
     background-color: RoyalBlue;
+    padding-left: 1em;
+    padding-right: 1em;
 }
 
 div.cell_fichatecnica{
     background-color: DarkSlateGray;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+#entradas {
+    border-style: solid;
+    border-color: white;
+    float: left;
+    display: flex;
+    flex-flow: column;
+    align-items: flex-end;
+    background-color: rgba(255, 0, 0, 0.3);
+}
+
+#parametros{
+    /* Solo para depuración. No se muestra en el diseño final. */
+    display: none;
+}
+
+#salida {
+    border-style: solid;
+    border-color: white;
+    float: left;
+    background-color: rgba(255, 0, 0, 0.3);
 }
