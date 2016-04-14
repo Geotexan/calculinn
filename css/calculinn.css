@@ -35,7 +35,7 @@ div.form {
 
 div.form-table-group {
     margin-left: 3%;
-    margin-top: 3%;
+    margin-top: 7%;
     box-shadow: -5px 5px white;
     padding: 1em;
 }
@@ -48,6 +48,11 @@ div.form-table-group {
 h1, h2, h3, td, th {
     font-family: "Montserrat";
     color: #fff;
+}
+
+h1 {
+    padding-left: 7%;
+    padding-top: 2%;
 }
 
 .td_calculo, .td_recomendacion {
@@ -173,6 +178,7 @@ div.cell_fichatecnica{
     flex-flow: column;
     align-items: flex-end;
     background-color: rgba(255, 0, 0, 0.3);
+    min-height: 300px;
 }
 
 #parametros{
@@ -185,4 +191,31 @@ div.cell_fichatecnica{
     border-color: white;
     float: left;
     background-color: rgba(255, 0, 0, 0.3);
+    min-width: 600px;
+}
+.right-side {
+    float: left;
+}
+
+#botonera {
+    margin-left: 3%;
+    margin-top: 3%;
+    height: auto;
+    width: auto;
+    border-style: solid;
+    border-color: white;
+    float: left;
+    background-color: rgba(255, 0, 0, 0.3);
+    box-shadow: -5px 5px white;
+}
+
+#botonera ul {
+    -webkit-padding-start: 0;
+}
+
+#botonera ul li {
+    width: 150px;
+    margin-left: 0;
+    list-style-type: none;
+    text-align: center;
 }
