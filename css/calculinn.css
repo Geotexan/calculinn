@@ -78,3 +78,11 @@ dl {
     color: #fff;
     text-decoration: underline;
 }
+
+div.cell_referencia {
+    background-color: blue;
+}
+
+div.cell_recomendado {
+    background-color: darkgreen;
+}
