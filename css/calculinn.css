@@ -96,9 +96,27 @@ input {
 }
 
 dl {
+    font-family: "Montserrat";
     list-style-type: none;
     color: #fff;
-    text-decoration: underline;
+    /* text-decoration: underline; */
+}
+
+dt {
+    float: left;
+    clear: left;
+    text-align: right;
+    font-weight: bold;
+    padding-left: 3em;
+    padding-right: 1em;
+}
+
+dt:before {
+    content: "↠";
+}
+
+dd {
+    padding: 0 0 0.5em 0;
 }
 
 #geotextiles_no_tejidos_funciones,
