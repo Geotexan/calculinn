@@ -321,6 +321,7 @@ p{
     width: 140px;
     font-size: 12px;
     height: 42px;
+    box-shadow: -5px 5px white;
 }
 
 .sombra-calculo{
@@ -473,4 +474,8 @@ p{
     background: #2b7d79;
     border: 2px solid #fff;
     width: 135px;
+}
+
+.centered-title {
+    text-align: center;
 }
