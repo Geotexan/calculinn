@@ -8,7 +8,7 @@
         <script src="../libs/jquery-2.2.1.min.js"></script>
         <script src="../js/fichas_tecnicas.js"></script>
         <script type="text/javascript" src="../libs/brython.js"></script>
-    <title>Cálculo Geotexan: Tuneles Norma</title>
+    <title>Cálculo Geotexan: Tuneles Cielo Abierto</title>
     </head>
     <body onload="brython()" class=calcular>
         <script type="text/python">
@@ -28,20 +28,20 @@
             #!/usr/bin/env python
             # -*- coding: utf-8 -*-
             
-            NUMENTRADAS = 1
+            NUMENTRADAS = 0
             NUMSALIDAS = 5
-            CABECERA = (u'D. m\xe1x', u'Rt', u'Elong', u'R CBR perf', u'K plano', u'Producto recomendado')
-            TABLA = [(u'[0..4)', u'25,6', u'50', u'4490', u'7', u'NT 40'), (u'[4..8)', u'31,6', u'50', u'5260', u'8', u'NT 46'), (u'[8..12]', u'36,8', u'50', u'6490', u'9', u'NT 58'), (u'[0..4)', u'19,55', u'50', u'3310', u'6', u'NT 30'), (u'[4..8)', u'22', u'50', u'3930', u'6', u'NT 35'), (u'[8..12]', u'25,6', u'50', u'4490', u'7', u'NT 40'), (u'[0..4)', u'15', u'50', u'2570', u'5', u'NT 23'), (u'[4..8)', u'18,5', u'50', u'3020', u'5', u'NT 25'), (u'[8..12]', u'19,55', u'50', u'3310', u'6', u'NT 30')]
-            RANGOS = {u'D. m\xe1x': (0, 12)}
+            CABECERA = (u'Rt', u'Elong', u'R CBR perf', u'K plano', u'Producto recomendado')
+            TABLA = [(u'9,5', u'57,23', u'1,56', u'0,1', u'NT 15')]
+            RANGOS = {}
             # Código python para cálculo
             #!/usr/bin/env python
             # -*- coding: utf-8 -*-
             
-            NUMENTRADAS = 1
+            NUMENTRADAS = 0
             NUMSALIDAS = 4
-            CABECERA = (u'D. m\xe1x', u'Rt', u'Elong', u'R CBR perf', u'K plano', u'Producto recomendado')
-            CALCULO = [(u'[0..4)', u'25', u'50', u'4000', u'7', u'NT 40'), (u'[4..8)', u'25', u'50', u'5000', u'8', u'NT 46'), (u'[8..12]', u'30', u'50', u'6000', u'12', u'NT 58'), (u'[0..4)', u'18', u'50', u'3000', u'7', u'NT 30'), (u'[4..8)', u'20', u'50', u'3500', u'7', u'NT 35'), (u'[8..12]', u'25', u'50', u'4000', u'7', u'NT 40'), (u'[0..4)', u'14', u'50', u'2500', u'6', u'NT 23'), (u'[4..8)', u'16', u'50', u'3000', u'7', u'NT 25'), (u'[8..12]', u'18', u'50', u'3000', u'7', u'NT 30')]
-            RANGOS = {u'D. m\xe1x': (0, 12)}
+            CABECERA = (u'Rt', u'Elong', u'R CBR perf', u'K plano', u'No lo muestra el primer formulario. Lo pongo como referencia interna.', u'Producto recomendado')
+            CALCULO = [(u'7', u'80/40', u'1,5', u'0,1', u'NT 15')]
+            RANGOS = {}
             # Código python para motor
             #!/usr/bin/env python
             # -*- coding: utf-8 -*-
@@ -470,7 +470,7 @@
             <span class="retroceder_ventana">retroceder</span>
         </a>
 
-        <h1>Cálculo de parámetros para tuneles norma</h1>
+        <h1>Cálculo de parámetros para tuneles cielo abierto</h1>
 
         <section>
             <div class="form" id="entradas">
