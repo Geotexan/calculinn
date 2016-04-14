@@ -80,9 +80,9 @@ dl {
 }
 
 div.cell_referencia {
-    background-color: blue;
+    background-color: IndianRed;
 }
 
 div.cell_recomendado {
-    background-color: darkgreen;
+    background-color: DarkGreen;
 }
