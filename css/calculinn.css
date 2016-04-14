@@ -99,3 +99,11 @@ ul li {
     font-family: "Montserrat";
     color: #fff;
 }
+
+div.cell_referencia {
+    background-color: IndianRed;
+}
+
+div.cell_recomendado {
+    background-color: DarkGreen;
+}
