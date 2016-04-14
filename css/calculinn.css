@@ -42,6 +42,21 @@ h1, h2, h3, td, th {
     color: #fff;
 }
 
+.td_calculo, .td_recomendacion {
+    padding: 0;
+    text-align: center;
+}
+
+.th_calculo, .th_recomendacion {
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+table {
+    border-collapse: collapse;
+    overflow-x: auto;
+}
+
 h2 {
     font-family: "Miller Text";
     font-size: 13px;
@@ -106,4 +121,12 @@ div.cell_referencia {
 
 div.cell_recomendado {
     background-color: DarkGreen;
+}
+
+div.cell_calculado{
+    background-color: RoyalBlue;
+}
+
+div.cell_fichatecnica{
+    background-color: DarkSlateGray;
 }

@@ -285,7 +285,7 @@
                     if DEBUG:
                         print(nombre, valor)
                     ths.append(nombre)
-                    tds.append(html.DIV(html.SPAN(valor),
+                    tds.append(html.DIV(valor,
                                         Class="cell_referencia"))
                 # Ahora los valores calculados para esas entradas
                 if DEBUG:
@@ -299,28 +299,30 @@
                     if DEBUG:
                         print(nombre, valor)
                     ths.append(nombre)
-                    tds.append(valor)
+                    tds.append(html.DIV(valor,
+                                        Class="cell_calculado"))
                 # La fila de la tabla de cabecera, los nombres de los paráms.
                 # Pero solo si no se había pintado antes.
                 if "header_calculo" not in doc:
                     try:
-                        row = html.TH(ths[0])
+                        row = html.TH(ths[0], Class="th_calculo")
                     except IndexError: # Sin valores para mostrar.
                         pass
                     else:
                         for th in ths[1:]:
-                            row += html.TH(th)
+                            row += html.TH(th, Class="th_calculo")
                         doc["referencia"] <= html.TR(row,
-                                                     id = "header_calculo")
-                # La fila de los valores: los de referencia y los calculados.
+                                                     id="header_calculo",
+                                                     Class="tr_calculo")
+                # La fila de valores: los de referencia (in) y los calculados.
                 try:
-                    row = html.TD(tds[0])
+                    row = html.TD(tds[0], Class="td_calculo")
                 except IndexError:  # Sin valores para mostrar.
                     pass
                 else:
                     for td in tds[1:]:
-                        row += html.TD(td)
-                    doc["referencia"] <= html.TR(row)
+                        row += html.TD(td, Class="td_calculo")
+                    doc["referencia"] <= html.TR(row, Class="tr_calculo")
 
             def dump_recomendacion(out):
                 """
@@ -342,7 +344,8 @@
                     if DEBUG:
                         print(nombre, valor)
                     ths.append(nombre)
-                    tds.append(valor)
+                    tds.append(html.DIV(valor,
+                                        Class="cell_fichatecnica"))
                 try:
                     nombre = unicode(CABECERA[-1])
                     valor = out[-1]
@@ -350,30 +353,30 @@
                     pass
                 else:
                     ths.append(nombre)
-                    tds.append(html.DIV(html.SPAN(valor, name="product",
-                                                         id="product"),
+                    tds.append(html.DIV(valor, name="product", id="product",
                                         Class="cell_recomendado"))
                 # La fila de la tabla de cabecera, los nombres de los paráms.
                 # Pero solo si no existen ya en la tabla:
                 if "header_recomendado" not in doc:
                     try:
-                        row = html.TH(ths[0])
+                        row = html.TH(ths[0], Class="th_recomendacion")
                     except IndexError: # Sin valores para mostrar.
                         pass
                     else:
                         for th in ths[1:]:
-                            row += html.TH(th)
+                            row += html.TH(th, Class="th_recomendacion")
                         doc["producto"] <= html.TR(row,
-                                                   id ="header_recomendado")
+                                                   id ="header_recomendado",
+                                                   Class="tr_recomendacion")
                 # La fila de los valores: los de referencia y los calculados.
                 try:
-                    row = html.TD(tds[0])
+                    row = html.TD(tds[0], Class="td_recomendacion")
                 except IndexError:  # Sin valores para mostrar.
                     pass
                 else:
                     for td in tds[1:]:
-                        row += html.TD(td)
-                    doc["producto"] <= html.TR(row)
+                        row += html.TD(td, Class="td_recomendacion")
+                    doc["producto"] <= html.TR(row, Class="tr_recomendacion")
 
             def calculate(ev):
                 args = []
