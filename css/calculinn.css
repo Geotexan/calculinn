@@ -221,11 +221,12 @@ div.cell_fichatecnica{
 }
 
 .secc_geotextiles_no_tejidos_menu {
-    padding-left: 3%;
+    padding-left: 25%;
+    padding-top: 10%;
 }
 
 .secc_geotextiles_no_tejidos_menu ul li {
-    height: auto;
+    height: 100px;
     min-width: 12%;
     list-style-type: none;
     float: left;
@@ -234,5 +235,24 @@ div.cell_fichatecnica{
 
 .secc_geotextiles_no_tejidos_menu ul li div {
     height: 200px;
-    padding-top: 50px;
+    padding-top: 100px;
+}
+
+.secc_geotextiles_no_tejidos_menu ul li a {
+    text-decoration: none;
+}
+
+.secc_geotextiles_no_tejidos {
+    background: transparent none repeat scroll 0 0;
+    border: 2px solid #fff;
+    height: 33px;
+    left: 10px;
+    position: relative;
+    top: 35px;
+    width: 135px;
+    z-index: -1;
+}
+
+section.secc_geotextiles_no_tejidos div {
+    margin-top: 7%;
 }
