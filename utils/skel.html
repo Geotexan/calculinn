@@ -68,8 +68,8 @@
                 tds = []
                 if DEBUG:
                     print("Valores calculados que debe satisfacer el producto:")
-                for i in range(NUMENTRADAS, NUMENTRADAS + NUMSALIDAS - 1):
-                    # -1 porque la fila lleva también el producto como
+                for i in range(NUMENTRADAS, NUMENTRADAS + NUMSALIDAS):
+                    # No +1 porque la fila lleva también el producto como
                     # referencia interna para depuración, pero no se debe
                     # mostar. Aunque debe ser el mismo que da el recomendador.
                     nombre = unicode(CABECERA[i])
@@ -138,8 +138,8 @@
                 if DEBUG:
                     print("Cracterísticas del producto recomendado:")
                 # Analizo valores a mostrar y los organizo en headers y data.
-                for i in range(NUMENTRADAS, NUMENTRADAS + NUMSALIDAS - 1):
-                    # -1 porque al producto le voy a aplicar otro estilo.
+                for i in range(NUMENTRADAS, NUMENTRADAS + NUMSALIDAS):
+                    # No +1 porque al producto le voy a aplicar otro estilo.
                     nombre = unicode(CABECERA[i])
                     valor = out[i]
                     if DEBUG:
