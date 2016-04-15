@@ -189,7 +189,7 @@ div.cell_fichatecnica{
 #salida {
     border-style: solid;
     border-color: white;
-    float: left;
+    /* float: left; */  /* Para resoluciones de netbook 12" (1024x768) */
     background-color: rgba(255, 0, 0, 0.3);
     min-width: 600px;
 }
@@ -207,6 +207,7 @@ div.cell_fichatecnica{
     float: left;
     background-color: rgba(255, 0, 0, 0.3);
     box-shadow: -5px 5px white;
+    clear: left;
 }
 
 #botonera ul {
