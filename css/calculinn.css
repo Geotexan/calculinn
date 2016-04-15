@@ -219,3 +219,20 @@ div.cell_fichatecnica{
     list-style-type: none;
     text-align: center;
 }
+
+.secc_geotextiles_no_tejidos_menu {
+    padding-left: 3%;
+}
+
+.secc_geotextiles_no_tejidos_menu ul li {
+    height: auto;
+    min-width: 12%;
+    list-style-type: none;
+    float: left;
+    text-align: center;
+}
+
+.secc_geotextiles_no_tejidos_menu ul li div {
+    height: 200px;
+    padding-top: 50px;
+}

@@ -258,6 +258,7 @@ p{
 }
 
 .sombra-geotextiles{
+    box-shadow: -5px 5px white;
     background: transparent none repeat scroll 0 0;
     border: 2px solid #fff;
     height: 33px;
