@@ -135,9 +135,25 @@ dd {
 #geotextiles_no_tejidos_funciones,
 .materia_prima {
     max-width: 80%;
+    margin-left: 15%;
+    margin-top: 5%;
 }
+
 .materia_prima {
     font-size: 12px;
+}
+
+#geotextiles_no_tejidos_funciones tr:first-child {
+    border-bottom: 2px solid white;
+}
+
+#geotextiles_no_tejidos_funciones tr th {
+    text-align: left;
+    font-size: 20px;
+}
+#geotextiles_no_tejidos_funciones tr td {
+    min-width: 300px;
+    font-size: 18px;
 }
 
 ul,
