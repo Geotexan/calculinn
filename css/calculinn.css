@@ -271,7 +271,6 @@ div.cell_fichatecnica{
 
 .secc_geotextiles_no_tejidos {
     background: transparent none repeat scroll 0 0;
-    border: 2px solid #fff;
     height: 33px;
     left: 10px;
     position: relative;
@@ -280,6 +279,26 @@ div.cell_fichatecnica{
     z-index: -1;
 }
 
-section.secc_geotextiles_no_tejidos div {
+section.secc_geotextiles_no_tejidos div,
+.imagenes_no_tejidos_separar img:first-child{
     margin-top: 7%;
+}
+
+.secc_geotextiles_no_tejidos_separar {
+    background: transparent none repeat scroll 0 0;
+    height: 33px;
+    left: 10px;
+    position: relative;
+    top: 35px;
+    z-index: -1;
+    max-width: 70%;
+}
+
+#geotextiles_no_tejidos_funciones {
+    max-width: 50%;
+    float: left;
+}
+
+.imagenes_no_tejidos_separar img {
+    padding-left: 4%;
 }
