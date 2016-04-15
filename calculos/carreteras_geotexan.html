@@ -10,7 +10,7 @@
         <script type="text/javascript" src="../libs/brython.js"></script>
     <title>Cálculo Geotexan: Carreteras Geotexan</title>
     </head>
-    <body onload="brython()" class=carreteras>
+    <body onload="brython()" class="carreteras">
         <script type="text/python">
             from browser import document as doc
             from browser import alert
@@ -510,36 +510,38 @@
                 <!-- </form> -->
             </div>
 
-            <div id="salida" class="form-table-group">
-                <h2>Cálculo:</h2>
+            <div class="right-side">
+                <div id="salida" class="form-table-group">
+                    <h2>Cálculo:</h2>
 
-                <table id="referencia">
-                    <!-- Aquí irán los cálculos de referencia -->
-                </table>
+                    <table id="referencia">
+                        <!-- Aquí irán los cálculos de referencia -->
+                    </table>
 
-                <h2>Geotextil:</h2>
-                <table id="producto">
-                    <!-- Aquí irá el producto recomendado -->
-                </table>
-            </div>
+                    <h2>Geotextil:</h2>
+                    <table id="producto">
+                        <!-- Aquí irá el producto recomendado -->
+                    </table>
+                </div>
 
-            <div id="parametros" class="form-table-group">
-                <h2>Parámetros de activación de función de evaluación:</h2>
+                <div id="parametros" class="form-table-group">
+                    <h2>Parámetros de activación de función de evaluación:</h2>
 
-                <table id="tabla_rangos_entrada">
-                    <!-- Aquí irán los rangos que se han activado con las entradas -->
-                </table>
+                    <table id="tabla_rangos_entrada">
+                        <!-- Aquí irán los rangos que se han activado con las entradas -->
+                    </table>
+                </div>
+                <div id="botonera">
+                    <ul>
+                        <li class="link">
+                            <a href="#" id="pdf">Ficha técnica</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
 
         </section>
         <footer>
-            <section id="links">
-                <ul>
-                    <li class="link boton">
-                        <a href="#" id="pdf">Ficha técnica</a>
-                    </li>
-                </ul>
-            </section>
         </footer>
     </body>
 </html>
