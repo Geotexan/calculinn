@@ -50,7 +50,8 @@ def find_nombre_comun_ficheros(tabla_calculo, tabla_recomendador,
     """
     A partir de los nombres de los ficheros, obtiene el nombre común que
     llevarán los ficheros generados. Sin extensión.
-    Si sanitizar está a True, elimina los caracteres problemáticos.
+    Si sanitizar está a True, elimina los caracteres problemáticos y
+    pasa la cadena a minúsculas.
     """
     nombre_calculo = os.path.basename(tabla_calculo)
     nombre_recomendador = os.path.basename(tabla_recomendador)
@@ -188,7 +189,7 @@ def templatear(linea, modulo_calculo, modulo_recomendador, aplicacion,
                       ("SKEL_MOTOR", paste_modulo(ruta_motor)),
                       ("SKEL_HEAD",
                        "Cálculo de parámetros para {}".format(
-                           aplicacion.replace("_", " ").replace("_", " "))),
+                           aplicacion.replace("-", " ").replace("_", " "))),
                       ("SKEL_BODY_CLASS", find_body_class(aplicacion)))
         for snippet, valor in lista_subs:
             if snippet in linea:
@@ -205,7 +206,8 @@ def generate_html(pycalculo, pyrecomendador, aplicacion, dir_dest,
     """
     if aplicacion is None:
         aplicacion = find_nombre_comun_ficheros(ruta_calculo,
-                                                ruta_recomendador)
+                                                ruta_recomendador,
+                                                sanitizar=False)
         aplicacion = aplicacion.replace("-", " ").replace("_", " ")
     ruta_skel = os.path.dirname(os.path.abspath(__file__))
     skel = os.path.join(ruta_skel, "skel.html")
