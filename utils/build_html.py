@@ -211,6 +211,8 @@ def generate_html(pycalculo, pyrecomendador, aplicacion, dir_dest,
     skel = os.path.join(ruta_skel, "skel.html")
     fskel = open(skel)
     nombre_html = find_nombre_comun_ficheros(ruta_calculo, ruta_recomendador)
+    nombre_html = nombre_html.lower()
+    nombre_html = nombre_html.replace("-", "_")
     if not nombre_html.endswith(".html"):
         nombre_html += ".html"
     ruta_html = os.path.join(dir_dest, nombre_html)
