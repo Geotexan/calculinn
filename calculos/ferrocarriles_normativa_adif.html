@@ -8,7 +8,7 @@
         <script src="../libs/jquery-2.2.1.min.js"></script>
         <script src="../js/fichas_tecnicas.js"></script>
         <script type="text/javascript" src="../libs/brython.js"></script>
-    <title>Cálculo Geotexan: Drenaje</title>
+    <title>Cálculo Geotexan: Ferrocarriles Normativa Adif</title>
     </head>
     <body onload="brython()" class="calculo">
         <script type="text/python">
@@ -28,20 +28,20 @@
             #!/usr/bin/env python
             # -*- coding: utf-8 -*-
             
-            NUMENTRADAS = 3
-            NUMSALIDAS = 7
-            CABECERA = (u'Tipo terreno (desplegable)', u'Tipo \xe1rido (desplegable)', u'D. m\xe1x', u'Rt', u'Elong.', u'R CBR perf', u'R perf cono', u'Abertura poro', u'K vert', u'Producto recomendado')
-            TABLA = [(u'Cohesivo', u'Machacado', u'[0..60)', u'8', u'55,87', u'1,5', u'34,04', u'0,068', u'115', u'NT 12'), (u'Cohesivo', u'Machacado', u'[60..100)', u'8', u'55,87', u'1,5', u'34,04', u'0,068', u'115', u'NT 12'), (u'Cohesivo', u'Machacado', u'[100..\u221e]', u'8,5', u'55,35', u'1,5', u'33,2', u'0,065', u'110', u'NT 13'), (u'Cohesivo', u'Redondeado', u'[0..60)', u'6', u'55,19', u'1,02', u'39', u'0,075', u'120', u'NT 10'), (u'Cohesivo', u'Redondeado', u'[60..100)', u'6,5', u'55,25', u'1,11', u'36,52', u'0,071', u'117', u'NT 11'), (u'Cohesivo', u'Redondeado', u'[100..\u221e]', u'8', u'55,87', u'1,5', u'34,04', u'0,068', u'115', u'NT 12'), (u'No cohesivo', u'Machacado', u'[0..60)', u'8', u'55,87', u'1,5', u'34,04', u'0,068', u'115', u'NT 12'), (u'No cohesivo', u'Machacado', u'[60..100)', u'6,5', u'55,25', u'1,11', u'36,52', u'0,071', u'117', u'NT 11'), (u'No cohesivo', u'Machacado', u'[100..\u221e]', u'8', u'55,87', u'1,5', u'34,04', u'0,068', u'115', u'NT 12'), (u'No cohesivo', u'Redondeado', u'[0..60)', u'8', u'55,87', u'1,5', u'34,04', u'0,068', u'115', u'NT 12'), (u'No cohesivo', u'Redondeado', u'[60..100)', u'8', u'55,87', u'1,5', u'34,04', u'0,068', u'115', u'NT 12'), (u'No cohesivo', u'Redondeado', u'[100..\u221e]', u'8', u'55,87', u'1,5', u'34,04', u'0,068', u'115', u'NT 12')]
-            RANGOS = {u'Tipo terreno (desplegable)': (u'Cohesivo', u'No cohesivo'), u'D. m\xe1x': (0, 2147483647), u'Tipo \xe1rido (desplegable)': (u'Machacado', u'Redondeado')}
+            NUMENTRADAS = 2
+            NUMSALIDAS = 5
+            CABECERA = (u'Funci\xf3n (constante)', u'Aplicaci\xf3n (constante)', u'Rt', u'Elong', u'R CBR perf', u'K vert', u'Producto recomendado')
+            TABLA = [(u'Separaci\xf3n', u'Ferrocarriles en Plataforma', u'20', u'60', u'3,25', u'74', u'NT 25')]
+            RANGOS = {u'Funci\xf3n (constante)': (u'Separaci\xf3n',), u'Aplicaci\xf3n (constante)': (u'Ferrocarriles en Plataforma',)}
             # Código python para cálculo
             #!/usr/bin/env python
             # -*- coding: utf-8 -*-
             
-            NUMENTRADAS = 3
-            NUMSALIDAS = 6
-            CABECERA = (u'Tipo terreno (desplegable)', u'Tipo \xe1rido (desplegable)', u'D. m\xe1x', u'Rt', u'Elong.', u'R CBR perf', u'R perf cono', u'Abertura poro', u'K vert', u'Es para cotejar los valores. No se muestra en el formulario.', u'Producto recomendado')
-            CALCULO = [(u'Cohesivo', u'Machacado', u'[0..60)', u'7', u'50', u'1200', u'<35', u'<0,075', u'>90', u'NT 12'), (u'Cohesivo', u'Machacado', u'[60..100)', u'7,5', u'50', u'1300', u'<35', u'<0,07', u'>90', u'NT 12'), (u'Cohesivo', u'Machacado', u'[100..\u221e]', u'8', u'50', u'1500', u'<35', u'<0,065', u'>90', u'NT 13'), (u'Cohesivo', u'Redondeado', u'[0..60)', u'5', u'50', u'1000', u'<40', u'<0,08', u'>90', u'NT 10'), (u'Cohesivo', u'Redondeado', u'[60..100)', u'6', u'50', u'1100', u'<40', u'<0,075', u'>90', u'NT 11'), (u'Cohesivo', u'Redondeado', u'[100..\u221e]', u'7', u'50', u'1200', u'<35', u'<0,075', u'>90', u'NT 12'), (u'No cohesivo', u'Machacado', u'[0..60)', u'7,5', u'50', u'1300', u'<35', u'<0,07', u'>90', u'NT 12'), (u'No cohesivo', u'Machacado', u'[60..100)', u'6', u'50', u'1100', u'<40', u'<0,075', u'>90', u'NT 11'), (u'No cohesivo', u'Machacado', u'[100..\u221e]', u'7', u'50', u'1200', u'<35', u'<0,075', u'>90', u'NT 12'), (u'No cohesivo', u'Redondeado', u'[0..60)', u'7,5', u'50', u'1300', u'<35', u'<0,07', u'>90', u'NT 12'), (u'No cohesivo', u'Redondeado', u'[60..100)', u'7', u'50', u'1200', u'<35', u'<0,075', u'>90', u'NT 12'), (u'No cohesivo', u'Redondeado', u'[100..\u221e]', u'7,5', u'50', u'1300', u'<35', u'<0,07', u'>90', u'NT 12')]
-            RANGOS = {u'Tipo terreno (desplegable)': (u'Cohesivo', u'No cohesivo'), u'D. m\xe1x': (0, 2147483647), u'Tipo \xe1rido (desplegable)': (u'Machacado', u'Redondeado')}
+            NUMENTRADAS = 2
+            NUMSALIDAS = 4
+            CABECERA = (u'Funci\xf3n (constante)', u'Aplicaci\xf3n (constante)', u'Rt', u'Elong', u'R CBR perf', u'K vert', u'Producto recomendado')
+            CALCULO = [(u'Separaci\xf3n', u'Ferrocarriles en Plataforma', u'8 \u2013 10,1', u'50 \u2013 55', u'1,56', u'4,9', u'NT 25')]
+            RANGOS = {u'Funci\xf3n (constante)': (u'Separaci\xf3n',), u'Aplicaci\xf3n (constante)': (u'Ferrocarriles en Plataforma',)}
             # Código python para motor
             #!/usr/bin/env python
             # -*- coding: utf-8 -*-
@@ -295,7 +295,7 @@
                 if DEBUG:
                     print("Valores calculados que debe satisfacer el producto:")
                 for i in range(NUMENTRADAS, NUMENTRADAS + NUMSALIDAS):
-                    # -1 porque la fila lleva también el producto como
+                    # No +1 porque la fila lleva también el producto como
                     # referencia interna para depuración, pero no se debe
                     # mostar. Aunque debe ser el mismo que da el recomendador.
                     nombre = unicode(CABECERA[i])
@@ -365,7 +365,7 @@
                     print("Cracterísticas del producto recomendado:")
                 # Analizo valores a mostrar y los organizo en headers y data.
                 for i in range(NUMENTRADAS, NUMENTRADAS + NUMSALIDAS):
-                    # -1 porque al producto le voy a aplicar otro estilo.
+                    # No +1 porque al producto le voy a aplicar otro estilo.
                     nombre = unicode(CABECERA[i])
                     valor = out[i]
                     if DEBUG:
@@ -501,7 +501,7 @@
             <span class="retroceder_ventana">retroceder</span>
         </a>
 
-        <h1>Cálculo de parámetros para drenaje</h1>
+        <h1>Cálculo de parámetros para ferrocarriles normativa ADIF</h1>
 
         <section>
             <div class="form" id="entradas">

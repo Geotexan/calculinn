@@ -8,7 +8,7 @@
         <script src="../libs/jquery-2.2.1.min.js"></script>
         <script src="../js/fichas_tecnicas.js"></script>
         <script type="text/javascript" src="../libs/brython.js"></script>
-    <title>Cálculo Geotexan: Tuneles Excavados</title>
+    <title>Cálculo Geotexan: Tuneles Excavados Norma Une</title>
     </head>
     <body onload="brython()" class="calcular">
         <script type="text/python">
@@ -28,20 +28,20 @@
             #!/usr/bin/env python
             # -*- coding: utf-8 -*-
             
-            NUMENTRADAS = 2
+            NUMENTRADAS = 1
             NUMSALIDAS = 5
-            CABECERA = (u'Espesor', u'D. m\xe1x', u'Rt', u'Elong', u'R CBR perf', u'K plano', u'Producto recomendado')
-            TABLA = [(u'[1,2..1,5)', u'[0..4)', u'25,6', u'50', u'4490', u'7', u'NT 40'), (u'[1,2..1,5)', u'[4..8)', u'31,6', u'50', u'5260', u'8', u'NT 46'), (u'[1,2..1,5)', u'[8..12]', u'36,8', u'50', u'6490', u'9', u'NT 58'), (u'[1,5..2)', u'[0..4)', u'19,55', u'50', u'3310', u'6', u'NT 30'), (u'[1,5..2)', u'[4..8)', u'22', u'50', u'3930', u'6', u'NT 35'), (u'[1,5..2)', u'[8..12]', u'25,6', u'50', u'4490', u'7', u'NT 40'), (u'[2..\u221e]', u'[0..4)', u'15', u'50', u'2570', u'5', u'NT 23'), (u'[2..\u221e]', u'[4..8)', u'18,5', u'50', u'3020', u'5', u'NT 25'), (u'[2..\u221e]', u'[8..12]', u'19,55', u'50', u'3310', u'6', u'NT 30')]
-            RANGOS = {u'Espesor': (1.2, 2147483647), u'D. m\xe1x': (0, 12)}
+            CABECERA = (u'D. m\xe1x', u'Rt', u'Elong', u'R CBR perf', u'K plano', u'Producto recomendado')
+            TABLA = [(u'[0..4)', u'25,6', u'50', u'4490', u'7', u'NT 40'), (u'[4..8)', u'31,6', u'50', u'5260', u'8', u'NT 46'), (u'[8..12]', u'36,8', u'50', u'6490', u'9', u'NT 58'), (u'[0..4)', u'19,55', u'50', u'3310', u'6', u'NT 30'), (u'[4..8)', u'22', u'50', u'3930', u'6', u'NT 35'), (u'[8..12]', u'25,6', u'50', u'4490', u'7', u'NT 40'), (u'[0..4)', u'15', u'50', u'2570', u'5', u'NT 23'), (u'[4..8)', u'18,5', u'50', u'3020', u'5', u'NT 25'), (u'[8..12]', u'19,55', u'50', u'3310', u'6', u'NT 30')]
+            RANGOS = {u'D. m\xe1x': (0, 12)}
             # Código python para cálculo
             #!/usr/bin/env python
             # -*- coding: utf-8 -*-
             
-            NUMENTRADAS = 2
+            NUMENTRADAS = 1
             NUMSALIDAS = 4
-            CABECERA = (u'Espesor', u'D. m\xe1x', u'Rt', u'Elong', u'R CBR perf', u'K plano', u'Producto recomendado')
-            CALCULO = [(u'[1,2..1,5)', u'[0..4)', u'25', u'50', u'4000', u'7', u'NT 40'), (u'[1,2..1,5)', u'[4..8)', u'25', u'50', u'5000', u'8', u'NT 46'), (u'[1,2..1,5)', u'[8..12]', u'30', u'50', u'6000', u'12', u'NT 58'), (u'[1,5..2)', u'[0..4)', u'18', u'50', u'3000', u'7', u'NT 30'), (u'[1,5..2)', u'[4..8)', u'20', u'50', u'3500', u'7', u'NT 35'), (u'[1,5..2)', u'[8..12]', u'25', u'50', u'4000', u'7', u'NT 40'), (u'[2..\u221e]', u'[0..4)', u'14', u'50', u'2500', u'6', u'NT 23'), (u'[2..\u221e]', u'[4..8)', u'16', u'50', u'3000', u'7', u'NT 25'), (u'[2..\u221e]', u'[8..12]', u'18', u'50', u'3000', u'7', u'NT 30')]
-            RANGOS = {u'Espesor': (1.2, 2147483647), u'D. m\xe1x': (0, 12)}
+            CABECERA = (u'D. m\xe1x', u'Rt', u'Elong', u'R CBR perf', u'K plano', u'Producto recomendado')
+            CALCULO = [(u'[0..4)', u'25', u'50', u'4000', u'7', u'NT 40'), (u'[4..8)', u'25', u'50', u'5000', u'8', u'NT 46'), (u'[8..12]', u'30', u'50', u'6000', u'12', u'NT 58'), (u'[0..4)', u'18', u'50', u'3000', u'7', u'NT 30'), (u'[4..8)', u'20', u'50', u'3500', u'7', u'NT 35'), (u'[8..12]', u'25', u'50', u'4000', u'7', u'NT 40'), (u'[0..4)', u'14', u'50', u'2500', u'6', u'NT 23'), (u'[4..8)', u'16', u'50', u'3000', u'7', u'NT 25'), (u'[8..12]', u'18', u'50', u'3000', u'7', u'NT 30')]
+            RANGOS = {u'D. m\xe1x': (0, 12)}
             # Código python para motor
             #!/usr/bin/env python
             # -*- coding: utf-8 -*-
@@ -295,7 +295,7 @@
                 if DEBUG:
                     print("Valores calculados que debe satisfacer el producto:")
                 for i in range(NUMENTRADAS, NUMENTRADAS + NUMSALIDAS):
-                    # -1 porque la fila lleva también el producto como
+                    # No +1 porque la fila lleva también el producto como
                     # referencia interna para depuración, pero no se debe
                     # mostar. Aunque debe ser el mismo que da el recomendador.
                     nombre = unicode(CABECERA[i])
@@ -365,7 +365,7 @@
                     print("Cracterísticas del producto recomendado:")
                 # Analizo valores a mostrar y los organizo en headers y data.
                 for i in range(NUMENTRADAS, NUMENTRADAS + NUMSALIDAS):
-                    # -1 porque al producto le voy a aplicar otro estilo.
+                    # No +1 porque al producto le voy a aplicar otro estilo.
                     nombre = unicode(CABECERA[i])
                     valor = out[i]
                     if DEBUG:
@@ -501,7 +501,7 @@
             <span class="retroceder_ventana">retroceder</span>
         </a>
 
-        <h1>Cálculo de parámetros para tuneles excavados</h1>
+        <h1>Cálculo de parámetros para tuneles excavados norma UNE</h1>
 
         <section>
             <div class="form" id="entradas">

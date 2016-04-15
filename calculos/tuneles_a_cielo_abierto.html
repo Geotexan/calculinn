@@ -8,7 +8,7 @@
         <script src="../libs/jquery-2.2.1.min.js"></script>
         <script src="../js/fichas_tecnicas.js"></script>
         <script type="text/javascript" src="../libs/brython.js"></script>
-    <title>Cálculo Geotexan: Tuneles Cielo Abierto</title>
+    <title>Cálculo Geotexan: Tuneles A Cielo Abierto</title>
     </head>
     <body onload="brython()" class="calcular">
         <script type="text/python">
@@ -295,7 +295,7 @@
                 if DEBUG:
                     print("Valores calculados que debe satisfacer el producto:")
                 for i in range(NUMENTRADAS, NUMENTRADAS + NUMSALIDAS):
-                    # -1 porque la fila lleva también el producto como
+                    # No +1 porque la fila lleva también el producto como
                     # referencia interna para depuración, pero no se debe
                     # mostar. Aunque debe ser el mismo que da el recomendador.
                     nombre = unicode(CABECERA[i])
@@ -365,7 +365,7 @@
                     print("Cracterísticas del producto recomendado:")
                 # Analizo valores a mostrar y los organizo en headers y data.
                 for i in range(NUMENTRADAS, NUMENTRADAS + NUMSALIDAS):
-                    # -1 porque al producto le voy a aplicar otro estilo.
+                    # No +1 porque al producto le voy a aplicar otro estilo.
                     nombre = unicode(CABECERA[i])
                     valor = out[i]
                     if DEBUG:
@@ -501,7 +501,7 @@
             <span class="retroceder_ventana">retroceder</span>
         </a>
 
-        <h1>Cálculo de parámetros para tuneles cielo abierto</h1>
+        <h1>Cálculo de parámetros para tuneles a cielo abierto</h1>
 
         <section>
             <div class="form" id="entradas">
