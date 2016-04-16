@@ -147,7 +147,7 @@ dd {
 }
 
 #geotextiles_no_tejidos_funciones,
-.materia_prima {
+.materia_prima, {
     max-width: 80%;
     margin-left: 15%;
     margin-top: 5%;
@@ -389,4 +389,19 @@ section.secc_geotextiles_no_tejidos div,
 .certificados {
     margin-left: 7%;
     margin-top: 10%;
+}
+
+.normativas_no_tejidos {
+    width: 100%;
+    padding-left: 5%;
+    font-family: "Montserrat";
+}
+
+.normativas_no_tejidos p {
+    font-size: 15px;
+}
+
+.normativa_desc {
+    max-width: 70%;
+    float: left;
 }
