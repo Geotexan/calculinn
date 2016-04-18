@@ -147,10 +147,25 @@ dd {
 }
 
 #geotextiles_no_tejidos_funciones,
+#geotextiles_no_tejidos_funciones p {
+    margin-left: 180px;
+    font-family: "Montserrat";
+    font-weight: 700;
+    font-size: 13px;
+}
+
+#geotextiles_no_tejidos_funciones h2 {
+    margin-left: 180px;
+    font-family: "Miller Text";
+    font-style:italic;
+    color:#fff;
+}
+
+#geotextiles_no_tejidos_funciones,
 .materia_prima, {
     max-width: 80%;
     margin-left: 15%;
-    margin-top: 5%;
+    margin-top: 7%;
 }
 
 .materia_prima {
@@ -308,13 +323,15 @@ section.secc_geotextiles_no_tejidos div,
     max-width: 70%;
 }
 
-#geotextiles_no_tejidos_funciones {
-    max-width: 50%;
+.imagenes_no_tejidos_separar {
+    padding-left: 4%;
     float: left;
 }
 
-.imagenes_no_tejidos_separar img {
-    padding-left: 4%;
+.imagenes_no_tejidos_separar img{
+    clear: both;
+    float: left;
+    padding-top: 2%;
 }
 
 .only-links {
