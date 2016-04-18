@@ -411,6 +411,7 @@ section.secc_geotextiles_no_tejidos div,
     width: 100%;
     padding-left: 5%;
     font-family: "Montserrat";
+    margin-top: 20px;
 }
 
 .normativas_no_tejidos p {
@@ -420,4 +421,12 @@ section.secc_geotextiles_no_tejidos div,
 .normativa_desc {
     max-width: 70%;
     float: left;
+}
+
+.normativa_desc {
+    background-color: transparent;
+    width: auto;
+    height: 250px;
+    overflow: scroll;
+    overflow-x:hidden;
 }
