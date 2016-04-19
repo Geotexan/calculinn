@@ -27,7 +27,7 @@ section label {
     padding-left: 10px;
 }
 div.form {
-    margin-left: 5%;
+    margin-left: 3%;
     margin-top: 3%;
     box-shadow: -5px 5px white;
     padding: 1em;
@@ -433,7 +433,7 @@ section.secc_geotextiles_no_tejidos div,
 }
 
 #info_icon {
-    margin-bottom: -0.69em;
+    margin-bottom: -0.2em;
     background-color: white;
     cursor: pointer;
 }
