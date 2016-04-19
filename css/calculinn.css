@@ -369,7 +369,7 @@ section.secc_geotextiles_no_tejidos div,
 }
 
 .three-rows:first-child {
-    margin-top: 5%;
+    margin-top: 4%;
 }
 
 .horizontal {
@@ -401,6 +401,10 @@ body > section > div:nth-child(1) > ul
 
 .only-links-horizontal a {
     text-decoration: none;
+}
+
+.only-links-horizontal-row {
+    margin-top: 5%;
 }
 
 .title {
