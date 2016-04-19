@@ -19,6 +19,12 @@
          url('../fonts/Montserrat-Bold.ttf') format('truetype'); /* Safari, Android, iOS */
 }
 
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
 .inicio {
     overflow-x:hidden;
     /* overflow-y:hidden; */
