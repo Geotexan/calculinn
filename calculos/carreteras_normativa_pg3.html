@@ -7,6 +7,7 @@
         <link rel="shortcut icon" href="../favicon.ico" type="image/vnd.microsoft.icon">
         <script src="../libs/jquery-2.2.1.min.js"></script>
         <script src="../js/fichas_tecnicas.js"></script>
+        <script src="../js/help.js"></script>
         <script type="text/javascript" src="../libs/brython.js"></script>
     <title>Cálculo Geotexan: Carreteras Normativa Pg3</title>
     </head>
@@ -15,6 +16,7 @@
             from browser import document as doc
             from browser import alert
             from browser import html
+            from browser import window
 
             ###################################################################
             # Esto está muy feo, pero es lo más rápido que puedo hacer
@@ -465,10 +467,12 @@
                     if len(valores) == 1:    # Es una constante
                         constante = html.INPUT(id="in%d" % i, title=tooltip,
                                                value=valores[0],
-                                               readonly=True)
+                                               readonly=True,
+                                               Class="input_calculo")
                         tagdiv <= constante
                     else:
-                        sel = html.SELECT(id="in%d" % i, title=tooltip)
+                        sel = html.SELECT(id="in%d" % i, title=tooltip,
+                                          Class="input_calculo")
                         for item in valores:
                             sel <= html.OPTION(item)
                         tagdiv <= sel
@@ -479,7 +483,12 @@
                     tagdiv <= html.INPUT(type="number", id="in%d" % i,
                                          min=minimo, max=maximo,
                                          required="required",
-                                         title=tooltip, step=step)
+                                         title=tooltip, step=step,
+                                         Class="input_calculo")
+                info = html.IMG(src = "../images/calculos/info.svg",
+                                alt="info", height="32", id="info_icon")
+                info.bind("click", lambda: window.ver_imagen_ayuda())
+                tagdiv <= info
                 elementos.append(tagdiv)
                 # Agrego la fila completa con label e input
                 # elementos.append(html.BR())
@@ -505,6 +514,10 @@
 
         <section>
             <div class="form" id="entradas">
+            <div id="blanket" style="display:none;"></div>
+        	<div id="popUpDiv" style="display:none;">
+                <a href="#" onclick="popup('popUpDiv')" >Click to Close CSS Pop Up</a>
+            </div>	
                 <!-- <form id="entradas" class="form"> -->
                     <!-- <button id="bcalcular">Calcular</button> -->
                 <!-- </form> -->
