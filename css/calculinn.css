@@ -380,6 +380,8 @@ section.secc_geotextiles_no_tejidos div,
     margin-top: 8%;
 }
 
+body > section > div:nth-child(1) > ul
+
 .only-links-horizontal div {
     margin-top: 8%;
 }
@@ -407,6 +409,10 @@ section.secc_geotextiles_no_tejidos div,
 
 .certificados {
     margin-top: 10%;
+}
+
+.productos {
+    margin-top: -2%;
 }
 
 .normativas_no_tejidos {
