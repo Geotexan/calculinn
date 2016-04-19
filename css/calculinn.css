@@ -73,7 +73,7 @@ table {
 h2 {
     /* font-family: "Miller Text";
     font-style: italic; */
-    font-size: 13px;
+    font-size: 1.5em;
 }
 
 th {
@@ -112,7 +112,6 @@ input {
 }
 
 .secc_geotextiles_no_tejidos {
-    margin-top: 10%;
     font-size: 20px;
 }
 
@@ -304,7 +303,6 @@ div.cell_fichatecnica{
     left: 10px;
     position: relative;
     top: 35px;
-    width: 135px;
     z-index: -1;
 }
 
