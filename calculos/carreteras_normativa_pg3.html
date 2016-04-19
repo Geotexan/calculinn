@@ -504,7 +504,7 @@
                 print("DONE")
         </script>
 
-        <!--cerrar ventana-->
+        <!-- atrás -->
         <a style="position:relative;z-index:1" href="javascript:history.back(1);">
             <img src="../images/boton_retroceder.png" width="25px"/>
             <span class="retroceder_ventana">retroceder</span>
@@ -512,12 +512,25 @@
 
         <h1>Cálculo de parámetros para carreteras normativa PG3</h1>
 
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content" id="modal-content">
+                <div class="modal-header">
+                    <span class="close">
+                        <img src="../images/boton_cerrar.png" width="25px" alt="x"/>
+                    </span>
+                    <h2>Diagrama de referencia</h2>
+                </div>
+                <div class="modal-body" id="modal-body">
+                    <!-- <p>¡Hola holita, vecinito!</p> -->
+                </div>
+            </div> 
+        </div>
+
+        <!-- The page itself -->
         <section>
             <div class="form" id="entradas">
-            <div id="blanket" style="display:none;"></div>
-        	<div id="popUpDiv" style="display:none;">
-                <a href="#" onclick="popup('popUpDiv')" >Click to Close CSS Pop Up</a>
-            </div>	
                 <!-- <form id="entradas" class="form"> -->
                     <!-- <button id="bcalcular">Calcular</button> -->
                 <!-- </form> -->

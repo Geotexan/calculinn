@@ -1,57 +1,19 @@
 /*
- * http://webdesignandsuch.com/how-to-create-a-popup-with-css-and-javascript/
+ * http://www.w3schools.com/howto/howto_css_modals.asp
  */
 
-function toggle(div_id) {
-	var el = document.getElementById(div_id);
-	if ( el.style.display == 'none' ) {	el.style.display = 'block';}
-	else {el.style.display = 'none';}
-}
-function blanket_size(popUpDivVar) {
-	if (typeof window.innerWidth != 'undefined') {
-		viewportheight = window.innerHeight;
-	} else {
-		viewportheight = document.documentElement.clientHeight;
-	}
-	if ((viewportheight > document.body.parentNode.scrollHeight) && (viewportheight > document.body.parentNode.clientHeight)) {
-		blanket_height = viewportheight;
-	} else {
-		if (document.body.parentNode.clientHeight > document.body.parentNode.scrollHeight) {
-			blanket_height = document.body.parentNode.clientHeight;
-		} else {
-			blanket_height = document.body.parentNode.scrollHeight;
-		}
-	}
-	var blanket = document.getElementById('blanket');
-	blanket.style.height = blanket_height + 'px';
-	var popUpDiv = document.getElementById(popUpDivVar);
-	popUpDiv_height=blanket_height/2-200;//200 is half popup's height
-	popUpDiv.style.top = popUpDiv_height + 'px';
-}
-function window_pos(popUpDivVar) {
-	if (typeof window.innerWidth != 'undefined') {
-		viewportwidth = window.innerHeight;
-	} else {
-		viewportwidth = document.documentElement.clientHeight;
-	}
-	if ((viewportwidth > document.body.parentNode.scrollWidth) && (viewportwidth > document.body.parentNode.clientWidth)) {
-		window_width = viewportwidth;
-	} else {
-		if (document.body.parentNode.clientWidth > document.body.parentNode.scrollWidth) {
-			window_width = document.body.parentNode.clientWidth;
-		} else {
-			window_width = document.body.parentNode.scrollWidth;
-		}
-	}
-	var popUpDiv = document.getElementById(popUpDivVar);
-	window_width=window_width/2-200;//200 is half popup's width
-	popUpDiv.style.left = window_width + 'px';
-}
-function popup(windowname) {
-	blanket_size(windowname);
-	window_pos(windowname);
-	toggle('blanket');
-	toggle(windowname);		
+function set_real_width_from_img(element, img_element) {
+    /* http://stackoverflow.com/questions/318630/get-real-image-width-and-height-with-javascript-in-safari-chrome */
+    var pic_real_width, pic_real_height;
+    $("<img/>") // Make in memory copy of image to avoid css issues
+        .attr("src", $(img_element).attr("src"))
+        .load(function() {
+            pic_real_width = this.width;   // Note: $(this).width() will not
+            pic_real_height = this.height; // work for in memory images.
+            // Ver calculinn.css. Se le agrega 16 de padding.
+            var ancho = pic_real_width + 16*2;
+            element.style.width = ancho + "px";
+    });
 }
 
 function ver_imagen_ayuda(){
@@ -60,7 +22,37 @@ function ver_imagen_ayuda(){
      */
     var url = window.location.href;
     var filename = url.split('/').pop();
-    var img = filename.replace(".html", ".png");
-    document.getElementById("popUpDiv").style.background = "url(../images/calculos/" + img + ") no-repeat";
-    popup('popUpDiv')
+    var imgsrc = "../images/calculos/" + filename.replace(".html", ".png");
+    var img = document.createElement("img");
+    img.setAttribute("src", imgsrc);
+    img.setAttribute("alt", "Diagrama de ayuda de parámetros.");
+    img.setAttribute("id", "diagrama");
+    var modal_body = document.getElementById("modal-body");
+    // Solo lo agrego una vez:
+    document.getElementById("diagrama") || modal_body.appendChild(img);
+
+    // Ajusto el modal-content al ancho de la imagen:
+    var modal_content = document.getElementById("modal-content");
+    set_real_width_from_img(modal_content, img);
+
+    // Get the modal
+    var modal = document.getElementById('myModal');
+    
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on the button, open the modal
+    modal.style.display = "block";
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
 };
