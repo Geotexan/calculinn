@@ -6,6 +6,10 @@ section {
     height: 90%;
 }
 
+.secc_calculo {
+    height: auto;
+}
+
 .div_geosinteticos_gtx, .div_geosinteticos {
     height: 70%;
     overflow: auto;
@@ -390,14 +394,35 @@ section.secc_geotextiles_no_tejidos div,
 }
 
 .horizontal {
-    display: inline;
+    /* display: inline; */
+    display: inline-table;
 }
 
 .only-links-horizontal {
-    margin-top: 8%;
+    margin-top: 1em;
+    text-align:center;
+    overflow: auto;
 }
 
-body > section > div:nth-child(1) > ul
+.secc_geotextiles_no_tejidos_botonera {
+    height: 70%;
+}
+
+.certificados {
+    height: 80%;
+}
+
+.certificados-productos {
+    height: 80%;
+}
+
+.certificados-productos .only-links-horizontal{
+    height: 70%;
+}
+
+.certificados-productos .only-links-horizontal ul{
+    height: 70%;
+}
 
 .only-links-horizontal div {
     margin-top: 8%;
@@ -405,8 +430,8 @@ body > section > div:nth-child(1) > ul
 
 .only-links-horizontal ul li {
     -webkit-padding-start: 0;
-    width: 250px;
-    height: 100px;
+    width: 350px;
+    /* height: 100px; */
     padding: 8px;
     margin-left: 30px;
     border-style: solid;
@@ -414,6 +439,9 @@ body > section > div:nth-child(1) > ul
     box-shadow: -5px 5px white;
     list-style-type: none;
     text-align: center;
+    white-space: nowrap;
+    margin: 1em;
+    font-size: 13;
 }
 
 .only-links-horizontal a {
