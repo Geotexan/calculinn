@@ -11,6 +11,10 @@ section {
     overflow: auto;
 }
 
+.secc_geotextiles_no_tejidos_campos {
+    height: 70%;
+}
+
 a {
     color: white;
 }
@@ -161,14 +165,14 @@ dd {
 
 #geotextiles_no_tejidos_funciones,
 #geotextiles_no_tejidos_funciones p {
-    margin-left: 180px;
+    margin-left: 80px;
     font-family: "Montserrat";
     font-weight: 700;
     font-size: 13px;
 }
 
 #geotextiles_no_tejidos_funciones h2 {
-    margin-left: 180px;
+    margin-left: 10px;
     font-family: "Miller Text";
     font-style:italic;
     color:#fff;
@@ -313,7 +317,7 @@ div.cell_fichatecnica{
 
 .secc_geotextiles_no_tejidos {
     background: transparent none repeat scroll 0 0;
-    height: 33px;
+    /* height: 33px; */
     left: 10px;
     position: relative;
     top: 35px;
@@ -321,26 +325,26 @@ div.cell_fichatecnica{
 }
 
 section.secc_geotextiles_no_tejidos div,
-.imagenes_no_tejidos_separar img:first-child{
+.imagenes_no_tejidos_funciones img:first-child{
     margin-top: 7%;
 }
 
-.secc_geotextiles_no_tejidos_separar {
+.secc_geotextiles_no_tejidos_funciones {
     background: transparent none repeat scroll 0 0;
-    height: 33px;
+    /* height: 33px; */
     left: 10px;
     position: relative;
     top: 35px;
-    z-index: -1;
-    max-width: 70%;
+    /* z-index: -1; */
+    max-width: 90%;
 }
 
-.imagenes_no_tejidos_separar {
+.imagenes_no_tejidos_funciones {
     padding-left: 4%;
     float: left;
 }
 
-.imagenes_no_tejidos_separar img{
+.imagenes_no_tejidos_funciones img{
     clear: both;
     float: left;
     padding-top: 2%;
