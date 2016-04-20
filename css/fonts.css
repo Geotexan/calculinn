@@ -1,6 +1,6 @@
 @font-face {
     font-family: "Miller Text";
-    src: url('/geosinteticos/fonts/millertextitalic.ttf') format('truetype');
+    src: url('../fonts/millertextitalic.ttf') format('truetype');
 }
 /* montserrat-regular - latin */
 @font-face {
@@ -8,7 +8,7 @@
     font-style: normal;
     font-weight: 400;
     src: local('Montserrat-Regular'),
-         url('/geosinteticos/fonts/Montserrat-Regular.ttf') format('truetype'); /* Safari, Android, iOS */
+         url('../fonts/Montserrat-Regular.ttf') format('truetype'); /* Safari, Android, iOS */
 }
 /* montserrat-700 - latin */
 @font-face {
@@ -16,7 +16,5 @@
     font-style: normal;
     font-weight: 700;
     src: local('Montserrat-Bold'),
-         url('../geosinteticos/fonts/Montserrat-Bold.ttf') format('truetype'); /* Safari, Android, iOS */
+         url('../fonts/Montserrat-Bold.ttf') format('truetype'); /* Safari, Android, iOS */
 }
-
-
