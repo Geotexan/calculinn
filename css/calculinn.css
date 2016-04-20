@@ -1,3 +1,16 @@
+.geosinteticos {
+    height: 100%;
+}
+
+section {
+    height: 90%;
+}
+
+.div_geosinteticos_gtx, .div_geosinteticos {
+    height: 70%;
+    overflow: auto;
+}
+
 a {
     color: white;
 }
@@ -106,12 +119,12 @@ input {
     width: 100px;
 }
 
-.secc_geosinteticos, .secc_geosinteticos_gtx,
-.secc_geotextiles_no_tejidos {
+.secc_geosinteticos, .secc_geosinteticos_gtx, .secc_geotextiles {
     margin-left: 10%;
 }
 
 .secc_geotextiles_no_tejidos {
+    margin-left: 10%;
     font-size: 20px;
     width: 80%;
 }
