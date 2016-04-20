@@ -106,7 +106,7 @@ input {
     width: 100px;
 }
 
-.secc_geosinteticos,
+.secc_geosinteticos, .secc_geosinteticos_gtx,
 .secc_geotextiles_no_tejidos {
     margin-left: 10%;
 }
@@ -445,12 +445,18 @@ body > section > div:nth-child(1) > ul
     overflow-x:hidden;
 }
 
-}
-
-#info_icon {
+img#info_icon {
     margin-bottom: -0.2em;
-    background-color: white;
     cursor: pointer;
+    /* Gradiente */
+   background: rgba(164,179,87,1);
+    background: -moz-radial-gradient(center, ellipse cover, rgba(164,179,87,1) 0%, rgba(117,137,12,0.5) 58%, rgba(117,137,12,0.44) 65%, rgba(117,137,12,0) 93%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(164,179,87,1)), color-stop(58%, rgba(117,137,12,0.5)), color-stop(65%, rgba(117,137,12,0.44)), color-stop(93%, rgba(117,137,12,0)));
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(164,179,87,1) 0%, rgba(117,137,12,0.5) 58%, rgba(117,137,12,0.44) 65%, rgba(117,137,12,0) 93%);
+    background: -o-radial-gradient(center, ellipse cover, rgba(164,179,87,1) 0%, rgba(117,137,12,0.5) 58%, rgba(117,137,12,0.44) 65%, rgba(117,137,12,0) 93%);
+    background: -ms-radial-gradient(center, ellipse cover, rgba(164,179,87,1) 0%, rgba(117,137,12,0.5) 58%, rgba(117,137,12,0.44) 65%, rgba(117,137,12,0) 93%);
+    background: radial-gradient(ellipse at center, rgba(164,179,87,1) 0%, rgba(117,137,12,0.5) 58%, rgba(117,137,12,0.44) 65%, rgba(117,137,12,0) 93%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a4b357', endColorstr='#75890c', GradientType=1 ); 
 }
 
 .input_calculo {
@@ -528,4 +534,10 @@ body > section > div:nth-child(1) > ul
     padding: 2px 16px;
     background-color: #5cb85c;
     color: white;
+}
+
+footer {
+    width: 100%;
+    bottom: 0;
+    position: fixed;
 }
