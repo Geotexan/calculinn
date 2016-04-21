@@ -1,6 +1,7 @@
 @font-face {
     font-family: "Miller Text";
-    src: url('../fonts/millertextitalic.ttf') format('truetype');
+    /* src: url('../fonts/millertextitalic.ttf') format('truetype'); */
+    src: url('../fonts/CrimsonText-Italic.ttf') format('truetype');
 }
 /* montserrat-regular - latin */
 @font-face {
