@@ -3,7 +3,7 @@
 }
 
 section {
-    height: 90%;
+    height: 85%;
 }
 
 .secc_calculo {
@@ -72,8 +72,9 @@ h1, h2, h3, td, th {
 }
 
 h1 {
-    padding-left: 7%;
+    /* padding-left: 7%; */
     padding-top: 2%;
+    font-family: "Miller Text";
 }
 
 .td_calculo, .td_recomendacion {
@@ -297,28 +298,6 @@ div.cell_fichatecnica{
     text-align: center;
 }
 
-.secc_geotextiles_no_tejidos_menu {
-    padding-left: 25%;
-    padding-top: 10%;
-}
-
-.secc_geotextiles_no_tejidos_menu ul li {
-    height: 100px;
-    min-width: 12%;
-    list-style-type: none;
-    float: left;
-    text-align: center;
-}
-
-.secc_geotextiles_no_tejidos_menu ul li div {
-    height: 200px;
-    padding-top: 100px;
-}
-
-.secc_geotextiles_no_tejidos_menu ul li a {
-    text-decoration: none;
-}
-
 .secc_geotextiles_no_tejidos {
     background: transparent none repeat scroll 0 0;
     /* height: 33px; */
@@ -402,6 +381,7 @@ section.secc_geotextiles_no_tejidos div,
     margin-top: 1em;
     text-align:center;
     overflow: auto;
+    font-variant: small-caps;
 }
 
 .secc_geotextiles_no_tejidos_botonera {
@@ -453,7 +433,8 @@ section.secc_geotextiles_no_tejidos div,
 }
 
 .title {
-    margin-left: 35%;
+    /* margin-left: 35%; */
+    text-align: center;
 }
 
 .certificados {
@@ -579,6 +560,37 @@ img#info_icon {
     padding: 2px 16px;
     background-color: #5cb85c;
     color: white;
+}
+
+#menu_funciones div{
+    margin: 1em;
+    min-width: 100px;
+}
+
+.secc_geotextiles_no_tejidos_menu {
+    /* padding-left: 25%; */
+    padding-top: 5%;
+    height: 80%;
+    text-align: center;
+}
+
+.secc_geotextiles_no_tejidos_menu ul li {
+    height: 100px;
+    list-style-type: none;
+    float: left;
+}
+
+.secc_geotextiles_no_tejidos_menu ul li div {
+    height: 200px;
+    padding-top: 100px;
+}
+
+.secc_geotextiles_no_tejidos_menu ul li a {
+    text-decoration: none;
+    min-width: 100px;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 3em;
 }
 
 footer {
