@@ -1,0 +1,5 @@
+﻿[AutoRun]
+OPEN=START index.html
+ICON=favicon.ico
+ACTION=Aplicación de cálculo de Geotexan, S. A.
+LABEL=Geotexan, S. A.
