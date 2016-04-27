@@ -615,9 +615,15 @@ img#info_icon {
 
 .iconos_geosinteticos img{
     float: left;
+}
 
-}footer {
+footer {
     width: 100%;
     bottom: 0;
     position: fixed;
+}
+
+/* Para no ver ese odioso blanco sobre fondo gris claro en firefox */
+select option span{
+    color: initial;
 }
