@@ -575,9 +575,10 @@ img#info_icon {
 }
 
 .secc_geotextiles_no_tejidos_menu ul li {
-    height: 100px;
+    height: 10em;
     list-style-type: none;
     float: left;
+    margin-right: 2em;
 }
 
 .secc_geotextiles_no_tejidos_menu ul li div {
@@ -593,7 +594,29 @@ img#info_icon {
     line-height: 3em;
 }
 
-footer {
+.boton-geotextiles{
+    font-family: 'Montserrat', sans-serif;
+    /* background: #2b7d79;
+    color:#fff;
+    border:2px solid #fff;
+    outline: none;
+    padding-left: 1em;
+    padding-right: 1em;
+    height: 42px;
+    width: 135px; */
+    font-size: 14px;
+    margin-left: 0.5em;
+    text-transform: uppercase;
+}
+
+.iconos_geosinteticos {
+    display: table-caption;
+}
+
+.iconos_geosinteticos img{
+    float: left;
+
+}footer {
     width: 100%;
     bottom: 0;
     position: fixed;
