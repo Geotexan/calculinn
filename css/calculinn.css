@@ -621,6 +621,32 @@ footer {
     width: 100%;
     bottom: 0;
     position: fixed;
+    text-align: center;
+}
+
+#logo_footer img{
+    width: 13em;
+    margin-bottom: -1em;
+}
+
+#eslogan_footer img{
+    width: 20em;
+}
+
+#direccion_footer img{
+    width: 15em;
+    border-left: 5px solid white;
+    margin-bottom: -5px;
+}
+
+footer ul{
+    margin: 0;
+}
+
+footer li{
+    display: inline-block;
+    margin-left: 1.1em;
+    margin-right: 1.1em;
 }
 
 /* Para no ver ese odioso blanco sobre fondo gris claro en firefox */
