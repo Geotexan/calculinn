@@ -139,13 +139,13 @@ def find_body_class(aplicacion):
     """
     # clases actuales en el CSS: calculo, carreteras, calcular
     if "carretera" in aplicacion.lower():
-        body_class = "carreteras"
+        body_class = "calcular"
     elif "balsa" in aplicacion.lower():
-        body_class = "calculo"
+        body_class = "calcular"
     elif "drenaje" in aplicacion.lower():
-        body_class = "calculo"
+        body_class = "calcular"
     elif "ferrocaril" in aplicacion.lower():
-        body_class = "calculo"
+        body_class = "calcular"
     elif "muro" in aplicacion.lower():
         body_class = "calcular"
     elif "hidra" in aplicacion.lower():     # Obras hidráulicas
@@ -153,9 +153,9 @@ def find_body_class(aplicacion):
     elif "tuneles" in aplicacion.lower():
         body_class = "calcular"
     elif "vertedero" in aplicacion.lower():
-        body_class = "calculo"
+        body_class = "calcular"
     else:   # La más genérica que encuentro
-        body_class = "calculo"
+        body_class = "calcular"
     return body_class
 
 
