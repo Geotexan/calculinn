@@ -275,28 +275,32 @@ div.cell_fichatecnica{
     float: left;
 }
 
-#botonera {
-    margin-left: 3%;
+#botonera{
+}
+
+.link{
     margin-top: 3%;
-    height: auto;
-    width: auto;
+    height: 3em;
     border-style: solid;
     border-color: white;
     float: left;
     background-color: rgba(255, 0, 0, 0.3);
     box-shadow: -5px 5px white;
-    clear: left;
 }
 
-#botonera ul {
+#botonera ul{
     -webkit-padding-start: 0;
+    display: table;
 }
 
 #botonera ul li {
     width: 150px;
-    margin-left: 0;
     list-style-type: none;
     text-align: center;
+    margin-right: 3em;
+    margin-left: -1.5em;
+    display: table-cell;
+    vertical-align: middle;
 }
 
 .secc_geotextiles_no_tejidos {
