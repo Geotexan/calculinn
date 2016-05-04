@@ -8,7 +8,7 @@ IFS=$'\n\t'
 ## actual todas las páginas html y módulos correspondientes.
 ## LICENSE: [Do What the Fuck You Want to Public License](http://www.wtfpl.net)
 
-RUTA_DEFAULT='/home/queen/Geotexan/doc/Programación/calculinn: Programa cálculo pendrive/tablas/normalizadas'
+RUTA_DEFAULT="$HOME/Geotexan/doc/Programación/calculinn\:\ Programa\ cálculo\ pendrive/tablas/normalizadas"
 OPEN=false
 RUTA_BASE=$(dirname $0)
 RUTA_DEST="$RUTA_BASE/../calculos"
