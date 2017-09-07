@@ -1,3 +1,9 @@
 img#logo {
     width: 25%;
 }
+
+@media print {
+	div#botonera, .no-print, .no-print * {
+		display: none !important;
+	}
+}
