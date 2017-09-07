@@ -3,7 +3,7 @@
  * igual por el valor de cada parámetro.
  */
 
-var DEBUG=true;
+var DEBUG=false;
 
 // "Parser" de parámetros. Los guarda en una `hashmap` o como se llamen en JS.
 var params={};location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi,function(s,k,v){params[k]=v})
