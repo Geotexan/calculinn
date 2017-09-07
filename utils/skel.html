@@ -42,6 +42,10 @@
 
             unicode = lambda c: str(c, "utf8")
 
+            def urlfy(str):
+                """Devuelve la misma cadena sin caracteres "problemáticos"."""
+                return str.replace(" ", "_").replace(".", "_")
+
             def dump_calculo(out):
                 """
                 Recibe la fila completa del resultado del cálculo.
@@ -80,7 +84,7 @@
                     if DEBUG:
                         print(nombre, valor)
                     ths.append(nombre)
-                    tds.append(html.DIV(valor,
+                    tds.append(html.DIV(valor, id="ref_{}".format(urlfy(nombre)),
                                         Class="cell_calculado"))
                 # La fila de la tabla de cabecera, los nombres de los paráms.
                 # Pero solo si no se había pintado antes.
@@ -149,6 +153,7 @@
                         print(nombre, valor)
                     ths.append(nombre)
                     tds.append(html.DIV(valor,
+                                        id="gtx_{}".format(urlfy(nombre)),
                                         Class="cell_fichatecnica"))
                 try:
                     nombre = unicode(CABECERA[-1])
@@ -170,7 +175,7 @@
                         for th in ths[1:]:
                             row += html.TH(th, Class="th_recomendacion")
                         doc["producto"] <= html.TR(row,
-                                                   id ="header_recomendado",
+                                                   id="header_recomendado",
                                                    Class="tr_recomendacion")
                 # La fila de los valores: los de referencia y los calculados.
                 try:

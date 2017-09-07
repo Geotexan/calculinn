@@ -7,10 +7,13 @@ $(document).ready(function() {
         var url = window.location.href;
         var basename = url.split("/").pop();
         var desturl = url.replace(basename, basename.replace("#", "")).replace("/calculos/", "/just/");
-        var params = ["pg3_elon", "gtx_elon", "pg3_trac", "gtx_trac", "pg3_cono", "gtx_cono", "pg3_poro", "gtx_poro", "gtx_nt"];
+        // TODO: En vez de HARDODED, recorrer el DOM y rescatar todo lo que empiece por ref_, gtx_ o prouct.
+        var params = ["ref_E", "gtx_E", "ref_Rt", "gtx_Rt", "ref_R_perf__Cono", "gtx_R_perf__Cono", "ref_Abertura_poro", "gtx_Abertura_poro", "product"];
         var params_values = [];
         for (var param in params){
-        	params_values.push(params[param] + "=" + param);
+        	// TODO: En lugar del índice numérico param, el valor del span que está contenido en el div.
+        	var valor = param;
+        	params_values.push(params[param] + "=" + valor);
         }
         desturl += "?" + params_values.join("&");
         //console.log(desturl);
