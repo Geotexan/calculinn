@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="../css/just.css" type="text/css" media="all">
+        <link rel="shorcut icon" href="../favicon.ico" type="image/vnd.microsoft.icon">
+        <script src="../libs/jquery-2.2.1.min.js"></script>
+        <script type="text/javascript" src="../js/params_just.js"></script>
+        <title>Cálculo Geotexan: justificación</title>
+    </head>
+    <body>
+        <section>
+            <header>
+                <img id="logo" src="../images/logo.png" alt="Geotexan, S. A."/>
+                <h1>Justificación de cálculo - Ferrocarriles - Cálculo Geotexan</h1>
+            </header>
+
+            <img id="diagrama" src="../images/calculos/ferrocarriles_por_geotexan.png" alt="Diagrama ferrocarriles según Geotexan"/>
+
+            <p> El funcionamiento del geotextil como estabilización de suelos con baja capacidad portante, se produce como consecuencia del confinamiento de estos suelos, evitando la salida de finos por sub presión y eliminando agua si la hubiere. De esta forma y debido a la imposibilidad de pérdida de suelo por estar confinado se consiguen las siguientes mejoras:</p>
+            <ul>
+                <li>Se evita la contaminación con el material de aporte con lo cual este no pierde las características que por si tiene.</li>
+                <li>Se reduce considerablemente el asentamiento que pudiera producirse, debido a que, al estar confinado dicho suelo de baja capacidad portante, no se produce la disgregación del mismo, eliminándose la humedad que tenga (eliminación de agua a través del geotextil) y por tanto se produce la estabilización del sistema.</li>
+            </ul>
+            <p>Para que esto se produzca, el geotextil debe soportar las cargas, tanto estáticas como dinámicas, de la instalación del mismo, así como evitar su colmatación. Es decir, si el geotextil no rompe durante su instalación se consigue el confinamiento del suelo de baja capacidad portante y como consecuencia, la estabilización del sistema.</p>
+            <p>Para las funciones de separación, de filtración y de refuerzo en plataforma de ferrocarriles y para:</p>
+            <table>
+                <tr>
+                    <td>Diámetro máx balastro (mm)</td>
+                    <td><span id="in1"> </span></td>
+                    <td>CBR subsuelo (%)</td>
+                    <td><span id="in0"> </span></td>
+                    <td>Espesor mín balastro (mm)</td>
+                    <td><span id="in2"> </span></td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <th></th>
+                    <th>Cálculo Geotexan</th>
+                    <th>Geotextil aplicable</th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <td>Resistencia al punzonamiento estático mínimo (CBR a perforación)</td>
+                    <td><span id="ref_R_CBR_perf"> </span></td>
+                    <td><span id="gtx_R_CBR_perf"> </span></td>
+                    <td>kN</td>
+                </tr>
+                <tr>
+                    <td>Resistencia a tracción mínima</td>
+                    <td><span id="ref_Rt"> </span></td>
+                    <td><span id="gtx_Rt"> </span></td>
+                    <td>kN/m</td>
+                </tr>
+                <tr>
+                    <td>Alargamiento a rotura</td>
+                    <td><span id="ref_Elong"> </span></td>
+                    <td><span id="gtx_Elong"> </span></td>
+                    <td>(%)</td>
+                </tr>
+                <tr>
+                    <td>Permeabilidad al agua mínima</td>
+                    <td><span id="ref_K_vert"> </span></td>
+                    <td><span id="gtx_K_vert"> </span></td>
+                    <td>l/m²s</td>
+                </tr>
+                <tr>
+                    <td>Por tanto, se recomienda utilizar el geotextil:</td>
+                    <td></td>
+                    <td>Geotesan <span id="product"></span></td>
+                    <td></td>
+                </tr>
+            </table>
+
+            <div id="botonera">
+                <form>
+                    <input type="button" name="imprimir" value="Imprimir" onClick="window.print()">
+                    <input type="button" name="volver" value="Atrás" onClick="javascript:history.back(1);">
+                </form>
+            </div>
+
+            <footer>
+                <p id="disclaimer">Este documento contiene una justificación de cálculo desarrollada por Geotexan, S. A. para colaborar en la aplicación específica de sus productos con los profesionales interesados, sin asumir ninguna garantía ni responsabilidad por la información suministrada.</p>
+            </footer>
+        </section>
+    </body>
+</html>

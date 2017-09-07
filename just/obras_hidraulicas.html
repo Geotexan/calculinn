@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="../css/just.css" type="text/css" media="all">
+        <link rel="shorcut icon" href="../favicon.ico" type="image/vnd.microsoft.icon">
+        <script src="../libs/jquery-2.2.1.min.js"></script>
+        <script type="text/javascript" src="../js/params_just.js"></script>
+        <title>Cálculo Geotexan: justificación</title>
+    </head>
+    <body>
+        <section>
+            <header>
+                <img id="logo" src="../images/logo.png" alt="Geotexan, S. A."/>
+                <h1>Justificación de cálculo - Obras hidráulicas - Cálculo Geotexan</h1>
+            </header>
+
+            <img id="diagrama" src="../images/calculos/obras_hidraulicas.png" alt="Diagrama obras hidráulicas"/>
+
+            <p>El geotextil en obras fluviales v marítimas se utiliza para evitar la erosión de los taludes vfondos. Se coloca entre dichos taludes o fondos y el revestimiento exterior que puede estar formado por:</p>
+            <ul>
+                <li>Escollera</li>
+                <li>Gaviones</li>
+                <li>Piezas prefabricadas</li>
+            </ul>
+            <p>Su función es la de filtro, dejando la libre circulación del agua a través del geotextil y confinando el suelo del talud, evitando de esta manera la fuga de finos v portanto la erosión del mismo.</p>
+            <p>Dicho geotextil tiene que soportar las elevadas cargas de la escollera o cualquier otro revestimiento utilizado, absorbiendo de la misma manera la energia producida porla caída sobre el geotextil de dicha escollera.</p>
+            <p>También influve la capacidad portante del suelo a confinar, pues la absorción de la energia de caída de Ia escollera, depende de las deformaciones que durante la instalación se pueden producir para evitar la rotura del geotextil.</p>
+            <p>La permeabilidad de dicho suelo es fundamental conocerla para que cumpla su función de filtro.</p>
+            <p>El cálculo del tipo de geotextil, depende de las características del terreno de los taludes (CBR y diámetro máximo) y del revestimiento exterior (tamaño y altura de caída de la escollera).</p>
+            <p>Para la función de separación, de filtración y de protección en obras hidráulicas con los siguientes datos:</p>
+            <table>
+                <tr>
+                    <td>CBR terreno (%)</td>
+                    <td><span id="in0"> </span></td>
+                    <td>Altura caída escollera (m)</td>
+                    <td><span id="in3"> </span></td>
+                    <td>Diámetro máx. terreno (mm)</td>
+                    <td><span id="in1"> </span></td>
+                    <td>y tamaño máx. escollera (mm)</td>
+                    <td><span id="in2"> </span></td>
+                </tr>
+            </table>
+            <p>Las características mecánicas e hidráulicas que se aconseja debe cumplir el geotextil, son:</p>
+            <table>
+                <tr>
+                    <th></th>
+                    <th>Cálculo Geotexan</th>
+                    <th>Geotextil aplicable</th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <td>Resistencia al punzonamiento estático mínimo (CBR a perforación)</td>
+                    <td><span id="ref_R_CBR_perf"> </span></td>
+                    <td><span id="gtx_R_CBR_perf"> </span></td>
+                    <td>kN</td>
+                </tr>
+                <tr>
+                    <td>Resistencia a la perforación dinámica máxima (caída cono)</td>
+                    <td><span id="ref_R_perf_cono"> </span></td>
+                    <td><span id="gtx_R_perf_cono"> </span></td>
+                    <td>mm</td>
+                </tr>
+                <tr>
+                    <td>Resistencia a tracción mínima</td>
+                    <td><span id="ref_Elong"> </span></td>
+                    <td><span id="gtx_Elong"> </span></td>
+                    <td>kN/m</td>
+                </tr>
+                <tr>
+                    <td>Alargamiento a rotura mínima</td>
+                    <td><span id="ref_Rt"> </span></td>
+                    <td><span id="gtx_Rt"> </span></td>
+                    <td>(%)</td>
+                </tr>
+                <tr>
+                    <td>Permeabilidad al agua mínima</td>
+                    <td><span id="ref_K_vert"> </span></td>
+                    <td><span id="gtx_K_vert"> </span></td>
+                    <td>l/m²s</td>
+                </tr>
+                <tr>
+                    <td>Abertura de poro</td>
+                    <td><span id="ref_Abertura_poro"> </span></td>
+                    <td><span id="gtx_Abertura poro"> </span></td>
+                    <td>mm</td>
+                </tr>
+                <tr>
+                    <td>Por tanto, se recomienda utilizar el geotextil</td>
+                    <td></td>
+                    <td>Geotesan <span id="product"></span></td>
+                    <td></td>
+                </tr>
+            </table>
+
+            <div id="botonera">
+                <form>
+                    <input type="button" name="imprimir" value="Imprimir" onClick="window.print()">
+                    <input type="button" name="volver" value="Atrás" onClick="javascript:history.back(1);">
+                </form>
+            </div>
+
+            <footer>
+                <p id="disclaimer">Este documento contiene una justificación de cálculo desarrollada por Geotexan, S. A. para colaborar en la aplicación específica de sus productos con los profesionales interesados, sin asumir ninguna garantía ni responsabilidad por la información suministrada.</p>
+            </footer>
+        </section>
+    </body>
+</html>

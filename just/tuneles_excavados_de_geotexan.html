@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="../css/just.css" type="text/css" media="all">
+        <link rel="shorcut icon" href="../favicon.ico" type="image/vnd.microsoft.icon">
+        <script src="../libs/jquery-2.2.1.min.js"></script>
+        <script type="text/javascript" src="../js/params_just.js"></script>
+        <title>Cálculo Geotexan: justificación</title>
+    </head>
+    <body>
+        <section>
+            <header>
+                <img id="logo" src="../images/logo.png" alt="Geotexan, S. A."/>
+                <h1>Justificación de cálculo - Túneles excavados - Cálculo Geotexan</h1>
+            </header>
+
+            <img id="diagrama" src="../images/calculos/tuneles_excavados_de_geotexan.png" alt="Diagrama túneles excavados según Geotexan"/>
+
+            <p> El geotextil para túneles se utiliza como protección de la geomembrana de PVC, evitando que ésta se punzone o desgarre, tanto por la presión del terreno o revestimiento adyacente como por la abrasión ocasionada por los movimientos de contracción y dilatación térmica. Puede tener también una función secundaria de drenaje de líquidos a los laterales del túnel.</p>
+            <p>Se coloca de manera adyacente a la geomembrana. En túneles excavados se sitúa entre el revestimiento del terreno de la bóveda y la geomembrana de PVC. El Geotextil se sujeta a la gunita con clavos de PVC y arandela plana, donde posteriormente se suelda la geomembrana de PVC. En túneles a cielo abierto y dovelas, el geotextil se sitúa encima de la geomembrana, protegiendo a esta del relleno posterior de tierras.</p>
+            <p>La elección del tipo de geotextil en túneles excavados, depende del espesor de la geomembrana y de la granulometría de la gunita o del suelo en contacto con el geotextil.</p>
+            <p>Para la función de protección y drenaje en túneles excavados y para:</p>
+            <table>
+                <tr>
+                    <td>Diámetro máx revestimiento superior (mm)</td>
+                    <td><span id="in1"> </span></td>
+                    <td>y espesor de la geomembrana de PVC (mm)</td>
+                    <td><span id="in0"> </span></td>
+                </tr>
+            </table>
+            <p>Las características mecánicas e hidráulicas que se aconseja debe cumplir el geotextil, son:</p>
+            <table>
+                <tr>
+                    <th></th>
+                    <th>Cálculo Geotexan</th>
+                    <th>Geotextil aplicable</th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <td>Resistencia al punzonamiento estático mínimo (CBR a perforación)</td>
+                    <td><span id="ref_R_CBR_perf"> </span></td>
+                    <td><span id="gtx_R_CBR_perf"> </span></td>
+                    <td>kN</td>
+                </tr>
+                <tr>
+                    <td>Resistencia a tracción mínima</td>
+                    <td><span id="ref_Rt"> </span></td>
+                    <td><span id="gtx_Rt"> </span></td>
+                    <td>kN/m</td>
+                </tr>
+                <tr>
+                    <td>Alargamiento a rotura mínimo</td>
+                    <td><span id="ref_Elong"> </span></td>
+                    <td><span id="gtx_Elong"> </span></td>
+                    <td>%</td>
+                </tr>
+                <tr>
+                    <td>Gradiente de flujo de agua en plano mínima (K<sub>plano</sub>)</td>
+                    <td><span id="ref_K_plano"> </span></td>
+                    <td><span id="gtx_K_plano"> </span></td>
+                    <td>10<sup>-6</sup>(m²/s)</td>
+                </tr>
+                <tr>
+                    <td>Por tanto, se recomienda utilizar el geotextil:</td>
+                    <td></td>
+                    <td>Geotesan <span id="product"></span></td>
+                    <td></td>
+                </tr>
+            </table>
+
+            <div id="botonera">
+                <form>
+                    <input type="button" name="imprimir" value="Imprimir" onClick="window.print()">
+                    <input type="button" name="volver" value="Atrás" onClick="javascript:history.back(1);">
+                </form>
+            </div>
+
+            <footer>
+                <p id="disclaimer">Este documento contiene una justificación de cálculo desarrollada por Geotexan, S. A. para colaborar en la aplicación específica de sus productos con los profesionales interesados, sin asumir ninguna garantía ni responsabilidad por la información suministrada.</p>
+            </footer>
+        </section>
+    </body>
+</html>

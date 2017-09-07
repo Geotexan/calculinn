@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="../css/just.css" type="text/css" media="all">
+        <link rel="shorcut icon" href="../favicon.ico" type="image/vnd.microsoft.icon">
+        <script src="../libs/jquery-2.2.1.min.js"></script>
+        <script type="text/javascript" src="../js/params_just.js"></script>
+        <title>Cálculo Geotexan: justificación</title>
+    </head>
+    <body>
+        <section>
+            <header>
+                <img id="logo" src="../images/logo.png" alt="Geotexan, S. A."/>
+                <h1>Justificación de cálculo - Muros - Cálculo Geotexan</h1>
+            </header>
+  
+            <img id="diagrama" src="../images/calculos/muro_de_contencion.png" alt="Diagrama muros de contención según Geotexan"/>
+
+            <p>Los geosintéticos para muros de contención y muros verdes pueden ser geotextiles o geomallas, dependiendo de la Resistencia a Tracción requerida, calculada a partir de la sobrecarga del muro, las características del material de relleno (densidad, ángulo de rozamiento interno, altura de tongada) y de la altura e inclinación del muro.</p>
+            <p>Estos muros necesitan ser revestidos en la cara exterior para que no ataque la radiación ultravioleta a los geosintéticos. Dicho revestimiento puede ser con material de aporte (guníta o muro no resistente) o bien mediante hidrosiembra, muros verdes (utilizando geosinteticos de control de erosión como las mallas volumétricas o introduciendo dentro de la geomalla y en la parte exterior del relleno, tierra vegetal, para posteriormente darte la hidrosiembra).</p>
+            <p>El geotextil o la geomalla en muros de contención o muros verdes, se utilizan para evitar el vuelco del muro utilizando dichos geosintéticos entre capas del material de relleno por tongadas de espesor no mayor de 50 cm. Dicha geomalla o geotextil trabaja en tracción, contrarrestando las fuerzas de vuelco debidas al circulo de deslizamiento del muro.</p>
+            <p>Su función es la de refuerzo, evitando el vuelco del muro. Este cálculo solo incluye la estabilidad interna del muro.</p>
+            <p>Para la función de refuerzo en muros de contención y en muros verdes y para:</p>
+            <table>
+                <tr>
+                    <td>Espesor tongada de relleno (cm)</td>
+                    <td><span id="in0"> </span></td>
+                    <td>Ángulo de rozamiento de relleno (%)</td>
+                    <td><span id="in1"> </span></td>
+                    <td>Altura de muro (m)</td>
+                    <td><span id="in2"> </span></td>
+                </tr>
+                <tr>
+                    <td>Inclinación de muro (grados)</td>
+                    <td><span id="in3"> </span></td>
+                    <td>Sobrecarga (kN/m²)</td>
+                    <td><span id="in5"> </span></td>
+                    <td>Densidad relleno (t/m³)</td>
+                    <td><span id="in4"> </span></td>
+                </tr>
+            </table>
+            <p>Las características mecánicas que se aconseja debe cumplir el geosintético, son:</p>
+            <table>
+                <tr>
+                    <th></th>
+                    <th>Cálculo Geotexan</th>
+                    <th>Geosintético aplicable</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <td>Resistencia a tracción calculada</td>
+                    <td><span id="ref_Elong"> </span></td>
+                    <td><span id="gtx_Elong"> </span></td>
+                    <td>kN/m</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Resistencia a tracción requerida</td>
+                    <td><span id="ref_Rt"> </span></td>
+                    <td><span id="gtx_Rt"> </span></td>
+                    <td>kN/m</td>
+                    <td>R. tracción requerida = R. tracción calculada ✕ 3</td>
+                </tr>
+                <tr>
+                    <td>Longitud anclaje</td>
+                    <td><span id="ref_L__anclaje"> </span></td>
+                    <td><span id="gtx_L__anclaje"> </span></td>
+                    <td>m</td>
+                </tr>
+                <tr>
+                    <td>Por tanto, se recomienda utilizar el geosintético:</td>
+                    <td>Geomalla Geotesan</td>
+                    <td><span id="product"></span></td>
+                    <td></td>
+                </tr>
+            </table>
+
+            <div id="botonera">
+                <form>
+                    <input type="button" name="imprimir" value="Imprimir" onClick="window.print()">
+                    <input type="button" name="volver" value="Atrás" onClick="javascript:history.back(1);">
+                </form>
+            </div>
+
+            <footer>
+                <p id="disclaimer">Este documento contiene una justificación de cálculo desarrollada por Geotexan, S. A. para colaborar en la aplicación específica de sus productos con los profesionales interesados, sin asumir ninguna garantía ni responsabilidad por la información suministrada.</p>
+            </footer>
+        </section>
+    </body>
+</html>

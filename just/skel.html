@@ -5,16 +5,7 @@
         <link rel="stylesheet" href="../css/just.css" type="text/css" media="all">
         <link rel="shorcut icon" href="../favicon.ico" type="image/vnd.microsoft.icon">
         <script src="../libs/jquery-2.2.1.min.js"></script>
-        <script type="text/javascript">
-            var params={};location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi,function(s,k,v){params[k]=v})
-            $(document).ready(function() {
-                for (var param  in params) {
-                    $("#"+param).text(params[param]);
-                    console.log(param);
-                    console.log(params[param]);
-                }
-            });
-        </script>
+        <script type="text/javascript" src="../js/params_just.js"></script>
         <title>Cálculo Geotexan: justificación</title>
     </head>
     <body>
@@ -26,18 +17,28 @@
             </header>
 
             <!-- TODO: Completar la ruta de la imagen -->                
-            <img id="diagrama" src="../images/calculos/.png" alt=""/>
+            <img id="diagrama" src="../images/calculos/.png" alt="Diagrama"/>
 
             <!-- TODO: Texto y tabla de valores. -->
+            <p></p>
+            <table>
                 <tr>
                     <th></th>
                     <th> <!-- TODO --> </th>
                     <th> <!-- TODO --> </th>
+                    <th></th>
                 </tr>
                 <tr>
                     <td> <!-- TODO --> </td>
-                    <td> <span id="xxx_yyy"> </span> </td>
-                    <td> <span id="zzz_yyy"> </span> </td>
+                    <td><span id="ref_"> </span></td>
+                    <td><span id="gtx_"> </span></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td> <!-- TODO --> </td>
+                    <td></td>
+                    <td>Geotesan <span id="product"></span></td>
+                    <td></td>
                 </tr>
             </table>
 

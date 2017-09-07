@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="../css/just.css" type="text/css" media="all">
+        <link rel="shorcut icon" href="../favicon.ico" type="image/vnd.microsoft.icon">
+        <script src="../libs/jquery-2.2.1.min.js"></script>
+        <script type="text/javascript" src="../js/params_just.js"></script>
+        <title>Cálculo Geotexan: justificación</title>
+    </head>
+    <body>
+        <section>
+            <header>
+                <img id="logo" src="../images/logo.png" alt="Geotexan, S. A."/>
+                <!-- TODO: Texto cabecera justificación -->
+                <h1>Justificación de cálculo - Balsas - Cálculo Geotexan</h1>
+            </header>
+
+            <img id="diagrama" src="../images/calculos/balsas.png" alt="Diagrama de geotextiles en balsas según Geotexan"/>
+
+            <p> El geotextil para balsas (de riego, de acumulación de agua), canales impermeabilizados y depósitos líquidos, se utiliza como protección de la geomembrana de PEAD, evitando que ésta se punzone o desgarre tanto por la presión del agua contra el terreno como por la abrasión ocasionada por los movimientos de contracción y dilatación térmica.</p>
+            <p>Puede tener una función secundaria de drenaje de líquidos.</p>
+            <p>Se coloca de manera adyacente a la geomembrana, en la parte interior para protegerla contra el posible punzonamiento que le pueda producir el terreno.</p>
+            <p>El cálculo del tipo de geotextil depende del espesor de la geomembrana, de la granulometría del suelo (diámetro máximo) y de la altura de columna de agua o líquido dela balsa.</p>
+            <p>Para la función de protección y drenaje en balsas y para:</p>
+            <table>
+                <tr>
+                    <td>Espesor de la geomembrana (mm)</td>
+                    <td><span id="in0"> </span></td>
+                    <td>Altura líquido (m)</td>
+                    <td><span id="in1"> </span></td>
+                    <td>Diámetro máx. del terreno (mm)</td>
+                    <td><span id="in2"> </span></td>
+                </tr>
+            </table>
+            <p>Las características mecánicas e hidráulicas que se aconseja debe cumplir el geotextil, son:</p>
+            <table>
+                <tr>
+                    <th></th>
+                    <th>Cálculo Geotexan</th>
+                    <th>Geotextil aplicable</th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <td>Resistencia al punzonamiento estático mínimo (CBR a perforación)</td>
+                    <td><span id="ref_R_CBR_perf"> </span></td>
+                    <td><span id="gtx_R_CBR_perf"> </span></td>
+                    <td>kN</td>
+                </tr>
+                <tr>
+                    <td>Resistencia a la perforación dinámica máxima (caída de cono)</td>
+                    <td><span id="ref_R_perf_cono"> </span></td>
+                    <td><span id="gtx_R_perf_cono"> </span></td>
+                    <td>mm</td>
+                </tr>
+                <tr>
+                    <td>Resistencia a tracción mínima</td>
+                    <td><span id="ref_Rt"> </span></td>
+                    <td><span id="gtx_Rt"> </span></td>
+                    <td>kN/m</td>
+                </tr>
+                <tr>
+                    <td>Alargamiento a rotura mínimo</td>
+                    <td><span id="ref_Elong_"> </span></td>
+                    <td><span id="gtx_Elong_"> </span></td>
+                    <td>%</td>
+                </tr>
+                <tr>
+                    <td>Abertura de poro</td>
+                    <td><span id="ref_Abertura_poro"> </span></td>
+                    <td><span id="gtx_Abertura_poro"> </span></td>
+                    <td>mm</td>
+                </tr>
+                <tr>
+                    <td>Gradiente de flujo de agua en plano mínimo (P<sub>K<sub>plano</sub></sub>)</td>
+                    <td><span id="ref_KH"> </span></td>
+                    <td><span id="gtx_KH"> </span></td>
+                    <td>10<sup>-6</sup>(m²/s)</td>
+                </tr>
+                <tr>
+                    <td>Por tanto, se recomienda utilizar el geotextil:</td>
+                    <td></td>
+                    <td>Geotesan <span id="product"></span></td>
+                    <td></td>
+                </tr>
+            </table>
+
+            <div id="botonera">
+                <form>
+                    <input type="button" name="imprimir" value="Imprimir" onClick="window.print()">
+                    <input type="button" name="volver" value="Atrás" onClick="javascript:history.back(1);">
+                </form>
+            </div>
+
+            <footer>
+                <p id="disclaimer">Este documento contiene una justificación de cálculo desarrollada por Geotexan, S. A. para colaborar en la aplicación específica de sus productos con los profesionales interesados, sin asumir ninguna garantía ni responsabilidad por la información suministrada.</p>
+            </footer>
+        </section>
+    </body>
+</html>
