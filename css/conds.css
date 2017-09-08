@@ -7,3 +7,37 @@ img#logo {
 		display: none !important;
 	}
 }
+
+body {
+	font-family: serif;
+	text-align: justify;
+}
+
+h1 {
+	text-align: center;
+	text-transform: uppercase;
+}
+
+#botonera {
+  display: flex;
+  justify-content: space-around;
+}
+
+img {
+	margin-left: 3%;
+	margin-top: 3%;
+}
+
+table {
+	display: table;
+ 	/* width: 100%; */
+ 	background: #fff;
+ 	margin: 0;
+ 	box-sizing: border-box;
+ 	border-collapse: collapse;
+}
+
+table, td {
+	text-align: center;
+	border: 1px solid lightgray;
+}

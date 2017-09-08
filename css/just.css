@@ -8,8 +8,48 @@ img#logo {
 	}
 }
 
+body {
+	font-family: 'Montserrat', sans-serif;
+	text-align: justify;
+}
+
+img {
+	display: block;
+	margin: auto;
+}
+
+h1 {
+	text-align: center;
+}
+
+#product {
+	font-weight: bold;
+}
+
 footer {
 	text-align: center;
+	text-transform: uppercase;
 	font-style: italic;
-	font-size: 75%;
+	font-size: 12px;
+	clear: both;
+	padding: 3em 1%;
+	color: #fff;
+	background: #2b7d79;
+}
+
+#botonera {
+  display: flex;
+  justify-content: space-around;
+}
+
+table {
+	display: table;
+ 	width: 100%; 
+ 	background: #fff;
+ 	margin: 0;
+ 	box-sizing: border-box;
+}
+
+td {
+	text-align: right;
 }
