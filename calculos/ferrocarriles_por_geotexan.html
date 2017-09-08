@@ -14,6 +14,14 @@
         <title>Cálculo Geotexan: Ferrocarriles Por Geotexan</title>
     </head>
     <body onload="brython()" class="calcular">
+        <noscript>
+            <style type="text/css">
+                .pagecontainer {display:none;}
+            </style>
+            <div class="noscriptmsg">
+                JavaScript debe estar habilitado para realizar los cálculos.
+            </div>
+        </noscript>
         <script type="text/python">
             from browser import document as doc
             from browser import alert
@@ -51,7 +59,8 @@
             # -*- coding: utf-8 -*-
             
             """
-            Prototipo de cálculo y recomendación para la aplicación de muros.
+            Cálculo y recomendación genérico para cualquiera de los cálculos de los
+            productos soportados.
             """
             
             # import sys
@@ -519,67 +528,69 @@
 
         <h1 class="header_calculo">Cálculo de parámetros para ferrocarriles por geotexan</h1>
 
-        <!-- The Modal -->
-        <div id="myModal" class="modal">
-            <!-- Modal content -->
-            <div class="modal-content" id="modal-content">
-                <div class="modal-header">
-                    <span class="close">
-                        <img src="../images/boton_cerrar.png" width="25px" alt="x"/>
-                    </span>
-                    <h2>Diagrama de referencia</h2>
-                </div>
-                <div class="modal-body" id="modal-body">
-                    <!-- <p>¡Hola holita, vecinito!</p> -->
+        <div class="pagecontainer">
+            <!-- The Modal -->
+            <div id="myModal" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content" id="modal-content">
+                    <div class="modal-header">
+                        <span class="close">
+                            <img src="../images/boton_cerrar.png" width="25px" alt="x"/>
+                        </span>
+                        <h2>Diagrama de referencia</h2>
+                    </div>
+                    <div class="modal-body" id="modal-body">
+                        <!-- <p>¡Hola holita, vecinito!</p> -->
+                    </div>
                 </div>
             </div>
+
+            <!-- The page itself -->
+            <section class="secc_calculo">
+                <div class="form" id="entradas">
+                    <!-- <form id="entradas" class="form"> -->
+                        <!-- <button id="bcalcular">Calcular</button> -->
+                    <!-- </form> -->
+                </div>
+
+                <div class="right-side">
+                    <div id="salida" class="form-table-group">
+                        <h2>Cálculo:</h2>
+
+                        <table id="referencia">
+                            <!-- Aquí irán los cálculos de referencia -->
+                        </table>
+
+                        <h2>Geotextil:</h2>
+                        <table id="producto">
+                            <!-- Aquí irá el producto recomendado -->
+                        </table>
+                    </div>
+
+                    <div id="parametros" class="form-table-group">
+                        <h2>Parámetros de activación de función de evaluación:</h2>
+
+                        <table id="tabla_rangos_entrada">
+                            <!-- Aquí irán los rangos que se han activado con las entradas -->
+                        </table>
+                    </div>
+                    <div id="botonera">
+                        <ul>
+                            <li class="link">
+                                <a href="#" id="just">Justificación del cálculo</a>
+                            </li>
+                            <li class="link">
+                                <a href="#" id="conds">Pliego de condiciones</a>
+                            </li>
+                            <li class="link">
+                                <a href="#" id="pdf">Ficha técnica</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </section>
         </div>
-
-        <!-- The page itself -->
-        <section class="secc_calculo">
-            <div class="form" id="entradas">
-                <!-- <form id="entradas" class="form"> -->
-                    <!-- <button id="bcalcular">Calcular</button> -->
-                <!-- </form> -->
-            </div>
-
-            <div class="right-side">
-                <div id="salida" class="form-table-group">
-                    <h2>Cálculo:</h2>
-
-                    <table id="referencia">
-                        <!-- Aquí irán los cálculos de referencia -->
-                    </table>
-
-                    <h2>Geotextil:</h2>
-                    <table id="producto">
-                        <!-- Aquí irá el producto recomendado -->
-                    </table>
-                </div>
-
-                <div id="parametros" class="form-table-group">
-                    <h2>Parámetros de activación de función de evaluación:</h2>
-
-                    <table id="tabla_rangos_entrada">
-                        <!-- Aquí irán los rangos que se han activado con las entradas -->
-                    </table>
-                </div>
-                <div id="botonera">
-                    <ul>
-                        <li class="link">
-                            <a href="#" id="just">Justificación del cálculo</a>
-                        </li>
-                        <li class="link">
-                            <a href="#" id="conds">Pliego de condiciones</a>
-                        </li>
-                        <li class="link">
-                            <a href="#" id="pdf">Ficha técnica</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-        </section>
         <footer>
             <ul>
                 <li>

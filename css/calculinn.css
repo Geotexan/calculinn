@@ -1,3 +1,15 @@
+.noscriptmsg {
+    margin: 10px 0px;
+    padding:12px;
+    text-align: center;
+    font-family: monospace; 
+    color: #D8000C;
+    background-color: #FFBABA;
+    margin:10px 22px;
+    font-size:2em;
+    vertical-align:middle;
+}
+
 .geosinteticos {
     height: 100%;
 }
