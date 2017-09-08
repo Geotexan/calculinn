@@ -2,7 +2,8 @@
 # -*- coding: utf-8 -*-
 
 """
-Prototipo de cálculo y recomendación para la aplicación de muros.
+Cálculo y recomendación genérico para cualquiera de los cálculos de los
+productos soportados.
 """
 
 # import sys

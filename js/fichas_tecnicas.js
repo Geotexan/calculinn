@@ -35,9 +35,9 @@ var fichas =
 };
 
 /*
-* Asociar la apertura de una nueva pestaña al click sobre
-* el enlace situado en el footer
-*/
+ * Asociar la apertura de una nueva pestaña al click sobre
+ * el enlace situado en el footer
+ */
 $(document).ready(function() {
     $('#pdf').click(function() {
         var nt = $('#product').val();

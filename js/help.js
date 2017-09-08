@@ -18,7 +18,8 @@ function set_real_width_from_img(element, img_element) {
 
 function ver_imagen_ayuda(){
     /*
-     * TODO
+     * Busca el diagrama (fichero .png) de ayuda correspondiente al
+     * cálculo actual y lo muestra en una ventana emergente.
      */
     var url = window.location.href;
     var filename = url.split('/').pop();
