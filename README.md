@@ -1,4 +1,4 @@
-[![Geotexan, SA](https://geotexan.com/wp-content/uploads/2015/05/geotexan-logo-verde2.png)
+![Geotexan, SA](https://geotexan.com/wp-content/uploads/2015/05/geotexan-logo-verde2.png)
 
 # calculinn
 
