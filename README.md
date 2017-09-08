@@ -18,7 +18,7 @@ Se apoya en código Python interpretado por [Brython](http://brython.info), que 
 
 ### Cambios en orígenes de datos
 
-Si es necesario cambiar algún valor o agregar nuevos productos se debe modificar el fichero _ods_ del directorio `tablas/normalizadas` y volver a generar los ficheros `.html`_
+Si es necesario cambiar algún valor o agregar nuevos productos se debe modificar el fichero _ods_ del directorio `tablas/normalizadas` y volver a generar los ficheros `.html`.
 ```bash
 cd utils
 ./make.sh
