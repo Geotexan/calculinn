@@ -12,11 +12,13 @@ Se puede [usar directamente desde el repositorio](http://geotexan.github.io/calc
 
 Se apoya en código Python interpretado por [Brython](http://brython.info), que es una implementación de un subconjunto de Python en JavaScript.
 
+Compatible con Safari, Chrome, Firefox, Internet Explorer/Edge e incluso Silk (Kindle) siempre que tengan activado JavaScript. Se ha evitado cualquier práctica que pudiera ser bloqueada por las reglas de seguridad de los diferentes navegadores y sistemas operativos (importar código desde un fichero local en Chrome, por ejemplo).
+
 [Planificación, incidencias y peticiones](https://tree.taiga.io/project/pacoqueen-calculinn/issues) alojadas en Taiga.
 
-## Actualizaciones
+### Actualizaciones
 
-### Cambios en orígenes de datos
+#### Cambios en orígenes de datos
 
 Si es necesario cambiar algún valor o agregar nuevos productos se debe modificar el fichero _ods_ del directorio `tablas/normalizadas` y volver a generar los ficheros `.html`.
 ```bash
@@ -26,7 +28,7 @@ cd utils
 
 Es importante conservar el formato de los nombres de los ficheros, pues determinan el tipo de cálculo (carreteras, vertederos, etc.) y el nombre del fichero `.html` --entre paréntesis-- que generará.
 
-### Cambios en páginas
+#### Cambios en páginas
 
 Si es necesario modificar el aspecto de una página se debe acudir primero al _CSS_. En caso de ser un cambio más profundo (atributo `id`, nuevas etiquetas, etc.) se debe modificar `utils/skel.html` y propagar el cambio con:
 ```bash
