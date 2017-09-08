@@ -38,3 +38,5 @@ Si es necesario modificar el aspecto de una página se debe acudir primero al _C
 cd utils
 ./make.sh
 ```
+> :warning: Se necesitan las tablas originales para poder regenerar los _html_.
+
