@@ -7,3 +7,9 @@ img#logo {
 		display: none !important;
 	}
 }
+
+footer {
+	text-align: center;
+	font-style: italic;
+	font-size: 75%;
+}

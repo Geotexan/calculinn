@@ -1,3 +1,5 @@
+[![Geotexan, SA](https://geotexan.com/wp-content/uploads/2015/05/geotexan-logo-verde2.png)
+
 # calculinn
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
