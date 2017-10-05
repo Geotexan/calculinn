@@ -28,17 +28,19 @@ def es_cabecera(lista):
     # fío de que no cambien las tablas y soy así de rebuscado.
     # NOTE: Si alguna cabecera de columna tiene un número entre el texto,
     # **no** se considerará cabecera.
-    res = False  # res es True si hay algún valor numérico, = NO cabecera.
+    es_fila_numerica = False  # es_fila_numerica es True si hay algún valor numérico, = NO cabecera.
     for valor in lista:
         hay_al_menos_un_valor_numerico = False
         for caracter in valor:
             if caracter.isdigit():
                 hay_al_menos_un_valor_numerico = (
                     hay_al_menos_un_valor_numerico or True)
-        res = res or hay_al_menos_un_valor_numerico
-        if res:     # OPTIMIZACIÓN: Si he encontrado uno, me salgo.
+        es_fila_numerica = es_fila_numerica or hay_al_menos_un_valor_numerico
+        if es_fila_numerica:     # OPTIMIZACIÓN: Si he encontrado uno, me salgo.
             break
-    return not res
+    if not lista:   # Si es una fila vacía, no quiero que se considere cabecera.
+        es_fila_numerica = True
+    return not es_fila_numerica
 
 
 def parse(fin):
@@ -61,7 +63,8 @@ def parse(fin):
                 numentradas, numsalidas = find_ins_outs(cabecera)
                 cabecera_superior = cabecera
             continue
-        res.append(tuple(fila))
+        if fila:    # Si la fila está vacía, paso de ella.
+            res.append(tuple(fila))
     return cabecera, res, numentradas, numsalidas, cabecera_superior
 
 
@@ -152,7 +155,8 @@ def parse_opendocument(fin):
     for row in rows:
         fila = convert_odrow(row)
         if es_cabecera(fila):
-            # La segunda cabecera, la de verdad, machacará a la de (In, Out).
+            # La segunda cabecera, la de verdad, machacará a la de (In, Out)
+            # en la segunda iteración. La primera nos dará el # de ins y outs.
             cabecera = fila
             if esta_en("In", cabecera) or esta_en("Out", cabecera):  # Ojo, es
                 # la fila que me dice cuántas entradas y salidas tiene la
@@ -160,7 +164,8 @@ def parse_opendocument(fin):
                 numentradas, numsalidas = find_ins_outs(cabecera)
                 cabecera_superior = cabecera
             continue
-        res.append(fila)
+        if fila:    # Si la fila está vacía, paso de ella.
+            res.append(fila)
     return cabecera, res, numentradas, numsalidas, cabecera_superior
 
 
