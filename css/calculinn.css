@@ -228,6 +228,7 @@ dd {
 #geotextiles_no_tejidos_funciones tr td {
     min-width: 300px;
     font-size: 18px;
+    font-weight: normal;
 }
 
 ul,
