@@ -271,7 +271,7 @@
 
             ###################################################################
 
-            DEBUG = True
+            DEBUG = False
 
             if DEBUG:
                 print("DEBUG activado.")
@@ -508,6 +508,14 @@
                 elementos.append(tagdiv)
                 # Agrego la fila completa con label e input
                 # elementos.append(html.BR())
+            filename_diagrama = window.location.href.split("/")[-1].replace(".html", ".png")
+            help_img = html.IMG(src="../images/calculos/%s" % filename_diagrama,
+                                alt="Diagrama de ayuda",
+                                id="help_img",
+                                width="300px")
+            tagdiv = html.DIV(Class="form-group")
+            tagdiv <= help_img
+            elementos.append(tagdiv)
             # Y creo el botón de calcular como input de tipo submit.
             elementos.append(html.INPUT(value = "Calcular", id="bcalcular",
                                         type="submit"))
