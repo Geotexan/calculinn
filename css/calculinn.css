@@ -319,6 +319,9 @@ div.cell_fichatecnica{
 section.secc_geotextiles_no_tejidos div,
 .imagenes_no_tejidos_funciones img:first-child{
     margin-top: 7%;
+    width: 50%;
+    margin-left: 20%;
+    margin-right: 20%;
 }
 
 .secc_geotextiles_no_tejidos_funciones {
