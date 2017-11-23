@@ -207,15 +207,6 @@ dd {
     font-size: 12px;
 }
 
-
-#geotextiles_no_tejidos_funciones tr:nth-child(odd) {
-    background: #1C6562;
-}
-
-#geotextiles_no_tejidos_funciones tr:nth-child(even) {
-    background: #1E3E3C;
-}
-
 #geotextiles_no_tejidos_funciones tr:first-child {
     border-bottom: 2px solid white;
     background: transparent;
