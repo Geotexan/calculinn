@@ -114,7 +114,7 @@ def generate(nombre_fout, cabecera, datos, numentradas, numsalidas, rangos,
     skel.append("CABECERA = {}\n".format(cabecera))
     if es_fichero_recomendador(cabecera_superior):
         skel.append("TABLA = {}\n".format(datos))
-    else:   # Es fichero de cálculo. Evito conflicos de nombre.
+    else:   # Es fichero de cálculo. Evito conflictos de nombre.
         skel.append("CALCULO = {}\n".format(datos))
     skel.append("RANGOS = {}".format(rangos))
     fout = open(nombre_fout, "w")
