@@ -116,14 +116,6 @@ th {
     text-align: left;
 }
 
-#table_normas tr:nth-child(odd) {
-    background: #A05748;
-}
-
-#table_normas tr:nth-child(even) {
-    background: #82482F;
-}
-
 #table_normas tr:first-child {
     border-bottom: 2px solid white;
     background: transparent;
