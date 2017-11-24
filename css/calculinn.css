@@ -2,7 +2,7 @@
     margin: 10px 0px;
     padding:12px;
     text-align: center;
-    font-family: monospace; 
+    font-family: monospace;
     color: #D8000C;
     background-color: #FFBABA;
     margin:10px 22px;
@@ -656,4 +656,21 @@ footer li{
 /* Para no ver ese odioso blanco sobre fondo gris claro en firefox */
 select option span{
     color: initial;
+}
+
+#left{
+    width: 55%;
+    float: left;
+    margin-top: 175px;
+    text-align: right;
+    margin-right: 60px;
+    font-size: 23px;
+}
+#right{
+    float: left;
+    margin-top: 150px;
+}
+
+.clear{
+    clear: both;
 }
