@@ -272,6 +272,7 @@ div.cell_fichatecnica{
 }
 
 #botonera{
+    margin-left: 7%;
 }
 
 .link{
@@ -290,13 +291,14 @@ div.cell_fichatecnica{
 }
 
 #botonera ul li {
-    width: 150px;
+    width: 115px;
     list-style-type: none;
     text-align: center;
     margin-right: 3em;
     margin-left: -1.5em;
     display: table-cell;
     vertical-align: middle;
+    font-size: 15px;
 }
 
 .secc_geotextiles_no_tejidos {
