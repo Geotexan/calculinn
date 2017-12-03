@@ -207,16 +207,17 @@ p{
     font-size: 12px;
 }
 
-.sombra{
-    background: transparent none repeat scroll 0 0;
-    border: 2px solid #fff;
-    bottom: 20px;
-    height: 33px;
-    position: relative;
-    right: 15px;
-    width: 205px;
-    z-index: -1;
-}
+/*.sombra{*/
+    /*background: transparent none repeat scroll 0 0;*/
+    /*border: 2px solid #fff;*/
+    /*bottom: 20px;*/
+    /*height: 33px;*/
+    /*position: relative;*/
+    /*right: 15px;*/
+    /*width: 205px;*/
+    /*z-index: -1;*/
+/*}*/
+
 .boton-geosinteticos{
     font-family: 'Montserrat', sans-serif;
     background: #f60c32;
