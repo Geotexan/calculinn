@@ -676,10 +676,3 @@ select option span{
 .clear{
     clear: both;
 }
-
-
-.sombra {
-    -webkit-box-shadow: 20px -6px 16px 5px rgba(0,0,0,0.58);
-    -moz-box-shadow: 20px -6px 16px 5px rgba(0,0,0,0.58);
-    box-shadow: 20px -6px 16px 5px rgba(0,0,0,0.58);
-}
