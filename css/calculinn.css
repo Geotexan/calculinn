@@ -623,11 +623,16 @@ img#info_icon {
     float: left;
 }
 
+.pagecontainer {
+    min-height: 800px;
+}
+
 footer {
     width: 100%;
     bottom: 0;
-    position: fixed;
+    position: relative;
     text-align: center;
+    clear: both;
 }
 
 #logo_footer img{
