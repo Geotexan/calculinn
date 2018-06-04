@@ -1,0 +1,850 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"font-",
+				"font-family"
+			],
+			[
+				"blo",
+				"blockquote\tTag"
+			],
+			[
+				"tabla",
+				"tablaBody"
+			],
+			[
+				"margin",
+				"margin-top"
+			],
+			[
+				"back",
+				"background"
+			],
+			[
+				"spa",
+				"letter-spacing"
+			],
+			[
+				"ma",
+				"max-width"
+			],
+			[
+				"text",
+				"text-decoration"
+			],
+			[
+				"color",
+				"color"
+			],
+			[
+				"style",
+				"font-style"
+			],
+			[
+				"alig",
+				"vertical-align"
+			],
+			[
+				"padd",
+				"padding-left"
+			],
+			[
+				"marg",
+				"margin-left"
+			],
+			[
+				"wid",
+				"width"
+			],
+			[
+				"inli",
+				"inline-block"
+			],
+			[
+				"inline",
+				"inline-block"
+			],
+			[
+				"border-bot",
+				"border-bottom-style"
+			],
+			[
+				"border-bottom",
+				"border-bottom-width"
+			],
+			[
+				"border-lef",
+				"border-left-width"
+			],
+			[
+				"border-ri",
+				"border-right-width"
+			],
+			[
+				"list-sty",
+				"list-style-type"
+			],
+			[
+				"camposEspe",
+				"CamposEspecificosRollo"
+			],
+			[
+				"obj_",
+				"obj_puid\t(local, instance)"
+			],
+			[
+				"temperature",
+				"temperatureConverter"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/home/queen/Geotexan/src/calculinn/doc/instructions.md",
+			"settings":
+			{
+				"buffer_size": 4814,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"package control: install",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Discover Packages"
+			],
+			[
+				"Oackage control",
+				"Package Control: List Packages"
+			],
+			[
+				":wa",
+				":w - Save"
+			],
+			[
+				":w",
+				":w - Save"
+			],
+			[
+				"prefere",
+				"Preferences: Settings"
+			],
+			[
+				"pack",
+				"Preferences: Browse Packages"
+			],
+			[
+				"packa",
+				"Preferences: Browse Packages"
+			],
+			[
+				"package",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"indent",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"pep",
+				"PEP8: Preview Changes"
+			],
+			[
+				"lint",
+				"User: Python Flake8 Lint"
+			],
+			[
+				":autopep",
+				"Anaconda: Autoformat PEP8 Errors"
+			],
+			[
+				"auto",
+				"Anaconda: Autoformat PEP8 Errors"
+			],
+			[
+				":auto",
+				"Anaconda: Autoformat PEP8 Errors"
+			],
+			[
+				"inden",
+				"Indent XML"
+			],
+			[
+				"indent ",
+				"Indent XML"
+			],
+			[
+				":sav ",
+				":w - Save"
+			],
+			[
+				"new file",
+				"File: New File Relative to Current View"
+			],
+			[
+				"package ",
+				"Package Control: Install Package"
+			],
+			[
+				"erlyman",
+				"Erlyman: Find"
+			],
+			[
+				"erly",
+				"Erlyman: Find"
+			],
+			[
+				"erlan",
+				"Erlyman: Find"
+			],
+			[
+				"erl",
+				"Erlyman: Context search"
+			],
+			[
+				"list",
+				"Package Control: List Packages"
+			],
+			[
+				"debug",
+				"SublimeLinter: Disable Debug Mode"
+			],
+			[
+				"python run",
+				"SublimeREPL: Python - virtualenv"
+			],
+			[
+				"pep8",
+				"User: Python PEP8 Autoformat"
+			],
+			[
+				"keybiu",
+				"Preferences: Key Bindings - User"
+			],
+			[
+				"keybin",
+				"Preferences: Key Bindings - Default"
+			],
+			[
+				"keybind",
+				"Preferences: Key Bindings - User"
+			],
+			[
+				"markdown pre",
+				"Markdown Preview: Python Markdown: Preview in Browser"
+			],
+			[
+				"package control",
+				"Package Control: Enable Package"
+			],
+			[
+				"strapdown",
+				"Strapdown.js Markdown: Preview in a browser"
+			],
+			[
+				"markdown",
+				"Strapdown.js Markdown: Preview in a browser"
+			],
+			[
+				"strap",
+				"Strapdown.js Markdown: Preview in a browser"
+			],
+			[
+				":refres",
+				"File: Refresh"
+			],
+			[
+				"refres",
+				"File: Refresh"
+			],
+			[
+				"lint ",
+				"Python: Enable Pep8 Linting On View"
+			],
+			[
+				":q",
+				"Set Syntax: SQL"
+			],
+			[
+				"ins",
+				"Web Inspector"
+			],
+			[
+				"inspe",
+				"Web Inspector"
+			],
+			[
+				"insp",
+				"Web Inspector"
+			],
+			[
+				"web insper",
+				"Web Inspector"
+			],
+			[
+				"webins",
+				"Web Inspector"
+			],
+			[
+				"web ins",
+				"Web Inspector"
+			],
+			[
+				"side",
+				"Side Bar: Reveal File"
+			],
+			[
+				"sidebar",
+				"Side Bar: Enable Syncing"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"package control: instal",
+				"Package Control: Install Package"
+			],
+			[
+				"console",
+				"SublimeREPL: Python - Sublime Text Console"
+			],
+			[
+				"pylint",
+				"Python: Enable Pep8 Linting On View"
+			],
+			[
+				"upgrade",
+				"Package Control: Upgrade/Overwrite All Packages"
+			],
+			[
+				":s",
+				":w - Save"
+			],
+			[
+				"linter",
+				"SublimeLinter: Show All Errors"
+			],
+			[
+				"packag",
+				"Package Control: Install Package"
+			],
+			[
+				"gutter",
+				"SublimeLinter: Choose Gutter Theme"
+			],
+			[
+				"package control: ins",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: Install",
+				"Package Control: Install Package"
+			],
+			[
+				"rope",
+				"Preferences: Browse Packages"
+			],
+			[
+				":W",
+				":w - Save"
+			]
+		],
+		"width": 497.0
+	},
+	"console":
+	{
+		"height": 278.0,
+		"history":
+		[
+			" import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe013ee18cced0ef93d5f746d80ef60'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) ",
+			"import urllib2,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe013ee18cced0ef93d5f746d80ef60'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); os.makedirs( ipp ) if not os.path.exists(ipp) else None; urllib2.install_opener( urllib2.build_opener( urllib2.ProxyHandler()) ); by = urllib2.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); open( os.path.join( ipp, pf), 'wb' ).write(by) if dh == h else None; print('Error validating download (got %s instead of %s), please try manual install' % (dh, h) if dh != h else 'Please restart Sublime Text to finish installation')",
+			" import urllib2,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe013ee18cced0ef93d5f746d80ef60'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); os.makedirs( ipp ) if not os.path.exists(ipp) else None; urllib2.install_opener( urllib2.build_opener( urllib2.ProxyHandler()) ); by = urllib2.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); open( os.path.join( ipp, pf), 'wb' ).write(by) if dh == h else None; print('Error validating download (got %s instead of %s), please try manual install' % (dh, h) if dh != h else 'Please restart Sublime Text to finish installation') ",
+			" import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe013ee18cced0ef93d5f746d80ef60'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			" import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe013ee18cced0ef93d5f746d80ef60'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) ",
+			"import urllib.request,os,hashlib; h = 'df21e130d211cfc94d9b0905775a7c0f' + '1e3d39e33b79698005270310898eea76'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			"import urllib2,os,hashlib; h = 'df21e130d211cfc94d9b0905775a7c0f' + '1e3d39e33b79698005270310898eea76'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); os.makedirs( ipp ) if not os.path.exists(ipp) else None; urllib2.install_opener( urllib2.build_opener( urllib2.ProxyHandler()) ); by = urllib2.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); open( os.path.join( ipp, pf), 'wb' ).write(by) if dh == h else None; print('Error validating download (got %s instead of %s), please try manual install' % (dh, h) if dh != h else 'Please restart Sublime Text to finish installation')",
+			"import urllib.request,os,hashlib; h = 'df21e130d211cfc94d9b0905775a7c0f' + '1e3d39e33b79698005270310898eea76'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) ",
+			"from ginn.framework import pclases",
+			"cd ginn",
+			"from framework import pclases",
+			"print(__name__)",
+			"print(__version__)",
+			"print __version__",
+			"print(\"a\")",
+			"print \"a\"",
+			"print 'a';",
+			"print 'a'",
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) ",
+			"import urllib"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/queen/Geotexan/src/calculinn",
+		"/home/queen/Geotexan/src/calculinn/doc"
+	],
+	"file_history":
+	[
+		"/home/queen/Geotexan/src/calculinn/README.md",
+		"/home/queen/Geotexan/src/bacall/src/layout/templates/layout/calculinn.sublime-project",
+		"/home/queen/Geotexan/src/bacall/src/layout/templates/layout/home.html",
+		"/home/queen/Geotexan/src/bacall/src/appginn/templatetags/tagginn.py",
+		"/home/queen/Geotexan/src/bacall/src/appnet/templatetags/tagnet.py",
+		"/home/queen/Documentos/Mockumental/mockumental.md",
+		"/tmp/fz3temp-2/DisneyCollection.txt",
+		"/home/queen/Dropbox/Alquiler Paseo de Buenos Aires-Calle Dr. Plácido Bañuelos/Clara.md",
+		"/home/queen/Geotexan/src/calculinn/js/fichas_tecnicas.js",
+		"/home/queen/Geotexan/src/calculinn/css/calculinn.css",
+		"/home/queen/Geotexan/src/calculinn/just/carreteras_por_geotexan.html",
+		"/home/queen/Geotexan/src/calculinn/conds/vertederos.html",
+		"/home/queen/Geotexan/src/calculinn/conds/balsas.html",
+		"/home/queen/Geotexan/src/calculinn/conds/carreteras_normativa_pg3.html",
+		"/home/queen/Geotexan/src/calculinn/conds/carreteras_por_geotexan.html",
+		"/home/queen/Geotexan/src/calculinn/conds/drenaje_normativa_pg3.html",
+		"/home/queen/Geotexan/src/calculinn/conds/drenaje_por_geotexan.html",
+		"/home/queen/Geotexan/src/calculinn/conds/ferrocarriles_por_geotexan.html",
+		"/home/queen/Geotexan/src/calculinn/conds/muro_de_contencion.html",
+		"/home/queen/Geotexan/src/calculinn/conds/obras_hidraulicas.html",
+		"/home/queen/Geotexan/src/calculinn/conds/tuneles_excavados_de_geotexan.html",
+		"/home/queen/Geotexan/src/calculinn/css/just.css",
+		"/home/queen/Geotexan/src/calculinn/css/conds.css",
+		"/home/queen/Geotexan/src/calculinn/just/carreteras_normativa_pg3.html",
+		"/home/queen/Geotexan/src/calculinn/js/replace_params.js",
+		"/home/queen/Geotexan/src/calculinn/js/pliego_condiciones.js",
+		"/home/queen/Geotexan/src/calculinn/just/balsas.html",
+		"/home/queen/Geotexan/src/calculinn/just/drenaje_normativa_pg3.html",
+		"/home/queen/Geotexan/src/calculinn/just/drenaje_por_geotexan.html",
+		"/home/queen/Geotexan/src/calculinn/just/ferrocarriles_por_geotexan.html",
+		"/home/queen/Geotexan/src/calculinn/just/muro_de_contencion.html",
+		"/home/queen/Geotexan/src/calculinn/just/obras_hidraulicas.html",
+		"/home/queen/Geotexan/src/calculinn/just/skel.html",
+		"/home/queen/Geotexan/src/calculinn/just/tuneles_excavados_de_geotexan.html",
+		"/home/queen/Geotexan/src/calculinn/just/vertederos.html",
+		"/home/queen/Geotexan/src/calculinn/utils/skel.html",
+		"/home/queen/Geotexan/src/calculinn/js/justificacion.js",
+		"/home/queen/Geotexan/src/calculinn/js/params_just.js",
+		"/home/queen/Geotexan/src/calculinn/calculos/carreteras_normativa_pg3.html",
+		"/home/queen/Geotexan/doc/Programación/Inventarios/20170429 Inventario cierre abril/incidencias.md",
+		"/home/queen/Geotexan/doc/Programación/20170605 Órdenes de carga/usecases.remark.md.html",
+		"/home/queen/Geotexan/doc/Programación/Inventarios/20170429 Inventario cierre abril/incidencias.",
+		"/home/queen/Geotexan/src/calculinn/geosinteticos/clasificacion.html",
+		"/home/queen/Geotexan/src/calculinn/geosinteticos/geosinteticos-geotexan.html",
+		"/home/queen/Geotexan/doc/Programación/20170201 Inventario cierre enero/incidencias.md",
+		"/home/queen/Geotexan/doc/Programación/20170201 Inventario cierre enero/correcciones DETALLE EXISTENCIAS GTX-FIBRAS-GEOCEM 2017.ods",
+		"/home/queen/Geotexan/src/calculinn/geotextiles/no-tejidos/geotextiles-no-tejidos.html",
+		"/home/queen/antes.txt.md",
+		"/home/queen/Geotexan/src/calculinn/geotextiles/no-tejidos/geotextiles-no-tejidos-definicion.html",
+		"/home/queen/Geotexan/src/geotexan.com/temp_obras.html",
+		"/home/queen/Geotexan/doc/Departamento/Migración a Sage Murano/20150605 notas reunión Murano Riotinto.md",
+		"/home/queen/Geotexan/doc/Telefonía/20150513 últimos IMEI línea jfreire.md",
+		"/home/queen/Geotexan/doc/Telefonía/Vodafone/20121011_paso_de_testigo_Toñi.md",
+		"/home/queen/Música/LEEME.md",
+		"/run/user/1000/gvfs/sftp:host=nietzsche,user=queen/home/queen/src/cortex/README.md",
+		"/run/user/1000/gvfs/sftp:host=nietzsche,user=queen/home/queen/src/AlienFeed/README.md",
+		"/run/user/1000/gvfs/sftp:host=nietzsche,user=queen/home/queen/TODO.md",
+		"/media/queen/BACKUP_1TB/readme.md",
+		"/home/queen/Geotexan/doc/Microinformática/Hardware/Proveedores/bq/20141218 tableta Javier Aguilar/notas.md",
+		"/home/queen/Geotexan/doc/Departamento/Migración a Sage Murano/20150113 notas doc alcance (rev 3).md",
+		"/home/queen/bin/restore_wallpaper.sh",
+		"/home/queen/src/dota2yearbeast.py",
+		"/home/queen/Dropbox/Miríada X/HTML5/ejercicios módulo 8/p2po_m8.htm",
+		"/home/queen/Dropbox/Miríada X/HTML5/ejercicios módulo 6/p2po_1.html",
+		"/home/queen/Dropbox/Miríada X/HTML5/ejercicios módulo 6/p2po_3.html",
+		"/home/queen/Dropbox/Miríada X/HTML5/ejercicios módulo 6/p2pm6.html",
+		"/home/queen/Dropbox/Miríada X/HTML5/ejercicios módulo 7/p2po.html",
+		"/home/queen/src/nautilus-terminal/README",
+		"/home/queen/Dropbox/Miríada X/HTML5/mod06/02-date_function.htm",
+		"/home/queen/Dropbox/Miríada X/HTML5/ejercicios módulo 5/p2p_mod5.html",
+		"/home/queen/Dropbox/Miríada X/HTML5/ejercicios módulo 4/p2pmod4.html",
+		"/media/queen/BAT-CUEVA/picard/limpia_dupes.py",
+		"/home/queen/src/ringo/estilos.css",
+		"/home/queen/src/ringo/index.html",
+		"/home/queen/Dropbox/Miríada X/HTML5/mod01/mod01/02b_parrafo_con estilos.html",
+		"/home/queen/Dropbox/Miríada X/HTML5/mod02/div_estilo.css",
+		"/home/queen/Dropbox/Miríada X/HTML5/ejercicios módulo 3/estructura.html",
+		"/home/queen/Dropbox/Miríada X/HTML5/ejercicios módulo 2/fuentes.html",
+		"/home/queen/Dropbox/Miríada X/HTML5/ejercicios módulo 3/pagpersonal.html",
+		"/home/queen/Dropbox/Miríada X/HTML5/mod03/mod03/10b_div01.html",
+		"/home/queen/Dropbox/Miríada X/HTML5/mod03/mod03/11e_div05.html",
+		"/home/queen/Dropbox/Miríada X/HTML5/mod03/mod03/13a_video.htm",
+		"/home/queen/Dropbox/Miríada X/HTML5/mod03/mod03/13b_video_webm_mp4.htm",
+		"/home/queen/Dropbox/Miríada X/HTML5/mod03/mod03/11h_div08.html",
+		"/home/queen/Dropbox/Miríada X/HTML5/ejercicios módulo 3/P2Po_background.html",
+		"/home/queen/Dropbox/Miríada X/HTML5/ejercicios módulo 2/mod2.css",
+		"/home/queen/Dropbox/Miríada X/HTML5/ejercicios módulo 2/mod2_p2.html",
+		"/home/queen/Dropbox/Miríada X/HTML5/ejercicios módulo 2/mod2_p1.html",
+		"/home/queen/Dropbox/Miríada X/HTML5/ejercicios módulo 2/menu vertical (opcional).html",
+		"/home/queen/Dropbox/Miríada X/HTML5/ejercicios módulo 2/menu horizontal (opcional).html",
+		"/home/queen/Dropbox/Miríada X/HTML5/ejercicios módulo 2/prioridad (opcional).html",
+		"/home/queen/Dropbox/Miríada X/HTML5/ejercicios módulo 1/mod1.html",
+		"/home/queen/Dropbox/Miríada X/HTML5/ejericio P2P módulo 1/mod1.html",
+		"/home/queen/Dropbox/Miríada X/HTML5/ejericio P2P módulo 1/mod1.css",
+		"/home/queen/Dropbox/Miríada X/HTML5/my1stpag.html",
+		"/home/queen/Dropbox/Miríada X/HTML5/mod01.zip",
+		"/home/queen/Dropbox/latex_currvitae/clara.tex",
+		"/home/queen/Geotexan/src/Geotex-INN/extra/scripts/mind_the_gap.py",
+		"/home/queen/.config/sublime-text-3/Packages/User/SublimeLinter.sublime-settings",
+		"/home/queen/Geotexan/src/Geotex-INN/db/baks_sql/20140203_qinn.backup",
+		"/home/queen/Geotexan/src/Geotex-INN/doc/sloccount_2007_01_16.txt",
+		"/home/queen/Geotexan/src/Geotex-INN/tests/20140201_0600_consumido.csv",
+		"/home/queen/Geotexan/src/Geotex-INN/db/20120510_ginn_geoserver.backup",
+		"/home/queen/Geotexan/src/Geotex-INN/ginn/formularios/ventana.py",
+		"/home/queen/Geotexan/src/Geotex-INN/ginn/formularios/ventana_progreso.py",
+		"/home/queen/Geotexan/src/Geotex-INN/ginn/framework/configuracion.py",
+		"/home/bogado/Geotexan/src/Geotex-INN/ginn/framework/launch_server.py",
+		"/home/bogado/Geotexan/src/Geotex-INN/ginn/formularios/launcher.py",
+		"/home/bogado/Geotexan/src/Geotex-INN/db/new_tablas.sql",
+		"/home/bogado/Geotexan/src/Geotex-INN/doc/pydoc/configuracion.html",
+		"/home/bogado/Geotexan/src/Geotex-INN/ginn/formularios/confirmings.py",
+		"/home/bogado/Geotexan/src/Geotex-INN/ginn/formularios/presupuestos.py",
+		"/home/bogado/Geotexan/src/Geotex-INN/ginn/framework/parse_mdblogic.py",
+		"/home/bogado/Geotexan/src/Geotex-INN/doc/pydoc/pagares_pagos.html",
+		"/home/bogado/Geotexan/src/Geotex-INN/ginn/main.py",
+		"/home/bogado/Geotexan/src/Geotex-INN/ginn/framework/configuracion.py",
+		"/home/bogado/Geotexan/src/Geotex-INN/ginn/formularios/ventana.py",
+		"/home/bogado/Geotexan/src/Geotex-INN/ginn/lib/mdb-array",
+		"/home/bogado/Geotexan/src/Geotex-INN/db/migrate2bacall.sh",
+		"/home/bogado/Geotexan/src/Geotex-INN/ginn/lib/odfpy/examples/list-as-odt.py",
+		"/home/bogado/Geotexan/src/Geotex-INN/last-session.txt",
+		"/home/bogado/Geotexan/src/Geotex-INN/ginn/framework/__init__.py",
+		"/home/bogado/Geotexan/src/Geotex-INN/ginn/framework/pclases/__init__.py",
+		"/home/bogado/Geotexan/src/Geotex-INN/ginn/framework/.cvsignore",
+		"/home/bogado/Geotexan/src/Geotex-INN/ginn/framework/repara_duracion_partes.py",
+		"/home/bogado/Geotexan/src/Geotex-INN/ginn/framework/memoize.py",
+		"/home/bogado/Geotexan/src/Geotex-INN/ginn/informes/factura_multipag.py",
+		"/home/bogado/Geotexan/src/Geotex-INN/ginn/formularios/rollos_almacen.glade"
+	],
+	"find":
+	{
+		"height": 26.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"wan_ip_ssh",
+			"REGISTER",
+			"def fix_DST",
+			"fix_DST",
+			"register"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/home/queen/Geotexan/src/calculinn/doc/instructions.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4814,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"actual_mode": true,
+							"av:ctrl+n": true,
+							"av:ctrl+s": true,
+							"av:ctrl+w": true,
+							"av:mode:normal": true,
+							"av_input": true,
+							"syntax": "Packages/Markdown/Markdown.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 38.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.autopep8":
+	{
+		"height": 0.0
+	},
+	"output.exec":
+	{
+		"height": 112.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.markdown":
+	{
+		"height": 112.0
+	},
+	"pinned_build_system": "",
+	"project": "calculinn.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"mind_",
+				"extra/scripts/mind_the_gap.py"
+			],
+			[
+				"20140701",
+				"extra/scripts/20140701_cambio_rollos.py"
+			],
+			[
+				"main.py",
+				"ginn/main.py"
+			],
+			[
+				"launcher",
+				"ginn/formularios/launcher.py"
+			],
+			[
+				"ventana.py",
+				"ginn/formularios/ventana.py"
+			],
+			[
+				"configuracion",
+				"ginn/framework/configuracion.py"
+			],
+			[
+				"framework/configu",
+				"ginn/framework/configuracion.py"
+			],
+			[
+				"parse",
+				"ginn/framework/parse_mdblogic.py"
+			],
+			[
+				"ventana_progreso",
+				"ginn/formularios/ventana_progreso.py"
+			],
+			[
+				"utils.py",
+				"ginn/formularios/utils.py"
+			],
+			[
+				"cairo",
+				"ginn/lib/cairograph.py"
+			],
+			[
+				"pclases",
+				"ginn/framework/pclases/__init__.py"
+			],
+			[
+				"presupuetos.",
+				"ginn/formularios/presupuestos.py"
+			],
+			[
+				"geninformes",
+				"ginn/informes/geninformes.py"
+			],
+			[
+				"pclases/__init",
+				"ginn/framework/pclases/__init__.py"
+			],
+			[
+				"consumo_",
+				"ginn/formularios/consumo_balas_partida.py"
+			],
+			[
+				"tablas.sql",
+				"db/tablas.sql"
+			],
+			[
+				"consulta_producipy",
+				"ginn/formularios/consulta_producido.py"
+			],
+			[
+				"consulta_producido",
+				"doc/pydoc/consulta_producido.html"
+			],
+			[
+				"consulta_ventas_por_produ",
+				"ginn/formularios/consulta_ventas_por_producto.py"
+			],
+			[
+				"consulta_consumo",
+				"ginn/formularios/consulta_consumo.py"
+			],
+			[
+				"por_producto",
+				"ginn/formularios/consulta_ventas_por_producto.py"
+			],
+			[
+				"salidas_por_prod",
+				"ginn/formularios/consulta_partidas_por_producto.py"
+			],
+			[
+				"gtkexc",
+				"ginn/formularios/gtkexcepthook.py"
+			],
+			[
+				"detectar",
+				"extra/scripts/detectar_albaranes_mal_facturados.py"
+			],
+			[
+				"template",
+				"ginn/informes/traceback_template.html"
+			],
+			[
+				"albaranes_mal",
+				"extra/scripts/detectar_albaranes_mal_facturados.py"
+			],
+			[
+				"tests",
+				"ginn/framework/tests.py"
+			],
+			[
+				"confirmings.py",
+				"ginn/formularios/confirmings.py"
+			],
+			[
+				"confirmin",
+				"ginn/formularios/confirmings.py"
+			],
+			[
+				"pagares",
+				"ginn/formularios/pagares_cobros.py"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 161.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
