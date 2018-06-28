@@ -104,10 +104,19 @@
 	"buffers":
 	[
 		{
-			"file": "/home/queen/Geotexan/src/calculinn/doc/instructions.md",
+			"file": "doc/instructions.md",
 			"settings":
 			{
 				"buffer_size": 4814,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "utils/skel.html",
+			"settings":
+			{
+				"buffer_size": 19154,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -416,10 +425,12 @@
 	"expanded_folders":
 	[
 		"/home/queen/Geotexan/src/calculinn",
-		"/home/queen/Geotexan/src/calculinn/doc"
+		"/home/queen/Geotexan/src/calculinn/doc",
+		"/home/queen/Geotexan/src/calculinn/utils"
 	],
 	"file_history":
 	[
+		"/home/queen/Geotexan/src/calculinn/fonts/OFL.txt",
 		"/home/queen/Geotexan/src/calculinn/README.md",
 		"/home/queen/Geotexan/src/bacall/src/layout/templates/layout/calculinn.sublime-project",
 		"/home/queen/Geotexan/src/bacall/src/layout/templates/layout/home.html",
@@ -546,8 +557,7 @@
 		"/home/bogado/Geotexan/src/Geotex-INN/ginn/framework/.cvsignore",
 		"/home/bogado/Geotexan/src/Geotex-INN/ginn/framework/repara_duracion_partes.py",
 		"/home/bogado/Geotexan/src/Geotex-INN/ginn/framework/memoize.py",
-		"/home/bogado/Geotexan/src/Geotex-INN/ginn/informes/factura_multipag.py",
-		"/home/bogado/Geotexan/src/Geotex-INN/ginn/formularios/rollos_almacen.glade"
+		"/home/bogado/Geotexan/src/Geotex-INN/ginn/informes/factura_multipag.py"
 	],
 	"find":
 	{
@@ -587,12 +597,12 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/home/queen/Geotexan/src/calculinn/doc/instructions.md",
+					"file": "doc/instructions.md",
 					"semi_transient": false,
 					"settings":
 					{
@@ -617,6 +627,38 @@
 							"av_input": true,
 							"syntax": "Packages/Markdown/Markdown.sublime-syntax",
 							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "utils/skel.html",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 19154,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1425,
+								1425
+							]
+						],
+						"settings":
+						{
+							"actual_mode": true,
+							"av_input": true,
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
