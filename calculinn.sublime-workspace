@@ -113,6 +113,24 @@
 			}
 		},
 		{
+			"file": "utils/build_html.py",
+			"settings":
+			{
+				"buffer_size": 14372,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "utils/motor.py",
+			"settings":
+			{
+				"buffer_size": 8225,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
 			"file": "utils/skel.html",
 			"settings":
 			{
@@ -133,6 +151,14 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"package control install",
+				"Package Control: Install Package"
+			],
+			[
+				"package control remove",
+				"Package Control: Remove Package"
+			],
 			[
 				"pack install",
 				"Package Control: Install Package"
@@ -613,7 +639,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -641,19 +667,93 @@
 							"av:ctrl+w": true,
 							"av:mode:normal": true,
 							"av_input": true,
-							"syntax": "Packages/Markdown/Markdown.sublime-syntax",
+							"syntax": "Packages/MarkdownLight/MarkdownLight.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 510.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "utils/build_html.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 14372,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								8337,
+								8337
+							]
+						],
+						"settings":
+						{
+							"actual_mode": true,
+							"av:ctrl+n": true,
+							"av:ctrl+s": true,
+							"av:ctrl+w": true,
+							"av:mode:command": true,
+							"av:mode:normal": true,
+							"av_input": true,
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 4939.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "utils/motor.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8225,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3055,
+								3055
+							]
+						],
+						"settings":
+						{
+							"actual_mode": true,
+							"av:ctrl+n": true,
+							"av:ctrl+s": true,
+							"av:ctrl+w": true,
+							"av:mode:command": true,
+							"av:mode:normal": true,
+							"av_input": true,
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 561.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 1,
+					"buffer": 3,
 					"file": "utils/skel.html",
 					"semi_transient": false,
 					"settings":
@@ -686,7 +786,7 @@
 						"translation.y": 153.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 3,
 					"type": "text"
 				}
 			]
