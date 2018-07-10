@@ -107,34 +107,34 @@
 			"file": "doc/instructions.md",
 			"settings":
 			{
-				"buffer_size": 4814,
+				"buffer_size": 4887,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "utils/build_html.py",
+			"file": "utils/make.sh",
 			"settings":
 			{
-				"buffer_size": 14372,
+				"buffer_size": 2376,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "utils/motor.py",
+			"file": "utils/master.sh",
 			"settings":
 			{
-				"buffer_size": 8225,
+				"buffer_size": 2685,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "utils/skel.html",
+			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 19165,
+				"buffer_size": 5258,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -466,12 +466,15 @@
 	},
 	"expanded_folders":
 	[
-		"/home/queen/Geotexan/src/calculinn",
-		"/home/queen/Geotexan/src/calculinn/doc",
-		"/home/queen/Geotexan/src/calculinn/utils"
+		"/home/queen/Geotexan/src/calculinn"
 	],
 	"file_history":
 	[
+		"/home/queen/Geotexan/src/calculinn/utils/build_html.py",
+		"/home/queen/Geotexan/src/calculinn/utils/motor.py",
+		"/home/queen/Geotexan/src/calculinn/geotextiles/no-tejidos/declaraciones_de_prestaciones.html",
+		"/home/queen/Geotexan/src/calculinn/utils/skel.html",
+		"/home/queen/Geotexan/src/calculinn/autorun",
 		"/home/queen/Geotexan/src/calculinn/doc/instructions.md",
 		"/home/queen/Geotexan/doc/Programación/Inventarios/20180611 Inventario cierre junio 18/incidencias.md",
 		"/home/queen/Geotexan/src/calculinn/fonts/OFL.txt",
@@ -510,7 +513,6 @@
 		"/home/queen/Geotexan/src/calculinn/just/skel.html",
 		"/home/queen/Geotexan/src/calculinn/just/tuneles_excavados_de_geotexan.html",
 		"/home/queen/Geotexan/src/calculinn/just/vertederos.html",
-		"/home/queen/Geotexan/src/calculinn/utils/skel.html",
 		"/home/queen/Geotexan/src/calculinn/js/justificacion.js",
 		"/home/queen/Geotexan/src/calculinn/js/params_just.js",
 		"/home/queen/Geotexan/src/calculinn/calculos/carreteras_normativa_pg3.html",
@@ -595,11 +597,7 @@
 		"/home/bogado/Geotexan/src/Geotex-INN/ginn/lib/mdb-array",
 		"/home/bogado/Geotexan/src/Geotex-INN/db/migrate2bacall.sh",
 		"/home/bogado/Geotexan/src/Geotex-INN/ginn/lib/odfpy/examples/list-as-odt.py",
-		"/home/bogado/Geotexan/src/Geotex-INN/last-session.txt",
-		"/home/bogado/Geotexan/src/Geotex-INN/ginn/framework/__init__.py",
-		"/home/bogado/Geotexan/src/Geotex-INN/ginn/framework/pclases/__init__.py",
-		"/home/bogado/Geotexan/src/Geotex-INN/ginn/framework/.cvsignore",
-		"/home/bogado/Geotexan/src/Geotex-INN/ginn/framework/repara_duracion_partes.py"
+		"/home/bogado/Geotexan/src/Geotex-INN/last-session.txt"
 	],
 	"find":
 	{
@@ -639,7 +637,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 3,
 			"sheets":
 			[
 				{
@@ -648,7 +646,7 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4814,
+						"buffer_size": 4887,
 						"regions":
 						{
 						},
@@ -665,14 +663,17 @@
 							"av:ctrl+n": true,
 							"av:ctrl+s": true,
 							"av:ctrl+w": true,
+							"av:mode:command": true,
 							"av:mode:normal": true,
 							"av_input": true,
+							"parser": null,
 							"syntax": "Packages/MarkdownLight/MarkdownLight.tmLanguage",
 							"tab_size": 2,
+							"target": "disk",
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 510.0,
+						"translation.y": 255.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
@@ -680,19 +681,55 @@
 				},
 				{
 					"buffer": 1,
-					"file": "utils/build_html.py",
+					"file": "utils/make.sh",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 14372,
+						"buffer_size": 2376,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								8337,
-								8337
+								1515,
+								1515
+							]
+						],
+						"settings":
+						{
+							"actual_mode": true,
+							"av:ctrl+n": true,
+							"av:ctrl+s": true,
+							"av:ctrl+w": true,
+							"av:mode:normal": true,
+							"av_input": true,
+							"syntax": "Packages/ShellScript/Bash.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "utils/master.sh",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2685,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2284,
+								2284
 							]
 						],
 						"settings":
@@ -704,69 +741,32 @@
 							"av:mode:command": true,
 							"av:mode:normal": true,
 							"av_input": true,
-							"syntax": "Packages/Python/Python.sublime-syntax",
+							"syntax": "Packages/ShellScript/Bash.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 4939.0,
+						"translation.y": 391.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "utils/motor.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 8225,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3055,
-								3055
-							]
-						],
-						"settings":
-						{
-							"actual_mode": true,
-							"av:ctrl+n": true,
-							"av:ctrl+s": true,
-							"av:ctrl+w": true,
-							"av:mode:command": true,
-							"av:mode:normal": true,
-							"av_input": true,
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 561.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
 					"buffer": 3,
-					"file": "utils/skel.html",
+					"file": "index.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 19165,
+						"buffer_size": 5258,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1854,
-								1854
+								272,
+								272
 							]
 						],
 						"settings":
@@ -775,7 +775,6 @@
 							"av:ctrl+n": true,
 							"av:ctrl+s": true,
 							"av:ctrl+w": true,
-							"av:mode:command": true,
 							"av:mode:normal": true,
 							"av_input": true,
 							"syntax": "Packages/HTML/HTML.sublime-syntax",
@@ -783,10 +782,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 153.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
