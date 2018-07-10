@@ -22,6 +22,7 @@ una de las tablas de referencia.
 * `autorun.inf` debería hacer que se autoejecutara `index.html` en el navegador
    del usuario al conectar un _pendrive_ que contiene todos los ficheros de la
    aplicación.
+* `autorun` sirve a algunos escritorios GNU/Linux a autoarrancar el USB.
 * `calculo` contiene los submenús de la parte de cálculo.
 * `calculos` contiene las páginas específicas de cada cálculo (balsas, 
   carreteras...). Se generan automáticamente a partir de una plantilla.
