@@ -29,32 +29,33 @@
             from browser import window
 
             ###################################################################
-            # Esto está muy feo, pero es lo más rápido que puedo hacer
-            # funcionar ahora mismo. En Firefox no hay problema con los
-            # imports. Pero en Chrome la cosa cambia.
+            # Chrome does not allow python `import` for security reasons.
+            # No problem on Firefox. But we **need** to be "browser-agnostics".
+            # So, unraveling file imports.
+            # 
             #from S_K_E_L_RECOMENDADOR import CABECERA, TABLA, RANGOS
             #from S_K_E_L_RECOMENDADOR import NUMENTRADAS, NUMSALIDAS
             #from S_K_E_L_CALCULO import TABLA as CALCULO
             #from motor import recomendar, calcular, find_step
-            # Código python para recomendador
+            # Full python for commends.
             #!/usr/bin/env python
             # -*- coding: utf-8 -*-
             
             NUMENTRADAS = 3
             NUMSALIDAS = 7
             CABECERA = (u'Tipo terreno (desplegable)', u'Tipo \xe1rido (desplegable)', u'D. m\xe1x', u'Rt', u'Elong.', u'R CBR perf', u'R perf cono', u'Abertura poro', u'K vert', u'Producto recomendado')
-            TABLA = [(u'Cohesivo', u'Machacado', u'[0..60)', u'8', u'55,87', u'1,5', u'30', u'0,068', u'0,115', u'NT 12'), (u'Cohesivo', u'Machacado', u'[60..100)', u'8', u'55,87', u'1,5', u'30', u'0,068', u'0,115', u'NT 12'), (u'Cohesivo', u'Machacado', u'[100..\u221e]', u'8', u'55,87', u'1,5', u'30', u'0,068', u'0,115', u'NT 12'), (u'Cohesivo', u'Redondeado', u'[0..60)', u'6', u'55,19', u'1,02', u'39', u'0,075', u'0,12', u'NT 10'), (u'Cohesivo', u'Redondeado', u'[60..100)', u'6,5', u'55,25', u'1,11', u'36,52', u'0,071', u'0,117', u'NT 11'), (u'Cohesivo', u'Redondeado', u'[100..\u221e]', u'8', u'55,87', u'1,5', u'30', u'0,068', u'0,115', u'NT 12'), (u'No cohesivo', u'Machacado', u'[0..60)', u'8', u'55,87', u'1,5', u'30', u'0,068', u'0,115', u'NT 12'), (u'No cohesivo', u'Machacado', u'[60..100)', u'6,5', u'55,25', u'1,11', u'36,52', u'0,071', u'0,117', u'NT 11'), (u'No cohesivo', u'Machacado', u'[100..\u221e]', u'8', u'55,87', u'1,5', u'30', u'0,068', u'0,115', u'NT 12'), (u'No cohesivo', u'Redondeado', u'[0..60)', u'8', u'55,87', u'1,5', u'30', u'0,068', u'0,115', u'NT 12'), (u'No cohesivo', u'Redondeado', u'[60..100)', u'8', u'55,87', u'1,5', u'30', u'0,068', u'0,115', u'NT 12'), (u'No cohesivo', u'Redondeado', u'[100..\u221e]', u'8', u'55,87', u'1,5', u'30', u'0,068', u'0,115', u'NT 12')]
+            TABLA = [(u'Cohesivo', u'Machacado', u'[0..60)', u'8', u'55,87', u'1,5', u'30', u'68', u'0,115', u'NT 12'), (u'Cohesivo', u'Machacado', u'[60..100)', u'8,5', u'55,35', u'1,5', u'30', u'65', u'0,11', u'NT 13'), (u'Cohesivo', u'Machacado', u'[100..\u221e]', u'9', u'56,58', u'1,52', u'30', u'64', u'0,109', u'NT 14'), (u'Cohesivo', u'Redondeado', u'[0..60)', u'6,5', u'55,25', u'1,11', u'33', u'71', u'0,117', u'NT 11'), (u'Cohesivo', u'Redondeado', u'[60..100)', u'6,5', u'55,25', u'1,11', u'33', u'71', u'0,117', u'NT 11'), (u'Cohesivo', u'Redondeado', u'[100..\u221e]', u'8', u'55,87', u'1,5', u'30', u'68', u'0,115', u'NT 12'), (u'No cohesivo', u'Machacado', u'[0..60)', u'8,5', u'55,35', u'1,5', u'30', u'65', u'0,11', u'NT 13'), (u'No cohesivo', u'Machacado', u'[60..100)', u'9', u'56,58', u'1,52', u'30', u'64', u'0,109', u'NT 14'), (u'No cohesivo', u'Machacado', u'[100..\u221e]', u'8', u'55,87', u'1,5', u'30', u'68', u'0,115', u'NT 12'), (u'No cohesivo', u'Redondeado', u'[0..60)', u'8', u'55,87', u'1,5', u'30', u'68', u'0,115', u'NT 12'), (u'No cohesivo', u'Redondeado', u'[60..100)', u'8', u'55,87', u'1,5', u'30', u'68', u'0,115', u'NT 12'), (u'No cohesivo', u'Redondeado', u'[100..\u221e]', u'8,5', u'55,35', u'1,5', u'30', u'65', u'0,11', u'NT 13')]
             RANGOS = {u'Tipo terreno (desplegable)': (u'Cohesivo', u'No cohesivo'), u'D. m\xe1x': (0, 2147483647), u'Tipo \xe1rido (desplegable)': (u'Machacado', u'Redondeado')}
-            # Código python para cálculo
+            # Full python code for evals.
             #!/usr/bin/env python
             # -*- coding: utf-8 -*-
             
             NUMENTRADAS = 3
             NUMSALIDAS = 6
             CABECERA = (u'Tipo terreno (desplegable)', u'Tipo \xe1rido (desplegable)', u'D. m\xe1x', u'Rt', u'Elong.', u'R CBR perf', u'R perf cono', u'Abertura poro', u'K vert', u'Producto recomendado')
-            CALCULO = [(u'Cohesivo', u'Machacado', u'[0..60)', u'7', u'50', u'1,2', u'<35', u'<80', u'>0,09', u'NT 12'), (u'Cohesivo', u'Machacado', u'[60..100)', u'7,5', u'50', u'1,3', u'<35', u'<80', u'>0,09', u'NT 12'), (u'Cohesivo', u'Machacado', u'[100..300]', u'8', u'50', u'1,5', u'<35', u'<80', u'>0,09', u'NT 12'), (u'Cohesivo', u'Redondeado', u'[0..60)', u'5', u'50', u'1', u'<40', u'<80', u'>0,09', u'NT 10'), (u'Cohesivo', u'Redondeado', u'[60..100)', u'6', u'50', u'1,1', u'<40', u'<80', u'>0,09', u'NT 11'), (u'Cohesivo', u'Redondeado', u'[100..300]', u'7', u'50', u'1,2', u'<35', u'<80', u'>0,09', u'NT 12'), (u'No cohesivo', u'Machacado', u'[0..60)', u'7,5', u'50', u'1,3', u'<35', u'<80', u'>0,09', u'NT 12'), (u'No cohesivo', u'Machacado', u'[60..100)', u'6', u'50', u'1,1', u'<40', u'<80', u'>0,09', u'NT 11'), (u'No cohesivo', u'Machacado', u'[100..300]', u'7', u'50', u'1,2', u'<35', u'<80', u'>0,09', u'NT 12'), (u'No cohesivo', u'Redondeado', u'[0..60)', u'7,5', u'50', u'1,3', u'<35', u'<80', u'>0,09', u'NT 12'), (u'No cohesivo', u'Redondeado', u'[60..100)', u'7', u'50', u'1,2', u'<35', u'<80', u'>0,09', u'NT 12'), (u'No cohesivo', u'Redondeado', u'[100..300]', u'7,5', u'50', u'1,3', u'<35', u'<80', u'>0,09', u'NT 12')]
+            CALCULO = [(u'Cohesivo', u'Machacado', u'[0..60)', u'7', u'50', u'1,2', u'<35', u'<80', u'>0,09', u'NT 12'), (u'Cohesivo', u'Machacado', u'[60..100)', u'7,5', u'50', u'1,3', u'<35', u'<80', u'>0,09', u'NT 13'), (u'Cohesivo', u'Machacado', u'[100..300]', u'8', u'50', u'1,5', u'<35', u'<80', u'>0,09', u'NT 14'), (u'Cohesivo', u'Redondeado', u'[0..60)', u'5', u'50', u'1', u'<40', u'<80', u'>0,09', u'NT 11'), (u'Cohesivo', u'Redondeado', u'[60..100)', u'6', u'50', u'1,1', u'<40', u'<80', u'>0,09', u'NT 11'), (u'Cohesivo', u'Redondeado', u'[100..300]', u'7', u'50', u'1,2', u'<35', u'<80', u'>0,09', u'NT 12'), (u'No cohesivo', u'Machacado', u'[0..60)', u'7,5', u'50', u'1,3', u'<35', u'<80', u'>0,09', u'NT 13'), (u'No cohesivo', u'Machacado', u'[60..100)', u'6', u'50', u'1,1', u'<40', u'<80', u'>0,09', u'NT 14'), (u'No cohesivo', u'Machacado', u'[100..300]', u'7', u'50', u'1,2', u'<35', u'<80', u'>0,09', u'NT 12'), (u'No cohesivo', u'Redondeado', u'[0..60)', u'7,5', u'50', u'1,3', u'<35', u'<80', u'>0,09', u'NT 12'), (u'No cohesivo', u'Redondeado', u'[60..100)', u'7', u'50', u'1,2', u'<35', u'<80', u'>0,09', u'NT 12'), (u'No cohesivo', u'Redondeado', u'[100..300]', u'7,5', u'50', u'1,3', u'<35', u'<80', u'>0,09', u'NT 13')]
             RANGOS = {u'Tipo terreno (desplegable)': (u'Cohesivo', u'No cohesivo'), u'D. m\xe1x': (0, 300), u'Tipo \xe1rido (desplegable)': (u'Machacado', u'Redondeado')}
-            # Código python para motor
+            # Full "motor" python code.
             #!/usr/bin/env python
             # -*- coding: utf-8 -*-
             
@@ -116,7 +117,7 @@
                 """
                 # Sanitize valores de entrada:
                 # pylint: disable=redefined-variable-type
-                if isinstance(valor, str):
+                if isinstance(valor, (unicode, str)):
                     if valor.isdigit():
                         valor = int(valor)
                     else:
@@ -125,7 +126,7 @@
                         except (ValueError, TypeError):
                             pass    # Es cadena y se queda como está.
                 # Check tipo de valor de referencia y comparación con el valor.
-                if isinstance(referencia, str):
+                if isinstance(referencia, (unicode, str)):
                     if ".." in referencia:  # Es un rango.
                         res = valor_in_rango(valor, referencia)
                     else:   # Es cadena.
@@ -134,7 +135,11 @@
                             res = valor == ref_flotante
                         except (ValueError, TypeError):  # No lo es. Es una cadena.
                             # Las entradas se pasaron a upper también en `calcular`
-                            res = valor == referencia.strip().upper()
+                            if referencia.strip().upper() == "Z":  # "Alta impedancia"
+                                # Cualquier valor de entrada es válido.
+                                res = True
+                            else:  # Comparo como cadena
+                                res = valor == referencia.strip().upper()
                 else:   # Es númerico.
                     res = valor == referencia
                 return res

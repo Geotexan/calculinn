@@ -29,32 +29,33 @@
             from browser import window
 
             ###################################################################
-            # Esto está muy feo, pero es lo más rápido que puedo hacer
-            # funcionar ahora mismo. En Firefox no hay problema con los
-            # imports. Pero en Chrome la cosa cambia.
+            # Chrome does not allow python `import` for security reasons.
+            # No problem on Firefox. But we **need** to be "browser-agnostics".
+            # So, unraveling file imports.
+            # 
             #from S_K_E_L_RECOMENDADOR import CABECERA, TABLA, RANGOS
             #from S_K_E_L_RECOMENDADOR import NUMENTRADAS, NUMSALIDAS
             #from S_K_E_L_CALCULO import TABLA as CALCULO
             #from motor import recomendar, calcular, find_step
-            # Código python para recomendador
+            # Full python for commends.
             #!/usr/bin/env python
             # -*- coding: utf-8 -*-
             
             NUMENTRADAS = 3
             NUMSALIDAS = 5
             CABECERA = (u'CBR', u'D m\xe1x', u'Espesor', u'Rt', u'Elong', u'R CBR perf', u'K vert', u'Producto recomendado')
-            TABLA = [(u'[0..1)', u'[0..150)', u'[200..400)', u'20', u'58,92', u'3,02', u'0,074', u'NT 25'), (u'[0..1)', u'[0..150)', u'[400..\u221e]', u'16', u'55,76', u'2,7', u'0,078', u'NT 23'), (u'[0..1)', u'[150..300)', u'[400..\u221e]', u'21', u'57,74', u'3,31', u'0,07', u'NT 30'), (u'[1..\u221e]', u'[0..150)', u'[200..400)', u'16', u'55,76', u'2,7', u'0,078', u'NT 23'), (u'[1..\u221e]', u'[0..150)', u'[400..\u221e]', u'16', u'55,76', u'2,7', u'0,078', u'NT 23'), (u'[1..\u221e]', u'[150..300)', u'[400..\u221e]', u'16', u'55,76', u'2,7', u'0,078', u'NT 23'), (u'[1..\u221e]', u'[300..400)', u'[500..600)', u'23', u'57,91', u'4', u'0,063', u'NT 35'), (u'[1..\u221e]', u'[400..500)', u'[600..750)', u'26', u'58,17', u'4,49', u'0,05', u'NT 40'), (u'[1..\u221e]', u'[500..600)', u'[750..900)', u'31,5', u'57,82', u'5,4', u'0,043', u'NT 46'), (u'[1..\u221e]', u'[600..\u221e)', u'[900..\u221e]', u'34,5', u'63,11', u'6,49', u'0,041', u'NT 58')]
+            TABLA = [(u'[0..1)', u'[0..150)', u'[200..400)', u'20', u'60', u'3,25', u'0,074', u'NT 25'), (u'[0..1)', u'[0..150)', u'[400..\u221e]', u'20', u'60', u'3,25', u'0,074', u'NT 25'), (u'[0..1)', u'[150..300)', u'[400..\u221e]', u'20', u'60', u'3,25', u'0,074', u'NT 25'), (u'[1..\u221e]', u'[0..150)', u'[200..400)', u'20', u'60', u'3,25', u'0,074', u'NT 25'), (u'[1..\u221e]', u'[0..150)', u'[400..\u221e]', u'20', u'60', u'3,25', u'0,074', u'NT 25'), (u'[1..\u221e]', u'[150..300)', u'Aqu\xed tambi\xe9n falta unafila respecto a la tabla de c\xe1lculos.', u'[400..\u221e]', u'20', u'60', u'3,25', u'0,074', u'NT 25'), (u'[1..\u221e]', u'[300..400)', u'[500..600)', u'23', u'57,91', u'4', u'0,063', u'NT 35'), (u'[1..\u221e]', u'[400..500)', u'[600..750)', u'26', u'58,17', u'4,49', u'0,05', u'NT 40'), (u'[1..\u221e]', u'[500..600)', u'[750..900)', u'31,5', u'57,82', u'5,4', u'0,043', u'NT 46'), (u'[1..\u221e]', u'[600..\u221e)', u'[900..\u221e]', u'34,5', u'63,11', u'6,49', u'0,041', u'NT 58')]
             RANGOS = {u'CBR': (0, 2147483647), u'Espesor': (200, 2147483647), u'D m\xe1x': (0, 2147483647)}
-            # Código python para cálculo
+            # Full python code for evals.
             #!/usr/bin/env python
             # -*- coding: utf-8 -*-
             
             NUMENTRADAS = 3
             NUMSALIDAS = 4
             CABECERA = (u'CBR', u'D m\xe1x', u'Espesor', u'Rt', u'Elong', u'R CBR perf', u'K vert', u'Producto recomendado')
-            CALCULO = [(u'[0..1)', u'[0..150)', u'[200..400)', u'17', u'50', u'3', u'>0,025', u'NT 25'), (u'[0..1)', u'[0..150)', u'[400..\u221e]', u'16', u'50', u'2,6', u'>0,025', u'NT 23'), (u'[0..1)', u'[150..300)', u'[400..\u221e]', u'20', u'50', u'3,3', u'>0,025', u'NT 30'), (u'[1..\u221e]', u'[0..150)', u'[200..400)', u'16', u'50', u'2,6', u'>0,025', u'NT 23'), (u'[1..\u221e]', u'[0..150)', u'[400..\u221e]', u'16', u'50', u'2,6', u'>0,025', u'NT 23'), (u'[1..\u221e]', u'[150..300)', u'[200..400)', u'19', u'50', u'3', u'>0,025', u'NT 25'), (u'[1..\u221e]', u'[150..300)', u'[400..\u221e]', u'16', u'50', u'2,6', u'>0,025', u'NT 23'), (u'[1..\u221e]', u'[300..400)', u'[400..600)', u'21', u'50', u'3,8', u'>0,025', u'NT 35'), (u'[1..\u221e]', u'[400..500)', u'[600..750)', u'24', u'50', u'4,4', u'>0,025', u'NT 40'), (u'[1..\u221e]', u'[500..600)', u'[750..900)', u'27', u'50', u'5,1', u'>0,025', u'NT 46'), (u'[1..\u221e]', u'[600..\u221e)', u'[900..\u221e]', u'30', u'50', u'6', u'>0,025', u'NT 58')]
+            CALCULO = [(u'[0..1)', u'[0..150)', u'[200..400)', u'17', u'50', u'3', u'>0,025', u'NT 25'), (u'[0..1)', u'[0..150)', u'[400..\u221e]', u'16', u'50', u'2,6', u'>0,025', u'NT 25'), (u'[0..1)', u'[150..300)', u'[400..\u221e]', u'20', u'50', u'3,3', u'>0,025', u'NT 25'), (u'[1..\u221e]', u'[0..150)', u'[200..400)', u'16', u'50', u'2,6', u'>0,025', u'NT 25'), (u'[1..\u221e]', u'[0..150)', u'[400..\u221e]', u'16', u'50', u'2,6', u'>0,025', u'NT 25'), (u'[1..\u221e]', u'[150..300)', u'[200..400)', u'19', u'50', u'3', u'>0,025', u'NT 25'), (u'[1..\u221e]', u'[150..300)', u'[400..\u221e]', u'16', u'50', u'2,6', u'>0,025', u'NT 25'), (u'[1..\u221e]', u'[300..400)', u'[400..600)', u'21', u'50', u'3,8', u'>0,025', u'NT 35'), (u'[1..\u221e]', u'[400..500)', u'[600..750)', u'24', u'50', u'4,4', u'>0,025', u'NT 40'), (u'[1..\u221e]', u'[500..600)', u'[750..900)', u'27', u'50', u'5,1', u'>0,025', u'NT 46'), (u'[1..\u221e]', u'[600..\u221e)', u'[900..\u221e]', u'30', u'50', u'6', u'>0,025', u'NT 58')]
             RANGOS = {u'CBR': (0, 2147483647), u'Espesor': (200, 2147483647), u'D m\xe1x': (0, 2147483647)}
-            # Código python para motor
+            # Full "motor" python code.
             #!/usr/bin/env python
             # -*- coding: utf-8 -*-
             
@@ -116,7 +117,7 @@
                 """
                 # Sanitize valores de entrada:
                 # pylint: disable=redefined-variable-type
-                if isinstance(valor, str):
+                if isinstance(valor, (unicode, str)):
                     if valor.isdigit():
                         valor = int(valor)
                     else:
@@ -125,7 +126,7 @@
                         except (ValueError, TypeError):
                             pass    # Es cadena y se queda como está.
                 # Check tipo de valor de referencia y comparación con el valor.
-                if isinstance(referencia, str):
+                if isinstance(referencia, (unicode, str)):
                     if ".." in referencia:  # Es un rango.
                         res = valor_in_rango(valor, referencia)
                     else:   # Es cadena.
@@ -134,7 +135,11 @@
                             res = valor == ref_flotante
                         except (ValueError, TypeError):  # No lo es. Es una cadena.
                             # Las entradas se pasaron a upper también en `calcular`
-                            res = valor == referencia.strip().upper()
+                            if referencia.strip().upper() == "Z":  # "Alta impedancia"
+                                # Cualquier valor de entrada es válido.
+                                res = True
+                            else:  # Comparo como cadena
+                                res = valor == referencia.strip().upper()
                 else:   # Es númerico.
                     res = valor == referencia
                 return res

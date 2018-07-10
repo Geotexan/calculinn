@@ -29,32 +29,33 @@
             from browser import window
 
             ###################################################################
-            # Esto está muy feo, pero es lo más rápido que puedo hacer
-            # funcionar ahora mismo. En Firefox no hay problema con los
-            # imports. Pero en Chrome la cosa cambia.
+            # Chrome does not allow python `import` for security reasons.
+            # No problem on Firefox. But we **need** to be "browser-agnostics".
+            # So, unraveling file imports.
+            # 
             #from S_K_E_L_RECOMENDADOR import CABECERA, TABLA, RANGOS
             #from S_K_E_L_RECOMENDADOR import NUMENTRADAS, NUMSALIDAS
             #from S_K_E_L_CALCULO import TABLA as CALCULO
             #from motor import recomendar, calcular, find_step
-            # Código python para recomendador
+            # Full python for commends.
             #!/usr/bin/env python
             # -*- coding: utf-8 -*-
             
             NUMENTRADAS = 2
             NUMSALIDAS = 5
             CABECERA = (u'Espesor', u'D. m\xe1x', u'Rt', u'Elong', u'R CBR perf', u'K plano', u'Producto recomendado')
-            TABLA = [(u'1,2', u'[0..4)', u'26', u'58,17', u'4,49', u'8,2', u'NT 40'), (u'1,2', u'[4..8)', u'31,5', u'57,82', u'5,4', u'9,53', u'NT 46'), (u'1,2', u'[8..12]', u'34,5', u'63,11', u'6,49', u'14,5', u'NT 58'), (u'1,5', u'[0..4)', u'20', u'58,92', u'3,02', u'5,44', u'NT 25'), (u'1,5', u'[4..8)', u'23', u'57,91', u'4', u'6,06', u'NT 35'), (u'1,5', u'[8..12]', u'26', u'58,17', u'4,49', u'8,2', u'NT 40'), (u'2', u'[0..4)', u'16', u'55,76', u'2,7', u'6,12', u'NT 23'), (u'2', u'[4..8)', u'20', u'58,92', u'3,02', u'5,44', u'NT 25'), (u'2', u'[8..12]', u'20', u'58,92', u'3,02', u'5,44', u'NT 25')]
+            TABLA = [(u'1,2', u'[0..4)', u'26', u'58,17', u'4,49', u'8,20E-06', u'NT 40'), (u'1,2', u'[4..8)', u'31,5', u'57,82', u'5,4', u'9,53E-06', u'NT 46'), (u'1,2', u'[8..12]', u'34,5', u'63,11', u'6,49', u'1,45E-05', u'NT 58'), (u'1,5', u'[0..4)', u'20', u'58,92', u'3,02', u'5,44E-06', u'NT 25'), (u'1,5', u'[4..8)', u'23', u'57,91', u'4', u'6,06E-06', u'NT 35'), (u'1,5', u'[8..12]', u'26', u'58,17', u'4,49', u'8,20E-06', u'NT 40'), (u'2', u'[0..4)', u'20', u'60', u'3,25', u'7,3E-06', u'NT 25'), (u'2', u'[4..8)', u'20', u'58,92', u'3,02', u'5,44E-06', u'NT 25'), (u'2', u'[8..12]', u'20', u'58,92', u'3,02', u'5,44E-06', u'NT 25')]
             RANGOS = {u'Espesor': (u'1,2', u'1,5', u'2'), u'D. m\xe1x': (0, 12)}
-            # Código python para cálculo
+            # Full python code for evals.
             #!/usr/bin/env python
             # -*- coding: utf-8 -*-
             
             NUMENTRADAS = 2
             NUMSALIDAS = 4
             CABECERA = (u'Espesor', u'D. m\xe1x', u'Rt', u'Elong', u'R CBR perf', u'K plano', u'Producto recomendado')
-            CALCULO = [(u'1,2', u'[0..4)', u'25', u'50', u'4', u'5', u'NT 40'), (u'1,2', u'[4..8)', u'25', u'50', u'5', u'Extra\xf1o bug. Si se repite el valor 5 en dos celdas consecutivas, solo see uno de los dos valores. Dar\xe1 error. La tupla ser\xe1 m\xe1s corta que el resto.', u'5', u'NT 46'), (u'1,2', u'[8..12]', u'30', u'50', u'6', u'5', u'NT 58'), (u'1,5', u'[0..4)', u'18', u'50', u'3', u'5', u'NT 25'), (u'1,5', u'[4..8)', u'20', u'50', u'3,5', u'5', u'NT 35'), (u'1,5', u'[8..12]', u'25', u'50', u'4', u'5', u'NT 40'), (u'2', u'[0..4)', u'14', u'50', u'2,5', u'5', u'NT 23'), (u'2', u'[4..8)', u'16', u'50', u'3', u'5', u'NT 25'), (u'2', u'[8..12]', u'18', u'50', u'3', u'5', u'NT 25')]
+            CALCULO = [(u'1,2', u'[0..4)', u'25', u'50', u'4', u'5,00E-06', u'NT 40'), (u'1,2', u'[4..8)', u'25', u'50', u'5', u'5,00E-06', u'NT 46'), (u'1,2', u'[8..12]', u'30', u'50', u'6', u'5,00E-06', u'NT 58'), (u'1,5', u'[0..4)', u'18', u'50', u'3', u'5,00E-06', u'NT 25'), (u'1,5', u'[4..8)', u'20', u'50', u'3,5', u'5,00E-06', u'NT 35'), (u'1,5', u'[8..12]', u'25', u'50', u'4', u'5,00E-06', u'NT 40'), (u'2', u'[0..4)', u'14', u'50', u'2,5', u'5,00E-06', u'NT 25'), (u'2', u'[4..8)', u'16', u'50', u'3', u'5,00E-06', u'NT 25'), (u'2', u'[8..12]', u'18', u'50', u'3', u'5,00E-06', u'NT 25')]
             RANGOS = {u'Espesor': (u'1,2', u'1,5', u'2'), u'D. m\xe1x': (0, 12)}
-            # Código python para motor
+            # Full "motor" python code.
             #!/usr/bin/env python
             # -*- coding: utf-8 -*-
             
@@ -116,7 +117,7 @@
                 """
                 # Sanitize valores de entrada:
                 # pylint: disable=redefined-variable-type
-                if isinstance(valor, str):
+                if isinstance(valor, (unicode, str)):
                     if valor.isdigit():
                         valor = int(valor)
                     else:
@@ -125,7 +126,7 @@
                         except (ValueError, TypeError):
                             pass    # Es cadena y se queda como está.
                 # Check tipo de valor de referencia y comparación con el valor.
-                if isinstance(referencia, str):
+                if isinstance(referencia, (unicode, str)):
                     if ".." in referencia:  # Es un rango.
                         res = valor_in_rango(valor, referencia)
                     else:   # Es cadena.
@@ -134,7 +135,11 @@
                             res = valor == ref_flotante
                         except (ValueError, TypeError):  # No lo es. Es una cadena.
                             # Las entradas se pasaron a upper también en `calcular`
-                            res = valor == referencia.strip().upper()
+                            if referencia.strip().upper() == "Z":  # "Alta impedancia"
+                                # Cualquier valor de entrada es válido.
+                                res = True
+                            else:  # Comparo como cadena
+                                res = valor == referencia.strip().upper()
                 else:   # Es númerico.
                     res = valor == referencia
                 return res

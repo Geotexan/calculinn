@@ -59,7 +59,7 @@ def comparar(valor, referencia):
     """
     # Sanitize valores de entrada:
     # pylint: disable=redefined-variable-type
-    if isinstance(valor, str):
+    if isinstance(valor, (unicode, str)):
         if valor.isdigit():
             valor = int(valor)
         else:
@@ -68,7 +68,7 @@ def comparar(valor, referencia):
             except (ValueError, TypeError):
                 pass    # Es cadena y se queda como está.
     # Check tipo de valor de referencia y comparación con el valor.
-    if isinstance(referencia, str):
+    if isinstance(referencia, (unicode, str)):
         if ".." in referencia:  # Es un rango.
             res = valor_in_rango(valor, referencia)
         else:   # Es cadena.
@@ -77,7 +77,11 @@ def comparar(valor, referencia):
                 res = valor == ref_flotante
             except (ValueError, TypeError):  # No lo es. Es una cadena.
                 # Las entradas se pasaron a upper también en `calcular`
-                res = valor == referencia.strip().upper()
+                if referencia.strip().upper() == "Z":  # "Alta impedancia"
+                    # Cualquier valor de entrada es válido.
+                    res = True
+                else:  # Comparo como cadena
+                    res = valor == referencia.strip().upper()
     else:   # Es númerico.
         res = valor == referencia
     return res

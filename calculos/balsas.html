@@ -29,32 +29,33 @@
             from browser import window
 
             ###################################################################
-            # Esto está muy feo, pero es lo más rápido que puedo hacer
-            # funcionar ahora mismo. En Firefox no hay problema con los
-            # imports. Pero en Chrome la cosa cambia.
+            # Chrome does not allow python `import` for security reasons.
+            # No problem on Firefox. But we **need** to be "browser-agnostics".
+            # So, unraveling file imports.
+            # 
             #from S_K_E_L_RECOMENDADOR import CABECERA, TABLA, RANGOS
             #from S_K_E_L_RECOMENDADOR import NUMENTRADAS, NUMSALIDAS
             #from S_K_E_L_CALCULO import TABLA as CALCULO
             #from motor import recomendar, calcular, find_step
-            # Código python para recomendador
+            # Full python for commends.
             #!/usr/bin/env python
             # -*- coding: utf-8 -*-
             
             NUMENTRADAS = 3
             NUMSALIDAS = 7
             CABECERA = (u'Espesor (desplegable)', u'Altura', u'D. m\xe1x', u'Rt', u'Elong.', u'R CBR perf', u'R perf cono', u'Abertura poro', u'KH', u'Producto recomendado')
-            TABLA = [(u'1', u'[0..10)', u'[0..60)', u'16', u'55,76', u'2,7', u'18,65', u'0,06', u'6,12E-06', u'NT-23'), (u'1', u'[0..10)', u'[60..120)', u'20', u'58,28', u'3,02', u'15,35', u'0,059', u'5,44E-06', u'NT-25'), (u'1', u'[0..10)', u'[120..\u221e]', u'23', u'57,91', u'4', u'9,8', u'0,058', u'6,06E-06', u'NT-35'), (u'1', u'[10..\u221e]', u'[0..60)', u'20', u'58,28', u'3,02', u'15,35', u'0,059', u'5,44E-06', u'NT-25'), (u'1', u'[10..\u221e]', u'[60..120)', u'23', u'57,91', u'4', u'9,8', u'0,058', u'6,06E-06', u'NT-35'), (u'1', u'[10..\u221e]', u'[120..\u221e]', u'26', u'58,17', u'4,49', u'9,6', u'0,057', u'8,2E-06', u'NT-40'), (u'1,5', u'[0..10)', u'[0..60)', u'16', u'55,76', u'2,7', u'18,65', u'0,06', u'6,12E-06', u'NT-23'), (u'1,5', u'[0..10)', u'[60..120)', u'16', u'55,76', u'2,7', u'18,65', u'0,06', u'6,12E-06', u'NT-23'), (u'1,5', u'[0..10)', u'[120..\u221e]', u'20', u'58,28', u'3,02', u'15,35', u'0,059', u'5,44E-06', u'NT-25'), (u'1,5', u'[10..\u221e]', u'[0..60)', u'16', u'55,76', u'2,7', u'18,65', u'0,06', u'6,12E-06', u'NT-23'), (u'1,5', u'[10..\u221e]', u'[60..120)', u'20', u'58,28', u'3,02', u'15,35', u'0,059', u'5,44E-06', u'NT-25'), (u'1,5', u'[10..\u221e]', u'[120..\u221e]', u'23', u'57,91', u'4', u'9,8', u'0,058', u'6,06E-06', u'NT-35'), (u'2', u'[0..10)', u'[0..60)', u'14', u'54,83', u'2,26', u'20,75', u'0,06', u'6,1E-06', u'NT-21'), (u'2', u'[0..10)', u'[60..120)', u'16', u'55,76', u'2,7', u'18,65', u'0,06', u'6,12E-06', u'NT-23'), (u'2', u'[0..10)', u'[120..\u221e]', u'16', u'55,76', u'2,7', u'18,65', u'0,06', u'6,12E-06', u'NT-23'), (u'2', u'[10..\u221e]', u'[0..60)', u'16', u'55,76', u'2,7', u'18,65', u'0,06', u'6,12E-06', u'NT-23'), (u'2', u'[10..\u221e]', u'[60..120)', u'16', u'55,76', u'2,7', u'18,65', u'0,06', u'6,12E-06', u'NT-23'), (u'2', u'[10..\u221e]', u'[120..\u221e]', u'20', u'58,28', u'3,02', u'15,35', u'0,059', u'5,44E-06', u'NT-25')]
+            TABLA = [(u'1', u'[0..10)', u'[0..60)', u'16', u'55,76', u'3.25', u'13', u'59', u'7,3E-06', u'NT 25'), (u'1', u'[0..10)', u'[60..120)', u'20', u'58,28', u'3.25', u'13', u'59', u'7,3E-06', u'NT 25'), (u'1', u'[0..10)', u'[120..\u221e]', u'23', u'57,91', u'4', u'9,8', u'0,058', u'6,06E-06', u'NT 35'), (u'1', u'[10..\u221e]', u'[0..60)', u'20', u'58,28', u'3.25', u'13', u'59', u'7,3E-06', u'NT 25'), (u'1', u'[10..\u221e]', u'[60..120)', u'23', u'57,91', u'4', u'9,8', u'0,058', u'6,06E-06', u'NT 35'), (u'1', u'[10..\u221e]', u'[120..\u221e]', u'26', u'58,17', u'4,49', u'9,6', u'0,057', u'8,2E-06', u'NT 40'), (u'1,5', u'[0..10)', u'[0..60)', u'16', u'55,76', u'2,7', u'18,65', u'0,06', u'6,12E-06', u'NT 23'), (u'1,5', u'[0..10)', u'[60..120)', u'16', u'55,76', u'3.25', u'13', u'59', u'7,3E-06', u'NT 25'), (u'1,5', u'[0..10)', u'[120..\u221e]', u'20', u'58,28', u'3.25', u'13', u'59', u'7,3E-06', u'NT 25'), (u'1,5', u'[10..\u221e]', u'[0..60)', u'16', u'55,76', u'3.25', u'13', u'59', u'7,3E-06', u'NT 25'), (u'1,5', u'[10..\u221e]', u'[60..120)', u'20', u'58,28', u'3.25', u'13', u'59', u'7,3E-06', u'NT 25'), (u'1,5', u'[10..\u221e]', u'[120..\u221e]', u'23', u'57,91', u'4', u'9,8', u'0,058', u'6,06E-06', u'NT 35'), (u'2', u'[0..10)', u'[0..60)', u'14', u'54,83', u'2,26', u'20,75', u'0,06', u'6,1E-06', u'NT 21'), (u'2', u'[0..10)', u'[60..120)', u'16', u'55,76', u'3.25', u'13', u'59', u'7,3E-06', u'NT 25'), (u'2', u'[0..10)', u'[120..\u221e]', u'16', u'55,76', u'3.25', u'13', u'59', u'7,3E-06', u'NT 25'), (u'2', u'[10..\u221e]', u'[0..60)', u'16', u'55,76', u'3.25', u'13', u'59', u'7,3E-06', u'NT 25'), (u'2', u'[10..\u221e]', u'[60..120)', u'16', u'55,76', u'3.25', u'13', u'59', u'7,3E-06', u'NT 25'), (u'2', u'[10..\u221e]', u'[120..\u221e]', u'20', u'58,28', u'3.25', u'13', u'59', u'7,3E-06', u'NT 25')]
             RANGOS = {u'D. m\xe1x': (0, 2147483647), u'Espesor (desplegable)': (u'1', u'1,5', u'2'), u'Altura': (0, 2147483647)}
-            # Código python para cálculo
+            # Full python code for evals.
             #!/usr/bin/env python
             # -*- coding: utf-8 -*-
             
             NUMENTRADAS = 3
             NUMSALIDAS = 6
             CABECERA = (u'Espesor (desplegable)', u'Altura', u'D. m\xe1x', u'Rt', u'Elong.', u'R CBR perf', u'R perf cono', u'Abertura poro', u'KH', u'Producto recomendado')
-            CALCULO = [(u'1', u'[0..10)', u'[0..60)', u'15', u'50', u'2,7', u'<0,20', u'<0,07', u'3E-06', u'NT-23'), (u'1', u'[0..10)', u'[60..120)', u'18', u'50', u'3', u'<0,16', u'<0,07', u'3E-06', u'NT-25'), (u'1', u'[0..10)', u'[120..200]', u'21', u'50', u'3,7', u'<0,10', u'<0,07', u'3E-06', u'NT-35'), (u'1', u'[10..\u221e]', u'[0..60)', u'18', u'50', u'3', u'<0,16', u'<0,07', u'3E-06', u'NT-25'), (u'1', u'[10..\u221e]', u'[60..120)', u'21', u'50', u'3,7', u'<0,10', u'<0,07', u'3E-06', u'NT-35'), (u'1', u'[10..\u221e]', u'[120.200]', u'25', u'50', u'4,4', u'<0,10', u'<0,07', u'3E-06', u'NT-40'), (u'1,5', u'[0..10)', u'[0..60)', u'15', u'50', u'2,7', u'<0,20', u'<0,07', u'3E-06', u'NT-23'), (u'1,5', u'[0..10)', u'[60..120)', u'15', u'50', u'2,7', u'<0,20', u'<0,07', u'3E-06', u'NT-23'), (u'1,5', u'[0..10)', u'[120..200]', u'18', u'50', u'3', u'<0,16', u'<0,07', u'3E-06', u'NT-25'), (u'1,5', u'[10..\u221e]', u'[0..60)', u'15', u'50', u'2,7', u'<0,20', u'<0,07', u'3E-06', u'NT-23'), (u'1,5', u'[10..\u221e]', u'[60..120)', u'18', u'50', u'3', u'<0,16', u'<0,07', u'3E-06', u'NT-25'), (u'1,5', u'[10..\u221e]', u'[120..200]', u'21', u'50', u'3,7', u'<0,10', u'<0,07', u'3E-06', u'NT-35'), (u'2', u'[0..10)', u'[0..60)', u'12', u'50', u'2,2', u'<0,25', u'<0,07', u'3E-06', u'NT-21'), (u'2', u'[0..10)', u'[60..120)', u'15', u'50', u'2,7', u'<0,20', u'<0,07', u'3E-06', u'NT-23'), (u'2', u'[0..10)', u'[120..200]', u'15', u'50', u'2,7', u'<0,20', u'<0,07', u'3E-06', u'NT-23'), (u'2', u'[10..\u221e]', u'[0..60)', u'15', u'50', u'2,7', u'<0,20', u'<0,07', u'3E-06', u'NT-23'), (u'2', u'[10..\u221e]', u'[60..120)', u'15', u'50', u'2,7', u'<0,20', u'<0,07', u'3E-06', u'NT-23'), (u'2', u'[10..\u221e]', u'[120..200]', u'18', u'50', u'3', u'<0,15', u'<0,07', u'3E-06', u'NT-25')]
+            CALCULO = [(u'1', u'[0..10)', u'[0..60)', u'15', u'50', u'2,7', u'<20', u'<70', u'3E-06', u'NT 25'), (u'1', u'[0..10)', u'[60..120)', u'18', u'50', u'3', u'<16', u'<70', u'3E-06', u'NT 25'), (u'1', u'[0..10)', u'[120..200]', u'21', u'50', u'3,7', u'<10', u'<70', u'3E-06', u'NT 35'), (u'1', u'[10..\u221e]', u'[0..60)', u'18', u'50', u'3', u'<16', u'<70', u'3E-06', u'NT 25'), (u'1', u'[10..\u221e]', u'[60..120)', u'21', u'50', u'3,7', u'<10', u'<70', u'3E-06', u'NT 35'), (u'1', u'[10..\u221e]', u'[120.200]', u'25', u'50', u'4,4', u'<10', u'<70', u'3E-06', u'NT 40'), (u'1,5', u'[0..10)', u'[0..60)', u'15', u'50', u'2,7', u'<20', u'<70', u'3E-06', u'NT 23'), (u'1,5', u'[0..10)', u'[60..120)', u'15', u'50', u'2,7', u'<20', u'<70', u'3E-06', u'NT 25'), (u'1,5', u'[0..10)', u'[120..200]', u'18', u'50', u'3', u'<16', u'<70', u'3E-06', u'NT 25'), (u'1,5', u'[10..\u221e]', u'[0..60)', u'15', u'50', u'2,7', u'<20', u'<70', u'3E-06', u'NT 25'), (u'1,5', u'[10..\u221e]', u'[60..120)', u'18', u'50', u'3', u'<16', u'<70', u'3E-06', u'NT 25'), (u'1,5', u'[10..\u221e]', u'[120..200]', u'21', u'50', u'3,7', u'<10', u'<70', u'3E-06', u'NT 35'), (u'2', u'[0..10)', u'[0..60)', u'12', u'50', u'2,2', u'<25', u'<70', u'3E-06', u'NT 21'), (u'2', u'[0..10)', u'[60..120)', u'15', u'50', u'2,7', u'<20', u'<70', u'3E-06', u'NT 25'), (u'2', u'[0..10)', u'[120..200]', u'15', u'50', u'2,7', u'<20', u'<70', u'3E-06', u'NT 25'), (u'2', u'[10..\u221e]', u'[0..60)', u'15', u'50', u'2,7', u'<20', u'<70', u'3E-06', u'NT 25'), (u'2', u'[10..\u221e]', u'[60..120)', u'15', u'50', u'2,7', u'<20', u'<70', u'3E-06', u'NT 25'), (u'2', u'[10..\u221e]', u'[120..200]', u'18', u'50', u'3', u'<15', u'<70', u'3E-06', u'NT 25')]
             RANGOS = {u'D. m\xe1x': (0, 200), u'Espesor (desplegable)': (u'1', u'1,5', u'2'), u'Altura': (0, 2147483647)}
-            # Código python para motor
+            # Full "motor" python code.
             #!/usr/bin/env python
             # -*- coding: utf-8 -*-
             
@@ -116,7 +117,7 @@
                 """
                 # Sanitize valores de entrada:
                 # pylint: disable=redefined-variable-type
-                if isinstance(valor, str):
+                if isinstance(valor, (unicode, str)):
                     if valor.isdigit():
                         valor = int(valor)
                     else:
@@ -125,7 +126,7 @@
                         except (ValueError, TypeError):
                             pass    # Es cadena y se queda como está.
                 # Check tipo de valor de referencia y comparación con el valor.
-                if isinstance(referencia, str):
+                if isinstance(referencia, (unicode, str)):
                     if ".." in referencia:  # Es un rango.
                         res = valor_in_rango(valor, referencia)
                     else:   # Es cadena.
@@ -134,7 +135,11 @@
                             res = valor == ref_flotante
                         except (ValueError, TypeError):  # No lo es. Es una cadena.
                             # Las entradas se pasaron a upper también en `calcular`
-                            res = valor == referencia.strip().upper()
+                            if referencia.strip().upper() == "Z":  # "Alta impedancia"
+                                # Cualquier valor de entrada es válido.
+                                res = True
+                            else:  # Comparo como cadena
+                                res = valor == referencia.strip().upper()
                 else:   # Es númerico.
                     res = valor == referencia
                 return res

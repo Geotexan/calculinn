@@ -116,7 +116,7 @@
 			"file": "utils/skel.html",
 			"settings":
 			{
-				"buffer_size": 19154,
+				"buffer_size": 19165,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -134,12 +134,32 @@
 		"selected_items":
 		[
 			[
-				"package control: install",
+				"pack install",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Package Control: Remove Package"
+			],
+			[
+				"mar",
+				"Set Syntax: Markdown"
+			],
+			[
+				"pc install",
+				"Package Control: Install Package"
+			],
+			[
+				"pa c insta",
 				"Package Control: Install Package"
 			],
 			[
 				"Package Control: ",
 				"Package Control: Discover Packages"
+			],
+			[
+				"package control: install",
+				"Package Control: Install Package"
 			],
 			[
 				"Oackage control",
@@ -156,10 +176,6 @@
 			[
 				"prefere",
 				"Preferences: Settings"
-			],
-			[
-				"pack",
-				"Preferences: Browse Packages"
 			],
 			[
 				"packa",
@@ -430,6 +446,8 @@
 	],
 	"file_history":
 	[
+		"/home/queen/Geotexan/src/calculinn/doc/instructions.md",
+		"/home/queen/Geotexan/doc/Programación/Inventarios/20180611 Inventario cierre junio 18/incidencias.md",
 		"/home/queen/Geotexan/src/calculinn/fonts/OFL.txt",
 		"/home/queen/Geotexan/src/calculinn/README.md",
 		"/home/queen/Geotexan/src/bacall/src/layout/templates/layout/calculinn.sublime-project",
@@ -555,9 +573,7 @@
 		"/home/bogado/Geotexan/src/Geotex-INN/ginn/framework/__init__.py",
 		"/home/bogado/Geotexan/src/Geotex-INN/ginn/framework/pclases/__init__.py",
 		"/home/bogado/Geotexan/src/Geotex-INN/ginn/framework/.cvsignore",
-		"/home/bogado/Geotexan/src/Geotex-INN/ginn/framework/repara_duracion_partes.py",
-		"/home/bogado/Geotexan/src/Geotex-INN/ginn/framework/memoize.py",
-		"/home/bogado/Geotexan/src/Geotex-INN/ginn/informes/factura_multipag.py"
+		"/home/bogado/Geotexan/src/Geotex-INN/ginn/framework/repara_duracion_partes.py"
 	],
 	"find":
 	{
@@ -597,7 +613,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -633,39 +649,44 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
 					"file": "utils/skel.html",
-					"semi_transient": true,
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 19154,
+						"buffer_size": 19165,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1425,
-								1425
+								1854,
+								1854
 							]
 						],
 						"settings":
 						{
 							"actual_mode": true,
+							"av:ctrl+n": true,
+							"av:ctrl+s": true,
+							"av:ctrl+w": true,
+							"av:mode:command": true,
+							"av:mode:normal": true,
 							"av_input": true,
 							"syntax": "Packages/HTML/HTML.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 153.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]

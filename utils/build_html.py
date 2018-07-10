@@ -321,6 +321,9 @@ def main():
     parser.add_argument("-d", "--destino", help="Ruta destino donde se "
                         "generarán todos los ficheros.", dest="ruta_dest",
                         default=".")
+    parser.add_argument("-c", "--conservar", help="No borrar los `.py`"
+                        " temporales", dest="conservar", default=False,
+                        action="store_true")
     args = parser.parse_args()
     if len(args.tabla) > 2:
         parser.print_help()
@@ -335,7 +338,8 @@ def main():
                               tabla_recomendador)
     print("Fichero {} generado.".format(ruta_html))
     # Y ahora que ya está todo el código python inline, no necesito los .py
-    clean_pymodules(pycalculo, pyrecomendador, args.ruta_dest)
+    if not args.conservar:
+        clean_pymodules(pycalculo, pyrecomendador, args.ruta_dest)
     sys.exit(0)
 
 

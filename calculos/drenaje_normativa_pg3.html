@@ -29,14 +29,15 @@
             from browser import window
 
             ###################################################################
-            # Esto está muy feo, pero es lo más rápido que puedo hacer
-            # funcionar ahora mismo. En Firefox no hay problema con los
-            # imports. Pero en Chrome la cosa cambia.
+            # Chrome does not allow python `import` for security reasons.
+            # No problem on Firefox. But we **need** to be "browser-agnostics".
+            # So, unraveling file imports.
+            # 
             #from S_K_E_L_RECOMENDADOR import CABECERA, TABLA, RANGOS
             #from S_K_E_L_RECOMENDADOR import NUMENTRADAS, NUMSALIDAS
             #from S_K_E_L_CALCULO import TABLA as CALCULO
             #from motor import recomendar, calcular, find_step
-            # Código python para recomendador
+            # Full python for commends.
             #!/usr/bin/env python
             # -*- coding: utf-8 -*-
             
@@ -45,7 +46,7 @@
             CABECERA = (u'Funci\xf3n', u'Tr\xe1fico (desplegable)', u'E', u'Rt', u'R perf. Cono', u'Abertura poro', u'Producto recomendado')
             TABLA = [(u'Filtraci\xf3n', u'T0', u'57,23', u'9,5', u'24', u'0,061', u'NT 15'), (u'Filtraci\xf3n', u'T1', u'55,87', u'8', u'30', u'0,068', u'NT 12'), (u'Filtraci\xf3n', u'T2', u'55,19', u'6', u'39', u'0,075', u'NT 10'), (u'Filtraci\xf3n', u'T3', u'55,19', u'6', u'39', u'0,075', u'NT 10')]
             RANGOS = {u'Funci\xf3n': (u'Filtraci\xf3n',), u'Tr\xe1fico (desplegable)': (u'T0', u'T1', u'T2', u'T3')}
-            # Código python para cálculo
+            # Full python code for evals.
             #!/usr/bin/env python
             # -*- coding: utf-8 -*-
             
@@ -54,7 +55,7 @@
             CABECERA = (u'Funci\xf3n', u'Tr\xe1fico (desplegable)', u'E', u'Rt', u'R perf. Cono', u'Abertura poro', u'Producto recomendado')
             CALCULO = [(u'Filtraci\xf3n', u'T0', u'2,7', u'9', u'30', u'5 \u2013 20', u'NT 15'), (u'Filtraci\xf3n', u'T1', u'2,1', u'7', u'35', u'5 \u2013 20', u'NT 12'), (u'Filtraci\xf3n', u'T2', u'1,5', u'5', u'40', u'5 \u2013 20', u'NT 10'), (u'Filtraci\xf3n', u'T3', u'1,2', u'4', u'45', u'5 \u2013 20', u'NT 10')]
             RANGOS = {u'Funci\xf3n': (u'Filtraci\xf3n',), u'Tr\xe1fico (desplegable)': (u'T0', u'T1', u'T2', u'T3')}
-            # Código python para motor
+            # Full "motor" python code.
             #!/usr/bin/env python
             # -*- coding: utf-8 -*-
             
@@ -116,7 +117,7 @@
                 """
                 # Sanitize valores de entrada:
                 # pylint: disable=redefined-variable-type
-                if isinstance(valor, str):
+                if isinstance(valor, (unicode, str)):
                     if valor.isdigit():
                         valor = int(valor)
                     else:
@@ -125,7 +126,7 @@
                         except (ValueError, TypeError):
                             pass    # Es cadena y se queda como está.
                 # Check tipo de valor de referencia y comparación con el valor.
-                if isinstance(referencia, str):
+                if isinstance(referencia, (unicode, str)):
                     if ".." in referencia:  # Es un rango.
                         res = valor_in_rango(valor, referencia)
                     else:   # Es cadena.
@@ -134,7 +135,11 @@
                             res = valor == ref_flotante
                         except (ValueError, TypeError):  # No lo es. Es una cadena.
                             # Las entradas se pasaron a upper también en `calcular`
-                            res = valor == referencia.strip().upper()
+                            if referencia.strip().upper() == "Z":  # "Alta impedancia"
+                                # Cualquier valor de entrada es válido.
+                                res = True
+                            else:  # Comparo como cadena
+                                res = valor == referencia.strip().upper()
                 else:   # Es númerico.
                     res = valor == referencia
                 return res

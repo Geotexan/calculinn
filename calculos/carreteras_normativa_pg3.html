@@ -29,32 +29,33 @@
             from browser import window
 
             ###################################################################
-            # Esto está muy feo, pero es lo más rápido que puedo hacer
-            # funcionar ahora mismo. En Firefox no hay problema con los
-            # imports. Pero en Chrome la cosa cambia.
+            # Chrome does not allow python `import` for security reasons.
+            # No problem on Firefox. But we **need** to be "browser-agnostics".
+            # So, unraveling file imports.
+            # 
             #from S_K_E_L_RECOMENDADOR import CABECERA, TABLA, RANGOS
             #from S_K_E_L_RECOMENDADOR import NUMENTRADAS, NUMSALIDAS
             #from S_K_E_L_CALCULO import TABLA as CALCULO
             #from motor import recomendar, calcular, find_step
-            # Código python para recomendador
+            # Full python for commends.
             #!/usr/bin/env python
             # -*- coding: utf-8 -*-
             
             NUMENTRADAS = 2
             NUMSALIDAS = 5
             CABECERA = (u'Tr\xe1fico (desplegable)', u'Funci\xf3n (desplegable)', u'E', u'Rt', u'R perf. Cono', u'Abertura poro', u'Producto recomendado')
-            TABLA = [(u'T0', u'Separaci\xf3n', u'8,92', u'16', u'18,65', u'60', u'NT-23'), (u'T0', u'Filtraci\xf3n', u'5,44', u'9,5', u'28,66', u'61', u'NT-15'), (u'T1', u'Separaci\xf3n', u'6,44', u'12', u'21', u'61', u'NT-18'), (u'T1', u'Filtraci\xf3n', u'4,47', u'8', u'30', u'68', u'NT-12'), (u'T2', u'Separaci\xf3n', u'5,44', u'8', u'30', u'68', u'NT-12'), (u'T2', u'Filtraci\xf3n', u'3,31', u'6', u'39', u'75', u'NT-10'), (u'T3', u'Separaci\xf3n', u'4,47', u'6,5', u'33', u'71', u'NT-11'), (u'T3', u'Filtraci\xf3n', u'3,1', u'6', u'39', u'75', u'NT-10')]
+            TABLA = [(u'T0', u'Separaci\xf3n', u'89,2', u'16', u'18,65', u'60', u'NT 23'), (u'T0', u'Filtraci\xf3n', u'54,4', u'9,5', u'28,66', u'61', u'NT 15'), (u'T1', u'Separaci\xf3n', u'64,4', u'12', u'21', u'61', u'NT 18'), (u'T1', u'Filtraci\xf3n', u'44,7', u'8', u'30', u'68', u'NT 12'), (u'T2', u'Separaci\xf3n', u'55,35', u'8,5', u'30', u'68', u'NT 13'), (u'T2', u'Filtraci\xf3n', u'33,1', u'6', u'39', u'75', u'NT 10'), (u'T3', u'Separaci\xf3n', u'44,7', u'6,5', u'33', u'71', u'NT 11'), (u'T3', u'Filtraci\xf3n', u'31', u'6', u'39', u'75', u'NT 10')]
             RANGOS = {u'Funci\xf3n (desplegable)': (u'Filtraci\xf3n', u'Separaci\xf3n'), u'Tr\xe1fico (desplegable)': (u'T0', u'T1', u'T2', u'T3')}
-            # Código python para cálculo
+            # Full python code for evals.
             #!/usr/bin/env python
             # -*- coding: utf-8 -*-
             
             NUMENTRADAS = 2
             NUMSALIDAS = 4
             CABECERA = (u'Tr\xe1fico (desplegable)', u'Funci\xf3n (desplegable)', u'E', u'Rt', u'R perf. Cono', u'Abertura poro', u'Producto recomendado')
-            CALCULO = [(u'T0', u'Separaci\xf3n', u'6,4', u'16', u'20', u'5-20', u'NT-23'), (u'T0', u'Filtraci\xf3n', u'2,7', u'9', u'30', u'5-20', u'NT-15'), (u'T1', u'Separaci\xf3n', u'4,8', u'12', u'25', u'5-20', u'NT-18'), (u'T1', u'Filtraci\xf3n', u'2,1', u'7', u'35', u'5-20', u'NT-12'), (u'T2', u'Separaci\xf3n', u'3,2', u'8', u'30', u'5-20', u'NT-12'), (u'T2', u'Filtraci\xf3n', u'1,5', u'5', u'40', u'5-20', u'NT-10'), (u'T3', u'Separaci\xf3n', u'2,4', u'6', u'35', u'5-20', u'NT-11'), (u'T3', u'Filtraci\xf3n', u'1,2', u'4', u'45', u'5-20', u'NT-10')]
+            CALCULO = [(u'T0', u'Separaci\xf3n', u'64', u'16', u'20', u'50-200', u'NT 23'), (u'T0', u'Filtraci\xf3n', u'27', u'9', u'30', u'50-200', u'NT 15'), (u'T1', u'Separaci\xf3n', u'48', u'12', u'25', u'50-200', u'NT 18'), (u'T1', u'Filtraci\xf3n', u'21', u'7', u'35', u'50-200', u'NT 12'), (u'T2', u'Separaci\xf3n', u'32', u'8', u'30', u'50-200', u'NT 13'), (u'T2', u'Filtraci\xf3n', u'15', u'5', u'40', u'50-200', u'NT 10'), (u'T3', u'Separaci\xf3n', u'24', u'6', u'35', u'50-200', u'NT 11'), (u'T3', u'Filtraci\xf3n', u'12', u'4', u'45', u'50-200', u'NT 10')]
             RANGOS = {u'Funci\xf3n (desplegable)': (u'Filtraci\xf3n', u'Separaci\xf3n'), u'Tr\xe1fico (desplegable)': (u'T0', u'T1', u'T2', u'T3')}
-            # Código python para motor
+            # Full "motor" python code.
             #!/usr/bin/env python
             # -*- coding: utf-8 -*-
             
@@ -116,7 +117,7 @@
                 """
                 # Sanitize valores de entrada:
                 # pylint: disable=redefined-variable-type
-                if isinstance(valor, str):
+                if isinstance(valor, (unicode, str)):
                     if valor.isdigit():
                         valor = int(valor)
                     else:
@@ -125,7 +126,7 @@
                         except (ValueError, TypeError):
                             pass    # Es cadena y se queda como está.
                 # Check tipo de valor de referencia y comparación con el valor.
-                if isinstance(referencia, str):
+                if isinstance(referencia, (unicode, str)):
                     if ".." in referencia:  # Es un rango.
                         res = valor_in_rango(valor, referencia)
                     else:   # Es cadena.
@@ -134,7 +135,11 @@
                             res = valor == ref_flotante
                         except (ValueError, TypeError):  # No lo es. Es una cadena.
                             # Las entradas se pasaron a upper también en `calcular`
-                            res = valor == referencia.strip().upper()
+                            if referencia.strip().upper() == "Z":  # "Alta impedancia"
+                                # Cualquier valor de entrada es válido.
+                                res = True
+                            else:  # Comparo como cadena
+                                res = valor == referencia.strip().upper()
                 else:   # Es númerico.
                     res = valor == referencia
                 return res
