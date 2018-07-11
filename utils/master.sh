@@ -2,10 +2,9 @@
 set -eu
 set -o pipefail
 IFS=$'\n\t'
-# http://redsymbol.net/articles/unofficial-bash-strict-mode/
 
-## "Compila" todas las tablas de cálculo para generar en el directorio
-## actual todas las páginas html y módulos correspondientes.
+## Crea una imagen VFAT con el contenido del pendrive para ser grabada en 
+## varios dispositivos a la vez con MultiWriter o Etcher.
 ## LICENSE: [GLWT(Good Luck With That)](https://github.com/me-shaon/GLWTPL/blob/master/LICENSE)
 
 RUTA_BASE=$(dirname $0)/..
@@ -18,7 +17,7 @@ clean () {
 
 print_usage () {
     echo "$0 [clean] [path]"
-    echo "path : Ruta donde creará la estructura del pendrive."
+    echo "path : Ruta donde creará la imagen del pendrive."
     echo
     echo "clean: Limpia todos los ficheros."
     echo
@@ -61,7 +60,7 @@ dd if=/dev/zero of=$RUTA_DEST/geotexan.img bs=512 count=1958400
 
 # Creo el sistema de ficheros
 echo "Vamos a crear el sistema de ficheros. Ejecutando sudo..."
-sudo mkfs -t fat -F 16 $RUTA_DEST/geotexan.img
+sudo mkfs -t fat -F 16 -n GEOTEXAN $RUTA_DEST/geotexan.img
 
 # Monto la imagen
 echo "Vamos a montar la imagen. Ejecutando sudo..."
@@ -89,4 +88,4 @@ done
 echo "Vamos a desmontar la imagen. Ejecutando sudo..."
 sudo umount $MNT_IMG
 
-echo -e "\033[0;31m >>> Finalizado <<< \033[0m"
+echo -e "\033[0;32m >>> Finalizado <<< \033[0m"
