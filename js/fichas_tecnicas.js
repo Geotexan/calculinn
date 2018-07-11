@@ -4,7 +4,7 @@ var fichas =
     "NT-11"             : "1-1-02_geotesan_nt11.pdf",
     "NT-12"             : "1-1-03_geotesan_nt12.pdf",
     "NT-13"             : "1-1-04_geotesan_nt13.pdf",
-    "NT-14"             : "1-1-05_geotesan_nt14.pdf",
+    "NT-14"             : "1-1-05_0_geotesan_nt14.pdf",
     "NT-15"             : "1-1-06_geotesan_nt15.pdf",
     "NT-17"             : "1-1-07_geotesan_nt17.pdf",
     "NT-175"            : "1-1-08_geotesan_nt175.pdf",
