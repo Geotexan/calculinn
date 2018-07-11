@@ -138,24 +138,6 @@
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
-		},
-		{
-			"file": "just/carreteras_por_geotexan.html",
-			"settings":
-			{
-				"buffer_size": 5198,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "js/fichas_tecnicas.js",
-			"settings":
-			{
-				"buffer_size": 3442,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
 		}
 	],
 	"build_system": "",
@@ -485,11 +467,15 @@
 	"expanded_folders":
 	[
 		"/home/queen/Geotexan/src/calculinn",
+		"/home/queen/Geotexan/src/calculinn/calculo",
 		"/home/queen/Geotexan/src/calculinn/js",
 		"/home/queen/Geotexan/src/calculinn/just"
 	],
 	"file_history":
 	[
+		"/home/queen/Geotexan/src/calculinn/just/carreteras_por_geotexan.html",
+		"/home/queen/Geotexan/src/calculinn/js/fichas_tecnicas.js",
+		"/home/queen/Geotexan/src/calculinn/calculo/normas.html",
 		"/home/queen/Geotexan/src/calculinn/utils/build_html.py",
 		"/home/queen/Geotexan/src/calculinn/utils/motor.py",
 		"/home/queen/Geotexan/src/calculinn/geotextiles/no-tejidos/declaraciones_de_prestaciones.html",
@@ -506,9 +492,7 @@
 		"/home/queen/Documentos/Mockumental/mockumental.md",
 		"/tmp/fz3temp-2/DisneyCollection.txt",
 		"/home/queen/Dropbox/Alquiler Paseo de Buenos Aires-Calle Dr. Plácido Bañuelos/Clara.md",
-		"/home/queen/Geotexan/src/calculinn/js/fichas_tecnicas.js",
 		"/home/queen/Geotexan/src/calculinn/css/calculinn.css",
-		"/home/queen/Geotexan/src/calculinn/just/carreteras_por_geotexan.html",
 		"/home/queen/Geotexan/src/calculinn/conds/vertederos.html",
 		"/home/queen/Geotexan/src/calculinn/conds/balsas.html",
 		"/home/queen/Geotexan/src/calculinn/conds/carreteras_normativa_pg3.html",
@@ -616,8 +600,7 @@
 		"/home/bogado/Geotexan/src/Geotex-INN/ginn/formularios/ventana.py",
 		"/home/bogado/Geotexan/src/Geotex-INN/ginn/lib/mdb-array",
 		"/home/bogado/Geotexan/src/Geotex-INN/db/migrate2bacall.sh",
-		"/home/bogado/Geotexan/src/Geotex-INN/ginn/lib/odfpy/examples/list-as-odt.py",
-		"/home/bogado/Geotexan/src/Geotex-INN/last-session.txt"
+		"/home/bogado/Geotexan/src/Geotex-INN/ginn/lib/odfpy/examples/list-as-odt.py"
 	],
 	"find":
 	{
@@ -657,7 +640,7 @@
 	"groups":
 	[
 		{
-			"selected": 5,
+			"selected": 3,
 			"sheets":
 			[
 				{
@@ -696,7 +679,7 @@
 						"translation.y": 255.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
@@ -732,7 +715,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
@@ -769,7 +752,7 @@
 						"translation.y": 391.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -795,81 +778,10 @@
 							"av:ctrl+n": true,
 							"av:ctrl+s": true,
 							"av:ctrl+w": true,
+							"av:mode:command": true,
 							"av:mode:normal": true,
 							"av_input": true,
 							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "just/carreteras_por_geotexan.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5198,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3119,
-								3119
-							]
-						],
-						"settings":
-						{
-							"actual_mode": true,
-							"av:ctrl+n": true,
-							"av:ctrl+s": true,
-							"av:ctrl+w": true,
-							"av:mode:normal": true,
-							"av_input": true,
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 850.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "js/fichas_tecnicas.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3442,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2094,
-								2094
-							]
-						],
-						"settings":
-						{
-							"actual_mode": true,
-							"av:ctrl+n": true,
-							"av:ctrl+s": true,
-							"av:ctrl+w": true,
-							"av:mode:normal": true,
-							"av_input": true,
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
