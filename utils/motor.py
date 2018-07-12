@@ -210,7 +210,7 @@ def find_step(col, tabla):
         step = int((y - x) / 10)
     if step > 100000:
         # Solo hay un rango y llega hasta infinito. Un paso demasiado grande.
-        # OPTIMIZACIÓN: Much más rápido comparar dos floats que recorrer la
+        # OPTIMIZACIÓN: Mucho más rápido comparar dos floats que recorrer la
         # tabla para comprobar si solo hay el mismo rango para esa columna en
         # todas las filas.
         step = 10
