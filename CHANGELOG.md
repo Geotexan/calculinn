@@ -2,6 +2,8 @@
 
 Formato basado en [Keep a Changelog](https://keepachangelog.com/).
 
+> `grep "search_date" index.html`
+
 ## [Unreleased]
 
 ## 2018-07-13 - 1.0
