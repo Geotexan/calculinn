@@ -129,7 +129,7 @@ def check_aciertos(aciertos):
 
 def calcular(tabla, *args):
     """
-    De manera análiga a `recomendar`, realiza las comapraciones y devuelve
+    De manera análoga a `recomendar`, realiza las comapraciones y devuelve
     la fila que satisface todos los valores de entrada o None si no se
     encuentra ninguna.
     A la fila resultante se le elimina el último valor si éste es un producto
@@ -154,7 +154,7 @@ def parse_extremos(rango):
     :ini: Extremo inicial: Abierto «(» o cerrado «[»
     :x: Extremo inicial como flotante
     :y: Extremo final como número flotante (incluso si es infinito). Asegura
-        que es siempre un número, mno devuelve float("inf")
+        que es siempre un número, no devuelve float("inf")
     :fin: Extremo final: Abierto «(» o cerrado «[»
     """
     ini = rango[0]
@@ -169,7 +169,7 @@ def parse_extremos(rango):
     try:
         y = float(stry)
     except ValueError:  # Es infinito: ∞, uso el mayor entero posible
-        # (sys.maxint) pero manualmente porque no brython no puede importar.
+        # (sys.maxint) pero manualmente porque brython no puede importar.
         y = float(2**31 - 1)
     return ini, x, y, fin
 

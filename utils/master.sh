@@ -43,7 +43,7 @@ fi
 # Ficheros a incluir en el máster:
 declare -a FILES=("autorun.inf" "calculo" "calculos" "conds" "COPYING.txt" "css" "favicon.ico" \
     "fonts" "geosinteticos" "geotextiles" "images" "index.html" "introduccion" "js" "just" \
-    "libs" "pdf" "autorun")
+    "libs" "pdf" "autorun" "doc/instrucciones.pdf" "doc/instrucciones.html")
 
 # No se pueden ocultar hasta no estar en el pendrive formateado como FAT/NTFS
 declare -a HIDDEN=("calculo" "calculos" "conds" "css" "fonts" "geosinteticos" "geotextiles" \
