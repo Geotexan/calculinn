@@ -4,7 +4,7 @@
 
 # INSTRUCCIONES
 
-Para lanzar la aplicación abra el fichero [`index.html`](index.html).
+Para lanzar la aplicación abra el fichero [`index.html`](/index.html).
 
 Navegue por las diferentes secciones haciendo clic. Vuelva al menú principal con «retroceder» (arriba a la izquierda).
 

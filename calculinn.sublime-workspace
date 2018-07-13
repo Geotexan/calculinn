@@ -104,28 +104,10 @@
 	"buffers":
 	[
 		{
-			"file": "utils/make.sh",
-			"settings":
-			{
-				"buffer_size": 2376,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "utils/master.sh",
 			"settings":
 			{
-				"buffer_size": 2682,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "index.html",
-			"settings":
-			{
-				"buffer_size": 5258,
+				"buffer_size": 2784,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -470,14 +452,17 @@
 	"expanded_folders":
 	[
 		"/home/queen/Geotexan/src/calculinn",
-		"/home/queen/Geotexan/src/calculinn/doc"
+		"/home/queen/Geotexan/src/calculinn/doc",
+		"/home/queen/Geotexan/src/calculinn/utils"
 	],
 	"file_history":
 	[
-		"/home/queen/Geotexan/src/calculinn/index.html",
-		"/home/queen/Geotexan/src/calculinn/utils/motor.py",
+		"/home/queen/Geotexan/src/calculinn/utils/master.sh",
 		"/home/queen/Geotexan/src/calculinn/doc/instrucciones.md",
 		"/home/queen/Geotexan/src/calculinn/doc/instrucciones.html",
+		"/home/queen/Geotexan/src/calculinn/utils/make.sh",
+		"/home/queen/Geotexan/src/calculinn/index.html",
+		"/home/queen/Geotexan/src/calculinn/utils/motor.py",
 		"/home/queen/Geotexan/src/calculinn/doc/dev.md",
 		"/home/queen/Geotexan/src/calculinn/just/carreteras_por_geotexan.html",
 		"/home/queen/Geotexan/src/calculinn/js/fichas_tecnicas.js",
@@ -599,9 +584,7 @@
 		"/home/bogado/Geotexan/src/Geotex-INN/ginn/formularios/confirmings.py",
 		"/home/bogado/Geotexan/src/Geotex-INN/ginn/formularios/presupuestos.py",
 		"/home/bogado/Geotexan/src/Geotex-INN/ginn/framework/parse_mdblogic.py",
-		"/home/bogado/Geotexan/src/Geotex-INN/doc/pydoc/pagares_pagos.html",
-		"/home/bogado/Geotexan/src/Geotex-INN/ginn/main.py",
-		"/home/bogado/Geotexan/src/Geotex-INN/ginn/framework/configuracion.py"
+		"/home/bogado/Geotexan/src/Geotex-INN/doc/pydoc/pagares_pagos.html"
 	],
 	"find":
 	{
@@ -641,89 +624,16 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "utils/make.sh",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2376,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1515,
-								1515
-							]
-						],
-						"settings":
-						{
-							"actual_mode": true,
-							"av:ctrl+n": true,
-							"av:ctrl+s": true,
-							"av:ctrl+w": true,
-							"av:mode:normal": true,
-							"av_input": true,
-							"syntax": "Packages/ShellScript/Bash.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
 					"file": "utils/master.sh",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2682,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2316,
-								2316
-							]
-						],
-						"settings":
-						{
-							"actual_mode": true,
-							"av:ctrl+n": true,
-							"av:ctrl+s": true,
-							"av:ctrl+w": true,
-							"av:mode:command": true,
-							"av:mode:normal": true,
-							"av_input": true,
-							"syntax": "Packages/ShellScript/Bash.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 646.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "index.html",
 					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 5258,
+						"buffer_size": 2784,
 						"regions":
 						{
 						},
@@ -742,7 +652,7 @@
 							"av:ctrl+w": true,
 							"av:mode:normal": true,
 							"av_input": true,
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"syntax": "Packages/ShellScript/Bash.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},

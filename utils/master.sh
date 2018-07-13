@@ -43,7 +43,7 @@ fi
 # Ficheros a incluir en el máster:
 declare -a FILES=("autorun.inf" "calculo" "calculos" "conds" "COPYING.txt" "css" "favicon.ico" \
     "fonts" "geosinteticos" "geotextiles" "images" "index.html" "introduccion" "js" "just" \
-    "libs" "pdf" "autorun" "doc/instrucciones.pdf" "doc/instrucciones.html")
+    "libs" "pdf" "autorun")
 
 # No se pueden ocultar hasta no estar en el pendrive formateado como FAT/NTFS
 declare -a HIDDEN=("calculo" "calculos" "conds" "css" "fonts" "geosinteticos" "geotextiles" \
@@ -76,10 +76,8 @@ for FILE in "${FILES[@]}"; do
 done
 
 # Copio las instrucciones al raíz
-sudo cp "$RUTA_BASE/doc/instrucciones.html" "$MNT_IMG/instrucciones.htm"
-sudo cp "$RUTA_BASE/doc/instrucciones.pdf" "$MNT_IMG/instrucciones.pdf"
-sudo fatattr +r "$MNT_IMG/instrucciones.htm"
-sudo fatattr +r "$MNT_IMG/instrucciones.pdf"
+sudo cp "$RUTA_BASE/doc/instrucciones.pdf" "$MNT_IMG/INSTRUCCIONES.pdf"
+sudo fatattr +r "$MNT_IMG/INSTRUCCIONES.pdf"
 
 # Permisos y tal
 sudo chmod a+x $MNT_IMG/autorun.inf
