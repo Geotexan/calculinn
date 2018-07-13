@@ -75,6 +75,12 @@ for FILE in "${FILES[@]}"; do
     sudo fatattr +r "$MNT_IMG/$FILE"
 done
 
+# Copio las instrucciones al raíz
+sudo cp "$RUTA_BASE/doc/instrucciones.html" "$MNT_IMG/instrucciones.htm"
+sudo cp "$RUTA_BASE/doc/instrucciones.pdf" "$MNT_IMG/instrucciones.pdf"
+sudo fatattr +r "$MNT_IMG/instrucciones.htm"
+sudo fatattr +r "$MNT_IMG/instrucciones.pdf"
+
 # Permisos y tal
 sudo chmod a+x $MNT_IMG/autorun.inf
 sudo chmod a+x $MNT_IMG/autorun
@@ -82,7 +88,6 @@ for FILE in  "${HIDDEN[@]}"; do
     echo "Estableciendo permisos de ${MNT_IMG}/${FILE}..."
     sudo fatattr +h "$MNT_IMG/$FILE"
 done
-
 
 # Desmonto la imagen
 echo "Vamos a desmontar la imagen. Ejecutando sudo..."

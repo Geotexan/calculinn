@@ -4,9 +4,11 @@
 
 # INSTRUCCIONES
 
-Para abrir la aplicación haga doble clic en [`index.html`](index.html).
+Para lanzar la aplicación abra el fichero [`index.html`](index.html).
 
 Navegue por las diferentes secciones haciendo clic. Vuelva al menú principal con «retroceder» (arriba a la izquierda).
+
+<br><br><br>
 
 ## Cálculos
 
@@ -17,6 +19,7 @@ Los formularios de cálculo constan de tres secciones:
 ### Parámetros de entrada
 
 Introduzca los valores según el tipo de cálculo. Si deja el puntero sobre el campo, se mostrará el rango permitido.
+> Si el campo no es numérico o solo admite ciertos valores, se seleccionará mediante un desplegable.
 
 El significado de cada parámetro se puede ver en el diagrama inferior. Para ampliar el diagrama pulse en el icono ℹ que hay junto a cada campo de entrada.
 
@@ -32,12 +35,12 @@ El resultado del cálculo se divide en dos:
 
 ### Botonera
 
-Teniendo el resultado en pantalla, se puede imprimir del producto recomendado:
+Teniendo el resultado en pantalla, se puede imprimir:
 
 * Justificación del cálculo
 
 * Pliego de condiciones
 
-* Ficha técnica
+* Ficha técnica del producto recomendado
 
-El botón «Certificados actualizados» abrirá en una nueva pestaña los certificados más actualizados en la web de Geotexan. Requiere conexión a Internet.
+El botón «Certificados actualizados» abrirá, en una nueva pestaña, los certificados de calidad más recientes de la web de Geotexan. _Requiere conexión a Internet._
