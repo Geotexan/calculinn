@@ -6,6 +6,10 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/).
 
 ## [Unreleased]
 
+## 2018-07-16 - 1.1
+### Fixed
+- Pliego de condiciones de balas no mostraba valores técnicos geotextil.
+
 ## 2018-07-13 - 1.0
 ### Changed
 - Fichas técnicas, valores de cálculo y declaraciones de prestaciones 

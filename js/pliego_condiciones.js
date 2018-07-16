@@ -1,5 +1,5 @@
 /*
- * Determina el cálculo solicitado y abre el HTML de justificación del cálculo
+ * Determina el cálculo solicitado y abre el HTML del pliego de condiciones 
  * con los valores obtenidos y el producto recomendado.
  */
 $(document).ready(function() {
