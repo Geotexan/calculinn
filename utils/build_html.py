@@ -102,7 +102,7 @@ def clean_pymodules(pycalculo, pyrecomendador, ruta_dest):
 def pythonize_tablas(ruta_calculo, ruta_recomendador, ruta_dest):
     """
     ruta_calculo y ruta_recomendador son la ruta a las dos tablas en CSV o ODS.
-    Ejecuta un script externo que convierte ambas tablas en sendo módulos
+    Ejecuta un script externo que convierte ambas tablas en sendos módulos
     python conteniendo la base de conocimiento.
     """
     ruta_script = os.path.dirname(os.path.abspath(__file__))

@@ -30,6 +30,11 @@ def es_cabecera(lista):
     # **no** se considerará cabecera.
     es_fila_numerica = False  # es_fila_numerica es True si hay algún valor numérico, = NO cabecera.
     for valor in lista:
+        # Si es un número correspondiente a una unidad (m²->m2), es cabecera
+        # Las unidades van entre corchetes al final del nombre del parámetro.
+        # Si fuera un inicio cerrado de rango, estaría al principio.
+        if "[" in valor and not valor.startswith("["):
+            continue
         hay_al_menos_un_valor_numerico = False
         for caracter in valor:
             if caracter.isdigit():
@@ -154,6 +159,7 @@ def parse_opendocument(fin):
     numentradas = numsalidas = 0    # Por si no tuviera filas
     for row in rows:
         fila = convert_odrow(row)
+        # print(fila)
         if es_cabecera(fila):
             # La segunda cabecera, la de verdad, machacará a la de (In, Out)
             # en la segunda iteración. La primera nos dará el # de ins y outs.

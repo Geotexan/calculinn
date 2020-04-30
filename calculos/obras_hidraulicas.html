@@ -32,7 +32,7 @@
             # Chrome does not allow python `import` for security reasons.
             # No problem on Firefox. But we **need** to be "browser-agnostics".
             # So, unraveling file imports.
-            # 
+            #
             #from S_K_E_L_RECOMENDADOR import CABECERA, TABLA, RANGOS
             #from S_K_E_L_RECOMENDADOR import NUMENTRADAS, NUMSALIDAS
             #from S_K_E_L_CALCULO import TABLA as CALCULO
@@ -43,18 +43,18 @@
             
             NUMENTRADAS = 4
             NUMSALIDAS = 7
-            CABECERA = (u'CBR', u'D m\xe1x', u'Tama\xf1o escollera', u'Altura ca\xedda', u'Rt', u'Elong', u'R CBR perf', u'R perf cono', u'Abertura poro', u'K vert', u'Producto recomendado')
+            CABECERA = (u'CBR [%]', u'D m\xe1x (D) [mm]', u'Tama\xf1o escollera (T) [mm]', u'Altura ca\xedda escollera (H) [m]', u'Rt', u'Elong', u'R CBR perf', u'R perf cono', u'Abertura poro', u'K vert', u'Producto recomendado')
             TABLA = [(u'[0..6)', u'[100..300]', u'[300..3000]', u'[1..3]', u'31,7', u'64', u'6,1', u'7,2', u'55', u'0,041', u'NT 58'), (u'[6..\u221e]', u'[100..300]', u'[300..3000]', u'[1..3]', u'31,7', u'64', u'6,1', u'7,2', u'55', u'0,041', u'NT 58'), (u'[0..6)', u'[100..300]', u'[300..3000]', u'[0..1)', u'31', u'61', u'5,26', u'8,5', u'56', u'0,043', u'NT 46'), (u'[6..\u221e]', u'[100..300]', u'[300..3000]', u'[0..1)', u'31', u'61', u'5,26', u'8,5', u'56', u'0,043', u'NT 46'), (u'[0..6)', u'[100..300]', u'[0..300)', u'[1..3]', u'24,2', u'58', u'3,93', u'11,28', u'58', u'0,063', u'NT 35'), (u'[6..\u221e]', u'[100..300]', u'[0..300)', u'[1..3]', u'26', u'60', u'4,49', u'10,48', u'57', u'0,05', u'NT 40'), (u'[0..6)', u'[100..300]', u'[0..300)', u'[0..1)', u'16', u'54', u'2,34', u'18,12', u'60', u'0,079', u'NT 23'), (u'[6..\u221e]', u'[100..300]', u'[0..300)', u'[0..1)', u'20,7', u'55', u'3,33', u'14', u'59', u'0,074', u'NT 25'), (u'[0..6)', u'[0..100)', u'[300..3000]', u'[1..3]', u'31', u'61', u'5,26', u'8,5', u'56', u'0,043', u'NT 46'), (u'[6..\u221e]', u'[0..100)', u'[300..3000]', u'[1..3]', u'31,7', u'64', u'6,1', u'7,2', u'55', u'0,041', u'NT 58'), (u'[0..6)', u'[0..100)', u'[300..3000]', u'[0..1)', u'31', u'61', u'5,26', u'8,5', u'56', u'0,043', u'NT 46'), (u'[6..\u221e]', u'[0..100)', u'[300..3000]', u'[0..1)', u'31', u'61', u'5,26', u'8,5', u'56', u'0,043', u'NT 46'), (u'[0..6)', u'[0..100)', u'[0..300)', u'[1..3]', u'16', u'54', u'2,34', u'18,12', u'60', u'0,079', u'NT 23'), (u'[6..\u221e]', u'[0..100)', u'[0..300)', u'[1..3]', u'20,7', u'55', u'3,33', u'14', u'59', u'0,074', u'NT 25'), (u'[0..6)', u'[0..100)', u'[0..300)', u'[0..1)', u'13,8', u'54', u'2,2', u'20', u'60', u'0,085', u'NT 21'), (u'[6..\u221e]', u'[0..100)', u'[0..300)', u'[0..1)', u'16', u'54', u'2,34', u'18,12', u'60', u'0,079', u'NT 23')]
-            RANGOS = {u'CBR': (0, 2147483647), u'Altura ca\xedda': (0, 3), u'D m\xe1x': (0, 300), u'Tama\xf1o escollera': (0, 3000)}
+            RANGOS = {u'Tama\xf1o escollera (T) [mm]': (0, 3000), u'Altura ca\xedda escollera (H) [m]': (0, 3), u'CBR [%]': (0, 2147483647), u'D m\xe1x (D) [mm]': (0, 300)}
             # Full python code for evals.
             #!/usr/bin/env python
             # -*- coding: utf-8 -*-
             
             NUMENTRADAS = 4
             NUMSALIDAS = 6
-            CABECERA = (u'CBR', u'D m\xe1x', u'Tama\xf1o escollera', u'Altura ca\xedda', u'Rt', u'Elong', u'R CBR perf', u'R perf cono', u'Abertura poro', u'K vert', u'Producto recomendado')
+            CABECERA = (u'CBR [%]', u'D m\xe1x (D) [mm]', u'Tama\xf1o escollera (T) [mm]', u'Altura ca\xedda escollera (H) [m]', u'Rt', u'Elong', u'R CBR perf', u'R perf cono', u'Abertura poro', u'K vert', u'Producto recomendado')
             CALCULO = [(u'[0..6)', u'[100..300]', u'[300..3000]', u'[1..3]', u'30', u'50', u'6', u'<10', u'<70', u'>0,025', u'NT 58'), (u'[6..\u221e]', u'[100..300]', u'[300..3000]', u'[1..3]', u'30', u'50', u'6,4', u'<10', u'<70', u'>0,025', u'NT 58'), (u'[0..6)', u'[100..300]', u'[300..3000]', u'[0..1)', u'25', u'50', u'5', u'<10', u'<70', u'>0,025', u'NT 46'), (u'[6..\u221e]', u'[100..300]', u'[300..3000]', u'[0..1)', u'25', u'50', u'5', u'<10', u'<70', u'>0,025', u'NT 46'), (u'[0..6)', u'[100..300]', u'[0..300)', u'[1..3]', u'20', u'50', u'3,5', u'<15', u'<70', u'>0,025', u'NT 35'), (u'[6..\u221e]', u'[100..300]', u'[0..300)', u'[1..3]', u'23', u'50', u'4', u'<10', u'<70', u'>0,025', u'NT 35'), (u'[0..6)', u'[100..300]', u'[0..300)', u'[0..1)', u'13', u'50', u'2,3', u'<20', u'<70', u'>0,025', u'NT 23'), (u'[6..\u221e]', u'[100..300]', u'[0..300)', u'[0..1)', u'18', u'50', u'3', u'<20', u'<70', u'>0,025', u'NT 25'), (u'[0..6)', u'[0..100)', u'[300..3000]', u'[1..3]', u'25', u'50', u'5', u'<10', u'<70', u'>0,025', u'NT 46'), (u'[6..\u221e]', u'[0..100)', u'[300..3000]', u'[1..3]', u'28', u'50', u'6', u'<10', u'<70', u'>0,025', u'NT 58'), (u'[0..6)', u'[0..100)', u'[300..3000]', u'[0..1)', u'23', u'50', u'4,2', u'<10', u'<70', u'>0,025', u'NT 46'), (u'[6..\u221e]', u'[0..100)', u'[300..3000]', u'[0..1)', u'23', u'50', u'4,7', u'<10', u'<70', u'>0,025', u'NT 46'), (u'[0..6)', u'[0..100)', u'[0..300)', u'[1..3]', u'13', u'50', u'2,3', u'<20', u'<70', u'>0,025', u'NT 23'), (u'[6..\u221e]', u'[0..100)', u'[0..300)', u'[1..3]', u'14', u'50', u'2,5', u'<20', u'<70', u'>0,025', u'NT 25'), (u'[0..6)', u'[0..100)', u'[0..300)', u'[0..1)', u'12', u'50', u'2', u'<20', u'<70', u'>0,025', u'NT 21'), (u'[6..\u221e]', u'[0..100)', u'[0..300)', u'[0..1)', u'13', u'50', u'2,3', u'<20', u'<70', u'>0,025', u'NT 23')]
-            RANGOS = {u'CBR': (0, 2147483647), u'Altura ca\xedda': (0, 3), u'D m\xe1x': (0, 300), u'Tama\xf1o escollera': (0, 3000)}
+            RANGOS = {u'Tama\xf1o escollera (T) [mm]': (0, 3000), u'Altura ca\xedda escollera (H) [m]': (0, 3), u'CBR [%]': (0, 2147483647), u'D m\xe1x (D) [mm]': (0, 300)}
             # Full "motor" python code.
             #!/usr/bin/env python
             # -*- coding: utf-8 -*-
@@ -276,7 +276,7 @@
 
             ###################################################################
 
-            DEBUG = False
+            DEBUG = True
 
             if DEBUG:
                 print("DEBUG activado.")
@@ -303,6 +303,10 @@
                 tds_params = []
                 for i in range(NUMENTRADAS):
                     nombre = unicode(CABECERA[i])  # Por si tildes "raras".
+                    try:
+                        nombre = nombre[:nombre.index("[")]
+                    except ValueError:
+                        pass
                     valor = out[i]
                     if DEBUG:
                         print(nombre, valor)
@@ -321,6 +325,10 @@
                     # referencia interna para depuración, pero no se debe
                     # mostar. Aunque debe ser el mismo que da el recomendador.
                     nombre = unicode(CABECERA[i])
+                    try:
+                        nombre = nombre[:nombre.index("[")]
+                    except ValueError:
+                        pass
                     valor = out[i]
                     if DEBUG:
                         print(nombre, valor)
@@ -389,6 +397,10 @@
                 for i in range(NUMENTRADAS, NUMENTRADAS + NUMSALIDAS):
                     # No +1 porque al producto le voy a aplicar otro estilo.
                     nombre = unicode(CABECERA[i])
+                    try:
+                        nombre = nombre[:nombre.index("[")]
+                    except ValueError:
+                        pass
                     valor = out[i]
                     if DEBUG:
                         print(nombre, valor)
@@ -398,6 +410,10 @@
                                         Class="cell_fichatecnica"))
                 try:
                     nombre = unicode(CABECERA[-1])
+                    try:
+                        nombre = nombre[:nombre.index("[")]
+                    except ValueError:
+                        pass
                     valor = out[-1]
                 except IndexError:  # ¿No hay datos?
                     pass
@@ -464,10 +480,16 @@
             elementos = []
             for i in range(NUMENTRADAS):
                 if DEBUG:
-                    print("\tCABECERA[i] => ", CABECERA[i])
+                    print("\tCABECERA[{}] => {}".format(i, CABECERA[i]))
                 nombrecolumna = unicode(CABECERA[i])
+                try:
+                    nombreinput, unidades = nombrecolumna.split("[")
+                    unidades = unidades.replace("]", "").strip()
+                except ValueError:
+                    unidades = ""
+                nombreinput= nombrecolumna.split("[")[0]
                 # Algunos nombres de columna llevan algo de información extra:
-                nombreinput = nombrecolumna.replace("(desplegable)", "")
+                nombreinput = nombreinput.replace("(desplegable)", "")
                 nombreinput = nombreinput.replace("(constante)", "")
                 nombreinput = nombreinput.strip()
                 # Determino rangos para tooptip
@@ -506,6 +528,8 @@
                                          required="required",
                                          title=tooltip, step=step,
                                          Class="input_calculo")
+                units = html.LABEL(unidades + " ")
+                tagdiv <= units
                 info = html.IMG(src = "../images/calculos/info.svg",
                                 alt="info", height="16", id="info_icon")
                 info.bind("click", lambda: window.ver_imagen_ayuda())

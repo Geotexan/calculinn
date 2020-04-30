@@ -32,7 +32,7 @@
             # Chrome does not allow python `import` for security reasons.
             # No problem on Firefox. But we **need** to be "browser-agnostics".
             # So, unraveling file imports.
-            # 
+            #
             #from S_K_E_L_RECOMENDADOR import CABECERA, TABLA, RANGOS
             #from S_K_E_L_RECOMENDADOR import NUMENTRADAS, NUMSALIDAS
             #from S_K_E_L_CALCULO import TABLA as CALCULO
@@ -43,18 +43,18 @@
             
             NUMENTRADAS = 3
             NUMSALIDAS = 7
-            CABECERA = (u'Espesor (desplegable)', u'Altura', u'D. m\xe1x', u'Rt', u'Elong.', u'R CBR perf', u'R perf cono', u'Abertura poro', u'KH', u'Producto recomendado')
+            CABECERA = (u'Espesor geomembrana (\u212e) (desplegable) [mm]', u'Altura l\xedquido (H) [m]', u'D. m\xe1x (D) [mm]', u'Rt', u'Elong.', u'R CBR perf', u'R perf cono', u'Abertura poro', u'KH', u'Producto recomendado')
             TABLA = [(u'1', u'[0..10)', u'[0..60)', u'20,7', u'55', u'3,33', u'14', u'59', u'7,3E-06', u'NT 25'), (u'1', u'[0..10)', u'[60..120)', u'20,7', u'55', u'3,33', u'14', u'59', u'7,3E-06', u'NT 25'), (u'1', u'[0..10)', u'[120..\u221e]', u'24,2', u'58', u'3,93', u'11,28', u'58', u'7,8E-06', u'NT 35'), (u'1', u'[10..\u221e]', u'[0..60)', u'20,7', u'55', u'3,33', u'14', u'59', u'7,3E-06', u'NT 25'), (u'1', u'[10..\u221e]', u'[60..120)', u'24,2', u'58', u'3,93', u'11,28', u'58', u'7,8E-06', u'NT 35'), (u'1', u'[10..\u221e]', u'[120..\u221e]', u'26', u'60', u'4,49', u'10,48', u'57', u'8,2E-06', u'NT 40'), (u'1,5', u'[0..10)', u'[0..60)', u'16', u'54', u'2,34', u'18,12', u'60', u'6,12E-06', u'NT 23'), (u'1,5', u'[0..10)', u'[60..120)', u'20,7', u'55', u'3,33', u'14', u'59', u'7,3E-06', u'NT 25'), (u'1,5', u'[0..10)', u'[120..\u221e]', u'20,7', u'55', u'3,33', u'14', u'59', u'7,3E-06', u'NT 25'), (u'1,5', u'[10..\u221e]', u'[0..60)', u'20,7', u'55', u'3,33', u'14', u'59', u'7,3E-06', u'NT 25'), (u'1,5', u'[10..\u221e]', u'[60..120)', u'20,7', u'55', u'3,33', u'14', u'59', u'7,3E-06', u'NT 25'), (u'1,5', u'[10..\u221e]', u'[120..\u221e]', u'24,2', u'58', u'3,93', u'11,28', u'58', u'7,8E-06', u'NT 35'), (u'2', u'[0..10)', u'[0..60)', u'13,8', u'54', u'2,2', u'20', u'60', u'6,1E-06', u'NT 21'), (u'2', u'[0..10)', u'[60..120)', u'20,7', u'55', u'3,33', u'14', u'59', u'7,3E-06', u'NT 25'), (u'2', u'[0..10)', u'[120..\u221e]', u'20,7', u'55', u'3,33', u'14', u'59', u'7,3E-06', u'NT 25'), (u'2', u'[10..\u221e]', u'[0..60)', u'20,7', u'55', u'3,33', u'14', u'59', u'7,3E-06', u'NT 25'), (u'2', u'[10..\u221e]', u'[60..120)', u'20,7', u'55', u'3,33', u'14', u'59', u'7,3E-06', u'NT 25'), (u'2', u'[10..\u221e]', u'[120..\u221e]', u'20,7', u'55', u'3,33', u'14', u'59', u'7,3E-06', u'NT 25')]
-            RANGOS = {u'D. m\xe1x': (0, 2147483647), u'Espesor (desplegable)': (u'1', u'1,5', u'2'), u'Altura': (0, 2147483647)}
+            RANGOS = {u'Espesor geomembrana (\u212e) (desplegable) [mm]': (u'1', u'1,5', u'2'), u'Altura l\xedquido (H) [m]': (0, 2147483647), u'D. m\xe1x (D) [mm]': (0, 2147483647)}
             # Full python code for evals.
             #!/usr/bin/env python
             # -*- coding: utf-8 -*-
             
             NUMENTRADAS = 3
             NUMSALIDAS = 6
-            CABECERA = (u'Espesor (desplegable)', u'Altura', u'D. m\xe1x', u'Rt', u'Elong.', u'R CBR perf', u'R perf cono', u'Abertura poro', u'KH', u'Producto recomendado')
+            CABECERA = (u'Espesor geomembrana (\u212e) (desplegable) [mm]', u'Altura l\xedquido (H) [m]', u'D. m\xe1x (D) [mm]', u'Rt', u'Elong.', u'R CBR perf', u'R perf cono', u'Abertura poro', u'KH', u'Producto recomendado')
             CALCULO = [(u'1', u'[0..10)', u'[0..60)', u'15', u'50', u'2,7', u'<20', u'<70', u'3E-06', u'NT 25'), (u'1', u'[0..10)', u'[60..120)', u'18', u'50', u'3', u'<16', u'<70', u'3E-06', u'NT 25'), (u'1', u'[0..10)', u'[120..200]', u'21', u'50', u'3,7', u'<10', u'<70', u'3E-06', u'NT 35'), (u'1', u'[10..\u221e]', u'[0..60)', u'18', u'50', u'3', u'<16', u'<70', u'3E-06', u'NT 25'), (u'1', u'[10..\u221e]', u'[60..120)', u'21', u'50', u'3,7', u'<10', u'<70', u'3E-06', u'NT 35'), (u'1', u'[10..\u221e]', u'[120.200]', u'25', u'50', u'4,4', u'<10', u'<70', u'3E-06', u'NT 40'), (u'1,5', u'[0..10)', u'[0..60)', u'15', u'50', u'2,7', u'<20', u'<70', u'3E-06', u'NT 23'), (u'1,5', u'[0..10)', u'[60..120)', u'15', u'50', u'2,7', u'<20', u'<70', u'3E-06', u'NT 25'), (u'1,5', u'[0..10)', u'[120..200]', u'18', u'50', u'3', u'<16', u'<70', u'3E-06', u'NT 25'), (u'1,5', u'[10..\u221e]', u'[0..60)', u'15', u'50', u'2,7', u'<20', u'<70', u'3E-06', u'NT 25'), (u'1,5', u'[10..\u221e]', u'[60..120)', u'18', u'50', u'3', u'<16', u'<70', u'3E-06', u'NT 25'), (u'1,5', u'[10..\u221e]', u'[120..200]', u'21', u'50', u'3,7', u'<10', u'<70', u'3E-06', u'NT 35'), (u'2', u'[0..10)', u'[0..60)', u'12', u'50', u'2,2', u'<25', u'<70', u'3E-06', u'NT 21'), (u'2', u'[0..10)', u'[60..120)', u'15', u'50', u'2,7', u'<20', u'<70', u'3E-06', u'NT 25'), (u'2', u'[0..10)', u'[120..200]', u'15', u'50', u'2,7', u'<20', u'<70', u'3E-06', u'NT 25'), (u'2', u'[10..\u221e]', u'[0..60)', u'15', u'50', u'2,7', u'<20', u'<70', u'3E-06', u'NT 25'), (u'2', u'[10..\u221e]', u'[60..120)', u'15', u'50', u'2,7', u'<20', u'<70', u'3E-06', u'NT 25'), (u'2', u'[10..\u221e]', u'[120..200]', u'18', u'50', u'3', u'<15', u'<70', u'3E-06', u'NT 25')]
-            RANGOS = {u'D. m\xe1x': (0, 200), u'Espesor (desplegable)': (u'1', u'1,5', u'2'), u'Altura': (0, 2147483647)}
+            RANGOS = {u'Espesor geomembrana (\u212e) (desplegable) [mm]': (u'1', u'1,5', u'2'), u'Altura l\xedquido (H) [m]': (0, 2147483647), u'D. m\xe1x (D) [mm]': (0, 200)}
             # Full "motor" python code.
             #!/usr/bin/env python
             # -*- coding: utf-8 -*-
@@ -276,7 +276,7 @@
 
             ###################################################################
 
-            DEBUG = False
+            DEBUG = True
 
             if DEBUG:
                 print("DEBUG activado.")
@@ -303,6 +303,10 @@
                 tds_params = []
                 for i in range(NUMENTRADAS):
                     nombre = unicode(CABECERA[i])  # Por si tildes "raras".
+                    try:
+                        nombre = nombre[:nombre.index("[")]
+                    except ValueError:
+                        pass
                     valor = out[i]
                     if DEBUG:
                         print(nombre, valor)
@@ -321,6 +325,10 @@
                     # referencia interna para depuración, pero no se debe
                     # mostar. Aunque debe ser el mismo que da el recomendador.
                     nombre = unicode(CABECERA[i])
+                    try:
+                        nombre = nombre[:nombre.index("[")]
+                    except ValueError:
+                        pass
                     valor = out[i]
                     if DEBUG:
                         print(nombre, valor)
@@ -389,6 +397,10 @@
                 for i in range(NUMENTRADAS, NUMENTRADAS + NUMSALIDAS):
                     # No +1 porque al producto le voy a aplicar otro estilo.
                     nombre = unicode(CABECERA[i])
+                    try:
+                        nombre = nombre[:nombre.index("[")]
+                    except ValueError:
+                        pass
                     valor = out[i]
                     if DEBUG:
                         print(nombre, valor)
@@ -398,6 +410,10 @@
                                         Class="cell_fichatecnica"))
                 try:
                     nombre = unicode(CABECERA[-1])
+                    try:
+                        nombre = nombre[:nombre.index("[")]
+                    except ValueError:
+                        pass
                     valor = out[-1]
                 except IndexError:  # ¿No hay datos?
                     pass
@@ -464,10 +480,16 @@
             elementos = []
             for i in range(NUMENTRADAS):
                 if DEBUG:
-                    print("\tCABECERA[i] => ", CABECERA[i])
+                    print("\tCABECERA[{}] => {}".format(i, CABECERA[i]))
                 nombrecolumna = unicode(CABECERA[i])
+                try:
+                    nombreinput, unidades = nombrecolumna.split("[")
+                    unidades = unidades.replace("]", "").strip()
+                except ValueError:
+                    unidades = ""
+                nombreinput= nombrecolumna.split("[")[0]
                 # Algunos nombres de columna llevan algo de información extra:
-                nombreinput = nombrecolumna.replace("(desplegable)", "")
+                nombreinput = nombreinput.replace("(desplegable)", "")
                 nombreinput = nombreinput.replace("(constante)", "")
                 nombreinput = nombreinput.strip()
                 # Determino rangos para tooptip
@@ -506,6 +528,8 @@
                                          required="required",
                                          title=tooltip, step=step,
                                          Class="input_calculo")
+                units = html.LABEL(unidades + " ")
+                tagdiv <= units
                 info = html.IMG(src = "../images/calculos/info.svg",
                                 alt="info", height="16", id="info_icon")
                 info.bind("click", lambda: window.ver_imagen_ayuda())

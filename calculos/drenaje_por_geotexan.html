@@ -32,7 +32,7 @@
             # Chrome does not allow python `import` for security reasons.
             # No problem on Firefox. But we **need** to be "browser-agnostics".
             # So, unraveling file imports.
-            # 
+            #
             #from S_K_E_L_RECOMENDADOR import CABECERA, TABLA, RANGOS
             #from S_K_E_L_RECOMENDADOR import NUMENTRADAS, NUMSALIDAS
             #from S_K_E_L_CALCULO import TABLA as CALCULO
@@ -43,18 +43,18 @@
             
             NUMENTRADAS = 3
             NUMSALIDAS = 7
-            CABECERA = (u'Tipo terreno (desplegable)', u'Tipo \xe1rido (desplegable)', u'D. m\xe1x', u'Rt', u'Elong.', u'R CBR perf', u'R perf cono', u'Abertura poro', u'K vert', u'Producto recomendado')
+            CABECERA = (u'Tipo terreno (desplegable)', u'Tipo \xe1rido material drenante (desplegable)', u'D. m\xe1x material drenante (D) [mm]', u'Rt', u'Elong.', u'R CBR perf', u'R perf cono', u'Abertura poro', u'K vert', u'Producto recomendado')
             TABLA = [(u'Cohesivo', u'Machacado', u'[0..60)', u'7,2', u'50,58', u'1,23', u'31,2', u'68', u'0,115', u'NT 12'), (u'Cohesivo', u'Machacado', u'[60..100)', u'8', u'52', u'1,33', u'29,6', u'65', u'0,11', u'NT 13'), (u'Cohesivo', u'Machacado', u'[100..\u221e]', u'8,5', u'51', u'1,5', u'29,6', u'64', u'0,109', u'NT 14'), (u'Cohesivo', u'Redondeado', u'[0..60)', u'6,5', u'52', u'1,17', u'32', u'71', u'0,117', u'NT 11'), (u'Cohesivo', u'Redondeado', u'[60..100)', u'6,5', u'52', u'1,17', u'32', u'71', u'0,117', u'NT 11'), (u'Cohesivo', u'Redondeado', u'[100..\u221e]', u'7,2', u'50,58', u'1,23', u'31,2', u'68', u'0,115', u'NT 12'), (u'No cohesivo', u'Machacado', u'[0..60)', u'8', u'52', u'1,33', u'29,6', u'65', u'0,11', u'NT 13'), (u'No cohesivo', u'Machacado', u'[60..100)', u'8,5', u'51', u'1,5', u'29,6', u'64', u'0,109', u'NT 14'), (u'No cohesivo', u'Machacado', u'[100..\u221e]', u'7,2', u'50,58', u'1,23', u'31,2', u'68', u'0,115', u'NT 12'), (u'No cohesivo', u'Redondeado', u'[0..60)', u'7,2', u'50,58', u'1,23', u'31,2', u'68', u'0,115', u'NT 12'), (u'No cohesivo', u'Redondeado', u'[60..100)', u'7,2', u'50,58', u'1,23', u'31,2', u'68', u'0,115', u'NT 12'), (u'No cohesivo', u'Redondeado', u'[100..\u221e]', u'8', u'52', u'1,33', u'29,6', u'65', u'0,11', u'NT 13')]
-            RANGOS = {u'Tipo terreno (desplegable)': (u'Cohesivo', u'No cohesivo'), u'D. m\xe1x': (0, 2147483647), u'Tipo \xe1rido (desplegable)': (u'Machacado', u'Redondeado')}
+            RANGOS = {u'Tipo terreno (desplegable)': (u'Cohesivo', u'No cohesivo'), u'Tipo \xe1rido material drenante (desplegable)': (u'Machacado', u'Redondeado'), u'D. m\xe1x material drenante (D) [mm]': (0, 2147483647)}
             # Full python code for evals.
             #!/usr/bin/env python
             # -*- coding: utf-8 -*-
             
             NUMENTRADAS = 3
             NUMSALIDAS = 6
-            CABECERA = (u'Tipo terreno (desplegable)', u'Tipo \xe1rido (desplegable)', u'D. m\xe1x', u'Rt', u'Elong.', u'R CBR perf', u'R perf cono', u'Abertura poro', u'K vert', u'Producto recomendado')
+            CABECERA = (u'Tipo terreno (desplegable)', u'Tipo \xe1rido material drenante (desplegable)', u'D. m\xe1x material drenante (D) [mm]', u'Rt', u'Elong.', u'R CBR perf', u'R perf cono', u'Abertura poro', u'K vert', u'Producto recomendado')
             CALCULO = [(u'Cohesivo', u'Machacado', u'[0..60)', u'7', u'50', u'1,2', u'<35', u'<80', u'>0,09', u'NT 12'), (u'Cohesivo', u'Machacado', u'[60..100)', u'7,5', u'50', u'1,3', u'<35', u'<80', u'>0,09', u'NT 13'), (u'Cohesivo', u'Machacado', u'[100..300]', u'8', u'50', u'1,5', u'<35', u'<80', u'>0,09', u'NT 14'), (u'Cohesivo', u'Redondeado', u'[0..60)', u'5', u'50', u'1', u'<40', u'<80', u'>0,09', u'NT 11'), (u'Cohesivo', u'Redondeado', u'[60..100)', u'6', u'50', u'1,1', u'<40', u'<80', u'>0,09', u'NT 11'), (u'Cohesivo', u'Redondeado', u'[100..300]', u'7', u'50', u'1,2', u'<35', u'<80', u'>0,09', u'NT 12'), (u'No cohesivo', u'Machacado', u'[0..60)', u'7,5', u'50', u'1,3', u'<35', u'<80', u'>0,09', u'NT 13'), (u'No cohesivo', u'Machacado', u'[60..100)', u'6', u'50', u'1,1', u'<40', u'<80', u'>0,09', u'NT 14'), (u'No cohesivo', u'Machacado', u'[100..300]', u'7', u'50', u'1,2', u'<35', u'<80', u'>0,09', u'NT 12'), (u'No cohesivo', u'Redondeado', u'[0..60)', u'7,5', u'50', u'1,3', u'<35', u'<80', u'>0,09', u'NT 12'), (u'No cohesivo', u'Redondeado', u'[60..100)', u'7', u'50', u'1,2', u'<35', u'<80', u'>0,09', u'NT 12'), (u'No cohesivo', u'Redondeado', u'[100..300]', u'7,5', u'50', u'1,3', u'<35', u'<80', u'>0,09', u'NT 13')]
-            RANGOS = {u'Tipo terreno (desplegable)': (u'Cohesivo', u'No cohesivo'), u'D. m\xe1x': (0, 300), u'Tipo \xe1rido (desplegable)': (u'Machacado', u'Redondeado')}
+            RANGOS = {u'Tipo terreno (desplegable)': (u'Cohesivo', u'No cohesivo'), u'Tipo \xe1rido material drenante (desplegable)': (u'Machacado', u'Redondeado'), u'D. m\xe1x material drenante (D) [mm]': (0, 300)}
             # Full "motor" python code.
             #!/usr/bin/env python
             # -*- coding: utf-8 -*-
@@ -276,7 +276,7 @@
 
             ###################################################################
 
-            DEBUG = False
+            DEBUG = True
 
             if DEBUG:
                 print("DEBUG activado.")
@@ -303,6 +303,10 @@
                 tds_params = []
                 for i in range(NUMENTRADAS):
                     nombre = unicode(CABECERA[i])  # Por si tildes "raras".
+                    try:
+                        nombre = nombre[:nombre.index("[")]
+                    except ValueError:
+                        pass
                     valor = out[i]
                     if DEBUG:
                         print(nombre, valor)
@@ -321,6 +325,10 @@
                     # referencia interna para depuración, pero no se debe
                     # mostar. Aunque debe ser el mismo que da el recomendador.
                     nombre = unicode(CABECERA[i])
+                    try:
+                        nombre = nombre[:nombre.index("[")]
+                    except ValueError:
+                        pass
                     valor = out[i]
                     if DEBUG:
                         print(nombre, valor)
@@ -389,6 +397,10 @@
                 for i in range(NUMENTRADAS, NUMENTRADAS + NUMSALIDAS):
                     # No +1 porque al producto le voy a aplicar otro estilo.
                     nombre = unicode(CABECERA[i])
+                    try:
+                        nombre = nombre[:nombre.index("[")]
+                    except ValueError:
+                        pass
                     valor = out[i]
                     if DEBUG:
                         print(nombre, valor)
@@ -398,6 +410,10 @@
                                         Class="cell_fichatecnica"))
                 try:
                     nombre = unicode(CABECERA[-1])
+                    try:
+                        nombre = nombre[:nombre.index("[")]
+                    except ValueError:
+                        pass
                     valor = out[-1]
                 except IndexError:  # ¿No hay datos?
                     pass
@@ -464,10 +480,16 @@
             elementos = []
             for i in range(NUMENTRADAS):
                 if DEBUG:
-                    print("\tCABECERA[i] => ", CABECERA[i])
+                    print("\tCABECERA[{}] => {}".format(i, CABECERA[i]))
                 nombrecolumna = unicode(CABECERA[i])
+                try:
+                    nombreinput, unidades = nombrecolumna.split("[")
+                    unidades = unidades.replace("]", "").strip()
+                except ValueError:
+                    unidades = ""
+                nombreinput= nombrecolumna.split("[")[0]
                 # Algunos nombres de columna llevan algo de información extra:
-                nombreinput = nombrecolumna.replace("(desplegable)", "")
+                nombreinput = nombreinput.replace("(desplegable)", "")
                 nombreinput = nombreinput.replace("(constante)", "")
                 nombreinput = nombreinput.strip()
                 # Determino rangos para tooptip
@@ -506,6 +528,8 @@
                                          required="required",
                                          title=tooltip, step=step,
                                          Class="input_calculo")
+                units = html.LABEL(unidades + " ")
+                tagdiv <= units
                 info = html.IMG(src = "../images/calculos/info.svg",
                                 alt="info", height="16", id="info_icon")
                 info.bind("click", lambda: window.ver_imagen_ayuda())

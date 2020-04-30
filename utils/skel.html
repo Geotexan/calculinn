@@ -32,7 +32,7 @@
             # Chrome does not allow python `import` for security reasons.
             # No problem on Firefox. But we **need** to be "browser-agnostics".
             # So, unraveling file imports.
-            # 
+            #
             #from S_K_E_L_RECOMENDADOR import CABECERA, TABLA, RANGOS
             #from S_K_E_L_RECOMENDADOR import NUMENTRADAS, NUMSALIDAS
             #from S_K_E_L_CALCULO import TABLA as CALCULO
@@ -45,7 +45,7 @@
             SKEL_MOTOR
             ###################################################################
 
-            DEBUG = False
+            DEBUG = True
 
             if DEBUG:
                 print("DEBUG activado.")
@@ -72,6 +72,10 @@
                 tds_params = []
                 for i in range(NUMENTRADAS):
                     nombre = unicode(CABECERA[i])  # Por si tildes "raras".
+                    try:
+                        nombre = nombre[:nombre.index("[")]
+                    except ValueError:
+                        pass
                     valor = out[i]
                     if DEBUG:
                         print(nombre, valor)
@@ -90,6 +94,10 @@
                     # referencia interna para depuración, pero no se debe
                     # mostar. Aunque debe ser el mismo que da el recomendador.
                     nombre = unicode(CABECERA[i])
+                    try:
+                        nombre = nombre[:nombre.index("[")]
+                    except ValueError:
+                        pass
                     valor = out[i]
                     if DEBUG:
                         print(nombre, valor)
@@ -158,6 +166,10 @@
                 for i in range(NUMENTRADAS, NUMENTRADAS + NUMSALIDAS):
                     # No +1 porque al producto le voy a aplicar otro estilo.
                     nombre = unicode(CABECERA[i])
+                    try:
+                        nombre = nombre[:nombre.index("[")]
+                    except ValueError:
+                        pass
                     valor = out[i]
                     if DEBUG:
                         print(nombre, valor)
@@ -167,6 +179,10 @@
                                         Class="cell_fichatecnica"))
                 try:
                     nombre = unicode(CABECERA[-1])
+                    try:
+                        nombre = nombre[:nombre.index("[")]
+                    except ValueError:
+                        pass
                     valor = out[-1]
                 except IndexError:  # ¿No hay datos?
                     pass
@@ -233,10 +249,16 @@
             elementos = []
             for i in range(NUMENTRADAS):
                 if DEBUG:
-                    print("\tCABECERA[i] => ", CABECERA[i])
+                    print("\tCABECERA[{}] => {}".format(i, CABECERA[i]))
                 nombrecolumna = unicode(CABECERA[i])
+                try:
+                    nombreinput, unidades = nombrecolumna.split("[")
+                    unidades = unidades.replace("]", "").strip()
+                except ValueError:
+                    unidades = ""
+                nombreinput= nombrecolumna.split("[")[0]
                 # Algunos nombres de columna llevan algo de información extra:
-                nombreinput = nombrecolumna.replace("(desplegable)", "")
+                nombreinput = nombreinput.replace("(desplegable)", "")
                 nombreinput = nombreinput.replace("(constante)", "")
                 nombreinput = nombreinput.strip()
                 # Determino rangos para tooptip
@@ -275,6 +297,8 @@
                                          required="required",
                                          title=tooltip, step=step,
                                          Class="input_calculo")
+                units = html.LABEL(unidades + " ")
+                tagdiv <= units
                 info = html.IMG(src = "../images/calculos/info.svg",
                                 alt="info", height="16", id="info_icon")
                 info.bind("click", lambda: window.ver_imagen_ayuda())
