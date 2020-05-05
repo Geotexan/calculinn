@@ -5,6 +5,11 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/).
 > `grep "search_date" index.html`
 
 ## [Unreleased]
+### Added
+- Unidades en formularios de cálculo.
+
+### Changed
+- Corregidos rangos de vertederos.
 
 ## 2018-07-16 - 1.1
 ### Fixed
