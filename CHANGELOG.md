@@ -5,6 +5,7 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/).
 > `grep "search_date" index.html`
 
 ## [Unreleased]
+## 2020-04-30 - 1.2
 ### Added
 - Unidades en formularios de cálculo.
 
