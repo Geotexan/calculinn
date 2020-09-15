@@ -43,18 +43,18 @@
             
             NUMENTRADAS = 2
             NUMSALIDAS = 5
-            CABECERA = (u'Tr\xe1fico (desplegable)', u'Funci\xf3n (desplegable)', u'E', u'Rt', u'R perf. Cono', u'Abertura poro', u'Producto recomendado')
-            TABLA = [(u'T0', u'Separaci\xf3n', u'54', u'16', u'18,12', u'60', u'NT 23'), (u'T0', u'Filtraci\xf3n', u'51', u'9,4', u'28', u'61', u'NT 15'), (u'T1', u'Separaci\xf3n', u'54', u'12', u'21', u'61', u'NT 18'), (u'T1', u'Filtraci\xf3n', u'50,58', u'7,2', u'31,2', u'68', u'NT 12'), (u'T2', u'Separaci\xf3n', u'52', u'8', u'29,6', u'65', u'NT 13'), (u'T2', u'Filtraci\xf3n', u'53', u'5,3', u'36,8', u'75', u'NT 10'), (u'T3', u'Separaci\xf3n', u'52', u'6,5', u'32', u'71', u'NT 11'), (u'T3', u'Filtraci\xf3n', u'53', u'5,3', u'36,8', u'75', u'NT 10')]
-            RANGOS = {u'Funci\xf3n (desplegable)': (u'Filtraci\xf3n', u'Separaci\xf3n'), u'Tr\xe1fico (desplegable)': (u'T0', u'T1', u'T2', u'T3')}
+            CABECERA = ('Tráfico (desplegable)', 'Función (desplegable)', 'E=Rt*elongación (v min) [kN/m)', 'Rt (v min) [kN/m]', 'R perf. Cono (v max) [mm]', 'Abertura poro [mm]', 'Producto recomendado')
+            TABLA = [('T0', 'Separación', '8.64', '16', '19', '0.06', 'NT 23'), ('T0', 'Filtración', '4.79', '9.4', '30', '0.061', 'NT 15'), ('T1', 'Separación', '6.24', '12', '22', '0.061', 'NT 175'), ('T1', 'Filtración', '3.64', '7.2', '32.5', '0.068', 'NT 12'), ('T2', 'Separación', '4.16', '8', '29.6', '0.065', 'NT 13'), ('T2', 'Filtración', '2.8', '5.3', '36.9', '0.075', 'NT 10'), ('T3', 'Separación', '3.57', '6.5', '34', '0.071', 'NT 11'), ('T3', 'Filtración', '2.8', '5.3', '36', '0.075', 'NT 10')]
+            RANGOS = {'Tráfico (desplegable)': ('T0', 'T1', 'T2', 'T3'), 'Función (desplegable)': ('Filtración', 'Separación')}
             # Full python code for evals.
             #!/usr/bin/env python
             # -*- coding: utf-8 -*-
             
             NUMENTRADAS = 2
             NUMSALIDAS = 4
-            CABECERA = (u'Tr\xe1fico (desplegable)', u'Funci\xf3n (desplegable)', u'E', u'Rt', u'R perf. Cono', u'Abertura poro', u'Producto recomendado')
-            CALCULO = [(u'T0', u'Separaci\xf3n', u'64', u'16', u'20', u'50-200', u'NT 23'), (u'T0', u'Filtraci\xf3n', u'27', u'9', u'30', u'50-200', u'NT 15'), (u'T1', u'Separaci\xf3n', u'48', u'12', u'25', u'50-200', u'NT 18'), (u'T1', u'Filtraci\xf3n', u'21', u'7', u'35', u'50-200', u'NT 12'), (u'T2', u'Separaci\xf3n', u'32', u'8', u'30', u'50-200', u'NT 13'), (u'T2', u'Filtraci\xf3n', u'15', u'5', u'40', u'50-200', u'NT 10'), (u'T3', u'Separaci\xf3n', u'24', u'6', u'35', u'50-200', u'NT 11'), (u'T3', u'Filtraci\xf3n', u'12', u'4', u'45', u'50-200', u'NT 10')]
-            RANGOS = {u'Funci\xf3n (desplegable)': (u'Filtraci\xf3n', u'Separaci\xf3n'), u'Tr\xe1fico (desplegable)': (u'T0', u'T1', u'T2', u'T3')}
+            CABECERA = ('Tráfico (desplegable)', 'Función (desplegable)', 'E=Rt*elongación (v min) [kN/m)', 'R tracción (v min) [kN/m]', 'R perf. Cono (v max) [mm]', 'Abertura poro [mm]', 'Producto recomendado')
+            CALCULO = [('T0', 'Separación', '6.4', '16', '20', '0,05-0,2', 'NT 23'), ('T0', 'Filtración', '2.7', '9', '30', '0,05-0,2', 'NT 15'), ('T1', 'Separación', '4.8', '12', '25', '0,05-0,2', 'NT 175'), ('T1', 'Filtración', '2.1', '7', '35', '0,05-0,2', 'NT 12'), ('T2', 'Separación', '3.2', '8', '30', '0,05-0,2', 'NT 13'), ('T2', 'Filtración', '1.5', '5', '40', '0,05-0,2', 'NT 10'), ('T3', 'Separación', '2.4', '6', '35', '0,05-0,2', 'NT 11'), ('T3', 'Filtración', '1.2', '4', '45', '0,05-0,2', 'NT 10')]
+            RANGOS = {'Tráfico (desplegable)': ('T0', 'T1', 'T2', 'T3'), 'Función (desplegable)': ('Filtración', 'Separación')}
             # Full "motor" python code.
             #!/usr/bin/env python
             # -*- coding: utf-8 -*-

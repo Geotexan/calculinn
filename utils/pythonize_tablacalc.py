@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 
@@ -9,7 +9,7 @@ fuente, que da problemas a causa del "same origin policy" de JavaScript.
 """
 
 
-from __future__ import print_function
+
 import sys
 import csv
 import argparse
@@ -96,7 +96,7 @@ def es_fichero_recomendador(cabecera):
     columna que dice «Ficha técnica».
     """
     # Es una chapuza, lo sé. Pero hay que habilitar Chrome urgentemente.
-    if cabecera[-1].lower().strip() == u"ficha técnica":
+    if cabecera[-1].lower().strip() == "ficha técnica":
         res = False
     else:
         res = True

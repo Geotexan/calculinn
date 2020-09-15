@@ -43,18 +43,18 @@
             
             NUMENTRADAS = 2
             NUMSALIDAS = 5
-            CABECERA = (u'Espesor geomembrana (\u212e) [mm]', u'D. m\xe1x revestimiento superior (D) [mm]', u'Rt', u'Elong', u'R CBR perf', u'K plano', u'Producto recomendado')
-            TABLA = [(u'1,2', u'[0..4)', u'26', u'60', u'4,49', u'8,20E-06', u'NT 40'), (u'1,2', u'[4..8)', u'31', u'61', u'5,26', u'9,53E-06', u'NT 46'), (u'1,2', u'[8..12]', u'31,7', u'64', u'6,1', u'1,45E-05', u'NT 58'), (u'1,5', u'[0..4)', u'20,7', u'55', u'3,33', u'7,30E-06', u'NT 25'), (u'1,5', u'[4..8)', u'24,2', u'58', u'3,93', u'7,80E-06', u'NT 35'), (u'1,5', u'[8..12]', u'26', u'60', u'4,49', u'8,20E-06', u'NT 40'), (u'2', u'[0..4)', u'20,7', u'55', u'3,33', u'7,30E-06', u'NT 25'), (u'2', u'[4..8)', u'20,7', u'55', u'3,33', u'7,30E-06', u'NT 25'), (u'2', u'[8..12]', u'20,7', u'55', u'3,33', u'7,30E-06', u'NT 25')]
-            RANGOS = {u'D. m\xe1x revestimiento superior (D) [mm]': (0, 12), u'Espesor geomembrana (\u212e) [mm]': (u'1,2', u'1,5', u'2')}
+            CABECERA = ('Espesor geomembrana (℮) [mm]', 'D. máx revestimiento superior (D) [mm]', 'Rt [kN/m]', 'Elong [%]', 'R CBR perf [N]', 'K plano (permeabilidad) [m²/s*10^-6]', 'Producto recomendado')
+            TABLA = [('1.2', '[0..4)', '26', '60', '4600', '50', 'NT 40'), ('1.2', '[4..8)', '31', '58', '5560', '43', 'NT 46'), ('1.2', '[8..12]', '31.7', '60', '6100', '41', 'NT 58'), ('1.5', '[0..4)', '20.7', '55', '3300', '74', 'NT 25'), ('1.5', '[4..8)', '25', '55', '3930', '63', 'NT 35'), ('1.5', '[8..12]', '26', '60', '4600', '50', 'NT 40'), ('2', '[0..4)', '16', '54', '2600', '79', 'NT 23'), ('2', '[4..8)', '20.7', '55', '3300', '74', 'NT 25'), ('2', '[8..12]', '20.7', '55', '3300', '74', 'NT 25')]
+            RANGOS = {'Espesor geomembrana (℮) [mm]': ('1.2', '1.5', '2'), 'D. máx revestimiento superior (D) [mm]': (0, 12)}
             # Full python code for evals.
             #!/usr/bin/env python
             # -*- coding: utf-8 -*-
             
             NUMENTRADAS = 2
             NUMSALIDAS = 4
-            CABECERA = (u'Espesor geomembrana (\u212e) [mm]', u'D. m\xe1x revestimiento superior (D) [mm]', u'Rt', u'Elong', u'R CBR perf', u'K plano', u'Producto recomendado')
-            CALCULO = [(u'1,2', u'[0..4)', u'25', u'50', u'4', u'5,00E-06', u'NT 40'), (u'1,2', u'[4..8)', u'25', u'50', u'5', u'5,00E-06', u'NT 46'), (u'1,2', u'[8..12]', u'30', u'50', u'6', u'5,00E-06', u'NT 58'), (u'1,5', u'[0..4)', u'18', u'50', u'3', u'5,00E-06', u'NT 25'), (u'1,5', u'[4..8)', u'20', u'50', u'3,5', u'5,00E-06', u'NT 35'), (u'1,5', u'[8..12]', u'25', u'50', u'4', u'5,00E-06', u'NT 40'), (u'2', u'[0..4)', u'14', u'50', u'2,5', u'5,00E-06', u'NT 25'), (u'2', u'[4..8)', u'16', u'50', u'3', u'5,00E-06', u'NT 25'), (u'2', u'[8..12]', u'18', u'50', u'3', u'5,00E-06', u'NT 25')]
-            RANGOS = {u'D. m\xe1x revestimiento superior (D) [mm]': (0, 12), u'Espesor geomembrana (\u212e) [mm]': (u'1,2', u'1,5', u'2')}
+            CABECERA = ('Espesor geomembrana (℮) [mm]', 'D. máx revestimiento superior (D) [mm]', 'Rt [kN/m]', 'Elong [%]', 'R CBR perf [N]', 'K plano (permeabilidad) [m²/s*10^-6]', 'Producto recomendado')
+            CALCULO = [('1.2', '[0..4)', '25', '50', '4000', '7', 'NT 40'), ('1.2', '[4..8)', '25', '50', '5000', '8', 'NT 46'), ('1.2', '[8..12]', '30', '50', '6000', '12', 'NT 58'), ('1.5', '[0..4)', '18', '50', '3000', '7', 'NT 25'), ('1.5', '[4..8)', '20', '50', '3500', '7', 'NT 35'), ('1.5', '[8..12]', '25', '50', '4000', '7', 'NT 40'), ('2', '[0..4)', '14', '50', '2500', '6', 'NT 23'), ('2', '[4..8)', '16', '50', '3000', '7', 'NT 25'), ('2', '[8..12]', '18', '50', '3000', '7', 'NT 25')]
+            RANGOS = {'Espesor geomembrana (℮) [mm]': ('1.2', '1.5', '2'), 'D. máx revestimiento superior (D) [mm]': (0, 12)}
             # Full "motor" python code.
             #!/usr/bin/env python
             # -*- coding: utf-8 -*-

@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 """
@@ -8,7 +8,7 @@ el fichero HTML (basado en skel.html) y las tablas "pythonizadas"
 correspondientes que serán cargadas por brython en el navegador.
 """
 
-from __future__ import print_function
+
 import sys
 import os
 import re
