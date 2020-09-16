@@ -22,16 +22,19 @@ $(document).ready(function() {
         	// Después ya lo intento como campo de texto normal y como numérico.
         	if (! valor){
         		valor = $(selector).text();
-        		//console.log(valor);
+            // XXX DEBUG
+        		console.log(valor);
         	}
         	if (! valor){
         		valor = $(selector).val();
-        		//console.log(valor);
+            // XXX DEBUG
+        		console.log(valor);
         	}
         	params_values.push(params[param] + "=" + valor);
         }
         desturl += "?" + params_values.join("&");
-        //console.log(desturl);
+        // XXX DEBUG
+        console.log(desturl);
         window.location.href = desturl;
     });
 });

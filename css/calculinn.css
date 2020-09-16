@@ -704,3 +704,12 @@ select option span {
 .clear {
     clear: both;
 }
+
+.rango > span {
+    color: lightgray;
+    font-size: smaller;
+    font-family: auto;
+    font-style: normal;
+    /* visibility: hidden; */
+}
+

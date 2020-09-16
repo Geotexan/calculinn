@@ -283,9 +283,23 @@
 
             unicode = lambda c: str(c, "utf8")
 
-            def urlfy(str):
+            def urlfy(cad):
                 """Devuelve la misma cadena sin caracteres "problemáticos"."""
-                return str.replace(" ", "_").replace(".", "_")
+                ugly = ((" ", "_"),
+                        (".", "_"),
+                        ("(","_"),
+                        (")", "_"),
+                        ("<br>", "_"),
+                        ("/", "_"),
+                        ("²", "2"),
+                        ("*", "x"),
+                        ("=", "_"),
+                        ("á", "a"),
+                        ("ó", "o"),
+                        ("%", "0o"))
+                for bad, good in ugly:
+                    cad = cad.replace(bad, good)
+                return cad
 
             def dump_calculo(out):
                 """
@@ -326,9 +340,14 @@
                     # mostar. Aunque debe ser el mismo que da el recomendador.
                     nombre = unicode(CABECERA[i])
                     try:
+                        unidad = nombre[nombre.index("[")+1:nombre.index("]")]
                         nombre = nombre[:nombre.index("[")]
                     except ValueError:
-                        pass
+                        print("{} mal procesado".format(nombre))
+                        unidad = None
+                    nombre = nombre.strip()
+                    if unidad:
+                        nombre += "<br>{}".format(unidad)
                     valor = out[i]
                     if DEBUG:
                         print(nombre, valor)
@@ -398,9 +417,14 @@
                     # No +1 porque al producto le voy a aplicar otro estilo.
                     nombre = unicode(CABECERA[i])
                     try:
+                        unidad = nombre[nombre.index("[")+1:nombre.index("]")]
                         nombre = nombre[:nombre.index("[")]
                     except ValueError:
-                        pass
+                        print("{} mal procesado".format(nombre))
+                        unidad = None
+                    nombre = nombre.strip()
+                    if unidad:
+                        nombre += "<br>{}".format(unidad)
                     valor = out[i]
                     if DEBUG:
                         print(nombre, valor)
@@ -458,6 +482,8 @@
                 if len(args) == NUMENTRADAS:
                     out_calculo = calcular(CALCULO, *args)
                     if not out_calculo:
+                        for i in range(NUMENTRADAS):
+                            doc["rango{}".format(i)].style.visibility = "visible"
                         alert("No se pudieron realizar los cálculos.\n"
                               "Los parámetros de entrada no son válidos.")
                     else:
@@ -534,6 +560,10 @@
                                 alt="info", height="16", id="info_icon")
                 info.bind("click", lambda: window.ver_imagen_ayuda())
                 tagdiv <= info
+                rango = html.LABEL("<br>{}".format(tooltip),
+                                   Class="rango", id="rango{}".format(i))
+                rango.style.visibility = "hidden"
+                tagdiv <= rango
                 elementos.append(tagdiv)
                 # Agrego la fila completa con label e input
                 # elementos.append(html.BR())
@@ -584,7 +614,7 @@
 
             <!-- The page itself -->
             <section class="secc_calculo">
-                <div class="form" id="entradas">
+                <div class="form" id="entradas" autocomplete="on">
                     <!-- <form id="entradas" class="form"> -->
                         <!-- <button id="bcalcular">Calcular</button> -->
                     <!-- </form> -->

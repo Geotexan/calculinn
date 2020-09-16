@@ -165,6 +165,7 @@ span{
     position:relative;
     font-size: 17px;
 }
+
 p{
     font-family: 'Montserrat', sans-serif;
     color:#fff;
@@ -473,3 +474,4 @@ a.boton:after{
 .centered-title {
     text-align: center;
 }
+

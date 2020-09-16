@@ -152,6 +152,10 @@
 		"selected_items":
 		[
 			[
+				"Package Control: ",
+				"Package Control: Upgrade Package"
+			],
+			[
 				"mark pre",
 				"Markdown Preview: Save to HTML"
 			],
@@ -190,10 +194,6 @@
 			[
 				"pa c insta",
 				"Package Control: Install Package"
-			],
-			[
-				"Package Control: ",
-				"Package Control: Discover Packages"
 			],
 			[
 				"package control: install",
@@ -486,6 +486,7 @@
 	],
 	"file_history":
 	[
+		"/home/queen/src/gnome-shell-alarm/alarm-clock@bogado.qinn.es/extension.js",
 		"/home/queen/Geotexan/src/calculinn/conds/carreteras_por_geotexan.html",
 		"/home/queen/Geotexan/src/calculinn/utils/master.sh",
 		"/home/queen/Geotexan/src/calculinn/doc/instrucciones.md",
@@ -612,12 +613,11 @@
 		"/home/bogado/Geotexan/src/Geotex-INN/doc/pydoc/configuracion.html",
 		"/home/bogado/Geotexan/src/Geotex-INN/ginn/formularios/confirmings.py",
 		"/home/bogado/Geotexan/src/Geotex-INN/ginn/formularios/presupuestos.py",
-		"/home/bogado/Geotexan/src/Geotex-INN/ginn/framework/parse_mdblogic.py",
-		"/home/bogado/Geotexan/src/Geotex-INN/doc/pydoc/pagares_pagos.html"
+		"/home/bogado/Geotexan/src/Geotex-INN/ginn/framework/parse_mdblogic.py"
 	],
 	"find":
 	{
-		"height": 26.0
+		"height": 24.0
 	},
 	"find_in_files":
 	{
@@ -741,8 +741,8 @@
 						"selection":
 						[
 							[
-								1289,
-								1289
+								694,
+								694
 							]
 						],
 						"settings":
@@ -806,7 +806,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 26.0
+		"height": 24.0
 	},
 	"input":
 	{
@@ -855,7 +855,7 @@
 	"project": "calculinn.sublime-project",
 	"replace":
 	{
-		"height": 48.0
+		"height": 44.0
 	},
 	"save_all_on_build": true,
 	"select_file":

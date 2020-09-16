@@ -43,7 +43,7 @@
             
             NUMENTRADAS = 2
             NUMSALIDAS = 5
-            CABECERA = ('Tráfico (desplegable)', 'Función (desplegable)', 'E=Rt*elongación (v min) [kN/m)', 'Rt (v min) [kN/m]', 'R perf. Cono (v max) [mm]', 'Abertura poro [mm]', 'Producto recomendado')
+            CABECERA = ('Tráfico (desplegable)', 'Función (desplegable)', 'E=Rt*elongación (v min) [kN/m]', 'Rt (v min) [kN/m]', 'R perf. Cono (v max) [mm]', 'Abertura poro [mm]', 'Producto recomendado')
             TABLA = [('T0', 'Separación', '8.64', '16', '19', '0.06', 'NT 23'), ('T0', 'Filtración', '4.79', '9.4', '30', '0.061', 'NT 15'), ('T1', 'Separación', '6.24', '12', '22', '0.061', 'NT 175'), ('T1', 'Filtración', '3.64', '7.2', '32.5', '0.068', 'NT 12'), ('T2', 'Separación', '4.16', '8', '29.6', '0.065', 'NT 13'), ('T2', 'Filtración', '2.8', '5.3', '36.9', '0.075', 'NT 10'), ('T3', 'Separación', '3.57', '6.5', '34', '0.071', 'NT 11'), ('T3', 'Filtración', '2.8', '5.3', '36', '0.075', 'NT 10')]
             RANGOS = {'Tráfico (desplegable)': ('T0', 'T1', 'T2', 'T3'), 'Función (desplegable)': ('Filtración', 'Separación')}
             # Full python code for evals.
@@ -52,7 +52,7 @@
             
             NUMENTRADAS = 2
             NUMSALIDAS = 4
-            CABECERA = ('Tráfico (desplegable)', 'Función (desplegable)', 'E=Rt*elongación (v min) [kN/m)', 'R tracción (v min) [kN/m]', 'R perf. Cono (v max) [mm]', 'Abertura poro [mm]', 'Producto recomendado')
+            CABECERA = ('Tráfico (desplegable)', 'Función (desplegable)', 'E=Rt*elongación (v min) [kN/m]', 'R tracción (v min) [kN/m]', 'R perf. Cono (v max) [mm]', 'Abertura poro [mm]', 'Producto recomendado')
             CALCULO = [('T0', 'Separación', '6.4', '16', '20', '0,05-0,2', 'NT 23'), ('T0', 'Filtración', '2.7', '9', '30', '0,05-0,2', 'NT 15'), ('T1', 'Separación', '4.8', '12', '25', '0,05-0,2', 'NT 175'), ('T1', 'Filtración', '2.1', '7', '35', '0,05-0,2', 'NT 12'), ('T2', 'Separación', '3.2', '8', '30', '0,05-0,2', 'NT 13'), ('T2', 'Filtración', '1.5', '5', '40', '0,05-0,2', 'NT 10'), ('T3', 'Separación', '2.4', '6', '35', '0,05-0,2', 'NT 11'), ('T3', 'Filtración', '1.2', '4', '45', '0,05-0,2', 'NT 10')]
             RANGOS = {'Tráfico (desplegable)': ('T0', 'T1', 'T2', 'T3'), 'Función (desplegable)': ('Filtración', 'Separación')}
             # Full "motor" python code.
@@ -283,9 +283,23 @@
 
             unicode = lambda c: str(c, "utf8")
 
-            def urlfy(str):
+            def urlfy(cad):
                 """Devuelve la misma cadena sin caracteres "problemáticos"."""
-                return str.replace(" ", "_").replace(".", "_")
+                ugly = ((" ", "_"),
+                        (".", "_"),
+                        ("(","_"),
+                        (")", "_"),
+                        ("<br>", "_"),
+                        ("/", "_"),
+                        ("²", "2"),
+                        ("*", "x"),
+                        ("=", "_"),
+                        ("á", "a"),
+                        ("ó", "o"),
+                        ("%", "0o"))
+                for bad, good in ugly:
+                    cad = cad.replace(bad, good)
+                return cad
 
             def dump_calculo(out):
                 """
@@ -326,9 +340,14 @@
                     # mostar. Aunque debe ser el mismo que da el recomendador.
                     nombre = unicode(CABECERA[i])
                     try:
+                        unidad = nombre[nombre.index("[")+1:nombre.index("]")]
                         nombre = nombre[:nombre.index("[")]
                     except ValueError:
-                        pass
+                        print("{} mal procesado".format(nombre))
+                        unidad = None
+                    nombre = nombre.strip()
+                    if unidad:
+                        nombre += "<br>{}".format(unidad)
                     valor = out[i]
                     if DEBUG:
                         print(nombre, valor)
@@ -398,9 +417,14 @@
                     # No +1 porque al producto le voy a aplicar otro estilo.
                     nombre = unicode(CABECERA[i])
                     try:
+                        unidad = nombre[nombre.index("[")+1:nombre.index("]")]
                         nombre = nombre[:nombre.index("[")]
                     except ValueError:
-                        pass
+                        print("{} mal procesado".format(nombre))
+                        unidad = None
+                    nombre = nombre.strip()
+                    if unidad:
+                        nombre += "<br>{}".format(unidad)
                     valor = out[i]
                     if DEBUG:
                         print(nombre, valor)
@@ -458,6 +482,8 @@
                 if len(args) == NUMENTRADAS:
                     out_calculo = calcular(CALCULO, *args)
                     if not out_calculo:
+                        for i in range(NUMENTRADAS):
+                            doc["rango{}".format(i)].style.visibility = "visible"
                         alert("No se pudieron realizar los cálculos.\n"
                               "Los parámetros de entrada no son válidos.")
                     else:
@@ -534,6 +560,10 @@
                                 alt="info", height="16", id="info_icon")
                 info.bind("click", lambda: window.ver_imagen_ayuda())
                 tagdiv <= info
+                rango = html.LABEL("<br>{}".format(tooltip),
+                                   Class="rango", id="rango{}".format(i))
+                rango.style.visibility = "hidden"
+                tagdiv <= rango
                 elementos.append(tagdiv)
                 # Agrego la fila completa con label e input
                 # elementos.append(html.BR())
@@ -584,7 +614,7 @@
 
             <!-- The page itself -->
             <section class="secc_calculo">
-                <div class="form" id="entradas">
+                <div class="form" id="entradas" autocomplete="on">
                     <!-- <form id="entradas" class="form"> -->
                         <!-- <button id="bcalcular">Calcular</button> -->
                     <!-- </form> -->
