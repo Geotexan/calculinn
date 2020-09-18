@@ -20,7 +20,13 @@ function ver_imagen_ayuda(){
     /*
      * Busca el diagrama (fichero .png) de ayuda correspondiente al
      * cálculo actual y lo muestra en una ventana emergente.
+     * También hace visibles los rangos permitidos.
      */
+    var elementos = document.getElementsByClassName("rango");
+    for (var i = 0; i < elementos.length; i++) {
+        elementos[i].style.visibility = "visible";
+    }
+
     var url = window.location.href;
     var filename = url.split('/').pop();
     var imgsrc = "../images/calculos/" + filename.replace(".html", ".png");

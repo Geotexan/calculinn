@@ -104,37 +104,19 @@
 	"buffers":
 	[
 		{
-			"file": "js/pliego_condiciones.js",
+			"file": "just/drenaje_normativa_pg3.html",
 			"settings":
 			{
-				"buffer_size": 1009,
+				"buffer_size": 4304,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "conds/tuneles_excavados_de_geotexan.html",
+			"file": "conds/drenaje_normativa_pg3.html",
 			"settings":
 			{
-				"buffer_size": 3829,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "conds/balsas.html",
-			"settings":
-			{
-				"buffer_size": 4731,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "index.html",
-			"settings":
-			{
-				"buffer_size": 5258,
+				"buffer_size": 3639,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -152,8 +134,20 @@
 		"selected_items":
 		[
 			[
+				":w",
+				":w - Save"
+			],
+			[
+				":wa",
+				":w - Save"
+			],
+			[
+				"packa con lis",
+				"Package Control: List Packages"
+			],
+			[
 				"Package Control: ",
-				"Package Control: Upgrade Package"
+				"Package Control: Discover Packages"
 			],
 			[
 				"mark pre",
@@ -202,14 +196,6 @@
 			[
 				"Oackage control",
 				"Package Control: List Packages"
-			],
-			[
-				":wa",
-				":w - Save"
-			],
-			[
-				":w",
-				":w - Save"
 			],
 			[
 				"prefere",
@@ -480,19 +466,24 @@
 	[
 		"/home/queen/Geotexan/src/calculinn",
 		"/home/queen/Geotexan/src/calculinn/conds",
-		"/home/queen/Geotexan/src/calculinn/doc",
-		"/home/queen/Geotexan/src/calculinn/js",
-		"/home/queen/Geotexan/src/calculinn/utils"
+		"/home/queen/Geotexan/src/calculinn/just"
 	],
 	"file_history":
 	[
+		"/home/queen/Geotexan/src/calculinn/just/obras_hidraulicas.html",
+		"/home/queen/Geotexan/src/calculinn/conds/obras_hidraulicas.html",
+		"/home/queen/Geotexan/src/calculinn/conds/ferrocarriles_por_geotexan.html",
+		"/home/queen/Geotexan/src/calculinn/js/pliego_condiciones.js",
+		"/home/queen/Geotexan/src/calculinn/index.html",
+		"/home/queen/.config/sublime-text-3/Packages/User/ActualVim.sublime-settings",
+		"/home/queen/Geotexan/src/calculinn/conds/tuneles_excavados_de_geotexan.html",
+		"/home/queen/Geotexan/src/calculinn/conds/balsas.html",
 		"/home/queen/src/gnome-shell-alarm/alarm-clock@bogado.qinn.es/extension.js",
 		"/home/queen/Geotexan/src/calculinn/conds/carreteras_por_geotexan.html",
 		"/home/queen/Geotexan/src/calculinn/utils/master.sh",
 		"/home/queen/Geotexan/src/calculinn/doc/instrucciones.md",
 		"/home/queen/Geotexan/src/calculinn/doc/instrucciones.html",
 		"/home/queen/Geotexan/src/calculinn/utils/make.sh",
-		"/home/queen/Geotexan/src/calculinn/index.html",
 		"/home/queen/Geotexan/src/calculinn/utils/motor.py",
 		"/home/queen/Geotexan/src/calculinn/doc/dev.md",
 		"/home/queen/Geotexan/src/calculinn/just/carreteras_por_geotexan.html",
@@ -515,25 +506,19 @@
 		"/home/queen/Dropbox/Alquiler Paseo de Buenos Aires-Calle Dr. Plácido Bañuelos/Clara.md",
 		"/home/queen/Geotexan/src/calculinn/css/calculinn.css",
 		"/home/queen/Geotexan/src/calculinn/conds/vertederos.html",
-		"/home/queen/Geotexan/src/calculinn/conds/balsas.html",
 		"/home/queen/Geotexan/src/calculinn/conds/carreteras_normativa_pg3.html",
 		"/home/queen/Geotexan/src/calculinn/conds/drenaje_normativa_pg3.html",
 		"/home/queen/Geotexan/src/calculinn/conds/drenaje_por_geotexan.html",
-		"/home/queen/Geotexan/src/calculinn/conds/ferrocarriles_por_geotexan.html",
 		"/home/queen/Geotexan/src/calculinn/conds/muro_de_contencion.html",
-		"/home/queen/Geotexan/src/calculinn/conds/obras_hidraulicas.html",
-		"/home/queen/Geotexan/src/calculinn/conds/tuneles_excavados_de_geotexan.html",
 		"/home/queen/Geotexan/src/calculinn/css/just.css",
 		"/home/queen/Geotexan/src/calculinn/css/conds.css",
 		"/home/queen/Geotexan/src/calculinn/just/carreteras_normativa_pg3.html",
 		"/home/queen/Geotexan/src/calculinn/js/replace_params.js",
-		"/home/queen/Geotexan/src/calculinn/js/pliego_condiciones.js",
 		"/home/queen/Geotexan/src/calculinn/just/balsas.html",
 		"/home/queen/Geotexan/src/calculinn/just/drenaje_normativa_pg3.html",
 		"/home/queen/Geotexan/src/calculinn/just/drenaje_por_geotexan.html",
 		"/home/queen/Geotexan/src/calculinn/just/ferrocarriles_por_geotexan.html",
 		"/home/queen/Geotexan/src/calculinn/just/muro_de_contencion.html",
-		"/home/queen/Geotexan/src/calculinn/just/obras_hidraulicas.html",
 		"/home/queen/Geotexan/src/calculinn/just/skel.html",
 		"/home/queen/Geotexan/src/calculinn/just/tuneles_excavados_de_geotexan.html",
 		"/home/queen/Geotexan/src/calculinn/just/vertederos.html",
@@ -612,12 +597,11 @@
 		"/home/bogado/Geotexan/src/Geotex-INN/db/new_tablas.sql",
 		"/home/bogado/Geotexan/src/Geotex-INN/doc/pydoc/configuracion.html",
 		"/home/bogado/Geotexan/src/Geotex-INN/ginn/formularios/confirmings.py",
-		"/home/bogado/Geotexan/src/Geotex-INN/ginn/formularios/presupuestos.py",
-		"/home/bogado/Geotexan/src/Geotex-INN/ginn/framework/parse_mdblogic.py"
+		"/home/bogado/Geotexan/src/Geotex-INN/ginn/formularios/presupuestos.py"
 	],
 	"find":
 	{
-		"height": 24.0
+		"height": 38.0
 	},
 	"find_in_files":
 	{
@@ -631,6 +615,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"console",
 			"wan_ip_ssh",
 			"REGISTER",
 			"def fix_DST",
@@ -653,143 +638,58 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "js/pliego_condiciones.js",
+					"file": "just/drenaje_normativa_pg3.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1009,
+						"buffer_size": 4304,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								2008,
+								2008
 							]
 						],
 						"settings":
 						{
-							"actual_mode": true,
-							"av:ctrl+n": true,
-							"av:ctrl+s": true,
-							"av:ctrl+w": true,
-							"av:mode:normal": true,
-							"av_input": true,
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "conds/tuneles_excavados_de_geotexan.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3829,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1236,
-								1236
-							]
-						],
-						"settings":
-						{
-							"actual_mode": true,
-							"av:ctrl+n": true,
-							"av:ctrl+s": true,
-							"av:ctrl+w": true,
-							"av:mode:normal": true,
-							"av_input": true,
 							"syntax": "Packages/HTML/HTML.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "conds/balsas.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4731,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								694,
-								694
-							]
-						],
-						"settings":
-						{
-							"actual_mode": true,
-							"av:ctrl+n": true,
-							"av:ctrl+s": true,
-							"av:ctrl+w": true,
-							"av:mode:command": true,
-							"av:mode:normal": true,
-							"av_input": true,
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 315.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "index.html",
+					"buffer": 1,
+					"file": "conds/drenaje_normativa_pg3.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5258,
+						"buffer_size": 3639,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								272,
-								272
+								2101,
+								2101
 							]
 						],
 						"settings":
 						{
-							"actual_mode": true,
-							"av:ctrl+n": true,
-							"av:ctrl+s": true,
-							"av:ctrl+w": true,
-							"av:mode:normal": true,
-							"av_input": true,
 							"syntax": "Packages/HTML/HTML.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
@@ -806,7 +706,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 24.0
+		"height": 38.0
 	},
 	"input":
 	{
@@ -1017,7 +917,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 161.0,
+	"side_bar_width": 246.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

@@ -43,8 +43,8 @@
             
             NUMENTRADAS = 2
             NUMSALIDAS = 5
-            CABECERA = ('Función', 'Tráfico (desplegable)', 'E', 'Rt', 'R perf. Cono', 'Abertura poro', 'Producto recomendado')
-            TABLA = [('Filtración', 'T0', '51', '9,4', '28', '61', 'NT 15'), ('Filtración', 'T1', '50,58', '7,2', '31,2', '68', 'NT 12'), ('Filtración', 'T2', '53', '5,3', '36,8', '75', 'NT 10'), ('Filtración', 'T3', '53', '5,3', '36,8', '75', 'NT 10')]
+            CABECERA = ('Función', 'Tráfico (desplegable)', 'E=Rt*elongación (v. mín.) [kN/m]', 'Rt [kN/m]', 'R perf. Cono (v. máx.) [mm]', 'Abertura poro [mm]', 'Producto recomendado')
+            TABLA = [('Filtración', 'T0', '51', '9.4', '30', '0.061', 'NT 15'), ('Filtración', 'T1', '50.58', '7.2', '32.5', '0.068', 'NT 12'), ('Filtración', 'T2', '53', '5.3', '36.8', '0.075', 'NT 10'), ('Filtración', 'T3', '53', '5.3', '36.8', '0.075', 'NT 10')]
             RANGOS = {'Función': ('Filtración',), 'Tráfico (desplegable)': ('T0', 'T1', 'T2', 'T3')}
             # Full python code for evals.
             #!/usr/bin/env python
@@ -52,8 +52,8 @@
             
             NUMENTRADAS = 2
             NUMSALIDAS = 4
-            CABECERA = ('Función', 'Tráfico (desplegable)', 'E', 'Rt', 'R perf. Cono', 'Abertura poro', 'Producto recomendado')
-            CALCULO = [('Filtración', 'T0', '2,7', '9', '30', '5 – 20', 'NT 15'), ('Filtración', 'T1', '2,1', '7', '35', '5 – 20', 'NT 12'), ('Filtración', 'T2', '1,5', '5', '40', '5 – 20', 'NT 10'), ('Filtración', 'T3', '1,2', '4', '45', '5 – 20', 'NT 10')]
+            CABECERA = ('Función', 'Tráfico (desplegable)', 'E=Rt*elongación (v. mín.) [kN/m]', 'Rt [kN/m]', 'R perf. Cono (v. máx.) [mm]', 'Abertura poro [mm]', 'Como referencia para cotejar los valores con sus fichas ténicas. No se muestra en el formulario.', 'Producto recomendado')
+            CALCULO = [('Filtración', 'T0', '2.7', '9', '30', '0,05 a 0,2', 'NT 15'), ('Filtración', 'T1', '2.1', '7', '35', '0,05 a 0,2', 'NT 12'), ('Filtración', 'T2', '1.5', '5', '40', '0,05 a 0,2', 'NT 10'), ('Filtración', 'T3', '1.2', '4', '45', '0,05 a 0,2', 'NT 10')]
             RANGOS = {'Función': ('Filtración',), 'Tráfico (desplegable)': ('T0', 'T1', 'T2', 'T3')}
             # Full "motor" python code.
             #!/usr/bin/env python
@@ -295,7 +295,10 @@
                         ("*", "x"),
                         ("=", "_"),
                         ("á", "a"),
+                        ("í", "i"),
                         ("ó", "o"),
+                        ("µ", "u"),
+                        ("^", "-"),
                         ("%", "0o"))
                 for bad, good in ugly:
                     cad = cad.replace(bad, good)

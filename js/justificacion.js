@@ -36,5 +36,7 @@ $(document).ready(function() {
         // XXX DEBUG
         console.log(desturl);
         window.location.href = desturl;
+        // Esto se detecta como un popup. Puede que se abra, o puede que no:
+        // window.open(desturl);
     });
 });
